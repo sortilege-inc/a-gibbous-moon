@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Character — Play — A Gibbous Moon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital@0;1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../crescent.css">
+<link rel="stylesheet" href="dice.css">
+<link rel="stylesheet" href="sheet.css">
+</head>
+<body class="play-body">
+<div class="play-bar">
+<span class="brand">Historica Arcanum · A Gibbous Moon</span>
+<a href="../company/index.html" title="The Company">‹ Yârân</a>
+<span class="spacer"></span>
+<a href="../company/index.html" title="The Company">Yârân</a>
+<a href="../index.html">Home</a>
+</div>
+<main id="sheet"></main>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     TEMPLATE / DEMO SHEET.  Duplicate this file per PC, replace window.SHEET,
+     and link to it from the PC's bio page in ../company/ via <a class="play-btn">.
+     Full schema is documented in ../README.md. Rules: SRD 5.1 + Historica
+     Arcanum: The City of Crescent (magic origins, professions, spell rebound).
+     Fill mechanics from the DSL corpus — see README for source paths.
+     ══════════════════════════════════════════════════════════════════════ -->
+<script>
+window.SHEET = {
+  id: "template",                 /* unique slug — keys localStorage play-state */
+  name: "Sample Character",
+  player: "—",
+  portrait: "",                   /* URL or ../company/img/slug.png; blank hides it */
+  level: 5,
+  classes: [{ name: "Sorcerer", subclass: "Fiery Blood", level: 5 }],
+  race: "Human (Tiefling-blooded)",
+  background: "Undercity Smuggler",
+  origin: "Inherent Magic",       /* City of Crescent magic origin */
+  profession: "Alchemist",        /* City of Crescent profession */
+  alignment: "Chaotic Neutral",
+  abilities: { str: 8, dex: 14, con: 14, int: 12, wis: 10, cha: 18 },
+  saveProf: ["con", "cha"],
+  proficiencyBonus: 3,            /* optional — derived from level if omitted */
+  skills: { arcana: 1, deception: 2, persuasion: 1, "sleight of hand": 1, stealth: 1, insight: 1 },
+  ac: 13,
+  speed: 30,
+  senses: "Darkvision 60 ft · Passive Perception 10",
+  hp: { max: 33, current: 33, temp: 0 },
+  hitDice: [{ size: "d6", total: 5, used: 0 }],
+  attacks: [
+    { name: "Fire Bolt (cantrip)", ability: "cha", proficient: true, damage: "2d10", damageType: "fire", range: "120 ft", notes: "Ranged spell attack." },
+    { name: "Dagger", ability: "dex", proficient: true, damage: "1d4 MOD", damageType: "piercing", range: "20/60 ft", notes: "Finesse, thrown." }
+  ],
+  spellcasting: {
+    ability: "cha",
+    slots: { 1: { total: 4 }, 2: { total: 3 }, 3: { total: 2 } },
+    spells: [
+      { name: "Fire Bolt", level: 0 },
+      { name: "Prestidigitation", level: 0 },
+      { name: "Minor Illusion", level: 0 },
+      { name: "Burning Hands", level: 1 },
+      { name: "Shield", level: 1 },
+      { name: "Scorching Ray", level: 2 },
+      { name: "Misty Step", level: 2 },
+      { name: "Fireball", level: 3 }
+    ],
+    rebound: "When a spell fails or is overtaxed, roll on the City of Crescent Spell Rebound table (see the Grimoire / Lore). Wild inherent magic reverberates."
+  },
+  features: [
+    { name: "Font of Magic", source: "Sorcerer 2", uses: { max: 5, per: "long rest" },
+      text: "5 Sorcery Points. Convert points to spell slots and vice versa; fuel Metamagic. (Track spent points with the pips.)" },
+    { name: "Metamagic: Quickened Spell", source: "Sorcerer 3",
+      text: "Spend 2 Sorcery Points to cast a spell with a casting time of 1 action as a bonus action." },
+    { name: "Fiery Blood", source: "Origin — Inherent Magic",
+      text: "Your magic burns in your veins. You have resistance to fire damage, and once per short rest you can wreath a weapon or your fists in flame for +1d6 fire on a hit." }
+  ],
+  feats: [
+    { name: "Elemental Adept (Fire)", text: "Spells you cast ignore resistance to fire damage. When you roll fire damage, treat any 1 on a damage die as a 2." }
+  ],
+  proficiencies: {
+    armor: "—",
+    weapons: "Daggers, darts, slings, quarterstaffs, light crossbows",
+    tools: "Alchemist's supplies, thieves' tools",
+    languages: "Common, Turkish, Infernal, Thieves' Cant"
+  },
+  equipment: [
+    { name: "Alchemist's supplies", qty: 1 },
+    { name: "Vial of alchemist's fire", qty: 3, notes: "Improvised thrown, 1d4 fire, ongoing." },
+    { name: "Smuggler's satchel", qty: 1 },
+    { name: "Potion of Healing", qty: 2, notes: "Regain 2d4+2 HP." }
+  ],
+  currency: { gp: 42, sp: 15, cp: 8 },
+  conditions: [],
+  notes: "This is a sample sheet demonstrating the engine — replace it. Tap any modifier, save, skill, attack, or spell-attack to roll it in the tray below; use the Adv/Dis toggle first. Click spell-slot and feature-use pips to spend them; the −/+ on HP take damage/heal (Shift = 5). State persists in this browser until you Reset."
+};
+</script>
+<script src="dice.js"></script>
+<script src="sheet.js"></script>
+</body>
+</html>
