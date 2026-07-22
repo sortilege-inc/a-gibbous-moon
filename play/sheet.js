@@ -67,10 +67,13 @@
   }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(PS)); } catch (e) {} }
 
+  var activeSpellTab = null; // which spell level tab is showing (persists across re-renders)
+
   // ---- dice tray ----------------------------------------------------------
   var advMode = 0; // -1 dis, 0 normal, +1 adv
   var tray, trayDice, trayMsg, trayLog;
   function buildTray() {
+    if (tray) return;               // build once; survives re-renders so rolls persist
     tray = el("div", "roll-tray");
     tray.innerHTML =
       '<div class="tray-inner">' +
@@ -258,7 +261,8 @@
     if (S.senses) { var sBlk = stat("Senses", S.senses); sBlk.classList.add("wide"); v.appendChild(sBlk); }
     // Rest button
     var rest = el("div", "vstat rest-block");
-    rest.innerHTML = '<button class="btn-rest" title="Restore HP, slots, hit-dice &amp; uses to full">Long Rest</button>' +
+    rest.innerHTML = '<button class="btn-short" title="Restore short-rest features &amp; pact slots; spend Hit Dice to heal">Short Rest</button>' +
+      '<button class="btn-rest" title="Restore HP, slots, hit-dice &amp; uses to full">Long Rest</button>' +
       '<button class="btn-reset" title="Reset all play-state to the sheet defaults">Reset</button>';
     v.appendChild(rest);
     return v;
@@ -282,7 +286,7 @@
   }
   function colRight() {
     var c = el("div", "sheet-col right");
-    if (S.attacks && S.attacks.length) c.appendChild(attacksBlock());
+    if ((S.attacks && S.attacks.length) || S.spellcasting) c.appendChild(attacksBlock());
     if (S.spellcasting) c.appendChild(spellsBlock());
     if (S.features && S.features.length) c.appendChild(featuresBlock());
     if (S.feats && S.feats.length) c.appendChild(featsBlock());
@@ -339,10 +343,9 @@
   function attacksBlock() {
     var b = card("Attacks &amp; Actions");
     var pb = profBonus();
-    S.attacks.forEach(function (atk) {
+    (S.attacks || []).forEach(function (atk) {
       var abil = atk.ability || "str";
       var atkBonus = (atk.bonus != null ? atk.bonus : 0) + abilMod(abil) + (atk.proficient === false ? 0 : pb);
-      var dmgAbil = atk.damage && /MOD/i.test(atk.damage) ? abilMod(abil) : null;
       var dmgSpec = (atk.damage || "").replace(/MOD/gi, (abilMod(abil) >= 0 ? "+" : "") + abilMod(abil));
       var row = el("div", "attack");
       row.innerHTML =
@@ -353,6 +356,18 @@
         (atk.notes ? '<div class="atk-notes">' + nl2br(atk.notes) + '</div>' : '');
       b.appendChild(row);
     });
+    // spell attack, surfaced here too
+    if (S.spellcasting) {
+      var sc = S.spellcasting, sabil = sc.ability || "int";
+      var satk = sc.attackBonus != null ? sc.attackBonus : pb + abilMod(sabil);
+      var sdc = sc.saveDC != null ? sc.saveDC : 8 + pb + abilMod(sabil);
+      var srow = el("div", "attack spell-atk-row");
+      srow.innerHTML =
+        '<button class="atk-name rollable" data-spell-atk="' + satk + '">Spell Attack</button>' +
+        '<span class="atk-bonus">' + sgn(satk) + ' to hit</span>' +
+        '<span class="atk-meta">Save DC ' + sdc + ' · ' + ABIL_NAME[sabil] + '</span>';
+      b.appendChild(srow);
+    }
     return b;
   }
 
@@ -379,19 +394,41 @@
       });
       b.appendChild(slotWrap);
     }
-    // spell list grouped by level
+    // spell list — tabbed by level, each spell expandable with a Cast button
     var spells = sc.spells || [];
     if (spells.length) {
       var byLevel = {};
-      spells.forEach(function (sp) { (byLevel[sp.level || 0] = byLevel[sp.level || 0] || []).push(sp); });
-      Object.keys(byLevel).sort(function (a, c) { return a - c; }).forEach(function (lv) {
-        var h = el("div", "spell-lv-h", lv == 0 ? "Cantrips" : "Level " + lv);
-        b.appendChild(h);
-        var ul = el("div", "spell-list");
+      spells.forEach(function (sp, i) { sp._idx = i; (byLevel[sp.level || 0] = byLevel[sp.level || 0] || []).push(sp); });
+      var levels = Object.keys(byLevel).sort(function (a, c) { return a - c; });
+      if (activeSpellTab == null || levels.indexOf(String(activeSpellTab)) === -1) activeSpellTab = levels[0];
+      var tabs = el("div", "spell-tabs");
+      levels.forEach(function (lv) {
+        var tb = el("button", "spell-tab" + (String(lv) === String(activeSpellTab) ? " active" : ""),
+                    lv == 0 ? "Cantrips" : "Lvl " + lv);
+        tb.setAttribute("data-spell-tab", lv);
+        tabs.appendChild(tb);
+      });
+      b.appendChild(tabs);
+      levels.forEach(function (lv) {
+        var ul = el("div", "spell-list" + (String(lv) === String(activeSpellTab) ? " active" : ""));
+        ul.setAttribute("data-spell-level", lv);
         byLevel[lv].forEach(function (sp) {
+          var canCast = (sp.level || 0) === 0 || hasSlotFor(sp.level || 0);
+          var badges = (sp.concentration ? '<span class="sp-badge" title="Concentration">C</span>' : "") +
+                       (sp.ritual ? '<span class="sp-badge" title="Ritual">R</span>' : "");
           var it = el("div", "spell" + (sp.prepared === false ? " unprepared" : ""));
-          it.innerHTML = '<span class="sp-name">' + esc(sp.name) + '</span>' +
-            (sp.notes ? '<span class="sp-notes">' + esc(sp.notes) + '</span>' : '');
+          it.innerHTML =
+            '<div class="sp-row">' +
+              '<button class="sp-name" data-sp-expand="' + sp._idx + '" title="Show details">' + esc(sp.name) + '</button>' +
+              badges +
+              (sp.save ? '<span class="sp-save">' + esc(sp.save) + '</span>' : '') +
+              '<button class="sp-cast' + (sp.attack ? ' atkspell' : '') + '" data-sp-cast="' + sp._idx + '"' + (canCast ? '' : ' disabled') + ' title="Cast this spell">Cast</button>' +
+            '</div>' +
+            (sp.notes ? '<div class="sp-notes">' + esc(sp.notes) + '</div>' : '') +
+            '<div class="sp-body">' +
+              (sp.text ? nl2br(sp.text) : '<em class="sp-nodesc">No description on file.</em>') +
+              (sp.damage ? '<div class="sp-actions"><button class="sp-dmg rollable" data-dmg="' + esc(sp.damage) + '" data-dmg-name="' + esc(sp.name) + '">Roll ' + esc(sp.damage) + '</button></div>' : '') +
+            '</div>';
           ul.appendChild(it);
         });
         b.appendChild(ul);
@@ -492,7 +529,20 @@
       if (t.hasAttribute("data-slot")) { toggleSlot(t.getAttribute("data-slot")); return; }
       // feature use pips
       if (t.hasAttribute("data-use")) { toggleUse(parseInt(t.getAttribute("data-use"), 10)); return; }
+      // spell tabs — switch visible level without a full re-render
+      if (t.hasAttribute("data-spell-tab")) {
+        var lv = t.getAttribute("data-spell-tab"); activeSpellTab = lv;
+        var cardEl = t.closest(".sheet-card");
+        cardEl.querySelectorAll(".spell-tab").forEach(function (x) { x.classList.toggle("active", x.getAttribute("data-spell-tab") === lv); });
+        cardEl.querySelectorAll(".spell-list").forEach(function (x) { x.classList.toggle("active", x.getAttribute("data-spell-level") === lv); });
+        return;
+      }
+      // spell name — expand/collapse the full description
+      if (t.hasAttribute("data-sp-expand")) { var sp = t.closest(".spell"); if (sp) sp.querySelector(".sp-body").classList.toggle("open"); return; }
+      // cast — consume a slot (lowest available >= level) and roll the spell attack if relevant
+      if (t.hasAttribute("data-sp-cast")) { castSpell(parseInt(t.getAttribute("data-sp-cast"), 10)); return; }
       // rest / reset
+      if (t.classList.contains("btn-short")) { shortRest(); return; }
       if (t.classList.contains("btn-rest")) { longRest(); return; }
       if (t.classList.contains("btn-reset")) { if (confirm("Reset all play-state to the sheet defaults?")) { localStorage.removeItem(KEY); PS = defaultState(); render(); } return; }
     });
@@ -554,6 +604,47 @@
     });
     save(); render();
     setMsg("Long Rest", "HP, slots &amp; uses restored", "✓");
+  }
+  function shortRest() {
+    // features that recharge on a Short Rest (per text contains "Short")
+    (S.features || []).forEach(function (f, i) {
+      if (f.uses && /short/i.test(f.uses.per || "")) PS.uses[i] = 0;
+    });
+    // spell slots that recharge on a Short Rest (e.g. Warlock Pact Magic: slots[lv].recharge = "short")
+    var slots = (S.spellcasting || {}).slots || {};
+    Object.keys(slots).forEach(function (lv) { if (/short/i.test(slots[lv].recharge || "")) PS.slots[lv] = 0; });
+    save(); render();
+    setMsg("Short Rest", "short-rest features &amp; pact slots restored — spend Hit Dice to heal", "✓");
+  }
+
+  // ---- spells: availability + casting -------------------------------------
+  function hasSlotFor(level) {
+    var slots = (S.spellcasting || {}).slots || {};
+    return Object.keys(slots).some(function (lv) {
+      return parseInt(lv, 10) >= level && ((slots[lv].total || 0) - (PS.slots[lv] || 0)) > 0;
+    });
+  }
+  function castSpell(idx) {
+    var sc = S.spellcasting || {}; var sp = (sc.spells || [])[idx]; if (!sp) return;
+    var lvl = sp.level || 0, usedLv = null;
+    if (lvl > 0) {
+      var slots = sc.slots || {};
+      var cand = Object.keys(slots).map(Number).filter(function (l) {
+        return l >= lvl && ((slots[l].total || 0) - (PS.slots[l] || 0)) > 0;
+      }).sort(function (a, c) { return a - c; });
+      if (!cand.length) { setMsg("Cast — " + sp.name, "no spell slot available", "—"); logLine("Cannot cast " + sp.name + " — no slot"); return; }
+      usedLv = cand[0];
+      PS.slots[usedLv] = (PS.slots[usedLv] || 0) + 1; save();
+    }
+    render(); // update slot pips & cast-button availability (tray + its roll persist)
+    if (sp.attack) {
+      var abil = sc.ability || "int";
+      var atk = sc.attackBonus != null ? sc.attackBonus : profBonus() + abilMod(abil);
+      rollCheck("Spell Attack — " + sp.name + (usedLv ? " (Lvl " + usedLv + ")" : ""), atk);
+    } else {
+      setMsg("Cast — " + sp.name, usedLv ? "Lvl " + usedLv + " slot spent" : "cantrip", "✓");
+      logLine("Cast " + sp.name + (usedLv ? " (Lvl " + usedLv + " slot)" : ""));
+    }
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", render);

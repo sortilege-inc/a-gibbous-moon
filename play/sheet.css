@@ -68,10 +68,12 @@
 .hd-slash{ color:var(--ink-faint); }
 
 .rest-block{ display:flex; flex-direction:column; gap:0.35rem; justify-content:center; }
-.btn-rest, .btn-reset{
+.btn-short, .btn-rest, .btn-reset{
   font-family:var(--caps); text-transform:uppercase; letter-spacing:0.1em; font-size:0.6rem;
   cursor:pointer; border-radius:4px; padding:0.4rem 0.5rem; transition:.15s;
 }
+.btn-short{ border:1px solid var(--gold); background:rgba(196,154,69,0.12); color:var(--rust-deep); }
+.btn-short:hover{ background:var(--gold); color:var(--vellum-lit); }
 .btn-rest{ border:1px solid var(--teal); background:rgba(31,122,134,0.1); color:var(--teal-deep); }
 .btn-rest:hover{ background:var(--teal); color:var(--vellum-lit); }
 .btn-reset{ border:1px solid var(--edge); background:transparent; color:var(--ink-faint); }
@@ -153,12 +155,35 @@
 .pip{ width:15px; height:15px; border-radius:50%; border:1px solid var(--teal-deep); background:var(--teal); cursor:pointer; padding:0; transition:.12s; }
 .pip.spent{ background:transparent; border-color:var(--edge); }
 .pip:hover{ transform:scale(1.15); }
-.spell-lv-h{ font-family:var(--caps); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--rust-deep); margin:0.8rem 0 0.2rem; border-bottom:1px solid var(--edge-soft); }
-.spell-list{ display:flex; flex-direction:column; }
-.spell{ display:flex; align-items:baseline; gap:0.6rem; padding:0.18rem 0; }
-.spell .sp-name{ font-family:var(--fell); font-size:1.02rem; color:var(--ink); }
+.spell-atk-row{ border-top:1px dashed var(--edge-soft); margin-top:0.4rem; padding-top:0.5rem; }
+/* ---- spell tabs / list / cast ---- */
+.spell-tabs{ display:flex; flex-wrap:wrap; gap:0.3rem; margin:0.5rem 0; border-bottom:1px solid var(--edge-soft); padding-bottom:0.45rem; }
+.spell-tab{ font-family:var(--caps); font-size:0.58rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--ink-faint); border:1px solid var(--edge); background:transparent; border-radius:4px; padding:0.22rem 0.55rem; cursor:pointer; transition:.12s; }
+.spell-tab:hover{ color:var(--rust-deep); border-color:var(--rust); }
+.spell-tab.active{ color:var(--rust-deep); border-color:var(--rust-deep); background:rgba(155,58,42,0.08); font-weight:700; }
+.spell-list{ display:none; flex-direction:column; }
+.spell-list.active{ display:flex; }
+.spell{ display:block; padding:0.22rem 0; border-bottom:1px solid var(--edge-soft); }
+.sp-row{ display:flex; align-items:center; gap:0.5rem; }
+.spell .sp-name{ font-family:var(--fell); font-size:1.02rem; color:var(--ink); background:none; border:0; padding:0; cursor:pointer; text-align:left; flex:1 1 auto; }
+.spell .sp-name:hover{ color:var(--teal-deep); text-decoration:underline dotted; }
 .spell.unprepared .sp-name{ color:var(--ink-faint); font-style:italic; }
-.spell .sp-notes{ font-size:0.78rem; color:var(--ink-soft); }
+.spell .sp-notes{ font-size:0.78rem; color:var(--ink-soft); margin:0.1rem 0; }
+.sp-badge{ font-family:var(--caps); font-size:0.5rem; font-weight:700; color:var(--gold); border:1px solid var(--gold); border-radius:3px; padding:0 0.28rem; }
+.sp-save{ font-family:var(--caps); font-size:0.55rem; letter-spacing:0.05em; color:var(--slate); }
+.sp-cast{ font-family:var(--caps); font-size:0.56rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal-deep); border:1px solid var(--teal); background:rgba(31,122,134,0.08); border-radius:4px; padding:0.18rem 0.5rem; cursor:pointer; opacity:0; transition:.12s; }
+.spell:hover .sp-cast, .spell:focus-within .sp-cast{ opacity:1; }
+.sp-cast:hover{ background:var(--teal); color:var(--vellum-lit); }
+.sp-cast.atkspell{ border-color:var(--rust); color:var(--rust-deep); background:rgba(155,58,42,0.07); }
+.sp-cast.atkspell:hover{ background:var(--rust); color:var(--vellum-lit); }
+.spell:hover .sp-cast[disabled], .spell:focus-within .sp-cast[disabled]{ opacity:0.4; cursor:not-allowed; border-style:dashed; }
+@media (hover:none){ .sp-cast{ opacity:1; } }
+.sp-body{ display:none; font-size:0.88rem; color:var(--ink-2); margin:0.3rem 0 0.1rem; padding:0.2rem 0 0.2rem 0.6rem; border-left:2px solid var(--edge); }
+.sp-body.open{ display:block; }
+.sp-nodesc{ color:var(--ink-faint); }
+.sp-actions{ margin-top:0.4rem; }
+.sp-dmg{ font-family:var(--caps); font-size:0.55rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--rust-deep); border:1px solid var(--rust); background:transparent; border-radius:4px; padding:0.15rem 0.5rem; cursor:pointer; }
+.sp-dmg:hover{ background:var(--rust); color:var(--vellum-lit); }
 .rebound{ margin-top:0.8rem; font-size:0.84rem; color:var(--ink-soft); border-top:1px solid var(--edge-soft); padding-top:0.6rem; }
 
 /* ---- features / feats --------------------------------------- */
