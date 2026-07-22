@@ -7,6 +7,26 @@
 <meta name="description" content="Keeper's session prep: full stat blocks for Mira and the Living Manor, for the rescue at the house near the Trojan digsite.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital@0;1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../crescent.css">
+<style>
+/* hover-to-reveal spell text, scoped to this prep page */
+.spelllist{ margin-left:1.1rem; }
+.sp{ position:relative; cursor:help; font-style:italic; border-bottom:1px dotted var(--gilt); }
+.sp:hover,.sp:focus{ color:var(--oxblood); outline:none; }
+.sp .sp-tip{
+  position:absolute; left:0; top:1.6em; z-index:30;
+  width:22rem; max-width:82vw;
+  background:linear-gradient(180deg,#fbf6ea,#f0e6cf);
+  border:1px solid var(--gilt); border-top:3px solid var(--oxblood); border-radius:3px;
+  padding:.55rem .7rem; font-size:.82rem; line-height:1.45; font-style:normal;
+  color:var(--ink); box-shadow:0 6px 20px rgba(40,20,10,.28);
+  opacity:0; visibility:hidden; transition:opacity .12s ease; pointer-events:none;
+  white-space:normal;
+}
+.sp:hover .sp-tip,.sp:focus .sp-tip{ opacity:1; visibility:visible; }
+.sp .sp-tip b{ display:block; font-family:var(--disp); color:var(--oxblood); font-size:1rem; font-style:normal; }
+.sp .sp-tip i{ display:block; font-family:var(--caps); font-style:normal; text-transform:uppercase; letter-spacing:.07em; font-size:.62rem; color:var(--teal-deep); margin:.05rem 0 .32rem; }
+.sp .sp-tip .cust{ color:var(--moon); font-style:italic; }
+</style>
 </head>
 <body>
 <nav class="topnav"><span class="brand">A Gibbous Moon Over Constantinople</span><a href="../index.html">Home</a><a href="../nights/index.html" title="The record of play, night by night">Nights</a><a href="../cabal/index.html" title="The player characters">The Cabal</a><a href="../faces/index.html" title="The folk of the city">Faces</a><a href="../powers/index.html" title="Orders, guilds &amp; courts">Powers</a><a href="../city/index.html" title="The city, above &amp; below">The City</a><a href="../treasury/index.html" title="Relics &amp; wonders">The Treasury</a><a href="../mysteries/index.html" title="The shape of the world">Mysteries</a><a href="../veil/index.html" class="active gm" title="For the Keeper alone">The Veil</a></nav>
@@ -65,14 +85,41 @@
 <li><em>Karya's Mind Wipe</em> is cast at a random creature other than Mira. (Cannot recur for 1 hour.)</li>
 </ol>
 <p class="line"><b>Wild Spellcasting.</b> Mira is a 13th-level spellcaster (spellcasting ability Charisma; <b>spell save DC 19</b>, <b>+10</b> to hit with spell attacks). She needs no material components. She has prepared:</p>
-<p class="line" style="margin-left:1.1rem;"><b>Cantrips:</b> <em>minor illusion, shocking grasp, spare the dying</em><br>
-<b>1st (4 slots):</b> <em>silent image, alarm, command, mage armour</em><br>
-<b>2nd (3 slots):</b> <em>blur, detect thoughts, invisibility, mirror image, misty step</em><br>
-<b>3rd (3 slots):</b> <em>blink, counterspell, dispel magic, fear, major image, fireball</em><br>
-<b>4th (3 slots):</b> <em>blight, confusion, dimension door</em><br>
-<b>5th (2 slots):</b> <em>dominate person, telekinesis</em><br>
-<b>6th (1 slot):</b> <em>scatter</em><br>
-<b>7th (1 slot):</b> <em>project image, Karya's mind wipe</em></p>
+<p class="line" style="color:var(--ink-soft);font-size:0.86rem;margin:-0.2rem 0 0.5rem 1.1rem;">Hover (or tap) a spell to read its text.</p>
+<p class="line spelllist"><b>Cantrips:</b>
+<span class="sp" tabindex="0">minor illusion<span class="sp-tip"><b>Minor Illusion</b><i>Cantrip · illusion · 30 ft · 1 min</i>Create a sound (whisper to scream) or the image of an object no larger than a 5-ft cube. Physical interaction reveals an image as illusory; a creature that studies it can tell it is fake with an Investigation check vs her spell DC.</span></span>,
+<span class="sp" tabindex="0">shocking grasp<span class="sp-tip"><b>Shocking Grasp</b><i>Cantrip · evocation · touch · instantaneous</i>Melee spell attack (advantage if the target wears metal armour): 3d8 lightning at her level, and the target can't take reactions until the start of its next turn.</span></span>,
+<span class="sp" tabindex="0">spare the dying<span class="sp-tip"><b>Spare the Dying</b><i>Cantrip · necromancy · touch · instantaneous</i>Touch a living creature at 0 HP; it becomes stable. No effect on undead or constructs.</span></span><br>
+<b>1st (4 slots):</b>
+<span class="sp" tabindex="0">silent image<span class="sp-tip"><b>Silent Image</b><i>1st · illusion · 60 ft · conc. 10 min</i>Create a purely visual image up to a 15-ft cube; move it with an action. No sound, smell, or temperature. Investigation vs her DC to disbelieve.</span></span>,
+<span class="sp" tabindex="0">alarm<span class="sp-tip"><b>Alarm</b><i>1st · abjuration · 30 ft · 8 hrs</i>Ward a 20-ft cube; a Tiny-or-larger creature you didn't exempt sets off a mental ping (within 1 mile) or an audible hand-bell.</span></span>,
+<span class="sp" tabindex="0">command<span class="sp-tip"><b>Command</b><i>1st · enchantment · 60 ft · 1 round</i>One creature Wis save or obey a one-word command next turn (Approach, Drop, Flee, Grovel, Halt). No effect on undead, or if it can't understand her, or if the command is directly harmful.</span></span>,
+<span class="sp" tabindex="0">mage armour<span class="sp-tip"><b>Mage Armour</b><i>1st · abjuration · touch · 8 hrs</i>An unarmoured creature's base AC becomes 13 + Dex. (Already reflected in her AC 15.)</span></span><br>
+<b>2nd (3 slots):</b>
+<span class="sp" tabindex="0">blur<span class="sp-tip"><b>Blur</b><i>2nd · illusion · self · conc. 1 min</i>Attackers have disadvantage against her, unless they don't rely on sight (blindsight) or see through illusions (truesight).</span></span>,
+<span class="sp" tabindex="0">detect thoughts<span class="sp-tip"><b>Detect Thoughts</b><i>2nd · divination · self · conc. 1 min</i>Read the surface thoughts of a creature within 30 ft; probe deeper with an action (Wis save, target notices).</span></span>,
+<span class="sp" tabindex="0">invisibility<span class="sp-tip"><b>Invisibility</b><i>2nd · illusion · touch · conc. 1 hr</i>A touched creature (and its gear) turns invisible until it attacks or casts a spell.</span></span>,
+<span class="sp" tabindex="0">mirror image<span class="sp-tip"><b>Mirror Image</b><i>2nd · illusion · self · 1 min</i>Three illusory duplicates. Each attack against her may redirect to a duplicate (d20: 6+ with three left, 8+ with two, 11+ with one).</span></span>,
+<span class="sp" tabindex="0">misty step<span class="sp-tip"><b>Misty Step</b><i>2nd · conjuration · bonus action · instantaneous</i>Teleport up to 30 ft to an unoccupied space she can see.</span></span><br>
+<b>3rd (3 slots):</b>
+<span class="sp" tabindex="0">blink<span class="sp-tip"><b>Blink</b><i>3rd · transmutation · self · 1 min</i>At each turn's end, on a d20 roll of 11+ she vanishes to the Ethereal Plane and returns near her space at the start of her next turn — untouchable while gone.</span></span>,
+<span class="sp" tabindex="0">counterspell<span class="sp-tip"><b>Counterspell</b><i>3rd · abjuration · reaction · 60 ft</i>Interrupt a caster within 60 ft: a spell of 3rd level or lower fails automatically; 4th+ needs a check (DC 10 + spell level).</span></span>,
+<span class="sp" tabindex="0">dispel magic<span class="sp-tip"><b>Dispel Magic</b><i>3rd · abjuration · 120 ft · instantaneous</i>End any spell of 3rd level or lower on a target; for 4th+ make a check (DC 10 + spell level).</span></span>,
+<span class="sp" tabindex="0">fear<span class="sp-tip"><b>Fear</b><i>3rd · illusion · 30-ft cone · conc. 1 min</i>Each creature in the cone Wis save or drop what it holds and be frightened, forced to Dash away each turn; repeats the save when it can't see her.</span></span>,
+<span class="sp" tabindex="0">major image<span class="sp-tip"><b>Major Image</b><i>3rd · illusion · 120 ft · conc. 10 min</i>Like <em>silent image</em> but up to a 20-ft cube and fully sensory (sound, smell, temperature). Seems real until interacted with or disbelieved.</span></span>,
+<span class="sp" tabindex="0">fireball<span class="sp-tip"><b>Fireball</b><i>3rd · evocation · 150 ft · instantaneous</i>20-ft-radius sphere: Dex save for 8d6 fire, half on success. Ignites unattended flammables.</span></span><br>
+<b>4th (3 slots):</b>
+<span class="sp" tabindex="0">blight<span class="sp-tip"><b>Blight</b><i>4th · necromancy · 30 ft · instantaneous</i>One creature Con save for 8d8 necrotic, half on success. No effect on undead/constructs; plants save at disadvantage and take max damage.</span></span>,
+<span class="sp" tabindex="0">confusion<span class="sp-tip"><b>Confusion</b><i>4th · enchantment · 90 ft · conc. 1 min</i>10-ft-radius sphere: Wis save or, each turn, roll a d10 for random behaviour (wander, babble, attack the nearest creature, or act normally). Saves again each turn.</span></span>,
+<span class="sp" tabindex="0">dimension door<span class="sp-tip"><b>Dimension Door</b><i>4th · conjuration · 500 ft · instantaneous</i>Teleport herself (and one willing creature within 5 ft) to a spot she can see, visualise, or describe by distance and direction.</span></span><br>
+<b>5th (2 slots):</b>
+<span class="sp" tabindex="0">dominate person<span class="sp-tip"><b>Dominate Person</b><i>5th · enchantment · 60 ft · conc. 1 min</i>A humanoid Wis save or be charmed and controlled through a telepathic link. It repeats the save each time it takes damage.</span></span>,
+<span class="sp" tabindex="0">telekinesis<span class="sp-tip"><b>Telekinesis</b><i>5th · transmutation · 60 ft · conc. 10 min</i>Each round, move a Huge-or-smaller creature (contested by Str) or manipulate/hurl an object up to 1,000 lb.</span></span><br>
+<b>6th (1 slot):</b>
+<span class="sp" tabindex="0">scatter<span class="sp-tip"><b>Scatter</b><i>6th · conjuration · 30 ft · instantaneous</i>Up to five creatures within range (unwilling ones make a Wis save); teleport each to an unoccupied space she can see within 120 ft. <span class="cust">Non-SRD (Xanathar's) — table option.</span></span></span><br>
+<b>7th (1 slot):</b>
+<span class="sp" tabindex="0">project image<span class="sp-tip"><b>Project Image</b><i>7th · illusion · 500 miles · conc. 1 day</i>Create an intangible illusory double at a place she has seen; she sees and hears through it and acts through it. It vanishes if it takes any damage.</span></span>,
+<span class="sp" tabindex="0">Karya's mind wipe<span class="sp-tip"><b>Karya's Mind Wipe</b><i>7th · enchantment · 10 ft · instantaneous</i>A humanoid Wis save or she erases specific knowledge (a name, a language, an event) or rewrites up to 1 minute of memory. Recalling the tampered memory brings on violent fits. <span class="cust">Custom Historica spell.</span></span></span></p>
 </div>
 <p style="color:var(--ink-faint);font-size:0.95rem;">Play her as terrified, not malicious: she wants only to not be moved. <em>Misty step</em>, <em>dimension door</em>, <em>blink</em>, <em>invisibility</em>, and <em>mirror image</em> keep her slipping from room to room; <em>fear</em>, <em>confusion</em>, and <em>command</em> ("Flee!" / "Drop!") scatter her captors without killing them; <em>dominate person</em> and <em>telekinesis</em> are her panic buttons. Every 3rd-level-or-higher cast risks the Raw Power table going off among friend and foe alike — she has no more control of it than the party does.</p>
 <p style="color:var(--ink-faint);font-size:0.95rem;"><b>Custom Historica spells in her list:</b> <em>Sense the Sinner</em> (5th-level divination, ritual, concentration ≤10 min) — a target within 30 ft. makes a Wis save or the caster witnesses its past sins as visions, unnoticed on the first casting. <em>Karya's Mind Wipe</em> (7th-level enchantment) — a humanoid within 10 ft. makes a Wis save or has specific knowledge erased, or one minute of memory rewritten; recalling the tampered memory brings on violent fits. (Both surface on the Raw Power table above as well.)</p>
