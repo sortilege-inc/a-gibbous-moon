@@ -233,6 +233,15 @@
 .atk-tab.active{ color:var(--teal-deep); border-color:var(--teal-deep); background:rgba(31,122,134,0.09); font-weight:700; }
 .atk-list{ display:none; }
 .atk-list.active{ display:block; }
+/* action tabs: uniform name typography, colour-coded by type */
+.atk-card .atk-name, .atk-card .sp-name, .atk-card .feat-name{ font-family:var(--fell); font-size:0.98rem; font-weight:600; font-style:normal; }
+.atk-card .atk-name{ color:var(--oxblood); }
+.atk-card .sp-name{ color:var(--teal-deep); }
+.atk-card .feature[data-cat="Class"] .feat-name{ color:var(--slate); }
+.atk-card .feature[data-cat="Racial"] .feat-name{ color:var(--olive-deep); }
+.atk-card .feature[data-cat="General"] .feat-name{ color:var(--ink-2); }
+.atk-card .feature[data-cat="Profession"] .feat-name{ color:var(--moon); }
+.atk-card .atk-name:hover, .atk-card .sp-name:hover, .atk-card .feat-name:hover{ text-decoration:underline dotted; filter:brightness(0.85); }
 
 /* ---- proficiencies / gear / notes --------------------------- */
 .prof-row{ font-size:0.9rem; color:var(--ink-2); padding:0.25rem 0; }

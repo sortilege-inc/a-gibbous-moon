@@ -332,6 +332,8 @@
     var c = el("div", "sheet-col left");
     c.appendChild(abilitiesBlock());
     c.appendChild(skillsBlock());
+    c.appendChild(profBlock());
+    if (S.notes) c.appendChild(notesBlock());
     return c;
   }
   function colRight() {
@@ -340,9 +342,7 @@
     if (S.spellcasting) c.appendChild(spellsBlock());
     if (S.features && S.features.length) c.appendChild(featuresBlock());
     if (S.feats && S.feats.length) c.appendChild(featsBlock());
-    c.appendChild(profBlock());
     if (S.equipment && S.equipment.length || S.currency) c.appendChild(gearBlock());
-    if (S.notes) c.appendChild(notesBlock());
     return c;
   }
 
@@ -527,6 +527,7 @@
   function featureRow(f, i) {
     var it = el("div", "feature");
     it.setAttribute("data-econ", featCost(f));
+    it.setAttribute("data-cat", featCat(f));
     var usesHtml = "";
     if (f.uses) {
       var total = f.uses.max || 0, used = PS.uses[i] || 0, pips = "";
