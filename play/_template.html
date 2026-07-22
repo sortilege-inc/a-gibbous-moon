@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sample Character — Play — A Gibbous Moon</title>
+<title>Sample Character — Play — A Gibbous Moon Over Constantinople</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital@0;1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../crescent.css">
 <link rel="stylesheet" href="dice.css">
@@ -11,17 +11,17 @@
 </head>
 <body class="play-body">
 <div class="play-bar">
-<span class="brand">Historica Arcanum · A Gibbous Moon</span>
-<a href="../company/index.html" title="The Company">‹ Yârân</a>
+<span class="brand">A Gibbous Moon Over Constantinople</span>
+<a href="../cabal/index.html" title="The player characters">‹ The Cabal</a>
 <span class="spacer"></span>
-<a href="../company/index.html" title="The Company">Yârân</a>
+<a href="../cabal/index.html" title="The player characters">The Cabal</a>
 <a href="../index.html">Home</a>
 </div>
 <main id="sheet"></main>
 
 <!-- ══════════════════════════════════════════════════════════════════════
      TEMPLATE / DEMO SHEET.  Duplicate this file per PC, replace window.SHEET,
-     and link to it from the PC's bio page in ../company/ via <a class="play-btn">.
+     and link to it from the PC's bio page in ../cabal/ via <a class="play-btn">.
      Full schema is documented in ../README.md. Rules: SRD 5.1 + Historica
      Arcanum: The City of Crescent (magic origins, professions, spell rebound).
      Fill mechanics from the DSL corpus — see README for source paths.
@@ -31,7 +31,7 @@ window.SHEET = {
   id: "template",                 /* unique slug — keys localStorage play-state */
   name: "Sample Character",
   player: "—",
-  portrait: "",                   /* URL or ../company/img/slug.png; blank hides it */
+  portrait: "",                   /* URL or ../cabal/img/slug.png; blank hides it */
   level: 5,
   classes: [{ name: "Sorcerer", subclass: "Fiery Blood", level: 5 }],
   race: "Human (Tiefling-blooded)",

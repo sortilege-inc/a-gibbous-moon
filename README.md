@@ -14,26 +14,24 @@ monsters. The play sheets only *track and roll*; they don't enforce build legali
 
 ## Structure
 
-Section **display labels** are themed (Ottoman terms, with the plain English name
-in the nav tooltip, each page's masthead, and the landing cards). Directory names
-stay plain-English slugs, so URLs are unaffected.
+Section labels are evocative English, and the directory slug matches each label.
 
 | Path | Label | What |
 |------|-------|------|
 | `index.html` | — | Landing page — dark gold-framed hero, section cards |
 | `crescent.css` | — | The theme (all pages share it) |
-| `chronicle/` | **Rûznâme** | Night-by-night play log + index |
-| `company/` | **Yârân** | Player-character **bio** pages + index. Each links to a play sheet. |
-| `dramatis-personae/` | **Ahâli** | NPCs / adversaries (prose + optional 5e statblock) + index |
-| `factions/` | **Ocaklar** | The powers, orders & guilds above and below + index |
-| `atlas/` | **Dersaadet** | Constantinople + the Undercity gazetteer + index |
-| `relics/` | **Hazine** | Wondrous items & artefacts (the treasury) + index |
-| `lore/` | **Mythologia** | Cosmology, origins of magic, timeline + index |
-| `gm/` | **Perde Ardı** | Behind the Veil — GM-only prep & secret canon + index |
+| `nights/` | **Nights** | Night-by-night play log + index |
+| `cabal/` | **The Cabal** | Player-character **bio** pages + index. Each links to a play sheet. |
+| `faces/` | **Faces** | NPCs / adversaries (prose + optional 5e statblock) + index |
+| `powers/` | **Powers** | Orders, guilds & courts above and below + index |
+| `city/` | **The City** | Constantinople + the Undercity gazetteer + index |
+| `treasury/` | **The Treasury** | Wondrous items & artefacts + index |
+| `mysteries/` | **Mysteries** | Cosmology, origins of magic, timeline + index |
+| `veil/` | **The Veil** | GM-only prep & secret canon (the Keeper's pages) + index |
 | `play/` | — | The playable 5e sheet engine (see below) |
 
-To rename a section label, edit `NAV`/`SECTIONS` in the scratchpad generator (or
-just find-and-replace the label across pages) — the directory slug need not change.
+To rename a section, edit `SECTIONS` in the scratchpad generator (`gen_site.py`)
+and re-run it; if you change a slug, `git mv` the directory to match.
 
 Every folder has a `_template.html` — **duplicate it** to author a new entry, then
 add a link from that section's `index.html`. Section indexes currently show an
