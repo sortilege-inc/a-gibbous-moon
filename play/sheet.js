@@ -68,6 +68,13 @@
   function save() { try { localStorage.setItem(KEY, JSON.stringify(PS)); } catch (e) {} }
 
   var activeSpellTab = null; // which spell level tab is showing (persists across re-renders)
+  var activeFeatTab = null;  // which feature category tab is showing
+  function featCat(src) {
+    var s = (src || "").toLowerCase();
+    if (s.indexOf("class") !== -1) return "Class";
+    if (s.indexOf("racial") !== -1 || s.indexOf("race") !== -1 || s.indexOf("species") !== -1) return "Racial";
+    return "General";
+  }
 
   // ---- dice tray ----------------------------------------------------------
   var advMode = 0; // -1 dis, 0 normal, +1 adv
@@ -438,20 +445,41 @@
     return b;
   }
 
+  function featureRow(f, i) {
+    var it = el("div", "feature");
+    var usesHtml = "";
+    if (f.uses) {
+      var total = f.uses.max || 0, used = PS.uses[i] || 0, pips = "";
+      for (var k = 0; k < total; k++) pips += '<button class="pip' + (k < (total - used) ? "" : " spent") + '" data-use="' + i + '" data-idx="' + k + '"></button>';
+      usesHtml = '<span class="use-pips" title="' + esc((f.uses.per || "") + " uses") + '">' + pips + '</span>';
+    }
+    it.innerHTML = '<div class="feat-h"><span class="feat-name">' + esc(f.name) + '</span>' +
+      (f.source ? '<span class="feat-src">' + esc(f.source) + '</span>' : '') + usesHtml + '</div>' +
+      (f.text ? '<div class="feat-text">' + nl2br(f.text) + '</div>' : '');
+    return it;
+  }
   function featuresBlock() {
     var b = card("Features &amp; Traits");
-    S.features.forEach(function (f, i) {
-      var it = el("div", "feature");
-      var usesHtml = "";
-      if (f.uses) {
-        var total = f.uses.max || 0, used = PS.uses[i] || 0, pips = "";
-        for (var k = 0; k < total; k++) pips += '<button class="pip' + (k < (total - used) ? "" : " spent") + '" data-use="' + i + '" data-idx="' + k + '"></button>';
-        usesHtml = '<span class="use-pips" title="' + esc((f.uses.per || "") + " uses") + '">' + pips + '</span>';
-      }
-      it.innerHTML = '<div class="feat-h"><span class="feat-name">' + esc(f.name) + '</span>' +
-        (f.source ? '<span class="feat-src">' + esc(f.source) + '</span>' : '') + usesHtml + '</div>' +
-        (f.text ? '<div class="feat-text">' + nl2br(f.text) + '</div>' : '');
-      b.appendChild(it);
+    var order = ["Class", "Racial", "General"];
+    var groups = { Class: [], Racial: [], General: [] };
+    S.features.forEach(function (f, i) { groups[featCat(f.source)].push({ f: f, i: i }); });
+    var cats = order.filter(function (c) { return groups[c].length; });
+    if (activeFeatTab == null || cats.indexOf(activeFeatTab) === -1) activeFeatTab = cats[0];
+    if (cats.length > 1) {
+      var tabs = el("div", "feat-tabs");
+      cats.forEach(function (c) {
+        var tb = el("button", "feat-tab" + (c === activeFeatTab ? " active" : ""), c);
+        tb.setAttribute("data-feat-tab", c);
+        tabs.appendChild(tb);
+      });
+      b.appendChild(tabs);
+    }
+    cats.forEach(function (c) {
+      var active = (cats.length === 1) || (c === activeFeatTab);
+      var list = el("div", "feat-list" + (active ? " active" : ""));
+      list.setAttribute("data-feat-cat", c);
+      groups[c].forEach(function (o) { list.appendChild(featureRow(o.f, o.i)); });
+      b.appendChild(list);
     });
     return b;
   }
@@ -535,6 +563,14 @@
         var cardEl = t.closest(".sheet-card");
         cardEl.querySelectorAll(".spell-tab").forEach(function (x) { x.classList.toggle("active", x.getAttribute("data-spell-tab") === lv); });
         cardEl.querySelectorAll(".spell-list").forEach(function (x) { x.classList.toggle("active", x.getAttribute("data-spell-level") === lv); });
+        return;
+      }
+      // feature category tabs
+      if (t.hasAttribute("data-feat-tab")) {
+        var fc = t.getAttribute("data-feat-tab"); activeFeatTab = fc;
+        var fcard = t.closest(".sheet-card");
+        fcard.querySelectorAll(".feat-tab").forEach(function (x) { x.classList.toggle("active", x.getAttribute("data-feat-tab") === fc); });
+        fcard.querySelectorAll(".feat-list").forEach(function (x) { x.classList.toggle("active", x.getAttribute("data-feat-cat") === fc); });
         return;
       }
       // spell name — expand/collapse the full description

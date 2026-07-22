@@ -195,6 +195,12 @@
 .use-pips .pip{ background:var(--gold); border-color:var(--gold); }
 .use-pips .pip.spent{ background:transparent; }
 .feat-text{ font-size:0.9rem; color:var(--ink-2); margin-top:0.3rem; }
+.feat-tabs{ display:flex; flex-wrap:wrap; gap:0.3rem; margin:0.2rem 0 0.5rem; border-bottom:1px solid var(--edge-soft); padding-bottom:0.45rem; }
+.feat-tab{ font-family:var(--caps); font-size:0.58rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--ink-faint); border:1px solid var(--edge); background:transparent; border-radius:4px; padding:0.22rem 0.55rem; cursor:pointer; transition:.12s; }
+.feat-tab:hover{ color:var(--olive-deep); border-color:var(--olive-deep); }
+.feat-tab.active{ color:var(--olive-deep); border-color:var(--olive-deep); background:rgba(196,154,69,0.10); font-weight:700; }
+.feat-list{ display:none; }
+.feat-list.active{ display:block; }
 
 /* ---- proficiencies / gear / notes --------------------------- */
 .prof-row{ font-size:0.9rem; color:var(--ink-2); padding:0.25rem 0; }
