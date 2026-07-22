@@ -72,7 +72,7 @@ session-by-session against the original transcripts:
 ## Phase 4 — The voice
 
 Rewrite all public prose in the voice of a worldly mid-19th-century Ottoman,
-writing in British English (think an urbane Istanbulite man of letters, c. 1873 —
+writing in British English (think an urbane Istanbulite man of letters, c. 1857 —
 measured, ironic, cosmopolitan; Ottoman terms in italics with a light gloss).
 
 | # | Part | Detail |
