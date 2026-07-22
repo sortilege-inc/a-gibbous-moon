@@ -72,10 +72,13 @@
   var activeSpellTab = null; // which spell level tab is showing (persists across re-renders)
   var activeFeatTab = null;  // which feature category tab is showing
   var activeAtkTab = null;   // which Attacks & Actions tab is showing
-  function featCat(src) {
-    var s = (src || "").toLowerCase();
+  function featCat(f) {
+    if (f && f.category) return f.category; // explicit override
+    var s = ((f && f.source) || "").toLowerCase();
+    var name = ((f && f.name) || "").toLowerCase();
     if (s.indexOf("class") !== -1) return "Class";
     if (s.indexOf("racial") !== -1 || s.indexOf("race") !== -1 || s.indexOf("species") !== -1) return "Racial";
+    if (/^(apprentice|journeyman|expert|master) |accomplished chemist|bounty hunter|antiquarian|arch[ae]ologist|\bprofession\b/.test(name)) return "Profession";
     return "General";
   }
   // action-economy cost of an ability: "action" | "bonus" | "reaction" | "move" | "none"
@@ -537,9 +540,9 @@
   }
   function featuresBlock() {
     var b = card("Features &amp; Traits");
-    var order = ["Class", "Racial", "General"];
-    var groups = { Class: [], Racial: [], General: [] };
-    S.features.forEach(function (f, i) { groups[featCat(f.source)].push({ f: f, i: i }); });
+    var order = ["Class", "Racial", "General", "Profession"];
+    var groups = { Class: [], Racial: [], General: [], Profession: [] };
+    S.features.forEach(function (f, i) { groups[featCat(f)].push({ f: f, i: i }); });
     var cats = order.filter(function (c) { return groups[c].length; });
     if (activeFeatTab == null || cats.indexOf(activeFeatTab) === -1) activeFeatTab = cats[0];
     if (cats.length > 1) {
