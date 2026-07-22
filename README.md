@@ -108,13 +108,34 @@ window.SHEET = {
 Only `id` and `name` are strictly required; every section is skipped if its field
 is absent, so partial sheets render cleanly.
 
-## Where the content comes from
+## Generated from source
 
-The raw campaign materials live in
-`../28. A Gibbous Moon Over Constantinople/` (session notes, act walkthroughs, PC &
-NPC art, maps, side-quests) and the rules in the two DSL repos named above. The
-owner will direct which sources feed which pages during assembly.
+Content pages are **generated**, not hand-edited — so later corrections and the
+voice rewrite each edit the source and rebuild, never patching HTML twice. The
+generator and all sources live in a sibling support dir, `../a-gibbous-moon-support/`:
 
-> **Skeleton.** Framework only — theme, navigation, section indexes, per-section
-> templates, and the working 5e play-sheet engine (with one sample character).
-> Real content is added next.
+| Path | What |
+|------|------|
+| `archivist/vault/` | The Archivist Obsidian export (baseline of record) |
+| `art/optimized/` | Web-optimized WebP portraits (`<uuid>.webp`), keyed to the vault's image URLs |
+| `alchemy/` | Alchemy character exports → play sheets |
+| `scripts/build_site.py` | The builder |
+
+```bash
+python3 ../a-gibbous-moon-support/scripts/build_site.py
+```
+
+Re-running wipes and rebuilds the generated section dirs (`nights/ cabal/ faces/
+powers/ city/ treasury/ mysteries/` and their `img/`) plus the landing counts;
+`crescent.css`, `play/*.js|css`, `veil/`, `README.md`, `PLAN.md`, `.git` are
+preserved. Wikilinks resolve to `.ref` links; unresolved ones render as dotted
+`ref-open` "not yet chronicled" spans (honest gaps). Build prints a completeness
+report (every vault file mapped) and the top unresolved links.
+
+The four-phase content plan is in [PLAN.md](PLAN.md).
+
+> **Phase 1 complete.** The Archivist baseline is integrated: 15 nights, 5 Cabal
+> (with playable sheets), 78 Faces, 15 Powers, 64 City, 46 Treasury, 1 Mystery,
+> 23 committed portraits. Play sheets are early-campaign Alchemy snapshots (stale,
+> flagged) pending the Phase 3 refresh. Next: Phase 2, correcting the record
+> against the original transcripts.
