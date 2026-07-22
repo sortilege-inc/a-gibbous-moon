@@ -202,6 +202,30 @@
 .feat-list{ display:none; }
 .feat-list.active{ display:block; }
 
+/* ---- turn tracker (action economy) ---- */
+.econ-panel{ display:none; }
+.econ-panel.open{ display:flex; align-items:center; gap:0.7rem; flex-wrap:wrap; border:1px dashed var(--teal); background:rgba(31,122,134,0.05); }
+.econ-panel > b{ margin-bottom:0 !important; }
+.econ-btns{ display:flex; gap:0.4rem; flex-wrap:wrap; }
+.econ-b, .econ-roll{ font-family:var(--caps); font-size:0.6rem; letter-spacing:0.07em; text-transform:uppercase; border:1px solid var(--teal); background:rgba(31,122,134,0.08); color:var(--teal-deep); border-radius:5px; padding:0.32rem 0.7rem; cursor:pointer; transition:.12s; }
+.econ-b:hover, .econ-roll:hover{ background:var(--teal); color:var(--vellum-lit); }
+.econ-b.take{ border-color:var(--olive-deep); color:var(--olive-deep); background:rgba(196,154,69,0.12); }
+.econ-b.take:hover{ background:var(--olive-deep); color:var(--vellum-lit); }
+.econ-b.end{ border-color:var(--edge); color:var(--ink-faint); background:transparent; }
+.econ-b.spent{ opacity:0.45; text-decoration:line-through; }
+.econ-roll{ border-color:var(--rust); color:var(--rust-deep); background:transparent; }
+.econ-roll:hover{ background:var(--rust); color:var(--vellum-lit); }
+/* an ability whose action-economy cost has been spent this turn */
+.econ-spent{ opacity:0.38; pointer-events:none; filter:grayscale(0.6); }
+
+/* ---- Attacks & Actions tabs ---- */
+.atk-card .atk-tabs{ display:flex; flex-wrap:wrap; gap:0.3rem; margin:0 0 0.6rem; border-bottom:1px solid var(--edge-soft); padding-bottom:0.45rem; }
+.atk-tab{ font-family:var(--caps); font-size:0.58rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--ink-faint); border:1px solid var(--edge); background:transparent; border-radius:4px; padding:0.22rem 0.55rem; cursor:pointer; transition:.12s; }
+.atk-tab:hover{ color:var(--teal-deep); border-color:var(--teal); }
+.atk-tab.active{ color:var(--teal-deep); border-color:var(--teal-deep); background:rgba(31,122,134,0.09); font-weight:700; }
+.atk-list{ display:none; }
+.atk-list.active{ display:block; }
+
 /* ---- proficiencies / gear / notes --------------------------- */
 .prof-row{ font-size:0.9rem; color:var(--ink-2); padding:0.25rem 0; }
 .prof-row b{ font-family:var(--caps); font-size:0.6rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal-deep); margin-right:0.5rem; }

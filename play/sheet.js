@@ -51,7 +51,8 @@
     return {
       hp: (S.hp && S.hp.current != null) ? S.hp.current : ((S.hp && S.hp.max) || 0),
       temp: (S.hp && S.hp.temp) || 0,
-      slots: slots, hitDice: hd, uses: uses, conditions: (S.conditions || []).slice()
+      slots: slots, hitDice: hd, uses: uses, conditions: (S.conditions || []).slice(),
+      econ: { open: 0, phase: "pre", used: { reaction: 0, action: 0, bonus: 0, move: 0 } }
     };
   }
   function loadState() {
@@ -63,17 +64,36 @@
         for (var k in saved) if (saved.hasOwnProperty(k)) d[k] = saved[k];
       }
     } catch (e) {}
+    if (!d.econ || !d.econ.used) d.econ = { open: 0, phase: "pre", used: { reaction: 0, action: 0, bonus: 0, move: 0 } };
     return d;
   }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(PS)); } catch (e) {} }
 
   var activeSpellTab = null; // which spell level tab is showing (persists across re-renders)
   var activeFeatTab = null;  // which feature category tab is showing
+  var activeAtkTab = null;   // which Attacks & Actions tab is showing
   function featCat(src) {
     var s = (src || "").toLowerCase();
     if (s.indexOf("class") !== -1) return "Class";
     if (s.indexOf("racial") !== -1 || s.indexOf("race") !== -1 || s.indexOf("species") !== -1) return "Racial";
     return "General";
+  }
+  // action-economy cost of an ability: "action" | "bonus" | "reaction" | "move" | "none"
+  function spellCost(sp) {
+    if (sp.cast) return sp.cast;
+    var t = (sp.castTime || sp.text || "").toLowerCase();
+    if (/casting time:\s*1\s*reaction/.test(t)) return "reaction";
+    if (/1\s*bonus action/.test(t)) return "bonus";
+    if (/1\s*action/.test(t)) return "action";
+    return "action"; // most spells/cantrips
+  }
+  function featCost(f) {
+    if (f.action) return f.action;
+    var s = ((f.name || "") + " " + (f.text || "")).toLowerCase();
+    if (/\breaction\b/.test(s)) return "reaction";
+    if (/bonus action/.test(s)) return "bonus";
+    if (/\bas an action\b|\bas a magic action\b|\baction to\b|\btake the [a-z ]*action\b/.test(s)) return "action";
+    return "none"; // passive / always-on
   }
 
   // ---- dice tray ----------------------------------------------------------
@@ -198,6 +218,7 @@
     root.appendChild(body);
     buildTray();
     wireHandlers(root);
+    applyEcon();
   }
 
   function classLine() {
@@ -233,8 +254,10 @@
     var pb = profBonus();
     var init = (S.initiative != null ? S.initiative : abilMod("dex"));
     var hp = S.hp || { max: 0 };
+    var iv = stat("Initiative", sgn(init));
+    iv.classList.add("rollable", "econ-toggle"); iv.setAttribute("title", "Open the turn tracker");
+    v.appendChild(iv);
     v.appendChild(stat("Armor Class", S.ac != null ? S.ac : "—"));
-    v.appendChild(rollStat("Initiative", sgn(init), "roll-init"));
     v.appendChild(stat("Speed", (S.speed != null ? S.speed + " ft" : "—")));
     v.appendChild(rollStat("Prof. Bonus", sgn(pb), null));
     // HP block
@@ -272,7 +295,24 @@
       '<button class="btn-rest" title="Restore HP, slots, hit-dice &amp; uses to full">Long Rest</button>' +
       '<button class="btn-reset" title="Reset all play-state to the sheet defaults">Reset</button>';
     v.appendChild(rest);
+    v.appendChild(econPanel(init));
     return v;
+  }
+  function econPanel(init) {
+    var e = PS.econ, used = e.used;
+    var p = el("div", "vstat wide econ-panel" + (e.open ? " open" : ""));
+    var btns = '<button class="econ-roll rollable roll-init" title="Roll Initiative">Roll Init ' + sgn(init) + '</button>';
+    if (e.phase === "pre") {
+      btns += '<button class="econ-b take" data-econ-btn="take">Take Turn</button>' +
+              '<button class="econ-b' + (used.reaction ? " spent" : "") + '" data-econ-btn="reaction">Reaction</button>';
+    } else {
+      btns += '<button class="econ-b' + (used.action ? " spent" : "") + '" data-econ-btn="action">Action</button>' +
+              '<button class="econ-b' + (used.bonus ? " spent" : "") + '" data-econ-btn="bonus">Bonus Action</button>' +
+              '<button class="econ-b' + (used.move ? " spent" : "") + '" data-econ-btn="move">Movement</button>' +
+              '<button class="econ-b end" data-econ-btn="end">End Turn</button>';
+    }
+    p.innerHTML = '<b>Turn</b><div class="econ-btns">' + btns + '</div>';
+    return p;
   }
   function stat(label, val) {
     var s = el("div", "vstat");
@@ -347,37 +387,91 @@
     return b;
   }
 
+  function attackRow(atk) {
+    var pb = profBonus(), abil = atk.ability || "str";
+    var atkBonus = (atk.bonus != null ? atk.bonus : 0) + abilMod(abil) + (atk.proficient === false ? 0 : pb);
+    var dmgSpec = (atk.damage || "").replace(/MOD/gi, (abilMod(abil) >= 0 ? "+" : "") + abilMod(abil));
+    var row = el("div", "attack");
+    row.setAttribute("data-econ", atk.action || "action");
+    row.innerHTML =
+      '<button class="atk-name rollable" data-atk-bonus="' + atkBonus + '" data-atk-name="' + esc(atk.name) + '">' + esc(atk.name) + '</button>' +
+      '<span class="atk-bonus">' + sgn(atkBonus) + ' to hit</span>' +
+      (dmgSpec ? '<button class="atk-dmg rollable" data-dmg="' + esc(dmgSpec) + '" data-dmg-name="' + esc(atk.name) + '">' + esc(dmgSpec) + (atk.damageType ? " " + esc(atk.damageType) : "") + '</button>' : '') +
+      (atk.range ? '<span class="atk-meta">' + esc(atk.range) + '</span>' : '') +
+      (atk.notes ? '<div class="atk-notes">' + nl2br(atk.notes) + '</div>' : '');
+    return row;
+  }
+  // Attacks & Actions — no title, just tabs by action-economy type
   function attacksBlock() {
-    var b = card("Attacks &amp; Actions");
-    var pb = profBonus();
-    (S.attacks || []).forEach(function (atk) {
-      var abil = atk.ability || "str";
-      var atkBonus = (atk.bonus != null ? atk.bonus : 0) + abilMod(abil) + (atk.proficient === false ? 0 : pb);
-      var dmgSpec = (atk.damage || "").replace(/MOD/gi, (abilMod(abil) >= 0 ? "+" : "") + abilMod(abil));
-      var row = el("div", "attack");
-      row.innerHTML =
-        '<button class="atk-name rollable" data-atk-bonus="' + atkBonus + '" data-atk-name="' + esc(atk.name) + '">' + esc(atk.name) + '</button>' +
-        '<span class="atk-bonus">' + sgn(atkBonus) + ' to hit</span>' +
-        (dmgSpec ? '<button class="atk-dmg rollable" data-dmg="' + esc(dmgSpec) + '" data-dmg-name="' + esc(atk.name) + '">' + esc(dmgSpec) + (atk.damageType ? " " + esc(atk.damageType) : "") + '</button>' : '') +
-        (atk.range ? '<span class="atk-meta">' + esc(atk.range) + '</span>' : '') +
-        (atk.notes ? '<div class="atk-notes">' + nl2br(atk.notes) + '</div>' : '');
-      b.appendChild(row);
-    });
-    // spell attack, surfaced here too
-    if (S.spellcasting) {
-      var sc = S.spellcasting, sabil = sc.ability || "int";
+    var sc = S.spellcasting || {}, spells = sc.spells || [], pb = profBonus();
+    spells.forEach(function (sp, i) { sp._idx = i; });
+    var buckets = { "Attack": [], "Action": [], "Bonus Action": [], "Reaction": [] };
+    if (sc.ability || (sc.slots && Object.keys(sc.slots).length)) {
+      var sabil = sc.ability || "int";
       var satk = sc.attackBonus != null ? sc.attackBonus : pb + abilMod(sabil);
       var sdc = sc.saveDC != null ? sc.saveDC : 8 + pb + abilMod(sabil);
-      var srow = el("div", "attack spell-atk-row");
-      srow.innerHTML =
-        '<button class="atk-name rollable" data-spell-atk="' + satk + '">Spell Attack</button>' +
-        '<span class="atk-bonus">' + sgn(satk) + ' to hit</span>' +
-        '<span class="atk-meta">Save DC ' + sdc + ' · ' + ABIL_NAME[sabil] + '</span>';
-      b.appendChild(srow);
+      var sr = el("div", "attack spell-atk-row");
+      sr.innerHTML = '<button class="atk-name rollable" data-spell-atk="' + satk + '">Spell Attack</button>' +
+        '<span class="atk-bonus">' + sgn(satk) + ' to hit</span><span class="atk-meta">Save DC ' + sdc + ' · ' + ABIL_NAME[sabil] + '</span>';
+      buckets["Attack"].push(sr);
     }
+    (S.attacks || []).forEach(function (a) { buckets["Attack"].push(attackRow(a)); });
+    spells.forEach(function (sp) {
+      if (sp.attack) { buckets["Attack"].push(spellRow(sp)); return; }
+      var c = spellCost(sp);
+      buckets[c === "bonus" ? "Bonus Action" : c === "reaction" ? "Reaction" : "Action"].push(spellRow(sp));
+    });
+    (S.features || []).forEach(function (f, i) {
+      var c = featCost(f); if (c === "none") return;
+      buckets[c === "bonus" ? "Bonus Action" : c === "reaction" ? "Reaction" : "Action"].push(featureRow(f, i));
+    });
+    var order = ["Attack", "Action", "Bonus Action", "Reaction"];
+    var cats = order.filter(function (c) { return buckets[c].length; });
+    var b = el("section", "sheet-card atk-card");
+    if (!cats.length) return b;
+    if (activeAtkTab == null || cats.indexOf(activeAtkTab) === -1) activeAtkTab = cats[0];
+    var tabs = el("div", "atk-tabs");
+    cats.forEach(function (c) {
+      var tb = el("button", "atk-tab" + (c === activeAtkTab ? " active" : ""), c);
+      tb.setAttribute("data-atk-tab", c); tabs.appendChild(tb);
+    });
+    b.appendChild(tabs);
+    cats.forEach(function (c) {
+      var list = el("div", "atk-list" + (c === activeAtkTab ? " active" : ""));
+      list.setAttribute("data-atk-cat", c);
+      buckets[c].forEach(function (row) { list.appendChild(row); });
+      b.appendChild(list);
+    });
     return b;
   }
 
+  function spellRow(sp) {
+    var canCast = (sp.level || 0) === 0 || hasSlotFor(sp.level || 0);
+    var badges = (sp.concentration ? '<span class="sp-badge" title="Concentration">C</span>' : "") +
+                 (sp.ritual ? '<span class="sp-badge" title="Ritual">R</span>' : "");
+    var it = el("div", "spell" + (sp.prepared === false ? " unprepared" : ""));
+    it.setAttribute("data-econ", spellCost(sp));
+    // a roll button for damage / healing / dice-pool spells (MOD -> spellcasting mod)
+    var rollSpec = sp.damage || sp.heal || sp.dice, rollBtn = "";
+    if (rollSpec) {
+      var scMod = abilMod((S.spellcasting || {}).ability || "int");
+      var spec = String(rollSpec).replace(/MOD/gi, (scMod >= 0 ? "+" : "") + scMod);
+      var lbl = sp.heal ? "Heal" : "Roll";
+      rollBtn = '<div class="sp-actions"><button class="sp-dmg rollable" data-dmg="' + esc(spec) + '" data-dmg-name="' + esc(sp.name) + '">' + lbl + " " + esc(spec) + '</button></div>';
+    }
+    it.innerHTML =
+      '<div class="sp-row">' +
+        '<button class="sp-name" data-sp-expand="' + sp._idx + '" title="Show details">' + esc(sp.name) + '</button>' +
+        badges +
+        (sp.save ? '<span class="sp-save">' + esc(sp.save) + '</span>' : '') +
+        '<button class="sp-cast' + (sp.attack ? ' atkspell' : '') + '" data-sp-cast="' + sp._idx + '"' + (canCast ? '' : ' disabled') + ' title="Cast this spell">Cast</button>' +
+      '</div>' +
+      (sp.notes ? '<div class="sp-notes">' + esc(sp.notes) + '</div>' : '') +
+      '<div class="sp-body">' +
+        (sp.text ? nl2br(sp.text) : '<em class="sp-nodesc">No description on file.</em>') + rollBtn +
+      '</div>';
+    return it;
+  }
   function spellsBlock() {
     var sc = S.spellcasting;
     var b = card("Spellcasting");
@@ -419,25 +513,7 @@
       levels.forEach(function (lv) {
         var ul = el("div", "spell-list" + (String(lv) === String(activeSpellTab) ? " active" : ""));
         ul.setAttribute("data-spell-level", lv);
-        byLevel[lv].forEach(function (sp) {
-          var canCast = (sp.level || 0) === 0 || hasSlotFor(sp.level || 0);
-          var badges = (sp.concentration ? '<span class="sp-badge" title="Concentration">C</span>' : "") +
-                       (sp.ritual ? '<span class="sp-badge" title="Ritual">R</span>' : "");
-          var it = el("div", "spell" + (sp.prepared === false ? " unprepared" : ""));
-          it.innerHTML =
-            '<div class="sp-row">' +
-              '<button class="sp-name" data-sp-expand="' + sp._idx + '" title="Show details">' + esc(sp.name) + '</button>' +
-              badges +
-              (sp.save ? '<span class="sp-save">' + esc(sp.save) + '</span>' : '') +
-              '<button class="sp-cast' + (sp.attack ? ' atkspell' : '') + '" data-sp-cast="' + sp._idx + '"' + (canCast ? '' : ' disabled') + ' title="Cast this spell">Cast</button>' +
-            '</div>' +
-            (sp.notes ? '<div class="sp-notes">' + esc(sp.notes) + '</div>' : '') +
-            '<div class="sp-body">' +
-              (sp.text ? nl2br(sp.text) : '<em class="sp-nodesc">No description on file.</em>') +
-              (sp.damage ? '<div class="sp-actions"><button class="sp-dmg rollable" data-dmg="' + esc(sp.damage) + '" data-dmg-name="' + esc(sp.name) + '">Roll ' + esc(sp.damage) + '</button></div>' : '') +
-            '</div>';
-          ul.appendChild(it);
-        });
+        byLevel[lv].forEach(function (sp) { ul.appendChild(spellRow(sp)); });
         b.appendChild(ul);
       });
     }
@@ -447,6 +523,7 @@
 
   function featureRow(f, i) {
     var it = el("div", "feature");
+    it.setAttribute("data-econ", featCost(f));
     var usesHtml = "";
     if (f.uses) {
       var total = f.uses.max || 0, used = PS.uses[i] || 0, pips = "";
@@ -534,7 +611,10 @@
   }
 
   // ---- interaction --------------------------------------------------------
+  var handlersWired = false;
   function wireHandlers(root) {
+    if (handlersWired) return;   // #sheet persists across renders — wire once
+    handlersWired = true;
     root.addEventListener("click", function (e) {
       var t = e.target.closest("button, .rollable");
       if (!t) return;
@@ -573,6 +653,17 @@
         fcard.querySelectorAll(".feat-list").forEach(function (x) { x.classList.toggle("active", x.getAttribute("data-feat-cat") === fc); });
         return;
       }
+      // Attacks & Actions tabs
+      if (t.hasAttribute("data-atk-tab")) {
+        var ac = t.getAttribute("data-atk-tab"); activeAtkTab = ac;
+        var acard = t.closest(".sheet-card");
+        acard.querySelectorAll(".atk-tab").forEach(function (x) { x.classList.toggle("active", x.getAttribute("data-atk-tab") === ac); });
+        acard.querySelectorAll(".atk-list").forEach(function (x) { x.classList.toggle("active", x.getAttribute("data-atk-cat") === ac); });
+        return;
+      }
+      // turn tracker (Initiative opens it; buttons drive the action economy)
+      if (t.classList.contains("econ-toggle")) { PS.econ.open = PS.econ.open ? 0 : 1; save(); render(); return; }
+      if (t.hasAttribute("data-econ-btn")) { econBtn(t.getAttribute("data-econ-btn")); return; }
       // spell name — expand/collapse the full description
       if (t.hasAttribute("data-sp-expand")) { var sp = t.closest(".spell"); if (sp) sp.querySelector(".sp-body").classList.toggle("open"); return; }
       // cast — consume a slot (lowest available >= level) and roll the spell attack if relevant
@@ -662,6 +753,14 @@
   }
   function castSpell(idx) {
     var sc = S.spellcasting || {}; var sp = (sc.spells || [])[idx]; if (!sp) return;
+    // spells with a choice of effect (e.g. Nazar the Evil Eye) prompt first
+    var choice = null;
+    if (sp.choices && sp.choices.length) {
+      var menu = sp.choices.map(function (c, i) { return (i + 1) + ") " + c.label + (c.save ? "  [" + c.save + "]" : ""); }).join("\n");
+      var pick = prompt("Choose an effect for " + sp.name + ":\n\n" + menu + "\n\nEnter 1–" + sp.choices.length + ":", "1");
+      if (pick === null) return; // cancelled — no slot spent
+      choice = sp.choices[(parseInt(pick, 10) || 1) - 1] || sp.choices[0];
+    }
     var lvl = sp.level || 0, usedLv = null;
     if (lvl > 0) {
       var slots = sc.slots || {};
@@ -673,14 +772,32 @@
       PS.slots[usedLv] = (PS.slots[usedLv] || 0) + 1; save();
     }
     render(); // update slot pips & cast-button availability (tray + its roll persist)
+    var slotTxt = usedLv ? " (Lvl " + usedLv + ")" : "";
     if (sp.attack) {
       var abil = sc.ability || "int";
       var atk = sc.attackBonus != null ? sc.attackBonus : profBonus() + abilMod(abil);
-      rollCheck("Spell Attack — " + sp.name + (usedLv ? " (Lvl " + usedLv + ")" : ""), atk);
+      rollCheck("Spell Attack — " + sp.name + slotTxt, atk);
+    } else if (choice) {
+      setMsg("Cast — " + sp.name, choice.label + (choice.save ? " · " + choice.save : ""), "✓");
+      logLine("Cast " + sp.name + ": " + choice.label + slotTxt);
     } else {
       setMsg("Cast — " + sp.name, usedLv ? "Lvl " + usedLv + " slot spent" : "cantrip", "✓");
       logLine("Cast " + sp.name + (usedLv ? " (Lvl " + usedLv + " slot)" : ""));
     }
+  }
+  function econBtn(k) {
+    var e = PS.econ;
+    if (k === "take") { e.phase = "turn"; e.used.action = 0; e.used.bonus = 0; e.used.move = 0; }
+    else if (k === "end") { e.phase = "pre"; e.used.reaction = 0; }
+    else { e.used[k] = e.used[k] ? 0 : 1; } // toggle, so a mis-click can be undone
+    save(); render();
+  }
+  function applyEcon() {
+    var used = (PS.econ || {}).used || {};
+    ["reaction", "action", "bonus", "move"].forEach(function (c) {
+      var spent = !!used[c];
+      document.querySelectorAll('[data-econ="' + c + '"]').forEach(function (elm) { elm.classList.toggle("econ-spent", spent); });
+    });
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", render);
