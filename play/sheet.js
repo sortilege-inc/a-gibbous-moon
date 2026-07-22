@@ -533,9 +533,14 @@
       for (var k = 0; k < total; k++) pips += '<button class="pip' + (k < (total - used) ? "" : " spent") + '" data-use="' + i + '" data-idx="' + k + '"></button>';
       usesHtml = '<span class="use-pips" title="' + esc((f.uses.per || "") + " uses") + '">' + pips + '</span>';
     }
-    it.innerHTML = '<div class="feat-h"><span class="feat-name">' + esc(f.name) + '</span>' +
-      (f.source ? '<span class="feat-src">' + esc(f.source) + '</span>' : '') + usesHtml + '</div>' +
-      (f.text ? '<div class="feat-text">' + nl2br(f.text) + '</div>' : '');
+    // Trigger (feature analogue of Cast) — only for activatable features
+    var activatable = !!(f.uses || featCost(f) !== "none" || f.roll || f.damage || f.heal);
+    var canTrig = !f.uses || (PS.uses[i] || 0) < (f.uses.max || 0);
+    var trig = activatable ? '<button class="feat-trigger" data-feat-trigger="' + i + '"' + (canTrig ? '' : ' disabled') + ' title="Use this feature">Trigger</button>' : '';
+    it.innerHTML = '<div class="feat-h">' +
+      '<button class="feat-name" data-feat-expand="' + i + '" title="Show details">' + esc(f.name) + '</button>' +
+      (f.source ? '<span class="feat-src">' + esc(f.source) + '</span>' : '') + usesHtml + trig + '</div>' +
+      (f.text ? '<div class="feat-body">' + nl2br(f.text) + '</div>' : '');
     return it;
   }
   function featuresBlock() {
@@ -667,6 +672,9 @@
       // turn tracker (Initiative opens it; buttons drive the action economy)
       if (t.classList.contains("econ-toggle")) { PS.econ.open = PS.econ.open ? 0 : 1; save(); render(); return; }
       if (t.hasAttribute("data-econ-btn")) { econBtn(t.getAttribute("data-econ-btn")); return; }
+      // feature name — expand/collapse rules text; Trigger — use the feature
+      if (t.hasAttribute("data-feat-expand")) { var ft = t.closest(".feature"); if (ft) ft.querySelector(".feat-body").classList.toggle("open"); return; }
+      if (t.hasAttribute("data-feat-trigger")) { triggerFeature(parseInt(t.getAttribute("data-feat-trigger"), 10)); return; }
       // spell name — expand/collapse the full description
       if (t.hasAttribute("data-sp-expand")) { var sp = t.closest(".spell"); if (sp) sp.querySelector(".sp-body").classList.toggle("open"); return; }
       // cast — consume a slot (lowest available >= level) and roll the spell attack if relevant
@@ -786,6 +794,23 @@
     } else {
       setMsg("Cast — " + sp.name, usedLv ? "Lvl " + usedLv + " slot spent" : "cantrip", "✓");
       logLine("Cast " + sp.name + (usedLv ? " (Lvl " + usedLv + " slot)" : ""));
+    }
+  }
+  function triggerFeature(i) {
+    var f = (S.features || [])[i]; if (!f) return;
+    if (f.uses) {
+      var used = PS.uses[i] || 0;
+      if (used >= (f.uses.max || 0)) { setMsg("Trigger — " + f.name, "no uses left", "—"); logLine("No uses left: " + f.name); return; }
+      PS.uses[i] = used + 1; save();
+    }
+    render(); // update use pips (tray + its roll persist)
+    var roll = f.roll || f.damage || f.heal;
+    if (roll) {
+      rollDamage((f.heal ? "Heal — " : "Trigger — ") + f.name, String(roll).replace(/MOD/gi, ""));
+    } else {
+      var left = f.uses ? Math.max(0, (f.uses.max || 0) - (PS.uses[i] || 0)) + " left" : "";
+      setMsg("Trigger — " + f.name, left, "✓");
+      logLine("Triggered " + f.name);
     }
   }
   function econBtn(k) {

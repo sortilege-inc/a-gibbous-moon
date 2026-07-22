@@ -189,7 +189,15 @@
 /* ---- features / feats --------------------------------------- */
 .feature{ padding:0.6rem 0; border-bottom:1px solid var(--edge-soft); }
 .feat-h{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; }
-.feat-name{ font-family:var(--disp); font-weight:700; font-size:1.1rem; color:var(--olive-deep); }
+.feat-name{ font-family:var(--disp); font-weight:700; font-size:1.1rem; color:var(--olive-deep); background:none; border:0; padding:0; text-align:left; cursor:pointer; flex:1 1 auto; transition:.12s; }
+.feat-name:hover{ color:var(--rust-deep); text-decoration:underline dotted; }
+.feat-trigger{ font-family:var(--caps); font-size:0.56rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--olive-deep); border:1px solid var(--olive-deep); background:rgba(196,154,69,0.10); border-radius:4px; padding:0.18rem 0.5rem; cursor:pointer; opacity:0; transition:.12s; }
+.feature:hover .feat-trigger, .feature:focus-within .feat-trigger{ opacity:1; }
+.feat-trigger:hover{ background:var(--olive-deep); color:var(--vellum-lit); }
+.feature:hover .feat-trigger[disabled], .feature:focus-within .feat-trigger[disabled]{ opacity:0.4; cursor:not-allowed; border-style:dashed; }
+@media (hover:none){ .feat-trigger{ opacity:1; } }
+.feat-body{ display:none; font-size:0.9rem; color:var(--ink-2); margin-top:0.3rem; padding:0.15rem 0 0.2rem 0.6rem; border-left:2px solid var(--edge); }
+.feat-body.open{ display:block; }
 .feat-src{ font-family:var(--caps); font-size:0.52rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-faint); border:1px solid var(--edge); border-radius:3px; padding:0.05rem 0.4rem; }
 .use-pips{ display:flex; gap:0.25rem; margin-left:auto; }
 .use-pips .pip{ background:var(--gold); border-color:var(--gold); }
