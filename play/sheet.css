@@ -28,7 +28,14 @@
 .sh-eyebrow{ font-family:var(--caps); text-transform:uppercase; letter-spacing:0.16em; font-size:0.68rem; color:var(--teal-deep); }
 .sh-id h1{ font-family:var(--disp); font-weight:700; color:var(--slate); font-size:clamp(2.2rem,6vw,3.4rem); margin:0.15rem 0 0.1rem; line-height:1; }
 .sh-player{ font-family:var(--fell); font-style:italic; color:var(--ink-soft); }
-.sheet-head .tagrow{ margin:0.6rem 0 0; }
+.sheet-head .tagrow{ margin:0.6rem 0 0; display:flex; flex-wrap:wrap; align-items:center; gap:0.4rem; }
+/* ruleset edition toggle */
+.ed-toggle{ display:inline-flex; align-items:center; gap:0.25rem; margin-left:auto; }
+.ed-toggle .ed-lbl{ font-family:var(--caps); text-transform:uppercase; letter-spacing:0.12em; font-size:0.55rem; color:var(--ink-faint); }
+.ed-btn{ font-family:var(--caps); text-transform:uppercase; letter-spacing:0.06em; font-size:0.6rem; cursor:pointer;
+  border:1px solid var(--edge); background:transparent; color:var(--ink-faint); border-radius:4px; padding:0.2rem 0.5rem; transition:.15s; }
+.ed-btn:hover{ border-color:var(--teal); color:var(--teal-deep); }
+.ed-btn.active{ border-color:var(--rust); background:rgba(155,58,42,0.1); color:var(--rust-deep); font-weight:700; }
 
 /* ---- vitals row --------------------------------------------- */
 .vitals{ display:flex; flex-wrap:wrap; gap:0.8rem; margin:0 0 1.6rem; }

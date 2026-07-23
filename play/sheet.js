@@ -55,6 +55,7 @@
       hp: (S.hp && S.hp.current != null) ? S.hp.current : ((S.hp && S.hp.max) || 0),
       temp: (S.hp && S.hp.temp) || 0,
       slots: slots, hitDice: hd, uses: uses, conditions: (S.conditions || []).slice(),
+      edition: S.defaultEdition || "2014",
       econ: { open: 0, phase: "pre", used: { reaction: 0, action: 0, bonus: 0, move: 0 } }
     };
   }
@@ -120,6 +121,15 @@
     if (/^(apprentice|journeyman|expert|master) |accomplished chemist|bounty hunter|antiquarian|arch[ae]ologist|\bprofession\b/.test(name)) return "Profession";
     return "General";
   }
+  // ---- ruleset edition (5e / 5.5e) toggle --------------------------------
+  // Items tagged with an `ed` ("2014" | "2024") show only in that edition; untagged show in both.
+  function curEd() { return (PS && PS.edition) || S.defaultEdition || "2014"; }
+  function inEd(x) { return !x || !x.ed || x.ed === curEd(); }
+  function hasEditions() {
+    var arr = [].concat(S.features || [], S.attacks || [], ((S.spellcasting || {}).spells) || []);
+    return arr.some(function (x) { return x && x.ed; });
+  }
+
   // action-economy cost of an ability: "action" | "bonus" | "reaction" | "move" | "none"
   function spellCost(sp) {
     if (sp.cast) return sp.cast;
@@ -281,12 +291,20 @@
     if (S.origin) chips.push('<span class="chip olive">' + esc(typeof S.origin === "string" ? S.origin : S.origin.name) + '</span>');
     if (S.profession) chips.push('<span class="chip">' + esc(typeof S.profession === "string" ? S.profession : S.profession.name) + '</span>');
     if (S.alignment) chips.push('<span class="chip">' + esc(S.alignment) + '</span>');
+    var ed = curEd();
+    var edToggle = hasEditions()
+      ? '<div class="ed-toggle" title="Switch rules edition — 2014 (5e) vs 2024 (5.5e)">' +
+          '<span class="ed-lbl">Rules</span>' +
+          '<button class="ed-btn' + (ed === "2014" ? " active" : "") + '" data-ed="2014">5e</button>' +
+          '<button class="ed-btn' + (ed === "2024" ? " active" : "") + '" data-ed="2024">5.5e</button>' +
+        '</div>'
+      : '';
     h.innerHTML = port +
       '<div class="sh-id">' +
         '<div class="sh-eyebrow">' + esc(classLine()) + '</div>' +
         '<h1>' + esc(S.name || "Unnamed") + '</h1>' +
         (S.player ? '<div class="sh-player">played by ' + esc(S.player) + '</div>' : '') +
-        '<div class="tagrow">' + chips.join("") + '</div>' +
+        '<div class="tagrow">' + chips.join("") + edToggle + '</div>' +
       '</div>';
     return h;
   }
@@ -460,13 +478,15 @@
         '<span class="atk-bonus">' + sgn(satk) + ' to hit</span><span class="atk-meta">Save DC ' + sdc + ' · ' + ABIL_NAME[sabil] + '</span>';
       buckets["Attack"].push(sr);
     }
-    (S.attacks || []).forEach(function (a) { buckets["Attack"].push(attackRow(a)); });
+    (S.attacks || []).forEach(function (a) { if (inEd(a)) buckets["Attack"].push(attackRow(a)); });
     spells.forEach(function (sp) {
+      if (!inEd(sp)) return;
       if (sp.attack) { buckets["Attack"].push(spellRow(sp)); return; }
       var c = spellCost(sp);
       buckets[c === "bonus" ? "Bonus Action" : c === "reaction" ? "Reaction" : "Action"].push(spellRow(sp));
     });
     (S.features || []).forEach(function (f, i) {
+      if (!inEd(f)) return;
       var c = featCost(f); if (c === "none") return;
       buckets[c === "bonus" ? "Bonus Action" : c === "reaction" ? "Reaction" : "Action"].push(featureRow(f, i));
     });
@@ -558,7 +578,7 @@
     var spells = sc.spells || [];
     if (spells.length) {
       var byLevel = {};
-      spells.forEach(function (sp, i) { sp._idx = i; (byLevel[sp.level || 0] = byLevel[sp.level || 0] || []).push(sp); });
+      spells.forEach(function (sp, i) { sp._idx = i; if (!inEd(sp)) return; (byLevel[sp.level || 0] = byLevel[sp.level || 0] || []).push(sp); });
       var levels = Object.keys(byLevel).sort(function (a, c) { return a - c; });
       if (activeSpellTab == null || levels.indexOf(String(activeSpellTab)) === -1) activeSpellTab = levels[0];
       var tabs = el("div", "spell-tabs");
@@ -604,7 +624,7 @@
     var b = card("Features &amp; Traits");
     var order = ["Class", "Racial", "General", "Profession"];
     var groups = { Class: [], Racial: [], General: [], Profession: [] };
-    S.features.forEach(function (f, i) { groups[featCat(f)].push({ f: f, i: i }); });
+    S.features.forEach(function (f, i) { if (inEd(f)) groups[featCat(f)].push({ f: f, i: i }); });
     var cats = order.filter(function (c) { return groups[c].length; });
     if (activeFeatTab == null || cats.indexOf(activeFeatTab) === -1) activeFeatTab = cats[0];
     if (cats.length > 1) {
@@ -756,6 +776,7 @@
       // rest / reset
       if (t.classList.contains("btn-short")) { shortRest(); return; }
       if (t.classList.contains("btn-rest")) { longRest(); return; }
+      if (t.classList.contains("ed-btn")) { var ne = t.getAttribute("data-ed"); if (ne && ne !== PS.edition) { PS.edition = ne; save(); render(); } return; }
       if (t.classList.contains("btn-dl")) { downloadJSON(); return; }
       if (t.classList.contains("btn-ul")) { var inp = document.getElementById("agm-upload"); if (inp) inp.click(); return; }
       if (t.classList.contains("btn-reset")) { if (confirm("Revert to the shipped character and clear all play-state?")) { try { localStorage.removeItem(KEY); localStorage.removeItem(SHEET_KEY); } catch (e) {} S = window.SHEET || {}; PS = defaultState(); render(); } return; }
