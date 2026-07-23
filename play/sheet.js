@@ -15,7 +15,10 @@
 (function () {
   "use strict";
 
-  var S = window.SHEET || {};
+  var BASE_ID = (window.SHEET || {}).id || (window.SHEET || {}).name || "unknown";
+  var SHEET_KEY = "agm:sheet:" + BASE_ID;   // uploaded-sheet override (persists a swapped/edited character)
+  function loadSheetOverride() { try { var r = localStorage.getItem(SHEET_KEY); if (r) return JSON.parse(r); } catch (e) {} return null; }
+  var S = loadSheetOverride() || window.SHEET || {};
   var ABILS = ["str", "dex", "con", "int", "wis", "cha"];
   var ABIL_NAME = { str: "Strength", dex: "Dexterity", con: "Constitution",
     int: "Intelligence", wis: "Wisdom", cha: "Charisma" };
@@ -38,7 +41,7 @@
   function titleCase(s) { return (s || "").replace(/\b\w/g, function (c) { return c.toUpperCase(); }); }
 
   // ---- persistent play-state ---------------------------------------------
-  var KEY = "agm:play:" + (S.id || S.name || "unknown");
+  var KEY = "agm:play:" + BASE_ID;   // play-state, keyed to the page slot (not the swapped sheet)
   var PS = loadState();
   function defaultState() {
     var slots = {};
@@ -68,6 +71,42 @@
     return d;
   }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(PS)); } catch (e) {} }
+
+  // ---- download / upload a character snapshot ----------------------------
+  function downloadJSON() {
+    var payload = { format: "agm-character", version: 1, id: BASE_ID,
+      name: S.name || BASE_ID, sheet: S, state: PS };
+    var blob = new Blob([JSON.stringify(payload, null, 1)], { type: "application/json" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = BASE_ID + ".json";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    setMsg("Downloaded", BASE_ID + ".json", "⭳");
+  }
+  function looksLikeSheet(o) { return o && (o.abilities || o.spellcasting || o.attacks || o.features); }
+  function looksLikeState(o) { return o && (o.hp != null || o.slots || o.hitDice || o.econ); }
+  function handleUpload(file) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var data;
+      try { data = JSON.parse(reader.result); } catch (e) { alert("That file isn't valid JSON."); return; }
+      var sheet = null, state = null;
+      if (data && data.format === "agm-character") { sheet = data.sheet || null; state = data.state || null; }
+      else if (looksLikeSheet(data)) { sheet = data; }
+      else if (looksLikeState(data)) { state = data; }
+      if (!sheet && !state) { alert("Unrecognized file — expected a character or play-state JSON."); return; }
+      var msg = sheet ? ("Replace this character's sheet" + (state ? " and play-state" : "") + "?")
+                      : "Restore the saved play-state?";
+      if (!confirm(msg + "\n\nThis overwrites what's loaded here (your download is unaffected).")) return;
+      if (sheet) { try { localStorage.setItem(SHEET_KEY, JSON.stringify(sheet)); } catch (e) {} S = sheet; }
+      if (state) { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} PS = loadState(); }
+      else if (sheet) { try { localStorage.removeItem(KEY); } catch (e) {} PS = defaultState(); save(); }
+      render();
+      setMsg("Loaded", file.name, "⭱");
+    };
+    reader.readAsText(file);
+  }
 
   var activeSpellTab = null; // which spell level tab is showing (persists across re-renders)
   var activeFeatTab = null;  // which feature category tab is showing
@@ -296,7 +335,10 @@
     var rest = el("div", "vstat rest-block");
     rest.innerHTML = '<button class="btn-short" title="Restore short-rest features &amp; pact slots; spend Hit Dice to heal">Short Rest</button>' +
       '<button class="btn-rest" title="Restore HP, slots, hit-dice &amp; uses to full">Long Rest</button>' +
-      '<button class="btn-reset" title="Reset all play-state to the sheet defaults">Reset</button>';
+      '<button class="btn-reset" title="Revert to the shipped character and clear all play-state">Reset</button>' +
+      '<button class="btn-io btn-dl" title="Download this character + current state as a JSON file">⭳ JSON</button>' +
+      '<button class="btn-io btn-ul" title="Upload a character or saved play-state JSON">⭱ JSON</button>' +
+      '<input type="file" id="agm-upload" accept="application/json,.json" style="display:none">';
     v.appendChild(rest);
     v.appendChild(econPanel(init));
     return v;
@@ -638,6 +680,10 @@
   function wireHandlers(root) {
     if (handlersWired) return;   // #sheet persists across renders — wire once
     handlersWired = true;
+    root.addEventListener("change", function (e) {
+      var t = e.target;
+      if (t && t.id === "agm-upload" && t.files && t.files[0]) { handleUpload(t.files[0]); t.value = ""; }
+    });
     root.addEventListener("click", function (e) {
       var t = e.target.closest("button, .rollable");
       if (!t) return;
@@ -710,7 +756,9 @@
       // rest / reset
       if (t.classList.contains("btn-short")) { shortRest(); return; }
       if (t.classList.contains("btn-rest")) { longRest(); return; }
-      if (t.classList.contains("btn-reset")) { if (confirm("Reset all play-state to the sheet defaults?")) { localStorage.removeItem(KEY); PS = defaultState(); render(); } return; }
+      if (t.classList.contains("btn-dl")) { downloadJSON(); return; }
+      if (t.classList.contains("btn-ul")) { var inp = document.getElementById("agm-upload"); if (inp) inp.click(); return; }
+      if (t.classList.contains("btn-reset")) { if (confirm("Revert to the shipped character and clear all play-state?")) { try { localStorage.removeItem(KEY); localStorage.removeItem(SHEET_KEY); } catch (e) {} S = window.SHEET || {}; PS = defaultState(); render(); } return; }
     });
   }
 

@@ -68,10 +68,12 @@
 .hd-slash{ color:var(--ink-faint); }
 
 .rest-block{ display:flex; flex-direction:column; gap:0.35rem; justify-content:center; }
-.btn-short, .btn-rest, .btn-reset{
+.btn-short, .btn-rest, .btn-reset, .btn-io{
   font-family:var(--caps); text-transform:uppercase; letter-spacing:0.1em; font-size:0.6rem;
   cursor:pointer; border-radius:4px; padding:0.4rem 0.5rem; transition:.15s;
 }
+.btn-io{ border:1px solid var(--edge); background:transparent; color:var(--ink-faint); }
+.btn-io:hover{ border-color:var(--teal); color:var(--teal-deep); }
 .btn-short{ border:1px solid var(--gold); background:rgba(196,154,69,0.12); color:var(--rust-deep); }
 .btn-short:hover{ background:var(--gold); color:var(--vellum-lit); }
 .btn-rest{ border:1px solid var(--teal); background:rgba(31,122,134,0.1); color:var(--teal-deep); }
