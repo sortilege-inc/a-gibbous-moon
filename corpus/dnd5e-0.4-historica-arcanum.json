@@ -1,0 +1,29 @@
+{
+  "edition": "dnd5e",
+  "spec_version": "0.4",
+  "base_dir": "../../../Titterpig DSL/titterpig-dsl-dnd5e/0.4",
+  "output_dir": "../../titterpig-corpora",
+  "load_order": [
+    "dnd5e-0.4-core-base.ttrpg",
+    "dnd5e-0.4-conditions.ttrpg",
+    "dnd5e-0.4-races.ttrpg",
+    "dnd5e-0.4-backgrounds.ttrpg",
+    "dnd5e-0.4-classes.ttrpg",
+    "dnd5e-0.4-feats.ttrpg",
+    "dnd5e-0.4-equipment.ttrpg",
+    "dnd5e-0.4-magic-items.ttrpg",
+    "dnd5e-0.4-spells.ttrpg",
+    "dnd5e-0.4-monsters.ttrpg",
+    "../../titterpig-dsl-dnd5e-3rdparty/historica-arcanum/city-of-crescent/historica-coc-0.4-core.ttrpg",
+    "../../titterpig-dsl-dnd5e-3rdparty/historica-arcanum/city-of-crescent/historica-coc-0.4-magic-origins.ttrpg",
+    "../../titterpig-dsl-dnd5e-3rdparty/historica-arcanum/city-of-crescent/historica-coc-0.4-spells.ttrpg",
+    "../../titterpig-dsl-dnd5e-3rdparty/historica-arcanum/city-of-crescent/historica-coc-0.4-magic-items.ttrpg",
+    "../../titterpig-dsl-dnd5e-3rdparty/historica-arcanum/city-of-crescent/historica-coc-0.4-equipment.ttrpg",
+    "../../titterpig-dsl-dnd5e-3rdparty/historica-arcanum/city-of-crescent/historica-coc-0.4-spell-rebound.ttrpg",
+    "../../titterpig-dsl-dnd5e-3rdparty/historica-arcanum/city-of-crescent/historica-coc-0.4-subclasses.ttrpg",
+    "../../titterpig-dsl-dnd5e-3rdparty/historica-arcanum/city-of-crescent/historica-coc-0.4-feats.ttrpg",
+    "../../titterpig-dsl-dnd5e-3rdparty/historica-arcanum/city-of-crescent/historica-coc-0.4-professions.ttrpg",
+    "../../titterpig-dsl-dnd5e-3rdparty/historica-arcanum/city-of-crescent/historica-coc-0.4-monsters.ttrpg",
+    "../../titterpig-dsl-dnd5e-3rdparty/historica-arcanum/city-of-crescent/historica-coc-0.4-djinn-rules.ttrpg"
+  ]
+}
