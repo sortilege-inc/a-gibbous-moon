@@ -178,6 +178,17 @@
 .sp-cast.atkspell:hover{ background:var(--rust); color:var(--vellum-lit); }
 .spell:hover .sp-cast[disabled], .spell:focus-within .sp-cast[disabled]{ opacity:0.4; cursor:not-allowed; border-style:dashed; }
 @media (hover:none){ .sp-cast{ opacity:1; } }
+/* upcast slot-level stepper (auto-lowest + bump) */
+.sp-lv{ display:inline-flex; align-items:center; gap:0.12rem; }
+.sp-lv .lvnum{ font-family:var(--caps); font-size:0.56rem; letter-spacing:0.04em; color:var(--slate); min-width:1.35rem; text-align:center; }
+.sp-lv.bumped .lvnum{ color:var(--gold); font-weight:700; }
+.sp-lv .lvstep{ font-size:0.6rem; line-height:1; color:var(--teal-deep); border:1px solid var(--edge); background:transparent; border-radius:3px; padding:0.05rem 0.22rem; cursor:pointer; opacity:0; transition:.12s; }
+.spell:hover .sp-lv .lvstep, .spell:focus-within .sp-lv .lvstep{ opacity:1; }
+.sp-lv .lvstep:hover{ border-color:var(--teal); background:rgba(31,122,134,0.1); }
+.sp-lv .lvstep[disabled]{ opacity:0.25; cursor:not-allowed; }
+.spell:hover .sp-lv .lvstep[disabled], .spell:focus-within .sp-lv .lvstep[disabled]{ opacity:0.25; }
+@media (hover:none){ .sp-lv .lvstep{ opacity:1; } }
+.sp-lv + .sp-cast{ margin-left:0.4rem; }
 .sp-body{ display:none; font-size:0.88rem; color:var(--ink-2); margin:0.3rem 0 0.1rem; padding:0.2rem 0 0.2rem 0.6rem; border-left:2px solid var(--edge); }
 .sp-body.open{ display:block; }
 .sp-nodesc{ color:var(--ink-faint); }

@@ -462,11 +462,25 @@
       var lbl = sp.heal ? "Heal" : "Roll";
       rollBtn = '<div class="sp-actions"><button class="sp-dmg rollable" data-dmg="' + esc(spec) + '" data-dmg-name="' + esc(sp.name) + '">' + lbl + " " + esc(spec) + '</button></div>';
     }
+    // slot-level stepper: default = lowest available >= base; bump up/down through available higher/lower slots
+    var base = sp.level || 0, stepper = "";
+    if (base > 0 && slotLevels().length) {
+      var tgt = targetLevel(sp._idx, base), av = availLevels(base);
+      var canUp = tgt != null && av.some(function (l) { return l > tgt; });
+      var canDown = tgt != null && av.some(function (l) { return l < tgt; });
+      var bumped = castSel[sp._idx] != null && castSel[sp._idx] !== base;
+      stepper = '<span class="sp-lv' + (bumped ? " bumped" : "") + '" title="Slot level to cast at (bump to upcast)">' +
+        '<button class="lvstep" data-cast-down="' + sp._idx + '"' + (canDown ? '' : ' disabled') + '>▾</button>' +
+        '<span class="lvnum">' + (tgt != null ? "L" + tgt : "L" + base) + '</span>' +
+        '<button class="lvstep" data-cast-up="' + sp._idx + '"' + (canUp ? '' : ' disabled') + '>▴</button>' +
+      '</span>';
+    }
     it.innerHTML =
       '<div class="sp-row">' +
         '<button class="sp-name" data-sp-expand="' + sp._idx + '" title="Show details">' + esc(sp.name) + '</button>' +
         badges +
         (sp.save ? '<span class="sp-save">' + esc(sp.save) + '</span>' : '') +
+        stepper +
         '<button class="sp-cast' + (sp.attack ? ' atkspell' : '') + '" data-sp-cast="' + sp._idx + '"' + (canCast ? '' : ' disabled') + ' title="Cast this spell">Cast</button>' +
       '</div>' +
       (sp.notes ? '<div class="sp-notes">' + esc(sp.notes) + '</div>' : '') +
@@ -678,7 +692,20 @@
       if (t.hasAttribute("data-feat-trigger")) { triggerFeature(parseInt(t.getAttribute("data-feat-trigger"), 10)); return; }
       // spell name — expand/collapse the full description
       if (t.hasAttribute("data-sp-expand")) { var sp = t.closest(".spell"); if (sp) sp.querySelector(".sp-body").classList.toggle("open"); return; }
-      // cast — consume a slot (lowest available >= level) and roll the spell attack if relevant
+      // upcast stepper — bump the chosen slot level up/down through available slots
+      if (t.hasAttribute("data-cast-up") || t.hasAttribute("data-cast-down")) {
+        var up = t.hasAttribute("data-cast-up");
+        var ci = parseInt(t.getAttribute(up ? "data-cast-up" : "data-cast-down"), 10);
+        var csp = ((S.spellcasting || {}).spells || [])[ci]; if (!csp) return;
+        var cbase = csp.level || 0, cav = availLevels(cbase); if (!cav.length) return;
+        var cur = targetLevel(ci, cbase);
+        var higher = cav.filter(function (l) { return l > cur; });
+        var lower = cav.filter(function (l) { return l < cur; });
+        if (up && higher.length) castSel[ci] = higher[0];
+        else if (!up && lower.length) castSel[ci] = lower[lower.length - 1];
+        render(); return;
+      }
+      // cast — consume a slot (chosen level, else lowest available >= level) and roll the spell attack if relevant
       if (t.hasAttribute("data-sp-cast")) { castSpell(parseInt(t.getAttribute("data-sp-cast"), 10)); return; }
       // rest / reset
       if (t.classList.contains("btn-short")) { shortRest(); return; }
@@ -757,11 +784,26 @@
   }
 
   // ---- spells: availability + casting -------------------------------------
+  var castSel = {}; // spell idx -> chosen slot level to cast at (transient, not persisted)
   function hasSlotFor(level) {
     var slots = (S.spellcasting || {}).slots || {};
     return Object.keys(slots).some(function (lv) {
       return parseInt(lv, 10) >= level && ((slots[lv].total || 0) - (PS.slots[lv] || 0)) > 0;
     });
+  }
+  function slotLevels() {
+    return Object.keys((S.spellcasting || {}).slots || {}).map(Number).sort(function (a, c) { return a - c; });
+  }
+  function freeAt(lv) {
+    var s = ((S.spellcasting || {}).slots || {})[lv] || {};
+    return (s.total || 0) - (PS.slots[lv] || 0) > 0;
+  }
+  function availLevels(base) { return slotLevels().filter(function (l) { return l >= base && freeAt(l); }); }
+  // level a spell will cast at: the player's bumped choice if still valid, else the lowest available >= base
+  function targetLevel(idx, base) {
+    if (castSel[idx] != null && castSel[idx] >= base && freeAt(castSel[idx])) return castSel[idx];
+    var a = availLevels(base);
+    return a.length ? a[0] : null;
   }
   function castSpell(idx) {
     var sc = S.spellcasting || {}; var sp = (sc.spells || [])[idx]; if (!sp) return;
@@ -775,13 +817,9 @@
     }
     var lvl = sp.level || 0, usedLv = null;
     if (lvl > 0) {
-      var slots = sc.slots || {};
-      var cand = Object.keys(slots).map(Number).filter(function (l) {
-        return l >= lvl && ((slots[l].total || 0) - (PS.slots[l] || 0)) > 0;
-      }).sort(function (a, c) { return a - c; });
-      if (!cand.length) { setMsg("Cast — " + sp.name, "no spell slot available", "—"); logLine("Cannot cast " + sp.name + " — no slot"); return; }
-      usedLv = cand[0];
-      PS.slots[usedLv] = (PS.slots[usedLv] || 0) + 1; save();
+      usedLv = targetLevel(idx, lvl); // player's bump if chosen & valid, else lowest available >= base
+      if (usedLv == null) { setMsg("Cast — " + sp.name, "no spell slot available", "—"); logLine("Cannot cast " + sp.name + " — no slot"); return; }
+      PS.slots[usedLv] = (PS.slots[usedLv] || 0) + 1; castSel[idx] = null; save();
     }
     render(); // update slot pips & cast-button availability (tray + its roll persist)
     var slotTxt = usedLv ? " (Lvl " + usedLv + ")" : "";
