@@ -445,3 +445,58 @@ blockquote{
   .topnav{ gap:0.1rem 0.85rem; }
   .masthead.hero{ border-width:24px; }
 }
+
+/* -------------------------------------------------- Veil section rail (TOC)
+   Built from the page's own headings by veil/rail.js. A fixed rail to the left
+   of the content column on wide screens; an off-canvas drawer with a toggle
+   below ~1280px. Keeper accent (moon indigo). */
+.veilrail{
+  position:fixed; top:4.7rem; left:max(0.75rem, calc(50% - 596px));
+  width:180px; max-height:calc(100vh - 6.5rem);
+  overflow-y:auto; overscroll-behavior:contain;
+  font-family:var(--caps); font-size:0.72rem; letter-spacing:0.05em;
+  z-index:40; padding-right:0.4rem;
+}
+.veilrail::-webkit-scrollbar{ width:6px; }
+.veilrail::-webkit-scrollbar-thumb{ background:var(--edge); border-radius:3px; }
+.veilrail .vr-title{
+  text-transform:uppercase; letter-spacing:0.18em; font-size:0.62rem;
+  color:var(--moon); padding:0 0 0.5rem 0.7rem;
+  border-bottom:1px solid var(--edge-soft); margin-bottom:0.45rem;
+}
+.veilrail ul{ list-style:none; margin:0; padding:0; }
+.veilrail a{
+  display:block; text-decoration:none; color:var(--ink-soft);
+  padding:0.24rem 0.5rem 0.24rem 0.7rem; border-left:2px solid transparent;
+  text-transform:uppercase; line-height:1.25; transition:color .15s, border-color .15s;
+}
+.veilrail a:hover{ color:var(--rust); }
+.veilrail .vr-h3 a{
+  padding-left:1.35rem; text-transform:none; letter-spacing:0.01em;
+  font-family:var(--fell); font-size:0.84rem; color:var(--ink-faint);
+}
+.veilrail a.on{ color:var(--oxblood-deep); border-left-color:var(--moon); font-weight:600; }
+.veilrail .vr-h3{ display:none; }
+.veilrail .vr-grp.open .vr-h3{ display:block; }
+.veilrail-toggle{
+  position:fixed; left:0.9rem; bottom:1.1rem; z-index:41;
+  display:none; align-items:center; gap:0.45rem;
+  font-family:var(--caps); text-transform:uppercase; letter-spacing:0.12em;
+  font-size:0.7rem; color:var(--vellum-lit);
+  background:var(--oxblood); border:1px solid var(--gilt-soft);
+  border-radius:3px; padding:0.5rem 0.8rem; cursor:pointer;
+  box-shadow:0 3px 14px rgba(0,0,0,0.3);
+}
+.veilrail-toggle:hover{ border-color:var(--gilt-lit); }
+@media (max-width:1280px){
+  .veilrail{
+    left:0; top:0; width:min(19rem,82vw); max-height:none; height:100vh;
+    background:var(--vellum); border-right:1px solid var(--edge);
+    box-shadow:6px 0 26px rgba(0,0,0,0.22);
+    padding:4.8rem 0.6rem 2rem 0.6rem;
+    transform:translateX(-102%); transition:transform .25s ease;
+  }
+  .veilrail.open{ transform:none; }
+  .veilrail-toggle{ display:flex; }
+}
+@media print{ .veilrail, .veilrail-toggle{ display:none; } }
