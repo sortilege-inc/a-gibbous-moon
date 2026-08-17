@@ -1,0 +1,35 @@
+EXTENSION "HistoricaArcanum_CoC_DjinnRules" EXTENDS "Dnd5_5e_Core_Base" {
+    NAME "Historica Arcanum: The City of Crescent - Djinn Interaction Rules"
+    VERSION "0.4"
+    SPEC_VERSION "0.4"
+    RELEASE_DATE "2026-07-21"
+
+#tcx5ORPJE3tRRoTKJf1tFlGY ^"Possession for the Djinn" DEF {
+    EXTENDS ^"Djinn Rule"
+    PROPERTIES {
+        ^"Description" STRING "A djinn may try to possess a creature within 5 ft. of it. The creature makes a Charisma saving throw. The DC is determined according to the djinn's Proficiency + Charisma bonus + 8. Some djinns may use a different stat for possession but saving throws are always Charisma based For example, a djinn with a proficiency bonus of 2 and a charisma of 16 will have the DC of 13. A creature must succeed on a DC13 to avoid possession."
+    }
+}
+
+#tTLgHSYXQJrPYAmXKRVO1DLv ^"Exorcism Sacrament" DEF {
+    EXTENDS ^"Djinn Rule"
+    PROPERTIES {
+        ^"Description" STRING "Although there is a spell called exorcize the djinni, some djinns are exceptionally powerful for such a spell. In these situations, a ritual must be performed by at least 2 individuals other than the possessed person in order to exorcize the djinn. The ritual takes 1 hour to perform. Whereabouts of the ritual must not be in total darkness: at least dim light is needed around the possessed body and the participants of the ritual.\n\nRequirements:\n\n• Talisman of Warding (Musqa)\n• Holy Water\n• A beloved keepsake of the possessed person\n• The promise of a friend\n• The blood of an enemy\n• The touch of an innocent\n\nWhoever leads the ritual must concentrate as if concentrating on a spell. The other participants must choose a way to contribute to the process of the exorcism: such as praying, offering a sacrifice, casting spells, or other ways. Then they roll an appropriate check. Here are some examples:\n\n• Praying: Religion check.\n• Performing a song or a poem: Performance check\n• Casting a spell, such as protection from evil and good or bless: Spellcasting ability check.\n• Offering a sacrifice: Persuasion check.\n\nThe GM must set a different difficulty for the ritual and these acts. The ritual's end difficulty is determined by the power of the djinn. Stronger djinns mean harder to exorcize.\n\nAfter every successful check the end difficulty for the exorcism is lowered by 1, and by every failed check it is increased by 1. At the end of the ritual, the leader must roll a spellcasting ability check. If the person is not a spellcaster, they can use Wisdom.\n\nFor example, there's a djinn with an exorcizing DC 12, and a bard character performs a song about the great Solomon; they must succeed on a DC 10 Charisma (Performance) check. By succeeding, they reduce the difficulty for the exorcism by 1 (in this example from 12 to 11). The paladin offers his own trinket from a saint and must succeed on a DC 10 Persuasion check. On a success, DC is lowered to 10. The leader of the ritual, a wizard character, rolls a spellcasting ability check against DC 10. On a success, the djinn is exorcized."
+    }
+}
+
+#tXECPozLKLTcWPf0cd0A0R9A ^"Djinnstruck" DEF {
+    EXTENDS ^"Djinn Rule"
+    PROPERTIES {
+        ^"Description" STRING "Whenever a humanoid gets in direct contact with a djinn they will be under the effects of Djinnstruck. With an Intelligence (Arcana) check (DC 15) a creature may reverse the effects of the Djinnstruck. Also Lay on Hands (10), Lesser Restoration or powerful spells like Remove Curse, Greater Restoration also ends the curse.\n\nDjinnstruck creatures will have:\n\n• Impartial speech or speaking in Djinnspeak (GM's choice).\n• Inability to control some of the basic muscle movements.\n• Inability to control what they are saying. When they try to speak they will inevitably name one of the Djinnlord's name within a sentence.\n\nNames of the Powerful Djinns\n\nShamhuresh\nNar-As Samum\nZaw'baw'ah\nAbu Said\nAbu Al Aswad\nAbu Mihriz\nAbu Al Harid"
+    }
+}
+
+#tW0NwzFNQEyN5czZddDf17H9 ^"Name of the Djinn" DEF {
+    EXTENDS ^"Djinn Rule"
+    PROPERTIES {
+        ^"Description" STRING "It is important to know a djinn's name, as they contain power. If you know a djinn's full and real name you may have some power on the djinn.\n\n• When you utter the real name and a command sentence with it, the djinn must make a Charisma saving throw against your spell save DC. If you don't have one, your Charisma modifier will be used to calculate one. On a failed save, the djinn will fulfill your command. On a matter of success (or after the compilation of your command) a djinn is immuned to this for the next 24 hours.\n• Without issuing a command you may try to communicate with a djinn. When you utter their name and say nothing afterwards, the djinns are compelled to listen. Depending on the kind, you may strike a deal with them.\n\nSome example djinn names (Name — Meaning):\n\n• Ahger — Fire\n• Maraz — Sickness, Trouble\n• Farazi — Imagined\n• Taran — Darkness\n• Azihe — Lie\n• Gufl — Unclear, uncertain\n• Anber-nisar — The one that smells good\n• Behajat — Beautiful\n• Belagi — The one talks sweet.\n• Asude — Silent"
+    }
+}
+
+}

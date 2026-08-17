@@ -1,0 +1,950 @@
+EXTENSION "HistoricaArcanum_CoC_Professions" EXTENDS "Dnd5_5e_Core_Base" {
+    NAME "Historica Arcanum: The City of Crescent - The Profession System"
+    VERSION "0.4"
+    SPEC_VERSION "0.4"
+    RELEASE_DATE "2026-07-21"
+
+#tXfbe7HiXLPYB0qugJDte2VP ^"The Bounty Hunter" DEF {
+    EXTENDS ^"Profession"
+    PROPERTIES {
+        ^"Description" STRING "A life of chase, of high octane fights, and the thrill of bringing back your prey alive or dead; getting paid handsomely, and doing this for a living–You are a bounty hunter. You stalk your prey, prepare the best trap for the occasion, and strike your mark, with blades, chains, and all that is in your arsenal."
+        ^"Overview" STRING "How to Play?\n\nAccept a bounty and you will be expected to turn in your target; either subdued somehow or as a corpse. A bounty hunt has four exciting steps: tracking, preparing, confronting, and bringing back the bounty. Each step is ladened with high danger, so make sure you are ready for this way of life!\n\nClimbing the Ranks\n\nFor each bounty you turn in, you gain PEX (Profession Experience), and when you gather enough PEX, you will advance in the ranks of the bounty hunters. When you reach Rank 2 as a bounty hunter, you will have to be specialized in one way of hunting."
+        ^"Aspiring Background" STRING "You decide to spend your life as a bounty hunter, and by taking this background, you can start this profession at level 1 with 0 PEX as an Apprentice Bounty Hunter."
+    }
+    PEX_TABLE {
+        #t5vy1yj8w0iDiSRuUnfRJApx ^"The Bounty Hunter — CR 1/8" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "1/8"
+            ^"PEX" INTEGER 1
+        }
+        #tbA5WZLwV4W6bpSm6tdyfFyU ^"The Bounty Hunter — CR 1/4" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "1/4"
+            ^"PEX" INTEGER 2
+        }
+        #tUabsiBOr4n2gdPdrKY3XZCz ^"The Bounty Hunter — CR 1/2" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "1/2"
+            ^"PEX" INTEGER 3
+        }
+        #ttNZeUAM6pagh6ivMNoNlt8u ^"The Bounty Hunter — CR 1" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "1"
+            ^"PEX" INTEGER 5
+        }
+        #teUmjQGTPMe9ZqllbpJeJf1d ^"The Bounty Hunter — CR 2" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "2"
+            ^"PEX" INTEGER 10
+        }
+        #tYkhF2zDPuNkxEGe8VeOSDZH ^"The Bounty Hunter — CR 3" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "3"
+            ^"PEX" INTEGER 15
+        }
+        #twhUoVotD1k3BzPoO61gZEyK ^"The Bounty Hunter — CR 4" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "4"
+            ^"PEX" INTEGER 20
+        }
+        #tdhV5PXS3E6yTObFSMpKAERW ^"The Bounty Hunter — CR 5" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "5"
+            ^"PEX" INTEGER 25
+        }
+        #tkqMkJYhlsDO9OrN27KdLnFJ ^"The Bounty Hunter — CR 6" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "6"
+            ^"PEX" INTEGER 30
+        }
+        #tgAn6kdoyCQLSvse4tQQiaHo ^"The Bounty Hunter — CR 7" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "7"
+            ^"PEX" INTEGER 35
+        }
+        #t1v67DPuvdhlY6ZT19NdZylC ^"The Bounty Hunter — CR 8" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "8"
+            ^"PEX" INTEGER 40
+        }
+        #t8tJZXPWdR7Q5VyHuM6TX2a2 ^"The Bounty Hunter — CR 9" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "9"
+            ^"PEX" INTEGER 45
+        }
+        #tfWj5UXtYhE3uZnvoscgKfi8 ^"The Bounty Hunter — CR 10" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "10"
+            ^"PEX" INTEGER 60
+        }
+        #tL8uMwh7p79ix39oMPqXfkOp ^"The Bounty Hunter — CR 11" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "11"
+            ^"PEX" INTEGER 70
+        }
+        #tFkSKxIJCe6rkulqufHxg99j ^"The Bounty Hunter — CR 12" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "12"
+            ^"PEX" INTEGER 80
+        }
+        #tazOvNvmNKMLCQnCVcSMTmnz ^"The Bounty Hunter — CR 13" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "13"
+            ^"PEX" INTEGER 100
+        }
+        #tJxM3EjGhhYm18ovoISge02W ^"The Bounty Hunter — CR 14" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "14"
+            ^"PEX" INTEGER 120
+        }
+        #twJR3LH7PxMk79ftUQkUXm8b ^"The Bounty Hunter — CR 15-16" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "15-16"
+            ^"PEX" INTEGER 250
+        }
+        #thfS3kbjmDrvJMxmur9Jz1Yh ^"The Bounty Hunter — CR 17+" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "17+"
+            ^"PEX" INTEGER 600
+        }
+    }
+    RANKS {
+        #ttgZ0EEEr00SFfz7uVBcvL4s ^"Apprentice Bounty Hunter" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 1
+            ^"Description" STRING "As an apprentice bounty hunter, you understand the basics of the hunt and can use simple but effective tactics; you choose one of the below:\n\nYou can advance into the Journeyman level after taking at least two apprentice-level tactics. Each tactic will cost you 50 PEX. You must have hunted at least one CR 5 bounty successfully in your career."
+            PERKS {
+            #t6ljNMMpzM6vtiWmWZ8Cbpve ^"Advanced Tracking" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "You have the skills of a tracker when you are after your prey. Choose one of the following: Nature, Perception, or Investigation. Gain proficiency in it while you are tracking a foe."
+            }
+            #tt4CyPnOaBBbx5F9WbCLbMox ^"Smell the Ambush" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "Your senses give you an edge when your prey decides to become your predator. In the first round of combat, if you are surprised, you gain +1 AC and Advantage on saving throws against the cre ture which surprised you."
+            }
+            #tRayF9OjgPU2gn6IPXd50PlE ^"Tools of the Trade - Restock" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "You can show your apprentice bounty hunter badge to get free equipment from any city or town which harbors a bounty hunter guild. If you need to restock your equipment, you can get one adventurer's pack, explorer's pack, or dungeoneer's pack; a quiver of bolts or arrows; a pair of light or finesse melee weapons; a bow or a crossbow; a single melee weapon; or a single suit of light armor. Abusing the use of this will get the bounty hunter banned for life from all the bounty hunter guilds."
+            }
+            #t9bvNB4hSWsrykLHTetIkYkK ^"Concoction - Long March" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "You gain the skills to prepare a special bounty hunter remedy that focuses the senses and delays tiredness. Long March will grant the bounty hunter or anyone who imbibes it +10 movement for 1 hour when out of combat. However, only a person with bounty hunter training will benefit fully from this concoction: anyone else imbibing it will have a Disadvantage on any skill checks for the duration of the effect. It takes two hours or one Long Rest to prepare one vial of Long March, and it costs 25 gold worth of herbs and spices."
+            }
+            }
+        }
+        #toSUIp9lSpw2FfdgU25TPlGe ^"Journeyman Bounty Hunter" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 2
+            ^"Description" STRING "(300PEX)\n\nYou are now a journeyman with some experience under your belt. You have worked rigorously and turned in bounty after bounty. Now you have a specialty: many encounters with monsters give you an edge against them.\n\nYou can advance to Expert level after taking at least two Journeyman level tactics. Each tactic will cost you 100 PEX. You must have hunted at least one CR 9 bounty successfully in your career."
+            PERKS {
+            #tRdGUyDUDAMJrlWwh4Og78Ia ^"Specialization Choice" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "Trapper: The trapper knows how to use traps more efficiently. Any trap set by the trapper will deal an extra 1 die of its original damage on its original damage type.\n\nStalker: The stalker can hunt any beast or humanoid creature with more ease. You will have Advantage on any Survival, Investigation, or Perception checks to track and find out information about their weaknesses and strengths."
+            }
+            #tYnL7L4eH9YMHDjkM17Ae0Mj ^"Know thy enemy" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "After countless encounters with many bounties, you start to gather common knowledge about them. Any Intelligence check you make to remember the vulnerabilities of a bounty will be made with Advantage."
+            }
+            #tLThhvQpctErxRrIqF4PTXUU ^"Tools of the Trade - Armament" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "You can show your journeyman bounty hunter badge and get more specialized equipment made for you at half the market price. Cold iron weapons against the fey or silvered weapons against lycanthropes are examples of this aspect."
+            }
+            #tjLyYVRBbozTNiyqqvSP16yJ ^"Accomplished Bloodhound" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "The bounty hunter starts to get the grasp of the land, moving with greater ease and agility. During a hunt, the bounty hunter will not be hindered by any difficult terrain."
+            }
+            #tRhGchDhF58GQgJu6KdKW84b ^"Concoction - Exploit Weakness" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "You gain skills to prepare a special bounty hunter remedy. Keen Eyesight will grant the bounty hunter and only the bounty hunter a d6 bonus on weapon attack damage for 1 minute. However, only a person with bounty hunter training will benefit fully from this concoction: anyone else imbibing it will have a Disadvantage on any skill checks for the duration of the effect. It takes two hours or one Long Rest to prepare one vial of Exploit Weakness Concoction, and it costs 25 gold worth of uncommon herbs and spices, found in stores that sell uncommon crafting materials."
+            }
+            }
+        }
+        #tumJPPjB8hdO2NyxNNtoMjTB ^"Expert Bounty Hunter" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 3
+            ^"Description" STRING "(1000 PEX) You are now an expert with many years of experience amassed after many hard-earned bounties.\n\nYou can advance to Master level after taking at least two Expert level tactics. Each tactic will cost you 200 PEX. You must have hunted at least one CR 13 bounty successfully in your career."
+            PERKS {
+            #t1BQXdc8rlm4OB1ZPLrihdFm ^"Resistance - Enchantment" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "After years of encounter after encounter, you start to get more durable against your quarry's magical powers. You gain Advantage on saving throws against any enthralling power performed by your mark. Any magic or spell-like ability to affect your mind is considered enthrallment."
+            }
+            #twi8wGtuV9UIhviirRWN9ZF9 ^"Resistance - Dread" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "After years of encounter after encounter, you start to get more durable against your quarry's magical powers. You gain Advantage on saving throws against any fear-related power performed against you by your mark."
+            }
+            #tOX608rkBjIrmLl97zGadvyW ^"Resistance - Affliction" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "After years of encounter after encounter, you start to get more durable against some of the afflictions your quarry might use against you. You gain Advantage on any saving throws against blinded, deafened, grappled, prone and restrained conditions if they are afflicted by your mark."
+            }
+            #tWnaQwxfPxG59vMvfdTIv9hH ^"Resistance - Damage" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "After years of encounter after encounter, you start to get more durable against your quarry's special damage. When you accept a mark, you choose a damage type that your mark can deal and gain resistance against that type of damage for the duration of the hunt. You may have more than one bounty but you will only have one resistance at one given time."
+            }
+            #tpxx1BUBb6jncLqAsJhcsv9U ^"Concoction - Night Sight" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "You gain skills to prepare a special bounty hunter remedy. Night sight will grant the bounty hunter the ability to see during the night and in dark spaces. The bounty hunter will gain 60 feet of darkvision. If the hunter already has darkvision, this amplifies the effect by 60 more feet. Only a person with bounty hunter training will benefit fully from this concoction: anyone else imbibing it will have a Disadvantage on any skill checks for the duration of the effect. It takes two hours or a Long Rest to prepare one vial of Night Sight, and it costs 50 gold worth of herbs and spices."
+            }
+            #tYsmTuylIuhNfCeNUW3il3Qk ^"Tools of the Trade - Ultimate" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "The bounty hunter guild allows you to purchase items from their specialist store. You gain the ability to purchase Antimagic Bolas, The Igniter Bomb, and the Bounty Hunter Armor. Each costs 1000 gold pieces.\n\nAntimagic Bolas Weapon proficiency: Bounty Hunter. Properties: Range, Special Description: These bolas can be used against a large or a smaller creature. The creature is Restrained until it is freed. It has no effect on formless creatures or creatures of huge or larger. A creature can use its action to make a DC 12 Strength (Athletics) check, freeing itself or another creature within its reach. Dealing 10 Slashing damage to the bolas (AC 14) also frees the creature without harming it. Special Properties: While under the effect of the bolas, the target cannot perform any kind of magic.\n\nThe Igniter Bomb: Weapon Proficiency: Bounty Hunter. Properties: Explosive, Special. Description: This is a timed explosive that can be set for up to 10 minutes. Each creature in a 30-foot radius sphere centered on the bomb must make a dexterity saving throw (DC 14) A target takes 8d6 Force damage on a failed save, or have as much damage on a successful one. Special Properties: This special weapon will also damage structures made of stone, wood and metal.\n\nBounty Hunter Armor: Armor Proficiency: Bounty Hunter. Armor Class: 18+ Dex (Max 1) Type: Heavy Armor Stealth: Disadvantage. Shield: Installed shield on one arm, both handsfree. With Shield AC is set to 20 (+1 Dex if applicable) Description: A very heavy armor, used very rarely because not many of these suits are left. Special Properties: While wearing this armor, the bludgeoning, slashing, and Piercing damage from nonmagical weapons is reduced by 3."
+            }
+            }
+        }
+        #tciaJn3sTtjTjMqPGCoWa36u ^"Master Bounty Hunter" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 4
+            ^"Description" STRING "(5000 PEX) You are at the pinnacle of your profession. There is nothing much you can learn about the trade but you have much to share with your students."
+            PERKS {
+            #tKWn688ETFjJ2tgMSsYalLBP ^"Stories of the Past" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "You have a lot of experiences, stories and have probably taken part in many of the legends and myths. You have the ability to inspire greatness in others. For a number of times daily equal to your proficiency bonus, you can grant inspiration to anyone who listens to your stories. This inspiration point must be used in 1 hour or it will be lost. Anyone who already has an inspiration point won't be affected by this."
+            }
+            #tRVdlRnZZeIljJqGSBzPUN0b ^"Leader of the Pack" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "In any bounty hunt you join, all the other characters will have the following benefits:\n\n• Difficult terrain won't hinder them.\n\n• The group won't be lost unless by magical means.\n\n• The group will be alerted to danger, meaning they won't be subject to the surprised condition.\n\n• When tracking your mark, you will gain information on the exact number of creatures around them."
+            }
+            }
+        }
+    }
+}
+
+#t9vQXIdzWSTo7vX5F1RTxGyL ^"The Burglar" DEF {
+    EXTENDS ^"Profession"
+    PROPERTIES {
+        ^"Description" STRING "A life of crime under the cover of darkness, and honing your skills in the art of thievery, extortion, breaking & entering, and swindling–Thieves, bandits, swindlers, prowlers, and robbers of all kinds fall under this profession. You are a burglar and earning your pay from the works of others is a day-to-day act for you."
+        ^"Overview" STRING "How to Play? Decide on a mark, study how the mark acts during your free time. Find a weak or a sore spot and exploit it. Turn in the loot at a fence. Yet there will always be the forces of law trying to prevent you from getting your hard-earned gold. Be ready, be vigilant: it is not an easy life! Climbing the Ranks: For each act of thievery you perform, you gain PEX (Profession Experience) and when you gather enough PEX, you will advance in the ranks of the burglars. When you reach Rank 2 as a burglar you will have to be specialized in one way of theft. You earn PEX according to the gold pieces you earn from any type of heist. Each 10 gold pieces worth of stolen and fenced items will earn you 1 PEX."
+        ^"Aspiring Background" STRING "You decide to spend your life as a burglar, and by taking this background, you can start this profession at level 1 with 0 PEX as an Apprentice Burglar. Proficiencies + Equipment. Skill Proficiencies: Stealth, Sleight of Hand. Languages: Any one of your choice. Tool Proficiencies: Thieves Tools. Equipment: Thieves Tools, a dark cloak, a crowbar and a pouch with 10 gp."
+    }
+    RANKS {
+        #t0e9eLu90R7hJoee9WXqlimd ^"Apprentice Burglar" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 1
+            ^"Description" STRING "As an apprentice burglar, you are versed with the basics of the “trade” and you know the simplest of the techniques; you will have to choose one from the below: You can advance into the Journeyman level after taking at least two Apprentice level techniques. Each technique will cost you 50 PEX."
+            PERKS {
+            #tATHMerAH6ISbSARtV351iNy ^"Armament Coating" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "You learn how to produce a black gooey substance to coat your weapons, armor, and other metal equipment with. It takes 10 minutes to apply it to all of your equipment. You will gain Stealth proficiency as long as your equipment is coated with this substance. The effect lasts two hours; after that, the goo will dry up and wither away. The goo is water-resistant. It takes 50 gp worth of herbs and materials to produce this dark goo."
+            }
+            #tBQW0VBPfpDIyS5xXiO2f9QS ^"Patient Stalking" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "You carefully watch your heist target for 24 hours and gain exact information about their guard schedules, when they exchange guards, which guards are corrupt or loyal, which guards sleep on their duty, and which guards will accept bribes."
+            }
+            #tfglXOQredi8H6XatmrxGQZz ^"Hasty Exit" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "Sometimes things don't go as planned and you will have to get ready to run for dear life. You have what it takes to jump off the second story of a building, pick yourself up and keep running if the job goes sour. If you are being chased during or after a heist, you will be able to flee with +5 to your movement. In addition, when you jump off a high location, the falling distance is calculated -10 feet for damage purposes."
+            }
+            #tVfj56nIgyokJAyvDfyvd0Zr ^"Safecracker’s Dream" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "You become extremely proficient with cracking safes and opening locks. The difficulty of a lock you are fiddling with drops by one magnitude, essentially meaning that the DC is lowered by 5 (or based on GM discretion)."
+            }
+            #tF0Fh7Sskw4szUWlRYjbp3mH ^"Tools of the Trade - Restock" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "You can get swindled stuff from the fences you know all around the city or a town that harbors a thieves’ guild. You pay half the price for these used, but still functional, items. If you need to restock your equipment, you can get one adventurer's pack, explorer's pack, or dungeoneer's pack; a quiver of bolts or arrows; a pair of light or finesse melee weapons; a bow or a crossbow; single melee weapon; oe a single suit of light armor. Abusing the use of this will mean that you will no longer be welcome in the black market as a burglar."
+            }
+            }
+        }
+        #tuw5qgZPf42jHTI34FYNA6mJ ^"Journeyman Burglar" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 2
+            ^"Description" STRING "You are now a journeyman burglar and have some experience after making marks and stealing a small dragons’ hoard-worth of money. Now you have a specialty and in that specialty, you will have an edge. You can advance into the Expert level after taking at least two Journeyman level techniques. Each technique will cost you 100 PEX."
+            PERKS {
+            #ttIYSl9eevU9kApplIk9ca65 ^"Specialization Choice" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "You have to choose one of the three: A Duskshadow who uses darkness as an ally, a Darkblade who knows that the dead can’t resist theft, and a Venomtongue who runs a more profitable criminal enterprise."
+            }
+            #txSsxckAWxMKcKRpoBkLDFqW ^"Ingenious Technique" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "Each specialty gets different use of this method: Duskshadow: When using the Stealth skill, a Duskshadow will use half the movement speed (as is usually the case with stealth) and will gain +5 feet on top of that. Darkblade: A Shadowblade will gain the ability to use sneak attacks, regardless of class, for d6 extra damage. If the character already has the skills to sneak attack, this d6 is added on top of the damage. Venomtongue: A Venomtongue is a master con man who is great at selling stolen and second-hand items. Usually, 1/2 of the market price is used for used items for stolen and used items, but for the Venomtongue 3/4 is used."
+            }
+            #tnGQbRllTV4LFFRrzhRE9T0w ^"Tools of the Trade - Bags" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "All burglars can get this method and learn to use the Specialized Bags. The burglars need to be prepared to carry more stuff when they get into a heist. A character can carry an amount of weight equal to their Strength multiplied by 15 pounds at maximum, but in this special case, because of the specialized bags, this calculation is done as Strength multiplied by 20."
+            }
+            #thKAnIlT5uH2f21nbUFPIpbl ^"Efficient Bribing" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "All burglars can get this method. The burglar knows how to deal with the guards and other people who protect the heist. When you try to coerce anyone during a heist into doing what you want by paying a bribe, you will have Advantage on your Perception checks. The burglar needs to offer a bribe acceptable by the GM to the person in question."
+            }
+            #tLpCP7XWECHOtNhrwPSjR09W ^"Eye of the Appraiser" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "The burglar needs to have a trained eye to see what is expensive and what is not. The burglar will get Advantage on any roll to determine the cost of a mundane (nonmagical) item of value."
+            }
+            }
+        }
+        #t5oFeifLSTQOwHo6JVCY1GSA ^"Expert Burglar" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 3
+            ^"Description" STRING "After many bountiful heists, you gain enough reputation to be known as an expert burglar. You can advance into the Master level after taking at least two Expert level techniques. Each technique will cost you 200 PEX."
+            PERKS {
+            #tMJIqdenQHW4pZhKSmoMlK87 ^"Eloquent Speech" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "Each specialty gets a different use of this method: Duskshadow (200 PEX): The duskshadow will have Advantage on Intimidation checks while on a heist. Darkblade (200 PEX): The darkblade will have Advantage on Persuasion checks while on a heist. Venomtongue (200 PEX): The venomtongue will have Advantage on Deception checks while on a heist."
+            }
+            #tgXsXxBT33BiZtFrOA2f0hzy ^"Resistance - Arrest" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "All burglars can get this method. The burglar has connections everywhere: the guards, the court, the jail… Everywhere. The burglar can offer bribes according to the table: Law Enforcers 50 gp; Tradespeople 100 gp; City Officials 250 gp; Arcane Personage 500 gp; Divine Personage 500 gp; High Officials 1000 gp. This ability can be used only once per heist."
+            }
+            #tfcwRH5QWWlASOTTlQ033OkG ^"Resistance - Interrogation" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "All burglars can get this method. An expert burglar knows how to resist interrogation. When resisting any kind of torture and interrogation, the burglar gets an Advantage on its Constitution and Wisdom saving throws."
+            }
+            #t3FpEp73AErwzOpKh9u0J0Ub ^"Resistance - Protection" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "All burglars can get this method. An expert burglar knows how to evade protection spells. When against such magical protection, the burglar's saves will have proficiency in them."
+            }
+            #trkKit01vQCEtxOTrwv7MM1h ^"Tools of the Trade - Magical" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "Each specialty gets different use of this method: Duskshadow (200 PEX): The Duskshadow gains a chance to purchase a special talisman for 100 gp and only the attuned Duskshadow can use it. This talisman is called The Dark Badge and can be used to reroll any Stealth roll which is not a natural 1. The user has to accept the new roll. Darkblade (200 PEX): The Darkblade gains a chance to purchase a special talisman for 100 gp and only the attuned Darkblade can use it. This talisman is called Serrated Blade. It is a short sword that you break after using it. The target needs to make a Constitution saving throw (DC 12) at the start of its round or lose 1 Hp each round after the initial damage for 1 minute and the target's movement drops to half. Venomtongue (200 PEX): The Venomtongue gains a chance to purchase a special talisman for 100 gp and only the attuned Venomtongue can use it. This talisman is called Dark Poison. It is a poison that for all intents and purposes shows the Venomtongue as if he or she is dead. After 12 hours, or the Venomtongue takes 1 damage of any kind, the Venomtongue awakens."
+            }
+            #tLaS8i9NIrlKxiDFKg1caqZ3 ^"Mock Profession" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "All burglars can get this method. The burglar gains a mock profession to shield its illicit activities. You gain proficiency in a tool."
+            }
+            }
+        }
+        #tNAdAGfkaCVvCrbnff8oncMw ^"Master Burglar" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 4
+            PERKS {
+            #tTPqJOuOLbU8kH61FDzhVT9V ^"Stories of the Past" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "You have a lot of experiences, stories, and probably have been a part of legends and myths. You have the ability to inspire greatness in others. You can grant inspiration to anyone who listens to your stories a number of times equal to your proficiency bonus daily. This inspiration point must be used in 1 hour or lost. Anyone who already has an inspiration point won't be affected by this."
+            }
+            #tHPScT3ZSTIEKhi8YHIxNZDV ^"Leader of the Guild" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "As an established, respected member and leader of your guild, you can rely on certain benefits that your membership provides: • Your guild standing will provide you with lavish lodging and food. • The guild will pay for your resurrection if you need such a service. (You will owe a debt to the guild) • You will always have a guildhall provided to you in every city or town which has a thieves’ guild. • The Guild offers tremendous political power. If you are accused of a crime, your guild will support you no matter what. • You can get access to powerful political figures through your guild. Such connections may require donations."
+            }
+            }
+        }
+    }
+}
+
+#txtGxz4YpZ10f5whfkcYLWwp ^"The Alchemist" DEF {
+    EXTENDS ^"Profession"
+    PROPERTIES {
+        ^"Description" STRING "Being an Alchemist A calm and stoic life with a chance to improve yourself on a daily basis, honing your skills of making potions, elixirs, and concoctions–The hard work of an alchemist never ends."
+        ^"Overview" STRING "How to Play? As an alchemist, you will need to gather ingredients for your potions; then you will need to mix them in particular ways. The goal is to sell them to your buyers, earn some money and start it from the top.\n\nClimbing the Ranks: For each potion you create, you gain PEX (Profession Experience) and when you gather enough PEX you will advance in the ranks of alchemists. When you reach Rank 2 as an alchemist, you will have to be specialized in the way of alchemy. You earn PEX according to the potions you create. Each potion will give you different amounts of PEX according to rarities.\n\nCooking Potions, A General Rule Anything an alchemist creates is considered a consumable. For every day of downtime you spend crafting, you can craft one or more items with a total market value not exceeding 25 gp, and you must expend raw materials worth half the total market value. If something you want to craft has a market value greater than 25 gp, you make progress every day in 25-gp increments until you reach the market value of the item. For example, a dose of poison of adder’s bite (market value 400 gp) takes 16 days to craft by yourself.\n\nMultiple characters can combine their efforts toward the crafting of a single item, provided that the characters all have proficiency with the requisite tools and are working together in the same place. Each character contributes 25 gp worth of effort for every day spent helping to craft the item.\n\nWhile crafting, you can maintain a modest lifestyle without having to pay 1 gp per day, or a comfortable lifestyle at half the normal cost."
+        ^"Aspiring Background" STRING "You decide to spend your life as an alchemist, and by taking this background, you can start this profession at level 1 with 0 PEX as an Apprentice Alchemist. Proficiencies + Equipment\n\nSkill Proficiencies: Arcana, Nature\n\nLanguages: Any one of your choice.\n\nTool Proficiencies: Alchemist’s Supplies.\n\nEquipment: Alchemist’s Supplies, a set of quality clothes, a carving knife, a scroll case full of parchment, a vial of ink, 10 gp."
+    }
+    PEX_TABLE {
+        #t4DQSPlHgnDwKep1YfA5cM6V ^"The Alchemist — CR Common" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Common"
+            ^"PEX" INTEGER 2
+        }
+        #t254oYaPAlv8Q9XMWWnNeKnR ^"The Alchemist — CR Uncommon" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Uncommon"
+            ^"PEX" INTEGER 10
+        }
+        #t8N9eBO6j8UF84DkdPbV1NgW ^"The Alchemist — CR Rare" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Rare"
+            ^"PEX" INTEGER 150
+        }
+        #tEsDGKm55Kw9IlCtztKb73UW ^"The Alchemist — CR Very Rare" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Very Rare"
+            ^"PEX" INTEGER 500
+        }
+    }
+    RANKS {
+        #t0Vzfs6MSm6B0yXDCiWfGseT ^"Apprentice Alchemist" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 1
+            ^"Description" STRING "As an apprentice alchemist, you understand the most basic formulas and the simplest creations. In addition to picking up Tools of the Trade - Basic, you will have to choose one from the methods below:"
+            PERKS {
+            #tyvUn1ulvhm4YKtQQZvuqeCj ^"Accomplished Chemist - Basic" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "The alchemist gains proficiency in Alchemist's Supplies. The alchemist gains the ability to produce a basic potion of healing, vial of acid, antitoxin, lightrod, smokedust, entangling bag, and firestone.\n\nBasic Potion of Healing: You regain Hit Points when you drink this potion. 2d4+2. (Price 25 gp) Potion of Climbing: When you drink this potion, you gain a climbing speed equal to your walking speed for 1 hour. During this time you have Advantage on athletics checks for climbing. (Price 25 gp)\n\nVial of Acid: As an action you can splash the contents of this vial onto a creature within 5 feet of you or throw the vial up to 20 feet, shattering it on impact. In either case, make a ranged attack against a creature or object, treating acid as an improvised weapon. On a hit, the target takes 2d6 Acid damage. (Price 25 gp)\n\nAntitoxin: A creature that drinks this vial of liquid gains Advantage on saving throws against poison for 1 hour. It confers no benefit to undead or constructs. (Price 25 gp)\n\nLightrod: A lightrod is an alchemically enchanted rod. As an action, you can use it to illuminate an area much like the light cantrip. (Price 5 gp)\n\nSmokedust: As an action, you can ignite this alchemically created dust (usually in a pouch) and throw it up to 30 feet. Thich smoke emerges from the pouch, producing an effect much like fog cloud spell. The area of effect for this is a 10-foot sphere, and the duration is five minutes. (Price 20 gp)\n\nEntangling Bag: This fragile cloth sack contains a goo that expands when it comes into contact with air. As an action you can throw the bag up to 30 feet, causing an effect much like the web spell (DC 12), but it only affects a 5-foot cube area, and the duration is 5 minutes. The entangling bag has no effect on creatures larger than Large size, incorporeal, and oozes. (Price 25 gp)\n\nFirestone: When this bright crystal strikes a hard surface, it blows up with a very loud bang that can be heard from a mile away, and both blinds and deafens nearby creatures. As an action, you can throw the stone at a hard surface within 30 feet. Any creature within 10 feet of that point is affected by a blindness/deafness spell (DC 12), causing blindness or deafness effect. (Price 25 gp)"
+            }
+            #tVY4QJBonbPkmld10fXUHjoT ^"Discern Ingredients" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "The alchemist always knows what ingredients to use for potions and has an eye open for such components during travel and encounters. The GM has to work with the alchemist to provide information on special ingredients. Each ingredient can be used once per potion, and it will decrease the cost by 10%."
+            }
+            #tlXeVSCSFEjZoSwt7gdtEWHc ^"Proper Mixing Technique" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "The alchemist knows how to mix the potions properly and how to benefit from certain special tricks by doing so. The preparation time of any potion the alchemist creates will decrease by 20%."
+            }
+            #tGxJo6InyyaH8p6fsAEvL50o ^"Professional Interest" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "The alchemist gains proficiency in Alchemist's Supplies. The alchemist gains the ability to produce a basic potion of healing, vial of acid, antitoxin, lightrod, smokedust, entangling bag, and firestone."
+            }
+            }
+        }
+        #texcTtsJrIS2ThpUQrMeKmUY ^"Journeyman Alchemist" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 2
+            ^"Description" STRING "(300 PEX) You are now a journeyman alchemist and have intensive knowledge about what you can create. Now you have a specialty, and in that specialty, you will have an edge.\n\nYou can advance into the Expert level after taking at least two Journeyman level methods. Each method will cost you 100 PEX."
+            PERKS {
+            #tbXj7eD0op0J8G703PhkW6Ji ^"Specialization Choice:" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "You have to choose one of the two specialization choices: Poison Master who specializes in creating poisons, or the Elixir Master who specializes in creating oils and potions."
+            }
+            #tJpvVbepg9y5hTznK4Dnvpm2 ^"Extensive Extract Knowledge I" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "Each specialty gets different use of this technique:\n\nPoison Master: The poison master will learn to produce the following:\n\nThe Bat: (Inhaled) A creature subjected to this poison must succeed on a Constitution saving throw (DC 13) or become Poisoned for 1 hour. The poisoned creature is also blinded. (Price 250 gp)\n\nSlumber: (Injury) A creature subjected to this poison must succeed on a Constitution saving throw (DC 12) or be poisoned for 1 hour. The poisoned creature is also knocked unconscious. The creature will wake up if damaged in any way or another creature can use an action to wake it up. (Price 250 gp)\n\nUnwaver: (Ingested) A creature subjected to this poison must succeed on a Constitution saving throw(DC 12) or become Poisoned for 1 hour. The poisoned creature can’t tell lies while under the effect of this poison. (Price 150 gp)\n\nElixir Master (100 PEX): Elixir Master will learn to produce the following:\n\nFauna Affection: When you drink this potion, you are under the effect of an animal friendship spell (DC 13) for 1 hour. (Price 150 gp)\n\nStrong Lungs: When you drink this potion, you can breathe underwater for 1 hour.\n\nThe Heart: The next time you see a creature within 10 minutes after drinking this elixir, you become Charmed by that creature for 1 hour. If the creature is of a species and gender you are normally attracted to, you regard it as your true love while you are Charmed."
+            }
+            #t8Y2sck8C8yFFSca7rEkZG6g ^"Extensive Extract Knowledge II" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "Extensive Liquid Knowledge I needs to be purchased before this. Each specialty gets a different use of this technique:\n\nPoison Master: The poison master will learn to produce the following:\n\nAdder Bite: (Injury) A creature subjected to this poison must succeed on a Constitution saving throw (DC 11) or take 10 (3d6) Poison damage on a failed save, or half as much damage on a successful one. (Price 200 gp)\n\nGhoul’s Touch: (Contact) A creature subjected to this poison must succeed on a Constitution saving throw (DC 13) or become Poisoned for 3d6 hours. The poisoned creature is Paralyzed. (Price 400 gp)\n\nBurned Gangar Root: (Inhaled) A creature subjected to this poison must succeed on a Constitution saving throw (DC 12) or take 10 (3d6) Poison damage and must repeat the saving throw at the start of each of its turns. On each successive failed saves, the creature takes 3 (1d6) more Poison damage. After three successful saves, the effect of the poison ends. (Price 450 gp)\n\nVile Curse: A creature subjected to this poison must succeed on a Constitution saving throw (DC 15) or take 3 (1d6) Poison damage and become Poisoned. The poisoned creature must repeat the saving throw every day, taking 3 (1d6) Poison damage on a failed save. Until the effects of this poison end, the damage the poison inflicts can’t be healed by any means. After seven successful saving throws, the effect ends, and the creature can heal normally. (Price 200 gp)\n\nElixir Master (100 PEX): Elixir Master will learn to produce the following:\n\nSlick Slack: The oil can cover a medium or smaller creature, along with any equipment worn or carried. Applying the oil takes 10 minutes. The affected creature gains the effect of freedom of movement spell for 8 hours. (Price 250 gp)\n\nEmbiggen: When you drink this potion, you gain the “enlarge” effect of the enlarge/reduce spell for 1d6 hours. (Price 150 gp)\n\nBasic Behemoth's Edge: When you drink this potion, your Strength score changes to 21 for 1 hour. This potion has no effect if your strength is already 21 or higher. (Price 450 gp)\n\nPotion of Greater Healing: You regain Hit Points when you drink this potion. 4d4+4. (Price 250 gp)"
+            }
+            #tns5BD6yrvx5FH7wgRd2B9X9 ^"Extensive Extract Knowledge III" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "Extensive Liquid Knowledge I and II need to be purchased before this. Each specialty gets a different use of this technique:\n\nPoison Master: The poison master will learn to produce the following:\n\nVile Bile: (Contact) A creature subjected to this poison must succeed on a Constitution saving throw (DC 12) or be poisoned for 1 minute. The poisoned creature is also paralyzed. (Price 150 gp)\n\nCorrosive Vitae: (Ingested) A creature subjected to this poison must make a Constitution saving throw (DC 11). The creature takes 6 (1d12) Poison damage and is Poisoned for 24 hours. On a successful save, the creature takes half the damage and isn’t poisoned. (150 gp)\n\nAnesthetic Essence: (Inhaled) A creature subjected to this poison must succeed on a Constitution saving throw (DC 14) or become Poisoned for 8 hours. The poisoned creature is also unconscious. The creature will wake up if damaged in any way or another creature can use an action to wake it up. (250 gp)\n\nKomodo Bite: (Injury) A creature subjected to this poison must make a Constitution saving throw (DC 14) or take 18 (6d6) Poison damage on a failed save or half as much damage on a successful save. (1000 gp)\n\nElixir Master (100 PEX): Elixir Master will learn to produce the following:\n\nSight Beyond Sight: When you drink this potion, you gain the effect of the clairvoyance spell. (300 gp)\n\nShrinking: When you drink this potion, you gain the “reduce” effect of the enlarge/reduce spell for 1d4 hours. (150 gp)\n\nPotion of Superior Healing: You regain Hit Points when you drink this potion. 8d4+8. (Price 1250 gp)\n\nAdvanced Behemoth's Edge: When you drink this potion, your Strength score changes to 23 for 1 hour. This potion has no effect if your strength is already 23 or higher. (Price 2500 gp)"
+            }
+            }
+        }
+        #tOMnQdaAR9CrcH1rU0dzTTTU ^"Expert Alchemist" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 3
+            ^"Description" STRING "(1000 PEX) After years of training and producing potion after potion, you came to be known as an expert alchemist.\n\nYou can advance into the Master level after taking at least two Expert level methods. Each method will cost you 200 PEX."
+            PERKS {
+            #tyPXI1zrzcdgz3UrtrDqjike ^"Extensive Extract Knowledge IV" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "Extensive Liquid Knowledge I, II, and III needs to be purchased before this. Each specialty gets different use of this technique:\n\nPoison Master (200 PEX): The poison master will learn to produce the following:\n\nThe Day’s End: (Ingested) A creature that ingests this poison suffers no effect until the day ends. If the poison has not been neutralized before then, the creature must succeed on a Constitution saving throw (DC 16), taking 27 (9d6) Poison damage on a failed save, or half as much damage on a successful save. (1250 gp)\n\nBlack Grease: (Contact) A creature subjected to this poison must succeed on a Constitution saving throw (DC 18) or become Poisoned for 24 hours. The poisoned creature is Unconscious. The creature wakes up if it is damaged in some way. (Price 350 gp)\n\nDemonic Corroder: (Injury) A creature subjected to this poison must succeed on a Constitution saving throw (DC 19) taking 42 (14d6) Poison damage on a failed save, or half as much damage on a successful save. (Price 2500 gp)\n\nElixir Master (200 PEX): Elixir Master will learn to produce the following:\n\nExpert Behemoth's Edge: When you drink this potion, your Strength score changes to 25 for 1 hour. This potion has no effect if your strength is already 25 or higher. (Price 3500 gp)\n\nGhostly Pallor: The oil can cover a Medium or smaller creature, along with any equipment worn or carried. Applying the oil takes 10 minutes. The affected creature gains the effect of the etherealness spell for 1 hour. (Price 1250 gp)\n\nPuff of Smoke: When you drink this potion, you will gain the benefit of a gaseous form spell for 1 hour. (Price 550 gp)"
+            }
+            #tQjbkW4oBxilx63pepk2rpg4 ^"Garish Resistance Potions" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "Both specialization choices can take this. After years of practice and study, you start to produce potions of Psychic, Thunder, and Lightning Resistance. (Price 350 each)"
+            }
+            #tad3FYbHxD8wg259EwOvaysw ^"Horrid Resistance Potions" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "Both specialization choices can take this. After years of practice and study, you start to produce potions of Acid, Poison, and Necrotic Resistance. (Price 350 each)"
+            }
+            #t03dwJOCI4KiU3pQflSfXFVm ^"Environmental Resistance Potions" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "Both specialization choices can take this. Resistance II needs to be purchased before taking this, however. After years of practice and study, you start to produce potions of Cold, Fire, Force, and Radiant Resistance. (Price 350 each)"
+            }
+            #tr8Ol8jZfpB9h5kU9U3WkgAh ^"Tools of the Trade - Advanced" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "The alchemist, after years of trial and error, gains the best equipment there is on the market for producing alchemical concoctions. The alchemist gains expertise in the use of alchemist’s supplies."
+            }
+            }
+        }
+        #tPhDNVkIyjvyoNGFqhU5BEK4 ^"Master Alchemist" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 4
+            ^"Description" STRING "(5000 PEX)\n\nAlchemist Downtime Activities\n\nInsignificant Experimentation: You either go on sabbatical or go awol to work on your ingredients and potions. Choose one: Earn 10 gold, or spend 20 gold and earn 20 PEX.\n\nDecent Experimentation: You decide to work on bigger, more complex projects, choose one: Earn 15 gold, or spend 30 gold and earn 35 PEX.\n\nConsiderable Experimentation: You work on a more serious, more complex project and work on it for three weeks, most probably working together with a few of your colleagues. Choose one: Earn 25 gold, or spend 50 gold and earn 50 PEX.\n\nGlorious Experimentation: You work among the best alchemists in the realms, spending a month of time and benefit from their experiences. Choose one: Earn 50 gold, or spend 100 gold and earn 120 PEX.\n\nALCHEMIST MAGNUM OPUS QUEST\n\nThe Magnum Opus Quest should be accessible only to the most accomplished and capable of the alchemists. While preparing a Magnum Opus Quest for the alchemist, the GM needs to prepare this quest according to the motivations of the alchemist. The alchemist needs to have a proper purpose for embarking on this quest. Personal Reason (Roll d8): 1 Old Age–old age is a great motivation for a person to prolong life; 2 For the sake of a cherished persona; 3 To prove that they are worthy of a cause; 4 To weed out among the ranks of an organization; 5 To gain fame, fortune, and glory; 6 For the sake of academic research and advancement; 7 For the sake of uncovering the secrets of the universe and sharing them; 8 For the sake of earning more wisdom, knowledge, or power.\n\nThere are four steps to prepare the Magnum Opus Quest for an alchemist character:\n\nStep One, Acquire the Recipe: The recipe is the most important part of a legendary potion, so we have to decide how the alchemist character achieves this recipe. Event (Roll d6): 1 The recipe was lost in the ancient textbooks, divided into different owners; 2 The recipe is among the hoard of a powerful entity or a creature; 3 The recipe is hidden by the alchemists of the old in an intricate puzzle; 4 The recipe never worked correctly in the past, but it is common knowledge; 5 Some powerful authority figure owns the recipe; 6 The recipe is a gift or blessing from a deity. Acquiring the recipe should be a fun adventure as collecting the necessary ingredients to prepare the potion.\n\nStep Two, Acquiring the Ingredients: Every recipe has many ingredients, these three tables will give some ideas to the Dungeon Master to decide on how to determine random ingredients for the potion. Common Ingredient (Roll d20): 1 Mandrake Root; 2 Mammoth Tusk; 3 Moth Dust; 4 Griffon Tailfeather; 5 Newt Eye; 6 Ostrich Eggshell; 7 Watermelon Seeds; 8 Cat’s Tail; 9 Silver Dust; 10 Mistletoe Seeds; 11 Charcoal Dust; 12 Sesame Seed Oil; 13 Ant Venom; 14 Royal Jelly; 15 Giant Lizard Scales; 16 Pure Water; 17 Blessed Salt; 18 Sweet Bergamot; 19 Grave Dust; 20 Levander Oil. Uncommon Ingredient (Roll d20): 1 Elven Tears; 2 Pure Lead; 3 Grounded Undead Bones; 4 Giant Ant Antenna; 5 Kobold Milk; 6 Nightshade; 7 Goblin Ear; 8 Lightning Struck Tree Bark; 9 Giant Scorpion Stinger; 10 Red Amanita Mushroom; 11 Monitor Lizard Scales; 12 Pure Alcohol; 13 Blessed Water; 14 Giant Butterfly Dust; 15 Giant Toad Venom; 16 Troll Eyes; 17 Blood Lichen; 18 Morning Dew; 19 Wolfsbane; 20 Premium Dwarven Ale. Rare Ingredient (Roll d20): 1 Basilisk Eye; 2 Ghost Ectoplasm; 3 Grounded Devil Bone; 4 Cyclops Eye; 5 Chimera Dragon Scale; 6 Elemental Core (d4 1 Earth 2 Fire 3 Water 4 Air); 7 Celestial Feather; 8 Hell Hound Saliva; 9 Golem’s Essence (d4 1 Clay 2 Flesh, 3 Stone 4 Iron); 10 Medusa Hair Snake; 11 Werebeast’s Fur (d10 1-2 Rat, 3-4 Boar 5-6 Bear 7-8 Wold 9-10 Tiger); 12 Purpleworm Blood; 13 Dryad’s Tears; 14 Mephit Essence (d4 1 Dust 2 Ice 3 Magma 4 Steam); 15 Aboleth Skin; 16 Giant’s Beard (d6 1 Hill 2 Frost 3 Stone 4 Fire 5 Cloud 6 Storm); 17 Satyr’s Horns; 18 Ettin Tusks (d6 1-2 Left Head 3-4 Right Head 5-6 All); 19 Manticore Tail Spike; 20 Al Ghaib Essence from a captured Djinn. Very Rare Ingredient (Roll d20): 1 Skin from a Doppelganger, Flayed while Alive; 2 Cauldron from a Coven of Hags, Forcefully Taken; 3 Wrappings from a Mummy Lord, Forcefully Taken; 4 Essence of a Deity, Forcefully Taken; 5 Poison from a Guardian Naga, Willingly Given; 6 Blood of a Fallen Angel, Forcefully Taken; 7 Heartblood of a True Dragon, Willingly Given; 8 Wingfeather from a Pegasus, Willingly Given; 9 Fur from a Rakshasa, Skinned while Alive; 10 Tongue from a Hydra, Cut while Alive; 11 Talon from a Roc, Forcefully Taken; 12 Hair from a Sphinx, Willingly Given; 13 Tentacle from a Kraken, Forcefully Taken; 14 Tail from a Succubus/Incubus, Cut while Alive (d4 1-2 Succubus 3-4 Incubus); 15 Ink from a Kraken, Forcefully Taken; 16 Tail Scale from a Dragon Turtle, Swiped while Asleep; 17 Horn of the Unicorn, Forcefully Taken; 18 Bloof of an Elder Vampire, Forcefully Taken; 19 Stingervenom from a Pseudodragon, Willingly Given; 20 Essence of a Will-O’-Wisp, Forcefully Taken. The GM can roll any number of times from any number of tables according to the recipe.\n\nStep Three, Cooking the Potion: The alchemist knows the recipe, the ingredients are ready–now it is time to prepare the potion. The alchemist needs to use a specific tool to mix and transmogrify the potion, use a specific mixing method to prepare it, and specialized tools to preserve it. Roll d6 & d6 & d6 — Mixing Tool / Mixing Method / Preservation Method and Tool: 1 Golden Ladle / Boiling / Special Alloy Cauldron; 2 Crystal Spoon / Distilling / Specialized Alchemy Set; 3 Lead Bar / Freezing / Arcane Laboratory; 4 Steel Fork / Deaeration / Pressurized Chambers; 5 Cured Bark / Infusion / Environmental Infusion; 6 Charcoal Stick / Blessing / Another Plane of Existence. This process should take weeks and maybe months, and each day the alchemist must invest at least 8 hours into preparing this potion.\n\nStep Four, Battling the Side Effects: The potion is ready, but it will be hard for the alchemist to resist the side effects and battle against them. Roll d6 — Save / Side Effect: 1 Strength / Alchemist is Petrified into stone for 24 hours; 2 Dexterity / Alchemist’s speed is reduced to half; 3 Constitution / Alchemist’s eyes become sensitive to sunlight; 4 Intelligence / Alchemist becomes narcoleptic; 5 Wisdom / Alchemist loses the ability to lie and deceive; 6 Charisma / Alchemist’s tongue becomes numb, losing the ability to speak. The GM can use any of the effects above for any amount of time. The saving throws should be rolled daily, and the duration of each effect shouldn’t be less than a week.\n\nLastly, The Reward: After this exhausting process, the alchemist should have a fitting reward. We would like to give one special ability as a reward, but the GM can give any other reward other than this.\n\nEverliving: The alchemist stops aging. The alchemist gains immunity to any ability and age-draining effect from any source. Also, the alchemist gains poison and acid resistance."
+            PERKS {
+            #tDiMBG1DgCuUMGQJeZ5wQyk1 ^"Stories of the Past:" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "You have a lot of experiences, stories, and have probably taken part in some of the legends and myths. You have the ability to inspire greatness in others. You can grant inspiration to anyone who listens to your stories a number of times equal to your proficiency bonus daily. This inspiration point must be used in 1 hour or it will be lost. Anyone who already has an inspiration point won't be affected by this."
+            }
+            #tTJI7KuIKIZj2spk8UyeokYs ^"Alchemist Extraordinaire:" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "With the use of proper techniques and an expert understanding, the alchemist prepares better potions now. The alchemist gains the ability to prepare very rare potions but finding proper recipes for them will be another adventure."
+            }
+            }
+        }
+    }
+}
+
+#tIOMDJpM9xXLjKSEmGVGG8uo ^"The Antiquarian" DEF {
+    EXTENDS ^"Profession"
+    PROPERTIES {
+        ^"Description" STRING "Being an Antiquarian The life of a scientist who is versed in folklore and legends is never easy. Being a historian, a collector and an arcane researcher is both fulfilling and fruitful. The joy of providing prosperity with actual information about the properties of magic, wonders of enchanted items, and the vast world of magical research is, in itself, a very fulfilling job."
+        ^"Overview" STRING "How to Play? Find a dungeon, gather magical objects and non-magical historical objects, and present them to your colleagues in the academy or the occult circles. Write papers, books, and articles about ancient cultures, foreign languages, wonders of magic, and items of power.\n\nClimbing the Ranks For each magical item you discover from old ruins, dungeons, or lost cities, you will gain PEX (Profession Experience) and when you gather enough PEX, you will advance in the ranks of the antiquarians. When you reach Rank 2 as an antiquarian you will have to be specialized in one way of an antiquarian."
+        ^"Aspiring Background" STRING "You decide to spend your life as an antiquarian and by taking this background you can start this profession at level 1 with 0 PEX as an Apprentice Antiquarian. Proficiencies + Equipment\n\nSkill Proficiencies: Arcana, History\n\nLanguages: Any two of your choice.\n\nTool Proficiencies: None.\n\nEquipment: A book scribbled with notes, a bottle of ink, an ink pen, traveler's clothes, a pouch containing 10 gp."
+    }
+    PEX_TABLE {
+        #tKCkokbESHNS1DmvIFCyfudc ^"The Antiquarian — CR Common" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Common"
+            ^"PEX" INTEGER 5
+        }
+        #tYpRrZkqJe9oOwrJhm7c0FR3 ^"The Antiquarian — CR Uncommon" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Uncommon"
+            ^"PEX" INTEGER 25
+        }
+        #tM7CcIgNI2mlqDxdoWCBgrZw ^"The Antiquarian — CR Rare" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Rare"
+            ^"PEX" INTEGER 100
+        }
+        #tDKytTaeEjZGXrzntW94ORlk ^"The Antiquarian — CR Very Rare" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Very Rare"
+            ^"PEX" INTEGER 250
+        }
+        #tWoCLRgg0Z5c7QGTASgmLMc9 ^"The Antiquarian — CR Legendary" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Legendary"
+            ^"PEX" INTEGER 1000
+        }
+    }
+    RANKS {
+        #tA24WGcDqSQAVQWK8i9QpLyP ^"Apprentice Antiquarian" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 1
+            ^"Description" STRING "As an apprentice antiquarian, you have basic knowledge about the workings of enchanted items; you will have to choose one innovations from below:\n\nYou can advance into the Journeyman level after taking at least two Apprentice level innovations. Each innovation will cost you 50 PEX."
+            PERKS {
+            #t5IING7ZYMEf746V90pDMrbY ^"Unmask the Hidden" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "The antiquarian knows how to detect the enchanted auras of magical objects and how to identify their properties. The antiquarian gains the ability to use detect magic and identify spells only as rituals."
+            }
+            #tdSFNCNgxhmV0hatt6yeIG3D ^"Eye for Greatness" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "The antiquarian knows how to identify the value of art objects and historical objects even though they are not magical in nature. The antiquarian gains Advantage on Intelligence rolls made for appraisal. Also, the antiquarian receives 10% more gold while selling the items he acquired."
+            }
+            #tNGAdnzpIs4P2GVjhCfofrbp ^"Proficient Dungeoneer" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "The antiquarian should always have an eye for details when in ruins or dungeons. The antiquarian will have Advantage on any Investigation or Perception check made in such a place."
+            }
+            #t1RSbkQCLyEDmgzvthHfZEJB ^"Effortless Adaptation" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "The antiquarian is well versed in the workings of magical objects. Attunement is a lot easier for an antiquarian than other people. The antiquarian can attune to a magical object within the same Short Rest that the item has been identified."
+            }
+            }
+        }
+        #t3H7kh1zSxsKGRXsy5ijwtmf ^"Journeyman Antiquarian" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 2
+            ^"Description" STRING "You are now a journeyman antiquarian and uncovered plenty of artifacts with historical value, many items of magical power, and copious secrets of importance. Now you have a specialty and in that specialty, you will have an edge.\n\nYou can advance into the Expert level after taking at least two Journeyman level innovations. Each innovation will cost you 100 PEX."
+            PERKS {
+            #tmUEXTu7LUVUphUt0p4zgrvS ^"Specialization Choice:" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "You have to choose one of the two specialization choices: A Historian who specializes in discovering historical facts, and an Arcanist who specializes in discovering magical facts."
+            }
+            #tDGSrLVbGwnDpk9M3ORFwcHg ^"Accomplished Investigator" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "Each specialty gets different use of this innovation:\n\nHistorian: After spending 8 hours in some kind of research facility, such as a library, the Historian gains Advantage on any History check. If the Historian already has Advantage on Intelligence (History) checks, he gains expertise.\n\nArcanist: After spending 8 hours in some kind of an arcane research facility such as a magic institute, the Arcanist gains Advantage on any Intelligence (Arcana) check. If the Arcanist already has Advantage on Arcana checks, he gains expertise.\n\nAntiquarians gather in academies and guilds, when they are around each other they tend to speak about their experiences, their discoveries, and the knowledge they amassed in their travels. The antiquarian will have access to such places and will have a chance to do research and investigation."
+            }
+            #tZocaDzUT7t2I0LJTvZfPi8A ^"Proper Thaumaturgy" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "The antiquarian knows how to use consumable items such as scrolls better than everyone else. When you use such an item to cast a spell, you have a chance to keep the last charge of it from being expended. You will have to roll Arcana according to the following DCs: Common Scroll 15, Uncommon Scroll 20, Rare Scroll 25, Very Rare 30."
+            }
+            #tlhtfZJjo9rLQ6HrcCcEAn3R ^"Tools of the Trade - Advanced" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "The antiquarian gains more experience with the use of the tools of his art. The antiquarian chooses any one tool proficiency and gains proficiency in it. The antiquarian needs to only work for 125 days and pay 125 gp for this."
+            }
+            }
+        }
+        #tgS12As2zX34OtDbhd3g8bRk ^"Expert Antiquarian" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 3
+            ^"Description" STRING "(1000 PEX) You are now an expert antiquarian with many years of research, many papers published in many academies, and have amassed a great deal of historical or arcane knowledge.\n\nYou can advance into the Master level after taking at least two Expert level innovations. Each innovation will cost you 200 PEX."
+            PERKS {
+            #tOTN8bNQSbY8HgoDEuq8txwy ^"Resistance - Traps I" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "After years of running through dungeons, ruins, and lost cities, the antiquarian learns how to protect against traps. The antiquarian gains resistance against piercing, slashing, and Bludgeoning damage from the traps."
+            }
+            #tT7qGzeS4hcWIcefepR817vw ^"Resistance - Traps II" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "The antiquarian needs to purchase Resistance - Traps I to get this. After years of running through dungeons, ruins, and lost cities, the antiquarian learns how to protect against traps. The antiquarian gains resistance against cold poison, cold and Acid damage from the traps."
+            }
+            #tCjzNG5wgTilHN9f8wHiaNj2 ^"Resistance - Traps III" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "The antiquarian needs to purchase Resistance-Traps I and II to get this. After years of running through dungeons, ruins, and lost cities, the antiquarian learns how to protect against traps. The antiquarian gains resistance against fire and Lightning damage from the traps."
+            }
+            #t2eURi6fj3KJWIUm3shkrkxM ^"Resistance - Curses" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "The antiquarian gains Advantage on saving throws against any cursed item even though using such an item doesn't grant a saving throw."
+            }
+            #tJbSpAi9SlOgHAEsHk8tBHIA ^"Tools of The Trade - Improved" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "The antiquarian gains more experience with the use of the tools of his art. The antiquarian chooses any one tool proficiency and gains proficiency in it. The antiquarian needs to only work for 125 days and pay 125 gp for this."
+            }
+            #tT9ik39vtjJdYt5Zn97mB52A ^"Touch of the Arcane" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "Each specialty gets different use of this innovation:\n\nHistorian: The Historian gains the ability to use locate object and tongues once a day. This ability is refreshed at a short or Long Rest.\n\nArcanist: The Arcanist gains the ability to use augury and clairvoyance once a day. This ability is refreshed at a short or Long Rest."
+            }
+            }
+        }
+        #trTm5Q9Lp15ZxbqKNGuOEJTt ^"Master Antiquarian" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 4
+            ^"Description" STRING "(5000 PEX)"
+            PERKS {
+            #tGDnB7t6B8QjjIObM9rjxGRI ^"Stories of the Past:" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "You have a lot of experiences, stories, and have probably taken part in some of the legends and myths. You have the ability to inspire greatness in others. You can grant inspiration to anyone who listens to your stories a number of times equal to your proficiency bonus daily. This inspiration point must be used in 1 hour or it will be lost. Anyone who already has an inspiration point won't be affected by this."
+            }
+            #tg1tYIH43iSRUhHRSk4RvZO2 ^"Master of Antiquity:" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "After years of inquiries and research on magical items, the antiquarian gains the ability to use any magical item bypassing any kind of race, class, or ability requirements they may possess."
+            }
+            }
+        }
+    }
+}
+
+#t5DZM0z7PseRDQLiOVpGcayl ^"The Archeologist" DEF {
+    EXTENDS ^"Profession"
+    PROPERTIES {
+        ^"Description" STRING "Being an Archeologist It is a common sight: adventurers delving deep into the ruins of ancient civilizations, derelict temples, and lairs of forgotten evils. Yet those ruins, temples, and lairs also contain important historical information that will help scientists and future generations to study and understand the past. Your mission as an archeologist is to preserve the ruins and artifacts for the future, and learn important skills by doing so."
+        ^"Overview" STRING "How to Play? The life of an archeologist is a life of danger for the sake of learning. You will be able to study and search for artifacts of the near and distant past and find out about how people lived in earlier civilizations and societies. An archeologist's career is spent in the lab and the field equally, writing reports and looking for treasures that other people may neglect, or worse, damage.\n\nClimbing the Ranks For each artifact of the past, you recover, and for each derelict or ruin you restore, you gain PEX, and you advance in the ranks of archeologists. When you reach Rank 2 as an archeologist, you will have to be specialized in one way of recovery. You earn PEX according to the rarity of the artifact or derelict item you restore. The GM is the final judge on the rarity of the artifacts and derelicts you restore as well as the time required to restore a derelict or a relic. Archeologists gain PEX from two sources: Small and instant gains of PEX from discovering and restoring Relics and larger PEX gains from restoring Derelicts that take longer to restore."
+        ^"Aspiring Background" STRING "You decide to spend your life as an archeologist and by taking this background you can start this profession at level 1 with 0 PEX as an Apprentice Archeologist.\n\nProficiencies + Equipment\n\nSkill Proficiencies: History, Survival.\n\nLanguages: Any one of your choice.\n\nTool Proficiencies: Cartographer's Tools or Navigator's Tools.\n\nEquipment: A notebook, scroll case full of parchment, a bottle of ink, an ink pen, traveler's clothes, a lantern, a shovel, a one person tent, trinkets from a dig site (worth 5 gp), a pouch containing 15 gp.\n\nPersonality Trait (d8):\n1. I am more at home when I am in a deserted city than a civilized one.\n2. I might be a gentle person at heart, but I won't back down from a fight either.\n3. I am not forgiving towards the people who damage priceless artifacts.\n4. Some people might call me a tomb raider or a corpse robber, but I have no problem with taking stuff from the dead. They don't need those items anymore.\n5. I collect trinkets and gimmicks from everywhere I go.\n6. Failing is an essential for growing up; trying again is essential for success.\n7. Puzzles, enigmas and mysteries are my forte; I love them with passion.\n8. I would like to be well-known in academic circles.\n\nIdeal (d6):\n1. Protection. The artifacts and trinkets I uncover belong to a secure museum for the posterity to experience. (Good)\n2. Peril. I have to endure great peril to discover something of great value. Hard work and danger are the different sides of the same ancient gold piece. (Any)\n3. Knowledge. By understanding lost cultures and peoples, we can shed a light to the workings of the society of our day. (Neutral)\n4. Obligation. It is our duty to bring light to the illiterate and the ignorant. (Lawful)\n5. Timelessness. All my troubles and hard work are to gain immortality in the eyes of academic circles. (Any)\n6. Ambition. I wish to seek power in my path and through my path I wish to see myself in a place of authority. (Evil)\n\nBond (d6):\n1. I dedicate any items with a historical significance and rarity to a museum instead of using them for monetary gains.\n2. I am dedicated to my work but someone, an apprentice or someone who works under me is in love with me. I know of this but don't know how to act towards this person.\n3. I wish to earn my place in the academic circles.\n4. I am trying to find the lost derelict from an ancient time. I want to learn of its secrets, and take my place in the dusty pages of history books.\n5. I have a heinous rival trying to beat me in every aspect of our work. Only one of us can be the best and I plan to be the best.\n6. I had a mentor, a friend or a loved one following the trails of a lost civilization but that person is lost now. I am trying to find this person.\n\nFlaw (d6):\n1. I have no roots. I am always on the move. I travel from one dig to another.\n2. I have a quirk that gives me away when I am lying.\n3. I am secretly claustrophobic. This makes me nervous when I am in a dungeon or a derelict.\n4. I am awkward with people. I feel better when I am alone or in a dig site.\n5. I act like a tyrant when I am on a dig site, ordering people around loudly…Very loudly.\n6. Traps make me so insecure that I unnecessarily slow things."
+    }
+    PEX_TABLE {
+        #tXPNEl03S9wG2tlWsztUFS6s ^"The Archeologist — CR Minor Relic" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Minor Relic"
+            ^"PEX" INTEGER 1
+        }
+        #tKho5U7PADNPY6chmMq3WA9h ^"The Archeologist — CR Important Relic" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Important Relic"
+            ^"PEX" INTEGER 2
+        }
+        #tmP0hjs9SZkVTt6WVJ87uu2Y ^"The Archeologist — CR Major Relic" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Major Relic"
+            ^"PEX" INTEGER 4
+        }
+        #tyet0T1z7U3LUkzxqYUEELXZ ^"The Archeologist — CR Grand Relic" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Grand Relic"
+            ^"PEX" INTEGER 8
+        }
+        #tm3elTfFILgH1xfSoBH5ePvU ^"The Archeologist — CR Minor Derelict (days)" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Minor Derelict (days)"
+            ^"PEX" INTEGER 25
+        }
+        #tOuijaNxdeaI013uvHjyX8Tf ^"The Archeologist — CR Important Derelict (weeks)" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Important Derelict (weeks)"
+            ^"PEX" INTEGER 100
+        }
+        #tK6O2bVudhvMoZyNktexTABK ^"The Archeologist — CR Major Derelict (months)" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Major Derelict (months)"
+            ^"PEX" INTEGER 500
+        }
+        #tusbMovPkIX85A4jf6082yVU ^"The Archeologist — CR Grand Derelict (years)" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Grand Derelict (years)"
+            ^"PEX" INTEGER 1000
+        }
+    }
+    RANKS {
+        #tcOVoMlmHh3Sc2YGw5bo7W6X ^"Apprentice Archelogist" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 1
+            ^"Description" STRING "As an apprentice archeologist, you understand the basics of your profession and you know the basic preservation crafts, you will have to choose one from the below:\n\nYou can advance into the Journeyman level after taking at least two Apprentice level preservation crafts. Each preservation craft will cost you 50 PEX."
+            PERKS {
+            #thSuHRPglrYiFA4cWFMjuTAC ^"Tools of the Trade - Protective Gear" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "As an explorer, you will have to get accustomed to any harsh environment and weather conditions. In time the protective gear you wear will be specialized and help you in many different conditions. You will be immune to any non-magical heat or Cold damage caused by weather conditions, and also your movement speed will be less hindered by difficult terrain: the first 10 feet of any difficult terrain will not hinder you at all during combat."
+            }
+            #ts7etsS6TtyCkOsKZjHBHY2a ^"Tools of the Trade - Expert Tools" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "As an archeologist, you will need to survive in any derelict and sometimes need to gain access to closed doors. You become proficient in Dungeoneer's Kits and Thieves Tools."
+            }
+            #txbVAbczj4tDvOlQR1fHIENn ^"Internal Compass" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "You never lose your way or direction due to your internal compass. You get Advantage on Intelligence (Investigation) or Wisdom (Survival) checks to determine your way when looking for directions."
+            }
+            #tmIxeYQQUYGZMmfxyMFU8JZQ ^"Eye for Value" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "The archeologist needs to have a trained eye to see what is a valuable relic and what is not. The archeologist will get an Advantage on any roll to determine the rarity of a mundane (nonmagical) item of value."
+            }
+            }
+        }
+        #tME79GU0Wm5BqvTaWwYxTVKU ^"Journeyman Archeologist" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 2
+            ^"Description" STRING "(300 PEX) You are now a journeyman archeologist and have some experience after restoring many relics and some derelicts for prosperity. Now you will have a specialty and in this specialty, you will have an edge.\n\nYou can advance into the Expert level after taking at least two Journeyman level preservation crafts. Each preservation craft will cost you 100 PEX."
+            PERKS {
+            #tfvCZ6Sd3Fux61Xl1u9FHDiK ^"Specialization Choice:" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "You will have to choose one of the two: An Explorer is always on the road to find more places to explore and restore, and The Preserver is more specialized in preserving the buildings of old and restoring them for the next generation to cherish."
+            }
+            #tnFA11KFm2w2BQ5AFaYfjcc7 ^"Craft Know-how" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "Each specialty gets a different use of this preservation craft:\n\nExplorer: The Explorer is adept at finding, retrieving, and restoring relics. When you restore a relic as an explorer, you gain an extra 1 PEX.\n\nPreserver: The Preserver is the master at restoring, cleaning, and repairing derelicts and ruins. When you restore a relic as a preserver, you gain 20% more PEX (round up)."
+            }
+            #tFvSdoFTjIcrOjoqcJdfdckh ^"Tools of the Trade - Elevational Gear" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "All archeologists can get this preservation craft. The archeologists will always benefit from grappling hooks and whips. You gain proficiency with the whip, regardless of your martial weapon training. Also, any climbing attempt with a grappling hook will always have Advantage."
+            }
+            #tZoBvN63hlfud4oiVYoOf18D ^"Tricks of the Trade - Minor Magics" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "All Archeologists can get this preservation craft. You learn the prestidigitation cantrip, which doesn't count against the number of cantrips you know."
+            }
+            #tePT0nm1dUD8dr5p7ETvmkMh ^"Lore of the Past" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "All archeologists can get this preservation craft. You will gain Advantage in any Intelligence (History) checks to remember any facts about the culture that the relic or the derelict you are working on at the moment."
+            }
+            }
+        }
+        #trskeSPiO8zoULmFTouKMGuf ^"Expert Archeologist" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 3
+            ^"Description" STRING "(1000 PEX) After many derelicts and relics are restored, you gain enough skill and fame to be known as an expert archeologist.\n\nYou can advance into the Master level after taking at least two Expert level preservation crafts. Each preservation craft will cost you 200 PEX."
+            PERKS {
+            #t80OWJpKnI64iN6tptvljgCz ^"Expert Knowledge" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "Each Specialty gets different use of this preservation craft:\n\nExplorer: You learn the alarm spell as a ritual only, which doesn't count against the number of spells you know.\n\nPreserver: You learn the comprehend languages spell as a ritual only, which doesn't count against the number of spells you know."
+            }
+            #tQtSNBIPkMlmtSHN75P9zNWW ^"Adept Linguist" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "All archeologists can get this preservation craft. You will gain a language of your choice. You will be able to read, write and speak this language, even if it is a dead one."
+            }
+            #tDubKVeLI3LNRmNGimc3UauQ ^"Attention to Detail" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "All archeologists can get this preservation craft. You will have Advantage on any Wisdom (Perception) checks made to observe the details of a relic or a derelict."
+            }
+            #tcVQrkOJwOHukEPwdPF0698Z ^"Tools of the Trade - Magical" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "Each specialty gets different use of this preservation craft:\n\nExplorer: The Explorer gains a chance to purchase a special talisman for 100 gp and only the attuned Explorer can use it. This talisman is called Whispers of the Ancient and can be used to communicate with a non-hostile, non-corporeal being for 1 hour.\n\nPreserver: The Preserver gains a chance to purchase a special talisman for 100 gp and only the attuned Preserver can use it. This talisman is called Mending Glue and can be used to clean corrosion off metal or rot off the wood. Also, it can be used to fix stone. Each use of Mending Glue can affect 1 cubic foot."
+            }
+            #tNggOQGIVCvcWmnMiQij5Rij ^"Analytical Thinking" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "All archeologists can get this preservation craft. The archeologist has an educated and quick mind. Any Intelligence checks made to understand the workings of a relic or details of the derelict are made with Advantage."
+            }
+            }
+        }
+        #tlKQU7gKea65e3NCShQviTjP ^"Master Archeologist" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 4
+            ^"Description" STRING "(5000 PEX)"
+            PERKS {
+            #tOqdOdnidx1JLccPPLJiT7rx ^"Stories of the Past:" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "You have a lot of experiences, stories, and probably have been a part of legends and myths. You have the ability to inspire greatness in others. You can grant inspiration to anyone who listens to your stories a number of times up to your proficiency bonus daily. This inspiration point must be used in 1 hour or lost. Anyone who already has an inspiration point won't be affected by this."
+            }
+            #tsdvDQt1iMMiygyv7MoNTdso ^"Museum Master:" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "As an esteemed, honored member and headmaster of the Archeologists Association, you can rely on certain benefits that your membership provides:\n\n• The Association will provide you with lavish lodging options\n• The Association will provide mundane transportation methods for any dig or investigation you are part of as long as the grant is not abused in any way\n• You will have allies, contacts, and esteemed colleagues in every city or town where an Archeologists Association has a base of operations, a learning institution such as a university, or a museum."
+            }
+            #tnSRxNYVKl9wa9izoLXne5K0 ^"Archeologist Downtime Activities" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "Insignificant Dig: You go on a small dig or a search for a relic of small importance for one week, and at the end, choose one: Earn 10 gold, or spend 20 gold and earn 20 PEX.\n\nDecent Dig: You go on a slightly bigger dig or go search for a more important relic for ten days, and at the end, choose one: Earn 15 gold, or spend 30 gold and earn 35 PEX.\n\nConsiderable Dig: You go on a larger scale dig or go search for a larger scale relic for three weeks, probably joining a larger party of 10+ Archeologists, learning valuable lessons on your trade. Choose one: Earn 25 gold, or spend 50 gold and earn 50 PEX.\n\nGlorious Dig: You go on a very large dig or go search for a very large scale relic hunt for one month, working with the best of the best, going after either very important places or relics which are connected to each other, earning grandiose amounts of experience. Choose one: Earn 50 gold, or spend 100 gold and earn 120 PEX."
+            }
+            #tMP3WoFHMhZBFURH22Cj5Cn5 ^"Archeologist Magnum Opus Quest" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "The Magnum Opus Quest should be embarked only by the most esteemed and respected archeologists, and any inexperienced archeologist should wait for their time to come. While preparing a Magnum Opus for the archeologist, the GM needs to prepare a reason for the archeologist to go on this once in a lifetime dig. The most justifiable choice in this is to give the character a personal reason to search for such a relic or a derelict. The table below can give some ideas to answer to this question:\n\nPersonal Reason (d8):\n1. The uncovered relic/derelict will answer an important question on a lost culture\n2. The uncovered relic/derelict will answer the secrets of the universe\n3. For the sake of academic research and advancement.\n4. To serve a higher cause.\n5. To weed out among the ranks of Archeologists Association.\n6. The uncovered relic/derelict will provide wisdom, knowledge, or power.\n7. Just for the sake of it.\n8. To gain fortune and fame by uncovering this relic/derelict.\n\nThere are four steps to prepare the Magnum Opus Quest for an archeologist character.\n\nStep One, Creating the Backstory: The legendary relic or derelict the archeologist is after should have an intricate and alluring story. The table below can give some ideas to the GM to decide on how to lead the archeologist throughout this adventure:\nEvent (d6):\n1. The relic or derelict is inherited from an archaic spellcaster of an old era.\n2. The exact location of the relic or derelict is known but it is a hard-to-reach position.\n3. The final resting place of the relic or derelict is unknown but it can be tracked in different places.\n4. The relic or derelict is filled with traps (or protected by traps) and nobody yet has returned alive from a dig.\n5. To find this relic or derelict a specific trail full of puzzles needs to be followed.\n6. The relic or derelict is said to be gifted to mortals as a blessing.\nThe legendary relic or derelict needs to have a lavishly spun legend surrounding it.\n\nStep Two, Deciding on the Journey: The relic or derelict is far away from culture and needs to be reached before any dig or research can be made; this journey should be a grand adventure. The table below can give some ideas to the GM to decide on how to lead the archeologist throughout this journey:\nVehicle (d6):\n1. A Sailing Vessel\n2. A Horsecart\n3. On Foot\n4. A Flying Vessel\n5. A Train\n6. Magical Transportation\nThe GM should give delicious bits of information during the journey and keep the character interested in the journey.\n\nStep Three, Determining the Importance: We know where the relic or derelict is and we need to give the character a specific sense of importance. The table below can give some ideas to the GM to decide on how to lead the archeologist throughout this journey:\nImportance of the Dig (d6):\n1. The derelict or relic is from a long-lost culture.\n2. The research made on the derelict or relic will advance known science.\n3. Some lost magical secret is embedded into the derelict or the relic.\n4. The derelict or the relic tells of an apocalyptic prophecy.\n5. The derelict or the relic holds to salvation from a grand problem.\n6. The derelict or the relic is a religious artifact that will shed light into a distant past.\nThe GM should give some detail into showing the importance of the relic or the derelict to the character.\n\nStep Four, Choose the Future: The story of the relic or the derelict almost comes to an end; all there is missing is what this important piece of history is going to become. The table below can give some ideas to the GM to decide on how to conclude this long and arduous journey:\nFuture of the Dig (d6):\n1. The contents of the dig are stored in a dark warehouse never to be seen again.\n2. The contents of the dig are destroyed and forgotten.\n3. The contents of the dig are restored into their former glory and are now revered by many generations.\n4. The contents of the dig are considered holy ground and visited by countless pilgrims.\n5. The contents of the dig are revealed to be apocalyptic and kept under guard.\n6. The contents of the dig bring back a race or a culture into existence.\n\nLastly, The Reward: After all these long years of digs and research, the archeologist should get a great reward. We would like to give one special ability as a reward, but the GM can give any other reward than this.\n\nCradle of the Legends: Cradle of the Legends lets the archeologist use the legend lore spell once a day without needing material components. Also, whenever the archeologist makes an Intelligence (History) check and rolls anything below 9, it will be counted as 10."
+            }
+            }
+        }
+    }
+}
+
+#tcfbriYQtUQHZzRFjpxsOGHO ^"The Spy" DEF {
+    EXTENDS ^"Profession"
+    PROPERTIES {
+        ^"Description" STRING "Learn, whisper, and get paid. These souls of intrigue and espionage work on the act of obtaining confidential secrets from documents, people, or their very eyes. The work of a spy is usually part of larger institutions and governments, and it is through feeding secret information to their handler that they rise in their chosen career."
+        ^"Overview" STRING "Infiltrate and sneak behind the enemy lines and get a hold of their secrets; then sell it to your enemies, or to the highest bidder; or rather you can work for a patron to serve under a great cause to save a nation from the oppressing forces. In your trade, the tastiest commodities are knowledge and secrets. For each secret you uncover and turn into some kind of profit, you gain PEX and advance in the ranks of spies. When you reach Rank 2 as a spy, you will have to be specialized in one way or agent craft. You earn PEX according to the secrets you uncover and deliver. The GM is the final judge on the rarity of the secrets you uncover."
+        ^"Aspiring Background" STRING "You decide to spend your life as a spy and by taking this background you can start this profession at level 1 with 0 PEX as an Apprentice Spy.\n\nProficiencies + Equipment\n\nSkill Proficiencies: Choose two from among Deception, Insight, Persuasion and Stealth.\n\nLanguages: Any one of your choice.\n\nTool Proficiencies: Any one of your choice.\n\nEquipment: A few sets of clothes appropriate to your duties and a pouch containing 25 gp."
+    }
+    PEX_TABLE {
+        #tOyhNYTGrcUV3Z9hjE76pLzi ^"The Spy — CR Trivial Secret" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Trivial Secret"
+            ^"PEX" INTEGER 1
+        }
+        #tv3YsWzsfDxxAye8qVnmveOo ^"The Spy — CR Minor Secret" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Minor Secret"
+            ^"PEX" INTEGER 5
+        }
+        #twXSHuNwNFkGKboVC0AHWyZ4 ^"The Spy — CR Important Secret" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Important Secret"
+            ^"PEX" INTEGER 10
+        }
+        #tydfqQKzk6XwPEAC12oggPEn ^"The Spy — CR Major Secret" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Major Secret"
+            ^"PEX" INTEGER 25
+        }
+        #th1T2kQR7v6pkY1fdTw0NEwg ^"The Spy — CR Grand Secret" DEF {
+            EXTENDS ^"PEX Award"
+            ^"Challenge Rating" STRING "Grand Secret"
+            ^"PEX" INTEGER 100
+        }
+    }
+    RANKS {
+        #tR8l8s3EIhdeJ1V8wgwBrNq0 ^"Apprentice Spy" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 1
+            ^"Description" STRING "As an apprentice spy, you know the basics of your profession, and you know the simplest of the modus operandi; you will have to choose one from the below;\n\nYou can advance into the Journeyman level after taking at least two Apprentice level spycraft. Each spycraft will cost you 50 PEX."
+            PERKS {
+            #tvvnRASxLd5dmyOmVpLrMGy9 ^"Skeleton Key Procurement" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "The spy always needs to be prepared for breaking and entering into some important place stealthily. You gain proficiency in the use of Thieves’ Tools."
+            }
+            #tTVNQ593grXdh2ogZJfHPiNL ^"Quick to Observe" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "A spy needs to see every detail at lightning speed. The use of the Wisdom (Perception) skill, even during combat, is a Reaction for you. You don’t need to use your action or Bonus Action to see into details, and your eyes are well trained to perceive your surroundings hastily."
+            }
+            #txBSmGM7lvhNMzHolFTKOevf ^"Dressed for Success" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 50
+                ^"Description" STRING "A spy always has disguises ready for any event or situation. You gain proficiency in Disguise Kits."
+            }
+            #tTrdcWJFoyJ0YkSRh5BxFN6y ^"Blend In" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "A spy always has an edge language-wise. You will gain a language of your choice. You will be able to read, write, and speak one other language, but it can’t be a dead one."
+            }
+            }
+        }
+        #t5bOpsImVDDC3wDJXVBuFLE6 ^"Journeyman Spy" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 2
+            ^"Description" STRING "(300 PEX) You are now a journeyman spy and have undergone rigorous training in the art of spycraft. Now you have a specialty, and in this specialty, you will have an edge.\n\nYou can advance into the Expert level after taking at least two Journeyman level spycraft. Each spycraft will cost you 100 PEX."
+            PERKS {
+            #tqHQLFm7j2QoxlYUP8mOEi9M ^"Specialization Choice:" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "You have to choose one of the two: An Agent of the Government works for a higher cause to fight against their enemies. A Free Agent works for anyone who offers them a job to use their skills."
+            }
+            #tUqdvc3jpvJtX5KglbgGkubg ^"Contacts in High Places" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "Each specialty gets different use of this spycraft:\n\nAgent of the Government: An Agent of the Government has noble and merchant contacts all around the city; dealing and acquiring information from them will be both easier and cheaper. Any Charisma (Persuasion) check against such people will be done with Advantage.\n\nFree Agent: A Free Agent has contacts from criminal, pirate, and guard circles all around the city;dealing and acquiring information from them will be both easier and cheaper. Any Charisma (Persuasion) check against such people will be done with Advantage."
+            }
+            #t3UwEIWzFIbiPZyvMT5MQxnv ^"Tools of the Trade - Well Equipped" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "All spies can get this spycraft. You can show your agent badge to any quartermaster loyal to the cause you work in and get free equipment from them. You can get any common item (including magical ones) that the GM allows as long as you can justify a reason for having them. Abusing the use of this will get the agent banned for life from all such establishments."
+            }
+            #tPI8S5ah8PngqrmegvpaRfK7 ^"Accomplished Traveler" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "All spies can get this spycraft. All spies should know how to move quickly in all conditions. Any movement speed you have now has a +10 bonus to it. This includes the vehicles you drive, flying, swimming, and climbing."
+            }
+            #ttBsWUx8sWxRiuJMAcm8VN3w ^"People Reader" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 100
+                ^"Description" STRING "All spies can get this spycraft. A spy is trained to be the master of all initiation. The agent gets Advantage in any Wisdom (Insight) check when people try to deceive an agent."
+            }
+            }
+        }
+        #tosUIOC1kZu1x00uAX49FC5z ^"Expert Spy" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 3
+            ^"Description" STRING "(1000 PEX) After many secrets sold, and many plots ruined, you gain enough skills to be known as an expert spy.\n\nYou can advance to Master level after taking at least two Expert level spycraft. Each spycraft will cost you 200 PEX."
+            PERKS {
+            #tp1GjIWPhRY145UVJ6Au5Zqq ^"Resistance - Torture" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "All Spies can get this spycraft. An expert spy knows how to resist any kind of physical or mental torture. When resisting any kind of torture and interrogation, the Spy gets an Advantage on Constitution and Wisdom saving throws, and Charisma (Deception) skill checks."
+            }
+            #tGiWkc7GwzflmmJYoGXcc6af ^"Resistance - Divination" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "All spies can get this spycraft. An expert spy knows how to resist any divination magic or spelllike ability that is targeted to reveal its hiding place. When resisting any kind of divination magic that would reveal the spy’s physical position in the world, the spy gets Advantage on its saving throw. If the effect does not require a saving throw, the agent gets one at the standard difficulty to resist such an effect."
+            }
+            #tLJamAjtnIVtPVYUAmZgHAdY ^"Resistance - Enchantment" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "All spies can get this spycraft. The spy is loyal to the cause it works for. You get Advantage on your saving throws on any charm and enchantment magic that attempt to sway your mind away from your cause."
+            }
+            #tdIraXPGbTrsErKmzY0E0VXJ ^"Tools of the Trade - Magical" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 200
+                ^"Description" STRING "Each specialty gets different use of this spycraft:\n\nAgent of the Government: The Agent of the Government gains a chance to purchase a special talisman for 100 gp, and only the attuned Explorer can use it. This talisman is called Call of the Authority, and when you show this talisman to a loyal guardsman or official and activate its magic, this will compel the guardsman or official to act sympathetic towards you and aid you in a time of crisis. The talisman turns to dust after usage.\n\nFree Agent: Free Agent gains a chance to purchase a special talisman for 100 gp and only the attuned Explorer can use it. This talisman is called Free Pass, and when you show this talisman to a corrupt guardsman or official and activate its magic, this will compel the guardsman or official to act sympathetic towards you, and aid you in a time of crisis. The talisman turns to dust after usage."
+            }
+            }
+        }
+        #t3qXKG8OPUEsbjmHXCEeTzSh ^"Master Spy" DEF {
+            EXTENDS ^"Profession Rank"
+            ^"Rank Number" INTEGER 4
+            ^"Description" STRING "(5000 PEX) You are at the top among most of your spy colleagues, always revered. There is nothing much you can learn about the trade, but you have much to share with your students."
+            PERKS {
+            #tvI2yXg2b9SKyNf0S7pIhwHK ^"Stories of the Past:" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "You have a lot of experiences, stories and have probably taken some part in many of the legends and myths. You have the ability to inspire greatness in others. You can grant inspiration to anyone who listens to your stories a number of times equal to your proficiency bonus daily. This inspiration point must be used in 1 hour or it will be lost. Anyone who already has an inspiration point won't be affected by this."
+            }
+            #t3KyewyZErX3XY8jts3qD99r ^"Leader of the Cell:" DEF {
+                EXTENDS ^"Profession Perk"
+                ^"PEX Cost" INTEGER 0
+                ^"Description" STRING "As the revered leader of a small cell that operates undercover, you can rely on your cell to provide you with certain benefits:\n\n• Your cell standing will provide you with lavish lodging and food.\n\n• The cell will pay for your resurrection if you ever need such a service. (You will owe to the cell)\n\n• You will always have a cell-house provided to you in every city or town that houses similar operations.\n\n• The cell has tremendous political power. If you are accused of a crime, the secret members of the cell will step up to support you.\n\n• You can get access to powerful political figures through your cell. Such connections may require donations."
+            }
+            }
+        }
+    }
+}
+
+}

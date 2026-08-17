@@ -1,0 +1,17 @@
+{
+ "counts": {
+  "Hit Dice -> Hit Point Dice": 1,
+  "hit points -> Hit Points": 38,
+  "advantage": 105,
+  "disadvantage": 46,
+  "bonus action": 45,
+  "reaction": 26,
+  "concentration": 2,
+  "short rest": 5,
+  "long rest": 57,
+  "damage type": 202,
+  "condition (is/becomes)": 32,
+  "condition (the/a \u2026 condition)": 3,
+  "condition (has/gains the)": 0
+ }
+}

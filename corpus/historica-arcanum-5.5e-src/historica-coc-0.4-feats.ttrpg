@@ -1,0 +1,42 @@
+EXTENSION "HistoricaArcanum_CoC_Feats" EXTENDS "Dnd5_5e_Core_Base" {
+    NAME "Historica Arcanum: The City of Crescent - Feats"
+    VERSION "0.4"
+    SPEC_VERSION "0.4"
+    RELEASE_DATE "2026-07-21"
+
+#tr2ROYYpvZY8lrdOQHd5jAyb ^"Firearm Expert" DEF {
+    EXTENDS ^"Feat"
+    PROPERTIES {
+        ^"Description" STRING "Thanks to extensive practice with firearms, you gain the following benefits:\n\n• You ignore the loading quality of firearms with which you are proficient.\n\n• Being within 5 feet of a hostile creature doesn't impose Disadvantage on your ranged attack rolls.\n\n• When you use the Attack action and attack with a one-handed weapon, you can use a Bonus Action to attack with a one-handed repeating gun you are holding."
+    }
+}
+
+#t04pjxPVl1VBX9FJVTRHvFQJ ^"The Fortune-teller" DEF {
+    EXTENDS ^"Feat"
+    PROPERTIES {
+        ^"Description" STRING "When you gain this feat, your inner-eye will awaken, and you will get the ability to see glimpses into possible futures. Your Wisdom score increases by 1.\n\nYou can cast augury once a day, without expending a slot but only as a ritual. You can use marble-mugs, someone else’s hands, tarot cards, arrow heads, or any other cultural fortune-telling items as your material component. By casting it this way augury chooses a target, instead of an event, that will take place 30-minutes in the future. The GM may provide some omens and crypted messages about the future of the target of this spell, e.g. love life, death, birth, opportunities, wealth, family, friends, politics, failures, treachery, and more. Usually these omens are highly obscure and rarely a direct prophecy."
+    }
+}
+
+#tnXzJbQAkxVw4pt0JG2fUYck ^"The Urban Hunter" DEF {
+    EXTENDS ^"Feat"
+    PROPERTIES {
+        ^"Description" STRING "You gain the following benefits:\n\n• Increase your Intelligence or Wisdom score by 1.\n\n• You gain the Survival or Investigation skill. If you are already proficient in the skill, you double your proficiency bonus for that skill.\n\n• When you take the search action or make a Survival check to analyze clues and tracks in an urban area, you can learn the creature’s type."
+    }
+}
+
+#tZGPJgS3lK8Gv1PZRvlbKDmw ^"Strong Breath" DEF {
+    EXTENDS ^"Feat"
+    PROPERTIES {
+        ^"Description" STRING "Your breath is considered one of the strong breaths that have healing properties among society. You gain the following benefits:\n\n• You can cast exorcize djinni or remove curse once a day, without using a spell slot. You can’t do so again until you finish a Long Rest.\n\n• You learn the purifying breath or guidance cantrips."
+    }
+}
+
+#tnpCJ8nLgh7QfvdUXCmb52dY ^"Djinn's Foul Touch" DEF {
+    EXTENDS ^"Feat"
+    PROPERTIES {
+        ^"Description" STRING "You were once in contact with a djinn. This event affected you in the following ways:\n\n• You learn evil eye, knot the luck, or viscious mockery cantrips.\n\n• You can cast nazar or bestow curse once a day, without using a spell slot. You can’t do so again until you finish a Long Rest."
+    }
+}
+
+}

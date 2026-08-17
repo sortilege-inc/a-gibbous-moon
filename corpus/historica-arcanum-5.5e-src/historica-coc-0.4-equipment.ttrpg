@@ -1,0 +1,250 @@
+EXTENSION "HistoricaArcanum_CoC_Equipment" EXTENDS "Dnd5_5e_Core_Base" {
+    NAME "Historica Arcanum: The City of Crescent - Weapons & Armor"
+    VERSION "0.4"
+    SPEC_VERSION "0.4"
+    RELEASE_DATE "2026-07-21"
+
+#tCPWcaamd14qTrvDKPoGlGRN ^"Hanchar" DEF {
+    EXTENDS ^"Weapon"
+    PROPERTIES {
+        ^"Category" STRING "Simple Melee"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 2
+            ^"Unit" STRING "gp"
+        }
+        ^"Damage" STRING "1d4"
+        ^"Damage Type" STRING "piercing"
+        ^"Properties" LIST OF STRING ["Finesse", "Light", "Range", "Thrown"]
+        ^"Description" STRING "Uses the stats of a dagger, with the exception that it can also deal Slashing damage. Range 20/60."
+    }
+}
+
+#t35PtmTBnmASBOXoBc1KSBty ^"Shimshir" DEF {
+    EXTENDS ^"Weapon"
+    PROPERTIES {
+        ^"Category" STRING "Martial Melee"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 25
+            ^"Unit" STRING "gp"
+        }
+        ^"Damage" STRING "1d6"
+        ^"Damage Type" STRING "slashing"
+        ^"Properties" LIST OF STRING ["Finesse", "Light"]
+        ^"Description" STRING "Uses the stats of a scimitar."
+    }
+}
+
+#t5PZp5lTC02RWzwklTnkkmiH ^"Pala" DEF {
+    EXTENDS ^"Weapon"
+    PROPERTIES {
+        ^"Category" STRING "Martial Melee"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 10
+            ^"Unit" STRING "gp"
+        }
+        ^"Damage" STRING "1d6"
+        ^"Damage Type" STRING "piercing"
+        ^"Properties" LIST OF STRING ["Finesse", "Light"]
+        ^"Description" STRING "Uses the stats of a shortsword."
+    }
+}
+
+#teXL0tvg0b0zZfw0Ko2JW4x0 ^"Yatagan" DEF {
+    EXTENDS ^"Weapon"
+    PROPERTIES {
+        ^"Category" STRING "Martial Melee"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 15
+            ^"Unit" STRING "gp"
+        }
+        ^"Damage" STRING "1d8"
+        ^"Damage Type" STRING "slashing"
+        ^"Properties" LIST OF STRING ["Versatile"]
+        ^"Description" STRING "Uses the stats of a longsword."
+    }
+}
+
+#tIQt8ugwLUGCAYwMB06ylEVA ^"Tabar" DEF {
+    EXTENDS ^"Weapon"
+    PROPERTIES {
+        ^"Category" STRING "Martial Melee"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 20
+            ^"Unit" STRING "gp"
+        }
+        ^"Damage" STRING "1d10"
+        ^"Damage Type" STRING "slashing"
+        ^"Properties" LIST OF STRING ["Heavy", "Reach", "Two Handed"]
+        ^"Description" STRING "Uses the stats of a halberd."
+    }
+}
+
+#tHqkHFPvqaFXz2W0DVBqItL4 ^"Safavid Axe" DEF {
+    EXTENDS ^"Weapon"
+    PROPERTIES {
+        ^"Category" STRING "Martial Melee"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 10
+            ^"Unit" STRING "gp"
+        }
+        ^"Damage" STRING "1d12"
+        ^"Damage Type" STRING "piercing"
+        ^"Properties" LIST OF STRING ["Reach", "Two Handed"]
+        ^"Description" STRING "Uses the stats of a Greataxe."
+    }
+}
+
+#txLmTipIeyMiS3iQ7EGOdNOv ^"Mamluk Kilij" DEF {
+    EXTENDS ^"Weapon"
+    PROPERTIES {
+        ^"Category" STRING "Martial Melee"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 50
+            ^"Unit" STRING "gp"
+        }
+        ^"Damage" STRING "2d6"
+        ^"Damage Type" STRING "slashing"
+        ^"Properties" LIST OF STRING ["Heavy", "Two Handed"]
+        ^"Description" STRING "Uses the stats of a greatsword."
+    }
+}
+
+#tYmS9ncGWHun3B4irM2cBJ7W ^"Kargi" DEF {
+    EXTENDS ^"Weapon"
+    PROPERTIES {
+        ^"Category" STRING "Simple Melee"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 1
+            ^"Unit" STRING "gp"
+        }
+        ^"Damage" STRING "1d6"
+        ^"Damage Type" STRING "piercing"
+        ^"Properties" LIST OF STRING ["Thrown", "Versatile (1d8)"]
+        ^"Description" STRING "Uses the stats of a spear. Range 20/60."
+    }
+}
+
+#tOwEvBZAuR6YMw88Xv5pI3WE ^"Great Kargi" DEF {
+    EXTENDS ^"Weapon"
+    PROPERTIES {
+        ^"Category" STRING "Martial Melee"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 30
+            ^"Unit" STRING "gp"
+        }
+        ^"Damage" STRING "1d12"
+        ^"Damage Type" STRING "slashing"
+        ^"Properties" LIST OF STRING ["Heavy", "Two Handed"]
+        ^"Description" STRING "Uses the stats of a lance."
+    }
+}
+
+#tYgM7wLzNStIjn2oRaIks3QZ ^"Jereed" DEF {
+    EXTENDS ^"Weapon"
+    PROPERTIES {
+        ^"Category" STRING "Simple Melee"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 5
+            ^"Unit" STRING "gp"
+        }
+        ^"Damage" STRING "1d6"
+        ^"Damage Type" STRING "piercing"
+        ^"Properties" LIST OF STRING ["Thrown"]
+        ^"Description" STRING "Uses the stats of a javelin. Range 20/60."
+    }
+}
+
+#tiFciJDi52UqjYYsekR9uDeu ^"Handgun" DEF {
+    EXTENDS ^"Weapon"
+    PROPERTIES {
+        ^"Category" STRING "Martial Ranged"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 150
+            ^"Unit" STRING "gp"
+        }
+        ^"Damage" STRING "1d6"
+        ^"Damage Type" STRING "piercing"
+        ^"Properties" LIST OF STRING ["Ammunition", "Light", "Finesse", "Gunpowder", "Reload"]
+        ^"Description" STRING "Range 200/500. Gunpowder: if you roll the maximum amount of damage in the damage die, reroll the die and add it to the resulting damage."
+    }
+}
+
+#t9D5O8XnWAsYGYvBwZx0T2dP ^"Repeating Handgun" DEF {
+    EXTENDS ^"Weapon"
+    PROPERTIES {
+        ^"Category" STRING "Martial Ranged"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 300
+            ^"Unit" STRING "gp"
+        }
+        ^"Damage" STRING "1d6"
+        ^"Damage Type" STRING "piercing"
+        ^"Properties" LIST OF STRING ["Ammunition", "Gunpowder", "Reload (6)"]
+        ^"Description" STRING "Range 200/500. Gunpowder: if you roll the maximum amount of damage in the damage die, reroll the die and add it to the resulting damage."
+    }
+}
+
+#tOb5v5H4Fa2967JQ2zwnIN1D ^"Tüfeq" DEF {
+    EXTENDS ^"Weapon"
+    PROPERTIES {
+        ^"Category" STRING "Martial Ranged"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 450
+            ^"Unit" STRING "gp"
+        }
+        ^"Damage" STRING "1d8"
+        ^"Damage Type" STRING "piercing"
+        ^"Properties" LIST OF STRING ["Ammunition", "Gunpowder", "Reload", "Heavy", "Two Handed"]
+        ^"Description" STRING "Range 350/700. Gunpowder: if you roll the maximum amount of damage in the damage die, reroll the die and add it to the resulting damage."
+    }
+}
+
+#tBoXAyJJ2AZatI86gNFsN8Jm ^"Early Shotgun" DEF {
+    EXTENDS ^"Weapon"
+    PROPERTIES {
+        ^"Category" STRING "Martial Ranged"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 500
+            ^"Unit" STRING "gp"
+        }
+        ^"Damage" STRING "1d10"
+        ^"Damage Type" STRING "piercing"
+        ^"Properties" LIST OF STRING ["Ammunition", "Gunpowder", "Reload (2)", "Two Handed", "Heavy"]
+        ^"Description" STRING "Range 25. Gunpowder: if you roll the maximum amount of damage in the damage die, reroll the die and add it to the resulting damage."
+    }
+}
+
+#tC59zSLvYi38OYI5LfTsJDDN ^"Steel Vest" DEF {
+    EXTENDS ^"Armor"
+    PROPERTIES {
+        ^"Category" STRING "Medium Armor"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 250
+            ^"Unit" STRING "gp"
+        }
+        ^"Base Armor Class" INTEGER 15
+        ^"Adds Dex Modifier" BOOLEAN true
+        ^"Dex Modifier Max" INTEGER 2
+        ^"Strength Requirement" INTEGER 13
+        ^"Weight" STRING "40 lb."
+        ^"Description" STRING "-2 damage from firearm weapons."
+    }
+}
+
+#tQjKH6fmXkBdsq6wpxjXlBWI ^"Buff Coat" DEF {
+    EXTENDS ^"Armor"
+    PROPERTIES {
+        ^"Category" STRING "Light Armor"
+        ^"Cost" DEF {
+            ^"Amount" INTEGER 40
+            ^"Unit" STRING "gp"
+        }
+        ^"Base Armor Class" INTEGER 13
+        ^"Adds Dex Modifier" BOOLEAN true
+        ^"Dex Modifier Max" INTEGER 2
+        ^"Weight" STRING "20 lb."
+        ^"Description" STRING "-1 damage from firearm weapons."
+    }
+}
+
+}

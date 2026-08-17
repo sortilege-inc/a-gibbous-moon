@@ -1,0 +1,3542 @@
+EXTENSION "HistoricaArcanum_CoC_Monsters" EXTENDS "Dnd5_5e_Core_Base" {
+    NAME "Historica Arcanum: The City of Crescent - Bestiary"
+    VERSION "0.4"
+    SPEC_VERSION "0.4"
+    RELEASE_DATE "2026-07-21"
+
+#teqN9xt0fWFtu7Tl9Mvdy8SI ^"Armsmaster" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Armsmaster"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 14
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 13
+            ^"Charisma" INTEGER 11
+        }
+        ^"Armor Class" STRING "16 (Chain Mail)"
+        ^"Hit Points" INTEGER 52
+        ^"Hit Dice" STRING "8d8 + 16"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Str +4, Con +4"
+        ^"Skills" STRING "Athletics +4"
+        ^"Senses" STRING "Passive Perception 11"
+        ^"Challenge Rating" STRING "3"
+        ^"Experience Points" INTEGER 700
+    }
+    FEATURES {
+        #t02SdjsW8A9LNVvGaKkFYqjs ^"Good Aim" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The armsmaster has +2 bonus to attack rolls made with firearms (included in Actions)."
+        }
+        #tKptFUDRa59PIK78hB5RPi9d ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The armsmaster can make two attacks with any combination."
+        }
+        #trIYwUgAJzLr3uXyycNTZGP1 ^"Yatagan" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +4 to hit, reach 5 ft. one target. Hit 6 (1d8 + 2) Slashing damage, or 7 (1d10 + 2) Slashing damage if used with two hands."
+        }
+        #thFZ90oq2JlEu3TgI23laSVd ^"Repeating Handgun" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +7 to hit, range 120/300 ft., one target. Hit: 7 (1d6+3) Piercing damage."
+        }
+        #tfQjpu9QmSTUGjhcg8TtMabQ ^"Tüfeq" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +7 to hit, reach 250/750 ft., one target. Hit: 9 (1d8+3) Piercing damage. (Reroll on a roll of 8 and add the damage)"
+        }
+        #tpK8jGJ9UCLxhtquGU6HMZTg ^"Humbara Bomb" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "It can be thrown up to 40 feet as an action. Any creature within a 10 foot radius of the impact must succeed on a DC 13 Dexterity saving throw. On a failed save they take 15 (5d6) Fire damage or half as much on a successful one. Flammable objects catch fire in the radius."
+        }
+    }
+}
+
+#tTq3eSe6yk8giuUd5TzSRPMi ^"Arcane Researcher" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Arcane Researcher"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 10
+            ^"Dexterity" INTEGER 11
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 18
+            ^"Wisdom" INTEGER 16
+            ^"Charisma" INTEGER 14
+        }
+        ^"Armor Class" STRING "13 (MageArmor)"
+        ^"Hit Points" INTEGER 11
+        ^"Hit Dice" STRING "2d8 + 2"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Int +6, Wis +5"
+        ^"Skills" STRING "Arcana +6, History +6, Nature +6, Religion +6"
+        ^"Senses" STRING "Passive Perception 13"
+        ^"Challenge Rating" STRING "1/8"
+        ^"Experience Points" INTEGER 25
+    }
+    FEATURES {
+        #tuWfuzd0cOREdGmEkgUBBn3N ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The arcane researcher is a 2nd-level spellcaster. Its spellcasting ability is Intelligence. It has the following spells prepared. **At will:** mending, shocking grasp **1st Level:** (3 slots) identify, detect magic. alarm, mage armor"
+        }
+        #tyHQYKkIkVCz6nIr1Si7ptxb ^"Hoarder" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The arcane researcher always has some minor trinkets of some kind for sale. The Game Master can choose 1d4 from the trinkets table for it to have. The items can also be common magic items."
+        }
+        #tcxMDY0ggrBQSNyR8CzhV5RE ^"Shocking Grasp" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Spell Attack: +6 to hit, reach 5 ft., one target. Hit: 4 (1d8) Lightning damage"
+        }
+    }
+}
+
+#tiqVCHE9yz20w0BiSWszNW3T ^"The Avianist" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "The Avianist"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 10
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 16
+            ^"Charisma" INTEGER 10
+        }
+        ^"Armor Class" STRING "15 (studded leather armor)"
+        ^"Hit Points" INTEGER 22
+        ^"Hit Dice" STRING "4d8 + 4"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Dex +5"
+        ^"Skills" STRING "Animal Handling +5, Perception +5, Stealth +5"
+        ^"Senses" STRING "Passive Perception 15, Avian Sight"
+        ^"Challenge Rating" STRING "1/2"
+        ^"Experience Points" INTEGER 100
+    }
+    FEATURES {
+        #tVzm2fiZmuz8PeE4yDdyUVXI ^"Avian Sight" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "While the avian companion is within one mile of the avian master, the avian master can communicate with it telepathically. Additionally, as an action, the avian master can see through its avian companion’s eyes and hear what it hears until the start of its next turn, gaining the benefits of any Special Senses that the avian companion has. During this time, the avian master is deaf and blind with regard to its own senses."
+        }
+        #tA5DlNmeCtVf9xZjWuBdcMWO ^"Avian Companion" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The avian master can use its Bonus Action to guide its avian companion to perform a Help action by doing a flyby attack, granting Advantage on any ally’s attacks."
+        }
+        #tCDPsM0JvZ018BawzPYdr5gE ^"Longbow" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +5 to hit, range 150/600 ft. one target. Hit: 7 (1d8 + 3) Piercing damage."
+        }
+        #tWliA2Od2ma56HAxX1VZIMJ7 ^"Shortsword" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +5 to hit, range 5 ft., one target. Hit: 6 (1d6 +3) Slashing damage"
+        }
+    }
+}
+
+#tttkzrep8wcbOK2JrRbzkRw7 ^"Bostanji-Bashi Ibrahim of the Black Hells" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Bostanji-Bashi Ibrahim of the Black Hells"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "humanoid (human)"
+        ^"Alignment" STRING "lawful neutral"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 20
+            ^"Dexterity" INTEGER 18
+            ^"Constitution" INTEGER 16
+            ^"Intelligence" INTEGER 14
+            ^"Wisdom" INTEGER 16
+            ^"Charisma" INTEGER 14
+        }
+        ^"Armor Class" STRING "17 (Bostanji Armor)"
+        ^"Hit Points" INTEGER 90
+        ^"Hit Dice" STRING "12d8 + 36"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Str +8, Con +6, Cha +5"
+        ^"Skills" STRING "Athletics +8, Perception +6, Survival +6"
+        ^"Senses" STRING "Passive Perception 16"
+        ^"Challenge Rating" STRING "5"
+        ^"Experience Points" INTEGER 1800
+    }
+    FEATURES {
+        #tUDZSudjuSH0guJIxsaSjKoh ^"Artillery Officer Training" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Ibrahim has Advantage on melee attack rolls if there are allies within 5 ft. of the target."
+        }
+        #tnnxuRKVREOik8MrGVpiSSIb ^"Bringer of Blackhells" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Bostanji-Bashi Ibrahim has +2 to attack rolls made with ranged weapons. (Included in the attacks)"
+        }
+        #tlpLJtAm94uoKE2wzYHa8T8L ^"Bostanji Armor" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "This special armor of the palace guard makes his Armor Class 14 + Dex modifier (max 3). It can be donned and doffed in one minute and doesn’t impose Disadvantage on Stealth."
+        }
+        #ttwznrJNTA7GgpgCNek273Le ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "He can attack with his tüfeq and then with his Bayonet, or he can use his Great Sword two times to make an attack."
+        }
+        #tHK0ks8CYpRrdKgt6XSWeOIB ^"Great Sword" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +8 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) Slashing damage. It is a silvered weapon. It overcomes magical resistance to bludgeoning, piercing and Slashing damage."
+        }
+        #tKJfVP5jGGOU5Vow0CYN8VKE ^"Tüfeq" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +9 to hit, reach 250/750 ft., one target. Hit: 8 (1d8 + 4) Piercing damage. (Reroll on a roll of 8 and add the damage)"
+        }
+        #tSJia8ajKXMf7Yd3Sywg2bfT ^"Bayonet" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +7 to hit. Reach 5 ft., one target. Hit: 7 (1d6 + 4) Slashing damage."
+        }
+    }
+}
+
+#tQaHpTidJVkolgQ6MXMxolOQ ^"Bostanji" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Bostanji"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "humanoid (human)"
+        ^"Alignment" STRING "any lawful alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 19
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 11
+            ^"Wisdom" INTEGER 12
+            ^"Charisma" INTEGER 11
+        }
+        ^"Armor Class" STRING "17 (Bostanji Armor)"
+        ^"Hit Points" INTEGER 45
+        ^"Hit Dice" STRING "7d8 + 14"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Str +6, Con +4"
+        ^"Skills" STRING "Athletics +6, Perception +3, Survival +3"
+        ^"Senses" STRING "Passive Perception 13"
+        ^"Challenge Rating" STRING "2"
+        ^"Experience Points" INTEGER 450
+    }
+    FEATURES {
+        #t8RxI5d1O7tdU79HjGnq3GmB ^"The Palace Guard" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The bostanji has Advantage on melee attack rolls if there are allies within 5 ft of them."
+        }
+        #thAHctRUwcVgEBgiqN0DEeEJ ^"Good Aim" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The bostanji has +2 to attack rolls made with ranged weapons. (Included in the attacks)"
+        }
+        #tcbPtvPjcO9HU9SaQk7Jb4R6 ^"Bostanji Armor" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "This special armor of the palace guard makes his Armor Class 14 + Dex modifier (max 3). It can be donned and doffed in one minute and doesn’t impose Disadvantage on Stealth."
+        }
+        #tRYiMVsQdJObQJj0T4HXAIAZ ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "He can make a ranged attack with his tüfeq and can make a melee weapon attack with his bayonet as a Bonus Action."
+        }
+        #tZvykngMAwMgMRxxyC9kpvL6 ^"Tüfeq" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +7 to hit, reach 250-750 ft. one creature. Hit: 7 (1d8+3) Piercing damage. (Reroll on a roll of 8 and add the damage)"
+        }
+        #tq2Td5H5dVI7myxI4QasVlqT ^"Bayonet" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +7 to hit. Reach 5 ft., one target. Hit: 10 (1d6 + 4) Slashing damage."
+        }
+    }
+}
+
+#tx1fLlna99aSc6sGfUjflPZu ^"Devotee" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Devotee"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid (human)"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 14
+            ^"Dexterity" INTEGER 12
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 13
+            ^"Wisdom" INTEGER 11
+            ^"Charisma" INTEGER 14
+        }
+        ^"Armor Class" STRING "11"
+        ^"Hit Points" INTEGER 11
+        ^"Hit Dice" STRING "2d8 + 2"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Wis +4"
+        ^"Skills" STRING "Religion +3, Persuasion +4"
+        ^"Senses" STRING "Passive Perception 10"
+        ^"Challenge Rating" STRING "1/8"
+        ^"Experience Points" INTEGER 25
+    }
+    FEATURES {
+        #ta9P5cdLV8tRxatoPDFHJkFX ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The Devotee is a spellcaster. Its spellcasting ability is Charisma. It has the following spells prepared. **Cantrips** *spare the dying, guidance* **1st Level** (3 slots) *bless, goodberry, sanctuary*"
+        }
+        #tBO4KztOJJ3A1BT6c9ORWOUT ^"Morning Star" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +4 to hit. Reach 5 ft., one target. Hit: 6 (1d8+2) Bludgeoning damage."
+        }
+    }
+}
+
+#tcRrAs5BIqGj5efJKyZdJUay ^"Ephe" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Ephe"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any non-lawful alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 16
+            ^"Dexterity" INTEGER 13
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 11
+            ^"Charisma" INTEGER 13
+        }
+        ^"Armor Class" STRING "17 (Splint Mail)"
+        ^"Hit Points" INTEGER 58
+        ^"Hit Dice" STRING "9d8 + 18"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Dex +3, Con +4"
+        ^"Skills" STRING "Athletics +5, Perception +2, Survival +2"
+        ^"Senses" STRING "Passive Perception 12"
+        ^"Challenge Rating" STRING "2"
+        ^"Experience Points" INTEGER 450
+    }
+    FEATURES {
+        #txMfdE7sqpbQOfzJ1Ftpkav5 ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The ephe makes two pala attacks."
+        }
+        #tb2R8HokeF0S7tTIqAg3UOja ^"Pala" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +5 to hit, reach 5 ft, one target. Hit 6 (1d6+3) Slashing damage."
+        }
+        #tQYFacKWFMZyNe3QWyqc4sFQ ^"Tüfeq" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +3 to hit, reach 250-750 ft. one creature. Hit: 5 (1d8+1) Piercing damage. (1d8, reroll on a roll of 8 and add the damage)"
+        }
+    }
+}
+
+#tl7jfuqbLbXeDUIS8orTTk73 ^"Firefighter" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Firefighter"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any lawful alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 14
+            ^"Dexterity" INTEGER 14
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 11
+            ^"Charisma" INTEGER 10
+        }
+        ^"Armor Class" STRING "12"
+        ^"Hit Points" INTEGER 22
+        ^"Hit Dice" STRING "4d8 + 4"
+        ^"Speed" STRING "30 ft."
+        ^"Skills" STRING "Athletics +4"
+        ^"Senses" STRING "Passive Perception 10"
+        ^"Challenge Rating" STRING "1/2"
+        ^"Experience Points" INTEGER 100
+    }
+    FEATURES {
+        #tOsza5UZH7F0iNkyLgP5Ec4b ^"Strong Muscles" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The tulumbaci deals d6 damage with its unarmaed attacks."
+        }
+        #tLERIl9QqEmcwOSi7gnXmiLE ^"Handaxe" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or 20/60 ft, one target. Hit: 5 (1d6 +2) Slashing damage."
+        }
+        #theVDZciiWUpo3ArA4M8uTnQ ^"Unarmed Attack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) Bludgeoning damage. The target makes a DC 12 Strength saving throw or has Disadvantage on its next attack roll."
+        }
+    }
+}
+
+#tiLaHMIk77aO6WhDxcVCCtrQ ^"Humbaraci" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Humbaraci"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 12
+            ^"Dexterity" INTEGER 18
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 14
+            ^"Wisdom" INTEGER 12
+            ^"Charisma" INTEGER 10
+        }
+        ^"Armor Class" STRING "16 (Studded Leather)"
+        ^"Hit Points" INTEGER 65
+        ^"Hit Dice" STRING "9d8 + 18"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Dex +6, Con +4"
+        ^"Skills" STRING "Perception +3"
+        ^"Damage Resistances" STRING "fire"
+        ^"Senses" STRING "Passive Perception 13"
+        ^"Challenge Rating" STRING "3"
+        ^"Experience Points" INTEGER 700
+    }
+    FEATURES {
+        #tYcoUS5mU4NBi4GvxyInig2H ^"Tools" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "alchemist’s supplies"
+        }
+        #twDtcaDvlA4uy1OSNSqb8H8G ^"Expert Bomb Thrower" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Long range doesn’t impose Disadvantage on the humbaraci’s ranged weapon attack rolls. It ignores half cover and three quarters cover."
+        }
+        #tqrz9DlGRze2kEcwOGke4ypv ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The humbaraci makes two attacks: one with shortsword and one with bomb, or two with its shortsword."
+        }
+        #tL1lHzTFA2vnA7Y812zRzHof ^"Shortsword" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +6 to hit, reach 5 ft. one creature. Hit 7 (1d6 + 4) piercing"
+        }
+        #tsGMcYTEsjoMl5HoSFWXAMtI ^"Humbara Bomb" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Weapon Attack: +6 to hit, it can be thrown upto 40 feet as an action. Any creature within a 10 foot radius of the blast must succeed on a Dexterity saving throw (DC 14). On a failed save, they take 14 (4d6) Fire damage, or half as much on a successful one. Any flammable objects in the radius catch fire. At any given time, the humbaraci carries at least 5 bombs."
+        }
+        #tk0DmYc2cUm2CGSsNuIt1co2 ^"Fiery Explosion" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Reaction"
+            ^"Description" STRING "The humbaraci will not give out the secret of its bombs to the enemy. As a Reaction, humbaraci detonates all the bombs in its inventory. Any creature within 10 ft. of the humbaraci must succeed a Dexterity Saving Throw (DC 14) or take 14 (4d6) Fire damage per bomb left (half as much on a successful save.)"
+        }
+    }
+}
+
+#tNqB04eY0zSdrBrx8xrvdf4G ^"Kabadayi" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Kabadayi"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any lawful alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 16
+            ^"Dexterity" INTEGER 14
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 10
+            ^"Charisma" INTEGER 16
+        }
+        ^"Armor Class" STRING "13 (Leather Armor)"
+        ^"Hit Points" INTEGER 26
+        ^"Hit Dice" STRING "4d8 + 8"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Str +5"
+        ^"Skills" STRING "Athletics +5"
+        ^"Senses" STRING "Passive Perception 10"
+        ^"Challenge Rating" STRING "1/2"
+        ^"Experience Points" INTEGER 100
+    }
+    FEATURES {
+        #ts0pzQH12gcgN81bJQIXzHIb ^"Rage" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The kabadayi can enter a rage using a Bonus Action 2 times a day. While in rage, the kabadayi has the following features:\n• Has resistance to bludgeoning, piercing and Slashing damage.\n• Has +2 bonus to damage rolls with melee attacks using Strength.\n• Advantage on Strength checks and Strength saving throws.\nRage lasts for 1 minute. It ends early if the kabadayi hasn’t attacked against a hostile creature since its last turn or taken damage since then. He can’t cast or concentrate spells while raging."
+        }
+        #tlvJUVdDLf4lAI6vuLtpNycJ ^"Wrath of the Vagabond" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The kabadayi’s rage invokes fear in the hearts of his enemies. This fear can affect 3 creatures that it can see. The targets must succeed on a Wisdom saving throw (DC 13) or be frightened for 1 minute. He can use this feature once per rage. The effected creatures can repeat the saving throw at the end of their turns."
+        }
+        #txHupMP90ttAPnUgLH0N3lQp ^"Pala" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +5 to hit, reach 5 ft, one target. Hit 6 (1d6+3) Slashing damage."
+        }
+    }
+}
+
+#tdMv1BMC8JhjGgBhjDkVRME1 ^"Lala" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Lala"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any lawful"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 8
+            ^"Dexterity" INTEGER 11
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 18
+            ^"Wisdom" INTEGER 16
+            ^"Charisma" INTEGER 17
+        }
+        ^"Armor Class" STRING "10"
+        ^"Hit Points" INTEGER 44
+        ^"Hit Dice" STRING "8d8 + 8"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Int +7 Wis +6"
+        ^"Skills" STRING "Arcana +7, History +7, Investigation +7, Nature +7, Religion +7, Insight +7, Perception +7, Persuasion +6"
+        ^"Senses" STRING "Passive Perception 13"
+        ^"Languages" STRING "Turkish, Arabic, French, Greek"
+        ^"Challenge Rating" STRING "5"
+        ^"Experience Points" INTEGER 1800
+    }
+    FEATURES {
+        #tqplnGjALHnC6lOeOOmyZfFy ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Lala is a 6th-level spellcaster (+7 to hit with spell attacks, spell save DC 15) His spellcasting ability is Intelligence and have the following wizard spells prepared:\nCantrips: Minor Illusion, Message, Guidance, Fire Bolt\n1st-level (4 slots): Comprehend Languages, Detect Magic, Magic Missile, Shield 2nd-level (3 slots): Detect Thoughts, Hold Person, Suggestion 3rd-level (3 slots): Counterspell, remove curse, Slow"
+        }
+        #tN43jOdhYGKFLi3oAhEgOFMw ^"Expert Tutor" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Lala can cast guidance as a Bonus Action and the spell’s range is 30 ft."
+        }
+        #t7ciSuzYC5tDiVytu0isr184 ^"Helpful Hands" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The lala teaches with perfection. Lala can use his action to choose one of his allies. That ally will have Advantage on the ability checks in the next 10 minutes. Also, that creature rerolls the first 1 on an ability check."
+        }
+        #tJNhPVYpz7SxSJfKypwZRIqR ^"Fire Bolt" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Spell Attack: +7 to hit, range 120 ft., one target. Hit: 11 (2d10) Fire damage."
+        }
+    }
+}
+
+#tEL7raYd1GrgFwgCDICAYFiL ^"Levent" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Levent"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 12
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 13
+            ^"Charisma" INTEGER 10
+        }
+        ^"Armor Class" STRING "15 (Studded Leather)"
+        ^"Hit Points" INTEGER 33
+        ^"Hit Dice" STRING "6d8 + 6"
+        ^"Speed" STRING "40 ft. climb, move and swim"
+        ^"Skills" STRING "Acrobatics +5, Athletics +3, Survival +3"
+        ^"Senses" STRING "Passive Perception 11"
+        ^"Challenge Rating" STRING "2"
+        ^"Experience Points" INTEGER 450
+    }
+    FEATURES {
+        #tYJv25JSF5UKClhA6upqpfFD ^"Tools" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Vehicles (Water)"
+        }
+        #tCquT0EATijKKr01tZOgVRYd ^"Cunning Action" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Levents can take Dash, Disengage or Hide actions as a Bonus Action on their own turns."
+        }
+        #tZU1xiSVrIerTnU142MjQYQ1 ^"Swashbuckling Finesse" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "During the levent’s turn, if it makes a successful melee attack against a creature, that creature cannot make attacks of opportunity against the levent until the end of levents turn."
+        }
+        #tOFIUU9M8pUyMJ3gW8t4aoQ9 ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The levent makes two pala attacks: one with its main hand and one with its Bonus Action. Or it can make a Repeating Handgun attack as a Bonus Action."
+        }
+        #tiK0G8zmZqSsB4ff8Cc9D85h ^"Pala" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +5 to hit, reach 5 ft, one creature. Hit 6 (1d6 + 3) Slashing damage."
+        }
+        #tuN1zfowaxfMSUof0e60YywR ^"Repeating Handgun" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Weapon Attack: +6 to hit, range 120/300 ft., one target. Hit: 6 (1d6+3) Piercing damage. (Reroll on a roll of 6 on d6 and add the damage.)"
+        }
+    }
+}
+
+#tgOzyng9f7PHvkrJDZlIqXDX ^"Masquerading Merchant" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Masquerading Merchant"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid (any non-human race)"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 10
+            ^"Dexterity" INTEGER 12
+            ^"Constitution" INTEGER 10
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 12
+            ^"Charisma" INTEGER 14
+        }
+        ^"Armor Class" STRING "10"
+        ^"Hit Points" INTEGER 13
+        ^"Hit Dice" STRING "3d8"
+        ^"Speed" STRING "30 ft."
+        ^"Skills" STRING "Insight +3"
+        ^"Senses" STRING "Passive Perception 11"
+        ^"Challenge Rating" STRING "1/8"
+        ^"Experience Points" INTEGER 25
+    }
+    FEATURES {
+        #tMvDp7DWElIZxLFAB4IcF5os ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The masquerading merchant is a 2nd-level spellcaster. Its spellcasting ability is Charisma (spell save DC 12, +4 to hit with spell attacks). It can cast following spells\nCantrips: prestidigitation, mending, shocking grasp\n1st-level (1/day each): disguise self, goodberry, alarm, tongues"
+        }
+        #trmefJQIuvbvJPS2GIPKsuOW ^"Shocking Grasp" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Spell Attack: +4 to hit, range 5 ft., one target. Hit: 4 (1d8) ligthning damage."
+        }
+        #txA4iYnQyWdeTYbL94zfNf8G ^"Dagger" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee or Ranged Weapon Attack: +3 to hit, range 5 ft. or 20/60 ft., Hit: 3 (1d4+1) Piercing damage."
+        }
+    }
+}
+
+#tmsmgOeM4ekPfuZiq8eWGKGU ^"Muneccim" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Muneccim"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any lawful alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 10
+            ^"Dexterity" INTEGER 11
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 18
+            ^"Charisma" INTEGER 14
+        }
+        ^"Armor Class" STRING "13 (Mage Armor)"
+        ^"Hit Points" INTEGER 26
+        ^"Hit Dice" STRING "4d8 + 8"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Wis +6"
+        ^"Skills" STRING "Insight +6, Perception +6 Religions +6"
+        ^"Senses" STRING "Passive Perception 16"
+        ^"Languages" STRING "Turkish, Arabic, French, Greek"
+        ^"Challenge Rating" STRING "1"
+        ^"Experience Points" INTEGER 200
+    }
+    FEATURES {
+        #te031pN2lYSZnMhc2ebadB9K ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The muneccim is a spellcaster. Its spellcasting ability is Wisdom (spell save DC 14, +6 to hit with spell attacks). It has the following spells prepared:\nCantrips: druidcraft, guidance, prestidigitation, shocking grasp 1st level (4 slots): comprehend languages, detect magic, identify, mage armor 2nd level (3 slots): augury, detect thoughts, enhance ability, see invisibility 3rd level (2 slot): clairvoyance, slow"
+        }
+        #tRRdE3WZMZhh1na6xWrLCaHg ^"Fortune-telling" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The muneccim have the Fortune-telling feat."
+        }
+        #t91Cztnfu1P8XnNypVYg9aYH ^"Omens from the Sky (4/day)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The muneccim can touch a creature to grant them one of the abilities below, that is active for 1 minute. Once used, the ability is lost. A creature can’t have more than one benefit active on them at the same time. The muneccim can regain a use of it by expending a spell slot (action required)\nBad Omen: When the creature is hit by an attack, it can use its Reaction to roll a d10 and deduct it from the roll, potentially causing it to miss. Good Omen: When the creature misses an attack roll, it can use its Reaction to roll a d10 and add it to their attack roll, potentially causing it to hit. Magical Surge: When the creature casts a spell that is 3rd level or lower and expends a spell slot, it can use its Reaction to make a spellcasting ability check. DC is equal to 10 + spell’s level. On a success, the spell slot is restored. Instead of restoring a spell slot, the creature can give itself 1d10 Temporary Hit Points. Altering Fate: The creature uses its Reaction to give itself 1d10 bonus on the next ability check that is rolled within 1 minute. Starry Eyes: The stars shine on the eyes of the creature. It gains darkvision (30 ft.) for the next minute. Celestial Eyes: The creature is blessed with celestial sight. It has Advantage on Perception or Intelligence checks made within the next minute."
+        }
+        #tK54fS02cCcEryz4xzQSzTjV ^"Shocking Grasp" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Spell Attack: +6 to hit, reach 5 ft, one creature. Hit: 4 (1d8) Lightning damage."
+        }
+    }
+}
+
+#ttazCT0VQNKSyJrJa13m51hA ^"Muneccim Bashi" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Muneccim Bashi"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any lawful"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 11
+            ^"Dexterity" INTEGER 14
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 18
+            ^"Wisdom" INTEGER 20
+            ^"Charisma" INTEGER 14
+        }
+        ^"Armor Class" STRING "15 (Mage Armor)"
+        ^"Hit Points" INTEGER 66
+        ^"Hit Dice" STRING "12d8 +24"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Int +7, Wis +8"
+        ^"Skills" STRING "Arcana +7, Perception +8 Nature +7"
+        ^"Senses" STRING "Passive Perception 19"
+        ^"Languages" STRING "Turkish, Arabic, French, Greek"
+        ^"Challenge Rating" STRING "5"
+        ^"Experience Points" INTEGER 1800
+    }
+    FEATURES {
+        #tzBUHRQl4toTinHTZ1esSFaZ ^"Fortune-telling" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The muneccim have the Fortune-telling feat."
+        }
+        #tvJ3m89N8Kz7ZHHbbykr9L6I ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The muneccim bashi is a 6th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 16, +8 to hit with spell attacks). It has the following spells prepared:\nCantrips: guidance, mending, resistance, true strike, shocking grasp 1st level (4 slots): comprehend languages, detect magic, identify, mage armor 2nd level (3 slots): detect thoughts, hold person, see invisibility, suggestion, augury 3rd level (3 slots): clairvoyance, counterspell, slow"
+        }
+        #tLqLekg0kDXStrVVv7vcBjrh ^"Omens from the Sky (4/day)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The muneccim bashi can touch a creature to grant them one of the abilities below, that is active for 1 minute. Once used, the ability is lost. A creature can’t have more than one benefit active on them at the same time. The muneccim can regain a use of it by expending a spell slot (action required)\nBad Omen: When the creature is hit by an attack, it can use its Reaction to roll a d10 and deduct it from the roll, potentially causing it to miss. Good Omen: When the creature misses an attack roll, it can use its Reaction to roll a d10 and add it to their attack roll, potentially causing it to hit."
+        }
+        #tJOUft0CeuUMYBbS2qGWYnt6 ^"Reading the Stars" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "During a Long Rest, it can spend 2 hours searching the stars and make use of them. It can catch a glimpse of the future. The next day, either it or its allies within 30 ft. of it can have Advantage on attack rolls, ability checks or saving throws. It must grant this ability before the roll. It can use this feature up to 4 times."
+        }
+        #tFp4DSyFi7MrgvfI9Ihe3K7I ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The muneccimbashi can use Fury of the Stars two times."
+        }
+        #tiMMAaqvrpXpyrzU9Zf32O1U ^"Fury of the Stars" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee or Ranged Spell Attack: +8 to hit, range 5 ft. or 120 ft., Hit: 10 (1d10 + 5) Radiant damage."
+        }
+        #tofmc0rgfeffl7ewxAQK8LFr ^"Shocking Grasp" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Spell Attack: +8 to hit, reach 5 ft, one creature. Hit: 9 (2d8) Lightning damage."
+        }
+    }
+}
+
+#tIRcQmBTY4BgX3w9wtcx9wf0 ^"White Sentinel" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "White Sentinel"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any lawful"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 18
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 11
+            ^"Charisma" INTEGER 13
+        }
+        ^"Armor Class" STRING "17 (Scale Mail)"
+        ^"Hit Points" INTEGER 78
+        ^"Hit Dice" STRING "12d8 + 24"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Str +3, Con +4"
+        ^"Skills" STRING "Investigation +2, Insight +2, Perception +2"
+        ^"Senses" STRING "Passive Perception 12"
+        ^"Challenge Rating" STRING "4"
+        ^"Experience Points" INTEGER 1100
+    }
+    FEATURES {
+        #tOIxKaJ2xDkZkvavFoT3NF0g ^"Everready" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The white sentinel has Advantage on all initiative rolls."
+        }
+        #tKLn7Jed65yIjcpPOI39VfzE ^"Tactical Prowess" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "When the white sentinel makes an Investigation, Perception or Insight check they roll a d6 and add it to the result of the roll. The white sentinel can do this 3 times and regain expanded uses after a long or a Short Rest."
+        }
+        #tWzL4jwPOPhXQCIeuqqr7U07 ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The white Sentinel makes two yatagan attacks."
+        }
+        #tKHRH3RSir2ZTy2lvroXbbPQ ^"Yatagan" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +6 to hit, reach 5 ft, one creature. Hit 8 (1d8 + 4) Slashing damage or 10 (1d10+4) Slashing damage if used with both hands."
+        }
+        #tyjENeXgvzFc18Vx7aVcs03T ^"Tüfeq" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Weapon Attack: +5 to hit, reach 250/750 ft., one target. Hit: 9 (1d8 + 3) Piercing damage. (Reroll on a roll of 8 and add the damage)"
+        }
+        #tXp5rVK8roq3INFJZ9HU0cx2 ^"Repeating Handgun" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Weapon Attack: +5 to hit, range 120/300 ft., one target. Hit: 7 (1d6+3) Piercing damage. (Reroll on a roll of 6 and add the damage)"
+        }
+    }
+}
+
+#twDbPgjmAtCSZmZsMpiSEtgn ^"Mansur Officer" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Mansur Officer"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "lawful neutral"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 19
+            ^"Dexterity" INTEGER 18
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 11
+            ^"Wisdom" INTEGER 14
+            ^"Charisma" INTEGER 11
+        }
+        ^"Armor Class" STRING "17 (Bostanji Armor)"
+        ^"Hit Points" INTEGER 65
+        ^"Hit Dice" STRING "10d8 + 20"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Str +6, Con +4"
+        ^"Skills" STRING "Athletics +6, Perception +4, Survival +4"
+        ^"Senses" STRING "Passive Perception 14"
+        ^"Challenge Rating" STRING "4"
+        ^"Experience Points" INTEGER 1100
+    }
+    FEATURES {
+        #tUicyrAVfuIISgaf37qjgNo3 ^"The Law Enforcer" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The Mansur officer has Advantage on melee attack rolls if there are allies within 5 ft of it."
+        }
+        #tQGNCvXw7NWfHxwWvFPlyvAp ^"Good Aim" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The Mansur officer has +2 to attack rolls made with ranged weapons."
+        }
+        #tHu8Tcsk4xb8QuKVGcrDVgqj ^"Bostanji Armor" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "This special armor of the palace guard makes its Armor Class 14 + Dex modifier (max 3). It can be donned and doffed in one minute and doesn't impose Disadvantage on Stealth."
+        }
+        #tCDRIX0CBYOLsrU2xGmCGRO8 ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The Mansur officer can make a ranged attack with its tüfeq and can make a melee weapon attack with his bayonet as a Bonus Action."
+        }
+        #tZeMFhjMfueVsrJ8NkmaAEkm ^"Tüfeq" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Weapon Attack: +8 to hit, reach 250/750 ft., one target. Hit: 8 (1d8 + 4) Piercing damage. (Reroll on a roll of 8 and add the damage)"
+        }
+        #t6Aork0DOscDVmZTK54EZZMD ^"Bayonet" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +6 to hit. Reach 5 ft., one target. Hit: 7 (1d6 + 4) Slashing damage."
+        }
+    }
+}
+
+#tTq7z61yatDD6SoeBsA9tC6e ^"Mansur Enforcer" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Mansur Enforcer"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 17
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 12
+            ^"Charisma" INTEGER 10
+        }
+        ^"Armor Class" STRING "16 (Armor of Victory)"
+        ^"Hit Points" INTEGER 38
+        ^"Hit Dice" STRING "7d8 + 7"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Str +5"
+        ^"Skills" STRING "Athletics +5, Perception +3"
+        ^"Senses" STRING "Passive Perception 13"
+        ^"Challenge Rating" STRING "1"
+        ^"Experience Points" INTEGER 200
+    }
+    FEATURES {
+        #tUxtGtQPs5BAxv4mQjfe368a ^"The Law Enforcer" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The Mansur enforcer has Advantage on melee attack rolls if there are allies within 5 ft of them."
+        }
+        #taaTBgZLUDdZMXYgUh3NghUu ^"Good Aim" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The Mansur enforcer has +1 to attack rolls made with ranged weapons."
+        }
+        #taRG2T6C6IG7VPBgNlUFkbsK ^"Armor of Victory" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "This special armor of the army makes the enforcer's Armor Class 13 + Dex modifier (max 3). It does not pose Disadvantage on stealth checks. It can be donned and doffed in 1 minute."
+        }
+        #tRRjZPgh0Nmfm2dtpdr1NjPf ^"Tüfeq" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Weapon Attack: +6 to hit, reach 250/750 ft., one target. Hit: 7 (1d8+3) Piercing damage. (Reroll on a roll of 8 and add the damage)"
+        }
+        #tEp98owWUqXpAhtJ9p8ARL1n ^"Bayonet" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +5 to hit. Reach 5 ft., one target. Hit: 7 (1d8+3) Slashing damage."
+        }
+    }
+}
+
+#t6GKyLFP3a0ulgqZmDIaJe50 ^"Mansur Informer" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Mansur Informer"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 9
+            ^"Dexterity" INTEGER 18
+            ^"Constitution" INTEGER 11
+            ^"Intelligence" INTEGER 16
+            ^"Wisdom" INTEGER 16
+            ^"Charisma" INTEGER 12
+        }
+        ^"Armor Class" STRING "16 (Studded Leather Armor)"
+        ^"Hit Points" INTEGER 31
+        ^"Hit Dice" STRING "7d8"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Dex +6, Int +5"
+        ^"Skills" STRING "Arcana +5, Investigation +5, Medicine +5, Survival +5"
+        ^"Senses" STRING "Passive Perception 13"
+        ^"Challenge Rating" STRING "1"
+        ^"Experience Points" INTEGER 200
+    }
+    FEATURES {
+        #toPNLv7Q0I5v55lVxPHr92rY ^"Crime Scene Investigator" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The Mansur informer has Advantage on Intelligence (Investigation) checks and Wisdom (Medicine) checks at crime scenes and when dealing with bodies."
+        }
+        #tRbjsikdvrgZo5tAfuE6H6yo ^"Following the Crime" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The Mansur informer can take Dash, Disengage or Hide actions as a Bonus Action on its own turns."
+        }
+        #tYny5aMfOXamLbMUiHYa1JgS ^"Sneak Attack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The Mansur informer deals an extra d6 damage once per turn to one target when it has an Advantage on the attack roll, and using a weapon with finesse ability or a ranged weapon. The Mansur informer doesn't need Advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and he doesn't have Disadvantage on the attack roll."
+        }
+        #tF2WEqfi9jTH76UD9TqxdsHE ^"Pistol" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Weapon Attack: +6 to hit, reach 150-600 ft. one target. Hit: 7 (1d6+4) Bludgeoning damage. (Reroll on a roll of 6 and add the damage)"
+        }
+        #tyGmF1QxwqPLnJc0n6iYTCLJ ^"Rapier" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +6 to hit. Reach 5 ft., one target. Hit: 9 (1d8 + 4) Slashing damage."
+        }
+    }
+}
+
+#ty5kEGHCELLitObo8OceYSHe ^"Certain Agent" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Certain Agent"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "lawful neutral"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 13
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 14
+            ^"Wisdom" INTEGER 14
+            ^"Charisma" INTEGER 10
+        }
+        ^"Armor Class" STRING "14 (Leather Armor)"
+        ^"Hit Points" INTEGER 27
+        ^"Hit Dice" STRING "5d8 + 5"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Dex +5"
+        ^"Skills" STRING "Investigation +4, Survival +4, Stealth +5"
+        ^"Senses" STRING "Passive Perception 12"
+        ^"Challenge Rating" STRING "1"
+        ^"Experience Points" INTEGER 200
+    }
+    FEATURES {
+        #trlnI445gMecNrcNJ2ihcj6n ^"Cunning Action" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The certain agent can take a Bonus Action on each of its turns in combat. This action can be used only to take a Dash, Disengage, or Hide action."
+        }
+        #tQKx3d9gVsHtFdFr4skncMPm ^"Sneak Attack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The certain Agent deals an extra 1d6 damage once per turn to one target when it has an Advantage on the attack roll, and using a weapon with finesse ability or a ranged weapon. It doesn't need Advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and it doesn't have Disadvantage on the attack roll."
+        }
+        #ttr2EqIW1uYfPzoNiUF3VgHu ^"Silvered Scimitar" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +5 to hit. Range: 5 ft., one target. Hit: 6 (1d6+3) Slashing damage."
+        }
+        #tSQ0nRrD2TmMbzkrMM4HFIIq ^"Pistol" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Weapon Attack: +5 to hit, range 30/90, one target. Hit: 6 (1d6+3) Piercing damage. (Reroll on a roll of 6 and add the damage)"
+        }
+    }
+}
+
+#tP39NGpJlj2zuN3xF2OzhRQR ^"Certain Stalker" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Certain Stalker"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "lawful neutral"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 18
+            ^"Dexterity" INTEGER 12
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 18
+            ^"Wisdom" INTEGER 15
+            ^"Charisma" INTEGER 14
+        }
+        ^"Armor Class" STRING "14 (Leather Armor)"
+        ^"Hit Points" INTEGER 55
+        ^"Hit Dice" STRING "10d8 + 10"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Wis +4, Cha +4"
+        ^"Skills" STRING "Arcana +8, Investigation +8, Survival +4, Perception +4, Stealth +5"
+        ^"Senses" STRING "Passive Perception 14"
+        ^"Challenge Rating" STRING "3"
+        ^"Experience Points" INTEGER 700
+    }
+    FEATURES {
+        #ts7gxn6rKEb52K7Yxhfn6j7I ^"Cunning Action" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The ertain stalker can take a Bonus Action on each of its turns in combat. This action can be used only to take a Dash, Disengage, or Hide action."
+        }
+        #tifnoujcljDGVyFQX3bPkqTi ^"Sneak Attack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The certain stalker deals an extra 1d6 damage once per turn to one target when it has an Advantage on the attack roll, and using a weapon with finesse ability or a ranged weapon. It doesn't need Advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and it doesn't have Disadvantage on the attack roll."
+        }
+        #ts6Fl6tAliwjwxRdVan9LcPS ^"Urban Hunter" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The certain stalker has Advantage on Survival or Perception checks in order to track a target in urban areas."
+        }
+        #tUG2duyisNKCvEEz8XZpabpD ^"Mage Killer" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The certain Stalker can use its Reaction when a spell is cast within 5 ft. of it to make a melee weapon attack against the spellcaster. If the attack hits, the spellcaster makes the Concentration save with Disadvantage."
+        }
+        #twB7M36Jv06F1PkITEnsPQuC ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The certain Stalker is a 3rd-level spellcaster (DC 14, +6 to hit with spell attacks). Its spellcasting ability is Intelligence. It has the following spells prepared: Cantrips: prestidigitation, minor illusion, shocking grasp; 1st level (4 slots): absorb elements, detect magic, disguise self, sleep; 2nd level (2 slots): alter self, darkvision, detect thoughts, invisibility"
+        }
+        #tKOzKsqTW1p2znHhBHJEBboQ ^"Silvered Longsword" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +6 to hit. Range: 5 ft., one target. Hit: 8 (1d8 + 4) or 9 (1d10 + 4) Slashing damage if used with both hands."
+        }
+        #tZf8DsGGOvOO6DDLqJ8NIkIE ^"Pistol" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Weapon Attack: +3 to hit, range 30/90, one target. Hit: 4 (1d6+1) Piercing damage. (Reroll on a roll of 6 and add the damage)"
+        }
+    }
+}
+
+#ttP4e7FLCP7bgvtPGs37zikb ^"Harem Young Sorceress" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Harem Young Sorceress"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 11
+            ^"Dexterity" INTEGER 14
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 12
+            ^"Charisma" INTEGER 17
+        }
+        ^"Armor Class" STRING "12"
+        ^"Hit Points" INTEGER 32
+        ^"Hit Dice" STRING "5d8+10"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Cha + 5, Wis +3"
+        ^"Skills" STRING "Arcana +3, History +3"
+        ^"Senses" STRING "Passive Perception 11"
+        ^"Challenge Rating" STRING "1"
+        ^"Experience Points" INTEGER 200
+    }
+    FEATURES {
+        #tz5XhGhPp40ijoHPBcYh1SGH ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The harem young sorceress is a 4th-level spellcaster. Its spellcasting ability is Charisma (spell save DC 13, +5 to hit with spell attacks). It has the following spells prepared: Cantrips: (At will) fire bolt, message, mage hand; Level 1: (4 slots) shield, sleep, mage armor; Level 2: (3 slots) hold person, suggestion"
+        }
+        #t0wfbEGwGFtAFJUpf52jQj9G ^"Dagger" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +4 to hit, reach 5 ft, one creature. Hit: 4 (1d4+2) Piercing damage."
+        }
+        #tJ52GTY5jNZ1jWlIjST0E3h6 ^"Fire Bolt" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Magical Attack: +5 to hit, reach 120 ft, one creature Hit: 5 (1d10) Fire damage."
+        }
+    }
+}
+
+#tXNa4Bn4rXdhLbnqKRT8rU5U ^"Harem's Elite Blade" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Harem's Elite Blade"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 10
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 15
+            ^"Wisdom" INTEGER 13
+            ^"Charisma" INTEGER 19
+        }
+        ^"Armor Class" STRING "14 (17 with Mage Armor)"
+        ^"Hit Points" INTEGER 58
+        ^"Hit Dice" STRING "9d8+18"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Cha +7, Dex +6"
+        ^"Skills" STRING "Acrobatics +6, Perception +4, Performance +7"
+        ^"Senses" STRING "Passive Perception 14"
+        ^"Challenge Rating" STRING "3"
+        ^"Experience Points" INTEGER 700
+    }
+    FEATURES {
+        #t7fiMvxKdUcLSacxPENE18pQ ^"Elite Training" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "While the harem elite blade isn't wearing Medium or Heavy armor or using a shield, its AC can use its Charisma modifier rather than its Dexterity modifier, and it has Advantage on Constitution saving throws made to maintain Concentration on a spell."
+        }
+        #t2EMkKopEvi5mSEH4V4nCtuH ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The harem elite blade is a spellcaster. Its spellcasting ability is Charisma (spell save DC 16, +8 to hit with spell attacks). It has the following spells prepared: Cantrips: (At will) light, mage hand, ray of frost, true strike; Level 1: (4 slots) expeditious retreat, grease, longstrider, mage armor; Level 2: (3 slots) darkvision, invisibility, suggestion; Level 3: (2 slots) blink, nondetection"
+        }
+        #tfqY2HKJ4YUaHuFTDEhtO933 ^"Imbued Blades" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The Harem elite blade's melee weapon attacks are considered magical, and it adds its Charisma modifier to the weapon damage (included in the attacks)."
+        }
+        #tiUuMWJ4V6dXjjfV0yUvLYni ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The harem elite blade makes two attacks with its hanchar or one hanchar attack and one cantrip attack."
+        }
+        #tSEVO7NEvta3sk4pQ1NgTviu ^"Hanchar" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +6 to hit, reach 5 ft (20/60 when thrown). one target. Hit: 9 (1d4+7) Slashing damage."
+        }
+        #ta2mboPWUygjeC12RJtvZMeg ^"Ray of Frost" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Spell Attack: +7 to hit, reach 60 ft. Hit: 9 (2d8) Cold damage and the target's speed is reduced by 10 feet until the start of concubine elite blade's next turn."
+        }
+    }
+}
+
+#thAmQ4z0kR2j6aNNU5Mt4n7N ^"Harem's Oracle" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Harem's Oracle"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 10
+            ^"Dexterity" INTEGER 12
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 13
+            ^"Charisma" INTEGER 16
+        }
+        ^"Armor Class" STRING "14"
+        ^"Hit Points" INTEGER 44
+        ^"Hit Dice" STRING "8d8 + 16"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Cha +5, Wis +3"
+        ^"Skills" STRING "Insight +3, Persuasion +5, Arcana +2"
+        ^"Senses" STRING "Passive Perception 11"
+        ^"Challenge Rating" STRING "4"
+        ^"Experience Points" INTEGER 1100
+    }
+    FEATURES {
+        #tqjOIau6mbMeQW4YiSiQpAnp ^"Blinding Allure" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "While the harem oracle is wearing no armor and wielding no shield, its AC increases by its Charisma modifier."
+        }
+        #tsoc9rAaQqi0JAGlVLeFtF55 ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "It is a spellcaster. Its spellcasting ability is Charisma (spell save DC 13, +5 to hit with spell attacks). It has the following spells prepared: Cantrips: (At will) guidance, mending, thaumaturgy; Level 1: (3 slots) command, healing word, sanctuary, shield of faith; Level 2: (1 slots) augury, locate object, zone of truth"
+        }
+        #tSafAuc4fQmpHdKQ9yGZu5Ym ^"Hanchar" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or 20/60 ft., one target. Hit: 3 (1d4+1) Piercing damage."
+        }
+        #typXZKl3GfypyJ2Vqxlv5bQI ^"Manipulate Fate" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Reaction"
+            ^"Description" STRING "(2/day) When she or a creature she can see makes an attack roll, a saving throw or an ability check, the oracle can cause the roll to be made with Advantage or Disadvantage."
+        }
+    }
+}
+
+#t19nRfQbsuSJRJuSDrgmuhSJ ^"Janissary Chelebi" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Janissary Chelebi"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "humanoid (any)"
+        ^"Alignment" STRING "any neutral"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 14
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 11
+            ^"Charisma" INTEGER 10
+        }
+        ^"Armor Class" STRING "15 (Studded Leather Armor)"
+        ^"Hit Points" INTEGER 32
+        ^"Hit Dice" STRING "5d8 + 10"
+        ^"Speed" STRING "30 ft."
+        ^"Skills" STRING "Acrobatics +5"
+        ^"Senses" STRING "Passive Perception 10"
+        ^"Challenge Rating" STRING "1"
+        ^"Experience Points" INTEGER 200
+    }
+    FEATURES {
+        #tSE6Zz4LwqKdQAVhIqrF7y0X ^"Ottoman Stun (1/day)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If the janissary ignores to deal damage with Ottoman Slap attack, the target must succeed on a Constitution saving throw (DC 12) or be stunned until the end of the janissary's turn."
+        }
+        #tnLOGxE3ZJ9U0jxLBejKidL5 ^"Weapon Expert" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Janissaries, while using firearms, ignore half and three quarters cover."
+        }
+        #tvI7XvMHTomCQRKsJN5yAPqY ^"Tüfeq" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +5 to hit, ranged 250/750 ft., one target. Hit: 7 (1d8+3) Piercing damage. (Reroll on a roll of 8 and add the damage)"
+        }
+        #tjGJGqxGVCOdz4lUTqVXhM6E ^"Shimshir" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) Slashing damage."
+        }
+        #tK4RQbedBcctvhwSTPderCvl ^"Ottoman Slap" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) Bludgeoning damage."
+        }
+    }
+}
+
+#tjqUmNeMBt3qtFrIzgVRAjY8 ^"Janissary Thunderbolt" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Janissary Thunderbolt"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "humanoid (human)"
+        ^"Alignment" STRING "any neutral alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 15
+            ^"Dexterity" INTEGER 17
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 12
+            ^"Charisma" INTEGER 14
+        }
+        ^"Armor Class" STRING "15 (Studded Leather)"
+        ^"Hit Points" INTEGER 58
+        ^"Hit Dice" STRING "9d8 + 18"
+        ^"Speed" STRING "40 ft."
+        ^"Skills" STRING "Acrobatics +5, Stealth +5, Perception +3, Survival +3"
+        ^"Senses" STRING "Passive Perception 13"
+        ^"Challenge Rating" STRING "2"
+        ^"Experience Points" INTEGER 450
+    }
+    FEATURES {
+        #trCDtDG01ea7WMwMvBSd8OPq ^"Cunning Action" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Janissary thunderbolts can take Dash, Disengage or Hide actions as a Bonus Action on their own turns."
+        }
+        #tzWi36KgRJPxqqWYIVXMATsE ^"Thunderous Step" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Janissary thunderbolts, due to their special training, have the following features:\n• Their speed is increased by 10 ft. (Included in Speed). • When they take Dash action, the Opportunity Attacks against them have Disadvantage."
+        }
+        #tz4HdP8lUX2v2kkv5j2amTe9 ^"Sneak Attack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "He deals an extra d6 damage once per turn to one target when he has an Advantage on the attack roll, and using a weapon with finesse ability or a ranged weapon. He doesn't need Advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and he doesn't have Disadvantage on the attack roll."
+        }
+        #triNebNWGv4DKvONmPyrxfP4 ^"Ottoman Stun (1/day)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If the janissary ignores to deal damage with Ottoman Slap attack, the target must succeed on a Constitution saving throw (DC 12) or be stunned until the end of the janissary's turn. The janissary has +2 bonus on all Ottoman Slap attacks (included in the attacks)."
+        }
+        #tODUmJcZFR3MRoh2r0Ao3yqw ^"Weapon Expert" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Janissaries, while using firearms, ignore half and three quarters cover."
+        }
+        #tfQdJvhXMztKqjva7QqbgaTL ^"Tüfeq" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +5 to hit, reach 250/750 ft., one target. Hit: 7 (1d8 + 3) Piercing damage. (Reroll on a roll of 8 on d8 and add the damage.)"
+        }
+        #trV0Kq8CJ1sXhHczDjT7TiEQ ^"Shimshir" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) Slashing damage."
+        }
+        #tVzKuI7Btxio0herZ3yDvf9h ^"Ottoman Slap" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Unarmed Attack:* +6 to hit, reach 5 ft., one target. Hit: 3 (1d6 + 2) Bludgeoning damage."
+        }
+    }
+}
+
+#t4Z9WcIltoMl64xlYjaMISFn ^"Janissary Grim" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Janissary Grim"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "humanoid (human)"
+        ^"Alignment" STRING "any lawful alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 16
+            ^"Dexterity" INTEGER 18
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 12
+            ^"Charisma" INTEGER 16
+        }
+        ^"Armor Class" STRING "16 (Studded Leather Armor)"
+        ^"Hit Points" INTEGER 65
+        ^"Hit Dice" STRING "10d8 + 20"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Str +5, Con +4"
+        ^"Skills" STRING "Athletics +5, Intimidation +5"
+        ^"Senses" STRING "Passive Perception 11"
+        ^"Challenge Rating" STRING "3"
+        ^"Experience Points" INTEGER 700
+    }
+    FEATURES {
+        #t1QKvCRm5l3vPEaJdiNRZXKY ^"Grimm Strike" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The janissary grim can use this feature once he hits a creature that can see him with an attack. He adds his Charisma modifier to the attack, and the target must make a Charisma saving throw (DC 13) or be frightened for 1 minute. The creature repeats this saving throw at the end of its turns, and on a success, the fear is over. The janissary grim can't use this feature again until he finishes a Long Rest."
+        }
+        #tlrVGQyXYcE8IwL60oIFFkxx ^"Ottoman Stun (1/day)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If the janissary ignores to deal damage with Ottoman Slap attack, the target must succeed on a Constitution saving throw (DC 12) or be stunned until the end of the janissary's turn. The janissary has +2 bonus on all Ottoman Slap attacks (included in the attacks)."
+        }
+        #tOBHdOaeWP6wJCcPSuEkSizV ^"Weapon Expert" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Janissaries, while using firearms, ignore half and three quarters cover."
+        }
+        #tAoBNBGngEKUaRvIri91CqtZ ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The janissary grim makes two attacks with its shimshir or once with the Ottoman Slap and once with Tüfeq."
+        }
+        #tFZQaEDzdlYnlRFV6zzZAb7o ^"Shimshir" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) Slashing damage."
+        }
+        #tNIcBcNXKNmHEpeTRjjhIAYs ^"Ottoman Slap" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +7 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) Bludgeoning damage."
+        }
+        #tphGvmi7YJLUcXMQgHcuo5Eo ^"Tüfeq" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +6 to hit, reach 250/750 ft., one target. Hit: 8 (1d8 + 4) Piercing damage. (Reroll on a roll of 8 and add the damage)"
+        }
+    }
+}
+
+#tfzCWEuDxKkXtOhJluaF1L3x ^"Janissary Magnificent" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Janissary Magnificent"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "humanoid (human)"
+        ^"Alignment" STRING "any lawful alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 18
+            ^"Dexterity" INTEGER 18
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 14
+            ^"Charisma" INTEGER 14
+        }
+        ^"Armor Class" STRING "16 (Studded Leather Armor)"
+        ^"Hit Points" INTEGER 78
+        ^"Hit Dice" STRING "12d8 + 24"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Str +6, Con +4"
+        ^"Skills" STRING "Athletics +5,"
+        ^"Senses" STRING "Passive Perception 12"
+        ^"Challenge Rating" STRING "4"
+        ^"Experience Points" INTEGER 1100
+    }
+    FEATURES {
+        #tXF1Ir8s4rKivkdPqC6YBeDe ^"Magnificent Strike" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The janissary magnificent can use this feature once he hits a creature that can see him with an attack. He deals double damage on that attack. He can choose to use this future when he sees the damage roll. He can't use this feature until he finishes a Long Rest."
+        }
+        #tQya7QYmWrk3BqxI7ybowHar ^"Ottoman Stun (1/day)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If the janissary ignores to deal damage with Ottoman Slap attack, the target must succeed on a Constitution saving throw (DC 12) or be stunned until the end of the janissary's turn. The janissary has +2 bonus on all Ottoman Slap attacks (included in the attacks)."
+        }
+        #tCunWymetWzjMQA8FIIoAYuG ^"Weapon Expert" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Janissaries, while using firearms, ignore half and three quarters cover."
+        }
+        #t6ZsPYcoNcnRfHLIrA59ZiII ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "He makes two attacks with his shimshir or one Ottoman Slap."
+        }
+        #tSoV6QJC25Cs128WKdmGn7nN ^"Shimshir" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. Hit: 7 (1d6+4) Slashing damage."
+        }
+        #tZi1k24R4wA1GmAHq3xrEcjZ ^"Ottoman Slap" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +8 to hit, reach 5 ft., one target. Hit: 7 (1d6+4) Bludgeoning damage."
+        }
+        #tJLcqMLhWjEo2dieetDFHoJI ^"Tüfeq" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +6 to hit, reach 250/750 ft., one target. Hit: 10 1d8+ 4) Piercing damage. (Reroll on a roll of 8 and add the damage)"
+        }
+    }
+}
+
+#tDX3zIzJyyUP9nKvLJbsuhsE ^"Janissary Conqueror" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Janissary Conqueror"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "humanoid (human)"
+        ^"Alignment" STRING "any lawful alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 18
+            ^"Dexterity" INTEGER 18
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 14
+            ^"Charisma" INTEGER 14
+        }
+        ^"Armor Class" STRING "16 (Studded Leather Armor)"
+        ^"Hit Points" INTEGER 97
+        ^"Hit Dice" STRING "13d8 + 39"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Str +7, Con +5"
+        ^"Skills" STRING "Athletics +7, Intimidation +5"
+        ^"Senses" STRING "Passive Perception 12"
+        ^"Challenge Rating" STRING "6"
+        ^"Experience Points" INTEGER 2300
+    }
+    FEATURES {
+        #t2ge7B0NmRhzA03tPq4kn7HQ ^"Conqueror's Strike (3/day)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The janissary conqueror can use this feature when he deals a hit to a creature. The attack deals an additional 14 (3d6) damage."
+        }
+        #tkRLSDdyIkKhOxcTVNIu3yNr ^"Ottoman Stun (1/day)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If the janissary ignores to deal damage with Ottoman Slap attack, the target must succeed on a Constitution saving throw (DC 15) or be stunned until the end of the janissary's turn. The janissary has +3 bonus on all Ottoman Slap attacks (included in the attacks)."
+        }
+        #tV9QMsz0iJb2zEelguxGHkgf ^"Weapon Expert" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Janissaries, while using firearms, ignore half and three quarters cover."
+        }
+        #tB5gxK0Fm6u0nVk9alcTdadL ^"Forming the Ranks" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The janissary conqueror who has another ally fighting in 5 feet will have Advantage on all attack rolls."
+        }
+        #t9AynjEZxgrunkeLofDyvFhe ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The janissary conqueror can make three attacks. One of them can be Ottoman Slap or Tüfeq."
+        }
+        #t9truWRwk6jF0KttaH2H7kjb ^"Shimshir" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +7 to hit, reach 5 ft., one target. Hit: 7 (1d6+4) Slashing damage."
+        }
+        #tzNeNRLYobwruYX4XKO42B78 ^"Ottoman Slap" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +10 to hit, reach 5 ft., one target. Hit: 7 (1d6+4) Bludgeoning damage."
+        }
+        #teKAX9yjOhpCREp2mE4qhuOF ^"Tüfeq" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +7 to hit, reach 250/750 ft., one target. Hit: 10 (1d8 + 4) Piercing damage. (Reroll on a roll of 8 and add the damage)"
+        }
+    }
+}
+
+#txaiK5aVULtIQvbh3AnBWL1i ^"Janissary Ghazi" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Janissary Ghazi"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "humanoid (human)"
+        ^"Alignment" STRING "any lawful alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 16
+            ^"Dexterity" INTEGER 20
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 16
+            ^"Charisma" INTEGER 16
+        }
+        ^"Armor Class" STRING "17 (Studded Leather Armor)"
+        ^"Hit Points" INTEGER 91
+        ^"Hit Dice" STRING "14d8 + 28"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Str +6, Dex +8"
+        ^"Skills" STRING "Acrobatics +8, Persuasion +4"
+        ^"Senses" STRING "Passive Perception 11"
+        ^"Challenge Rating" STRING "7"
+        ^"Experience Points" INTEGER 2900
+    }
+    FEATURES {
+        #taElcBA7hq3uKqfnWTUisUfp ^"In the Name of Ghaza (1/day)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The janissary ghazi can use its Bonus Action to restore 3d10 Hit Points."
+        }
+        #tJrTxvZYKMpNxvjj4zbliyhC ^"Expert Gunfighter" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Being within 5 feet of a hostile creature doesn't impose Disadvantage on its tüfeq ranged attacks. In addition, the janissary ghazi can reload his tüfeq with a Bonus Action."
+        }
+        #tiTGFr2Z0Li3hhGkc0rAFPAW ^"Forming the Ranks" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The janissary ghazi who has another ally fighting in 5 feet will have Advantage on attack rolls."
+        }
+        #ttSoOYeAZTvkvgh3xumGCipu ^"Ottoman Stun (1/day)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If the janissary ignores to deal damage with Ottoman Slap attack, the target must succeed on a Constitution saving throw (DC 15) or be stunned until the end of the janissary's turn. The janissary has +3 bonus on all Ottoman Slap attacks (included in the attacks)."
+        }
+        #tg6CrkwV4vEnP1KdBl3iTEC2 ^"Weapon Expert" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Janissaries, while using firearms, ignore half and three quarters cover."
+        }
+        #t3ejfI9xq0K5k8nWdz8hU3XO ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The janissary ghazi can make three attacks with its Shimsir. One of the attacks can be Tüfeq or Ottoman Slap."
+        }
+        #trbwpNAeW1j1iAwlh6gzlz6Z ^"Tüfeq" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +8 to hit, reach 250-750 ft. one creature. Hit: 12 (1d8 + 5) Piercing damage. (Reroll on a roll of 8 and add the damage)"
+        }
+        #tUl1qAjcYwFf5sVUon4SSCjK ^"Shimsir" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +8 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3)"
+        }
+        #typnzFNldkQzRCLQ9nGRjKUd ^"Ottoman Slap" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) Bludgeoning damage."
+        }
+    }
+}
+
+#tAV45CpklPycatJDWOAxpF4s ^"Sekban Musketeer" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Sekban Musketeer"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 10
+            ^"Dexterity" INTEGER 18
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 14
+            ^"Charisma" INTEGER 15
+        }
+        ^"Armor Class" STRING "15 (Studded Leather)"
+        ^"Hit Points" INTEGER 65
+        ^"Hit Dice" STRING "10d8+20"
+        ^"Speed" STRING "30 ft."
+        ^"Skills" STRING "Acrobatics +6, Perception +4"
+        ^"Senses" STRING "Passive Perception 14"
+        ^"Challenge Rating" STRING "3"
+        ^"Experience Points" INTEGER 700
+    }
+    FEATURES {
+        #tl8vPnhZq519lgnH98dhr8iw ^"The Discipline of the Sekban-ı Cedit" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "A sekban can be frightened and has +2 bonus on attack rolls made with firearms (included in the attacks)."
+        }
+        #txX3q1P2vQyelu1fFo1ZDwPP ^"Expert Gunfighter" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Being within 5 ft. of a hostile creature doesn't impose Disadvantage on the musketeer's firearm attacks."
+        }
+        #tLvTJX3tFBalbdrL2h9O2cXW ^"No Mercy" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "When the sekban musketeer rolls a critical hit on an attack roll, it can choose to re-roll the damage dice but must use the second roll."
+        }
+        #tQ7SB4D9qtGYrR4rsdqk7vj8 ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The sekban musketeer makes two attacks in any combination."
+        }
+        #tb523yc4A9IDDdqnsFHyk565 ^"Pala" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. Hit: 8 (1d6+4) Piercing damage."
+        }
+        #tMrmM5TSnu678VuYkP9DfMzz ^"Repeating Handgun" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +8 to hit, range 120/300 ft., one target. Hit: 7 (1d6+4) Piercing damage. (Reroll on a roll of 6 and add the damage)"
+        }
+        #tgz0Ta8q6aV9EMTjOpe1vTQT ^"Military Training (1/round)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Reaction"
+            ^"Description" STRING "The sekban takes half the damage from one attack that hits it. The sekban must be able to see the attacker to use this ability."
+        }
+    }
+}
+
+#t86cb8fv7Ul3aQKWEyAtgtiL ^"Sekban Blademaster" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Sekban Blademaster"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 18
+            ^"Dexterity" INTEGER 15
+            ^"Constitution" INTEGER 17
+            ^"Intelligence" INTEGER 11
+            ^"Wisdom" INTEGER 13
+            ^"Charisma" INTEGER 10
+        }
+        ^"Armor Class" STRING "18 (Chain Mail and Shield)"
+        ^"Hit Points" INTEGER 82
+        ^"Hit Dice" STRING "11d8+33"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Con +5"
+        ^"Skills" STRING "Athletics +6, Acrobatics +4, Perception +3"
+        ^"Senses" STRING "Passive Perception 13"
+        ^"Challenge Rating" STRING "4"
+        ^"Experience Points" INTEGER 1100
+    }
+    FEATURES {
+        #tcNbhpttcALC2IQ0gYsfuYAC ^"The Discipline of the Sekban-ı Cedit" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "A sekban can be frightened and has +2 bonus on attack rolls made with firearms (included in the attacks)."
+        }
+        #t2gCoT0YQK8zKDtFQxPtIx8g ^"Blade Mastery" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "A melee weapon attack deals one extra die of its damage when the sekban blademaster hits with it (included in the attacks)."
+        }
+        #tQnJC7dmDjvM6M3lJCyiO9Xa ^"Second Wind" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The sekban blademaster has a limited well of stamina that it can draw on to protect itself from harm. On its turn, it can use a Bonus Action to regain Hit Points equal to 1d10 + 4. Once the sekban blademaster uses this feature, it must finish a short or Long Rest before it can use it again."
+        }
+        #tYWutNoHteWdof0Ei00yihg1 ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The sekban blademaster makes two attacks with its yatagan."
+        }
+        #tsE0TrVLTOqzI2WCk5njyEqM ^"Yatagan" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 +4) Slashing damage with one hand or 15 (2d10 +4) Slashing damage with two hands."
+        }
+        #tjsBIoSuJYEL2aNLYbnQZwM1 ^"Military Training (1/round)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Reaction"
+            ^"Description" STRING "The sekban takes half the damage from one attack that hits it. The sekban must be able to see the attacker to use this ability."
+        }
+    }
+}
+
+#tT2MCx8x2ufj709NzMGzRsv5 ^"Sekban Spy" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Sekban Spy"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 10
+            ^"Dexterity" INTEGER 17
+            ^"Constitution" INTEGER 13
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 14
+            ^"Charisma" INTEGER 12
+        }
+        ^"Armor Class" STRING "14 (Leather Armor)"
+        ^"Hit Points" INTEGER 22
+        ^"Hit Dice" STRING "4d8+4"
+        ^"Speed" STRING "40 ft."
+        ^"Skills" STRING "Persuasion +3, Perception +6, Stealth +8, Survival +3"
+        ^"Senses" STRING "Passive Perception 16"
+        ^"Challenge Rating" STRING "1"
+        ^"Experience Points" INTEGER 200
+    }
+    FEATURES {
+        #tNHfEJGTFGsk3PQF0RUm4Qg0 ^"The Discipline of the Sekban-ı Cedit" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "A sekban can be frightened and has +2 bonus on attack rolls made with firearms (included in the attacks)."
+        }
+        #tjyx9z9DxTRqopFAVXzWmRI6 ^"Master Tracker" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The sekban spy has Advantage on all Wisdom (Perception) checks that rely on hearing, sight or smell."
+        }
+        #ta6ee9IeeeqMlyFs01h0b4ee ^"Pala" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6+3) Piercing damage."
+        }
+        #tWxT61CRkeb7TxUoVefk7iYm ^"Silent Repeating Handgun" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Weapon Attack: +5 to hit, range 30/120 ft., one target. Hit 6 (1d6+3) Piercing damage. This handgun doesn’t make a sound. (Reroll on a roll of 6 and add the damage)"
+        }
+    }
+}
+
+#tvYx0DhQzxwHoupgvKJyd4fZ ^"Sekban Commander" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Sekban Commander"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "humanoid (human)"
+        ^"Alignment" STRING "any neutral alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 18
+            ^"Dexterity" INTEGER 20
+            ^"Constitution" INTEGER 18
+            ^"Intelligence" INTEGER 11
+            ^"Wisdom" INTEGER 13
+            ^"Charisma" INTEGER 10
+        }
+        ^"Armor Class" STRING "17 (Studded Leather)"
+        ^"Hit Points" INTEGER 129
+        ^"Hit Dice" STRING "17d8+53"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Con +8"
+        ^"Skills" STRING "Athletics +8, Acrobatics +9, Perception +5"
+        ^"Senses" STRING "Passive Perception 15"
+        ^"Challenge Rating" STRING "8"
+        ^"Experience Points" INTEGER 3900
+    }
+    FEATURES {
+        #tLc87iOJ63XwdSnWqenEckZX ^"The Discipline of the Sekban-ı Cedit" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "A sekban can be frightened and has +2 bonus on attack rolls made with firearms (included in the attacks)."
+        }
+        #tGx8fKGcPjFWc8Xh1F7No8Ke ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The sekban commander makes three attacks in any combination."
+        }
+        #tjPJs1xoO7IbGe9JziMXlRaR ^"Pala" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 7 (1d6+4) Piercing damage."
+        }
+        #tV53dE62QGff3vpAgcIX9M32 ^"Repeating Handgun" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Weapon Attack: +10 to hit, ranged 120/300 ft., one target. Hit: 8 (1d6+5) Piercing damage. (Reroll on a roll of 8 and add the damage)"
+        }
+        #tUrAMhL83GK0XdCz2ESaC6yH ^"Military Training (1/round)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Reaction"
+            ^"Description" STRING "The sekban takes half the damage from one attack that hits it. The sekban must be able to see the attacker to use this ability."
+        }
+    }
+}
+
+#tDKPcMT0DdaudvESU4BK6xa3 ^"Elven Arcanist" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Elven Arcanist"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 10
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 19
+            ^"Wisdom" INTEGER 16
+            ^"Charisma" INTEGER 11
+        }
+        ^"Armor Class" STRING "13 (16 with Mage Armor)"
+        ^"Hit Points" INTEGER 33
+        ^"Hit Dice" STRING "6d8 + 6"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Int +6, Wis +5"
+        ^"Skills" STRING "Arcana +6, History +6, Perception +5 Religion +6"
+        ^"Senses" STRING "Darkvision 60 ft., Passive Perception 13"
+        ^"Challenge Rating" STRING "4"
+        ^"Experience Points" INTEGER 1100
+    }
+    FEATURES {
+        #tkkgLsnZvUyg8Ao6e1e8F1Hi ^"Fey Ancestry" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The elven arcanist has Advantage on saving throws against being charmed, and magic can’t put it to sleep."
+        }
+        #t7HtbIRhiSxJi9yItENPNAkx ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The elven arcanist is a spellcaster. Its spellcasting ability is Intelligence (spell save DC 15, +7 to hit with spell attacks). It has the following spells prepared: Cantrips: (At will) fire bolt, mage hand, prestidigitation Level 1: (4 slots) burning hands, find familiar, mage armor, magic missile Level 2: (3 slots) invisibility, mirror image, scorching ray Level 3: (2 slots) fireball, haste"
+        }
+        #tswzQKgeTDXfDn2iYkgEkpBT ^"Dagger" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +5 to hit, reach 5 ft, one creature. Hit: 6 (1d4+3) Piercing damage."
+        }
+        #tgKEDOlBbJh0QFC8wDic6vCC ^"Fire Bolt" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Magical Attack: +6 to hit, reach 120 ft, one creature Hit: 11 (2d10) Fire damage."
+        }
+    }
+}
+
+#tb8zei3PfwgxzrRWw2Mxl0fU ^"Tiefling Pactmaker" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Tiefling Pactmaker"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "humanoid"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 11
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 13
+            ^"Wisdom" INTEGER 14
+            ^"Charisma" INTEGER 19
+        }
+        ^"Armor Class" STRING "15 (Studded Leather)"
+        ^"Hit Points" INTEGER 45
+        ^"Hit Dice" STRING "7d8 + 14"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Wis +5, Cha +7"
+        ^"Skills" STRING "History +4, Perception +5"
+        ^"Damage Resistances" STRING "fire"
+        ^"Senses" STRING "Darkvision 60 ft., Passive Perception 15"
+        ^"Challenge Rating" STRING "4"
+        ^"Experience Points" INTEGER 1100
+    }
+    FEATURES {
+        #tnSD2MmLcVgdIkVo23yFqKVc ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The tiefling dealmaker can cast the following spells. Its spellcasting ability is charisma (spell save DC 15, +7 to hit with spell attacks). At will: eldritch blast, minor illusion, thaumaturgy, silent image, speak with animals 3/day: (as 5th level spells) counterspell, darkness, fireball, expeditious retreat, hold person, invisibility, shield, 1/day: alter self, disguise self"
+        }
+        #tyYlBNcUbnqxP0OdYKTtMiX3 ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The tiefling dealmaker makes two attacks or casts eldritch blast twice."
+        }
+        #tkz0TOrYUOM5hYgpUDyppiMl ^"Pala" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d6+3) Piercing damage."
+        }
+        #tPoUUfB3JbIGSEU9NhNFsTt6 ^"Eldritch Blast" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Spell Attack: +6 to hit, ranged 120 ft., one target. Hit: 9 (1d10+4) Force damage."
+        }
+    }
+}
+
+#tQFnziS3ld8CGgZ05yWe1B0X ^"Bichura" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Bichura"
+        ^"Size" STRING "Small"
+        ^"Type" STRING "monstrosity"
+        ^"Alignment" STRING "neutral"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 8
+            ^"Dexterity" INTEGER 18
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 6
+            ^"Wisdom" INTEGER 6
+            ^"Charisma" INTEGER 4
+        }
+        ^"Armor Class" STRING "14"
+        ^"Hit Points" INTEGER 22
+        ^"Hit Dice" STRING "4d8 + 4"
+        ^"Speed" STRING "25 ft."
+        ^"Damage Resistances" STRING "bludgeoning, piercing, and slashing from nonmagical attacks, psychic."
+        ^"Senses" STRING "Passive Perception 8, Tremore Sense 60 ft. blind beyond this point"
+        ^"Challenge Rating" STRING "2"
+        ^"Experience Points" INTEGER 450
+    }
+    FEATURES {
+        #t2Da91bY4P6HBBWxz6cCk4aQ ^"Tremor Sense" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The bichura can’t see, but they can sense movement within 60 ft of themselves. This means bichura can’t know a creature’s position if it’s not walking."
+        }
+        #tZb3eJN6myKF965TfUy3g3ux ^"Remain Hidden" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The bichura are always invisible from eyesight unless they are detected with divination magic or other senses. They prefer to stay hidden patiently until any kind of danger passes away and prefer not to fight if they aren’t discovered."
+        }
+        #tSUd3ErtLZCbScmKhLgbD6mT ^"Movement of the Mind" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The bichura can lift object(s) from the ground with the aid of its psychic powers and hurls it (them) away randomly. The weights of these objects shouldn’t be more than 25 pounds in total and all of them must be within 30 feet to the bichura. This is a diversion tactic to scare the people away from the bichura."
+        }
+        #ta9y0F0Bmzbd7yrVrjPvpYM9 ^"Psychic Strike" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee or Ranged Weapon Attack: +6 to hit, ranged 5ft., or 30 ft., one target. Hit: 8 (1d8 + 4) Bludgeoning damage plus 2 (1d4 psychic)."
+        }
+    }
+}
+
+#tNl3CP5GtLenDwlVt2T6HHDa ^"Collector of Soul, The Naziat" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Collector of Soul, The Naziat"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "celestial"
+        ^"Alignment" STRING "lawful neutral"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 20
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 16
+            ^"Intelligence" INTEGER 15
+            ^"Wisdom" INTEGER 14
+            ^"Charisma" INTEGER 16
+        }
+        ^"Armor Class" STRING "15 (Natural Armor)"
+        ^"Hit Points" INTEGER 77
+        ^"Hit Dice" STRING "11d8 + 33"
+        ^"Speed" STRING "30 ft. walk and fly"
+        ^"Saving Throws" STRING "Con +6, Wis +5"
+        ^"Skills" STRING "Intimidation +6, Perception +5"
+        ^"Damage Resistances" STRING "radiant bludgeoning, piercing, and slashing from nonmagical attacks."
+        ^"Condition Immunities" STRING "charmed, exhaustion, frightened"
+        ^"Senses" STRING "Darkvision 60 ft. Passive Perception 14"
+        ^"Challenge Rating" STRING "7"
+        ^"Experience Points" INTEGER 2900
+    }
+    FEATURES {
+        #tBJj3YpARhSh3BCiBDRnoyxW ^"Sense the Sinner" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The naziat will sense any evil alignment creature, any undead and any fiend within 60 ft. The naziat will not know the potency of their powers, but it will know their numbers in detail. When the naziat sees a creature, it can force the creature to make a DC 14 Charisma saving throw. On a failed save, the naziat knows the creature's alignment."
+        }
+        #tPCXrQlUS47DuCAeyirdqIHm ^"End of All Things" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "No undead or fiend slain by the naziat will return; it will be utterly, permanently destroyed."
+        }
+        #tDb5M6yOYr5TCNol8ZXJafkF ^"Aura of Dread" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "As a Reaction the naziat will activate its dread aura. Any evil creature in a 10 ft. area will take 3 (1d6) Radiant damage for each turn spent in the area and it can’t regain Hit Points while they are still in this area. This aura persists for one minute and the Naziat will regain its use when it performs a Short Rest."
+        }
+        #t15DwfxMW6lT5fKq9aJvKFzC ^"Angelic Prowess" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "When the naziat is subjected to any effect which allows it to make a Constitution saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw and only half damage if it fails."
+        }
+        #traSF6GDmU6c0MWijYkbgudD ^"Reaping Scythe" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +8 to hit, reach 5 ft., one creature. Hit 16 (3d6+5) Slashing damage. The target needs to make a Constitution save on DC 12, or the target’s hit point maximum is reduced by the amount of damage taken. Lost Hit Points will be regained after a Long Rest or with a greater restoration spell. If a creature is brought to 0 HP by Reaping Scythe, the creature cannot be brought back to life with any kind of magic."
+        }
+    }
+}
+
+#t1uYojnBx1qLIs38Mp3bmBxA ^"Collector of Soul, The Nashitat" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Collector of Soul, The Nashitat"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "celestial"
+        ^"Alignment" STRING "lawful good"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 10
+            ^"Dexterity" INTEGER 10
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 16
+            ^"Wisdom" INTEGER 18
+            ^"Charisma" INTEGER 20
+        }
+        ^"Armor Class" STRING "15 (Breastplate)"
+        ^"Hit Points" INTEGER 99
+        ^"Hit Dice" STRING "18d8+18"
+        ^"Speed" STRING "30 ft. walk and fly"
+        ^"Skills" STRING "Medicine +7, Persuasion +8, Religion +7."
+        ^"Damage Resistances" STRING "all."
+        ^"Damage Immunities" STRING "poison and radiant."
+        ^"Condition Immunities" STRING "poisoned, frightened, charmed, blinded, deafened."
+        ^"Senses" STRING "Darkvision 60 ft. Passive Perception 14"
+        ^"Challenge Rating" STRING "7"
+        ^"Experience Points" INTEGER 2900
+    }
+    FEATURES {
+        #tdn0w8bNgInladhVlNhdOytv ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The nashitat is a spellcaster. Her spellcasting ability is wisdom. (Spell Save DC 14, +7 to hit with spell attacks) The nashitat will have the following spells prepared. Cantrips: (at will) guidance, light, resistance, spare the dying 1st level: (4 slots) bless, cure wounds, healing word, purify food and drink 2nd level: (3 slots) calm emotions, lesser restoration, zone of truth 3rd level: (3 slots) magic circle, remove curse, tongues 4th level: (2 slots) death ward, freedom of movement 5th level: (1 slot) greater restoration"
+        }
+        #txyGGSoEX80G5sqM14oe9Afu ^"Divine Wrath" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "As an action, the nashitat can expend a spell slot to cause 11 (3d6 +4) Radiant damage to one evil creature in its sight. If the nashitat expends a spell slot of 2nd level or higher, the extra damage is increased by 1d6 for each level above 1st."
+        }
+    }
+}
+
+#too6IKfxBlXsCOHkvcFlWjpf ^"Devourer of Dreams, Albasti" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Devourer of Dreams, Albasti"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "fiend"
+        ^"Alignment" STRING "neutral evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 8
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 16
+            ^"Wisdom" INTEGER 14
+            ^"Charisma" INTEGER 18
+        }
+        ^"Armor Class" STRING "14 (Neutral Armor)"
+        ^"Hit Points" INTEGER 54
+        ^"Hit Dice" STRING "8d8 + 16"
+        ^"Speed" STRING "30 ft move, climb, fly"
+        ^"Skills" STRING "Deception +6, Persuasion +6, Stealth +5"
+        ^"Damage Resistances" STRING "psychic"
+        ^"Condition Immunities" STRING "charmed and frightened."
+        ^"Senses" STRING "Darkvision 60 ft, Passive Perception 12"
+        ^"Challenge Rating" STRING "4"
+        ^"Experience Points" INTEGER 1100
+    }
+    FEATURES {
+        #tgNh2uBKYfx3ctRK0e5cz8W0 ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The albasti uses its Charisma as its spellcasting ability (Save difficulty 14, +6 on spell attacks). The albasti can cast these spells and require no material components. Cantrip: chill touch, guidance, message 1st level: (4 slots) disguise self, false life, sleep 2nd level: (3 slots) blur, detect thoughts, misty step 3rd level (2 slots) fear, sending 4th level (1 slot) confusion 5th level (1 slot) dream"
+        }
+        #t4MbUDmJt8ArfoiEYsga5w2n ^"Alternate Forms" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The albasti has two alternate forms other than the blurry original form it has. For each form change, the albasti has to spend one 1st level or above spell slot. It can shift forms as a Reaction. The forms are:"
+        }
+        #tQY7BaZx1scl0OyE9b6dLGhR ^"Stalker Form" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The albastis takes on a form that lurks in the darkness. Its skin turns dark, and it hides easier in the darkness. The albasti has Advantage on Dexterity (Stealth) checks while in darkness. It can use its Dream Devour attack in this form."
+        }
+        #tJVlcuhoKdHlV7K943tMs2XR ^"Hunter Form" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The albasti takes on its humanoid form."
+        }
+        #tI0FMfCyGZcitLFyXIzY7XNZ ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The devourer of dreams can make two attacks: one with its claws and one with its bite."
+        }
+        #t6qfUVyp53omIYLaR9KR1acX ^"Claws" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8+3) Slashing damage."
+        }
+        #tVZBATLRFCCIxAQf4wWGWIqa ^"Bite" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 +3) Piercing damage and 3 (1d6) Poison damage."
+        }
+        #tID4rU1XXmzT4iZcRO2pJEDa ^"Dream Devour" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Spell Attack: +6 to hit, range 90 ft., one creature. Hit: 13 (2d8 + 4) Psychic damage. It gains Temporary Hit Points equal to the damage dealt. This form of attack can only be used against sentient, sleeping targets. If hit, the target will not gain any benefit from a Long Rest, nor will it gain any bonuses to AC from Dexterity or shields. Damage dealt with this form of attack will never wake the target, nor can it reduce the target's Hit Points below 0. If the target is reduced to 0 Hit Points by this attack, its body is inflicted with the Scarlet Fever. Scarlet Fever is a disease which causes the target to fall into a coma full of nightmares. Only the use of greater restoration and remove disease and poison spells combined will remove Scarlet Fever."
+        }
+    }
+}
+
+#taF1lk6zJL3Xsz0W8BFcYncK ^"Abra" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Abra"
+        ^"Size" STRING "Large"
+        ^"Type" STRING "dragon"
+        ^"Alignment" STRING "lawful neutral"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 28
+            ^"Dexterity" INTEGER 14
+            ^"Constitution" INTEGER 28
+            ^"Intelligence" INTEGER 18
+            ^"Wisdom" INTEGER 18
+            ^"Charisma" INTEGER 24
+        }
+        ^"Armor Class" STRING "19 (Neutral Armor)"
+        ^"Hit Points" INTEGER 452
+        ^"Hit Dice" STRING "20d20+252"
+        ^"Speed" STRING "40 ft move, 90 ft fly."
+        ^"Saving Throws" STRING "Dex +8, Con, 14, Wis +10, Cha +13"
+        ^"Skills" STRING "History +10, Insight +10, Perception +16, Persuasion +13."
+        ^"Damage Immunities" STRING "fire, lightning"
+        ^"Senses" STRING "Blindsight 120 ft. Darkvision 120 ft. Passive Perception 26"
+        ^"Challenge Rating" STRING "17"
+        ^"Experience Points" INTEGER 18000
+        ^"Legendary Actions Intro" STRING "Abra can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. Abra regains spent legendary actions at the start of its turn."
+    }
+    FEATURES {
+        #tkWzfJzCQRcp861P30dPCtUu ^"Legendary Resistance (3/Day)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If Abra fails a saving throw, it can choose to succeed instead."
+        }
+        #taGgmkOS6aFyh3XNkAb1jBJj ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Abra can use its Aura of Dread. It then makes 3 attacks: one with its bite and two with its claws."
+        }
+        #tcl4NdSTk0dS8zOU40RcnRaY ^"Bite" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +14 to hit, reach 10 ft., one creature. Hit: 21 (2d12 + 9) Piercing damage."
+        }
+        #t8f4f32jjpx9wfYDPZ7mTzro ^"Claws" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +14 to hit, reach 5 ft., one creature. Hit: 25 (3d10 + 9) Slashing damage."
+        }
+        #tVRIZhGnHJxOIBW8N7ONaCMg ^"Tail Swipe" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +14 to hit, reach 15 ft., multiple creatures in the range. Hit: 19 (2d10 + 9) Bludgeoning damage All targets make a Strength saving throw (DC 21) or fall prone."
+        }
+        #tTAh8mzBvN5wxADJTkmkmWRI ^"Aura of Dread" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Each creature of Abra's choice that is within 120 feet of it and aware of it must succeed on a Wisdom saving throw (DC 21) or become Frightened for 1 minute. A creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to Abra's Aura of Dread for the next 24 hours."
+        }
+        #tpSrqzJcTcg6YfxhAKluNKy1 ^"Breath Weapons (Recharge 5-6)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Abra can use one of the following breath weapons."
+        }
+        #tVzENX8LYg51U8l2L018iTlt ^"Legendary Wrath" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Abra exhales fire and radiant energy in a 60-foot cone. Each creature in that area must make a dexterity saving throw (DC 21) or take 32 (6d10) Fire damage and 32 (6d10) Radiant damage on a failed save, or half as much on (both) a successful save."
+        }
+        #tZz2z79i6P6gqMHztDJjJtY1 ^"Disabling Cloud" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Abra exhales gas in a 60foot cone. Each creature in that area must succeed on a constitution saving throw (DC 21) or fall unconscious for 10 minutes unless damaged or shaken to wake up. Even if the save is made all attack rolls, saving throws and skill checks are made with a Disadvantage for 10 minutes."
+        }
+        #tU0GXC8jEaOe4FCx1NAzoDsB ^"Shapechange" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Abra magically polymorphs into a humanoid or beast that has a challenge rating no higher than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed into the new form. In the new form Abra retains its alignment, Hit Points, Hit Point Dice, ability to speak, proficiencies, Legendary Resistance, intelligence, wisdom and charisma scores, as well as this action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form."
+        }
+        #tLkC8V0KoDoR97PiKDybyY4v ^"Absorb Magical Anomaly" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Legendary Action"
+            ^"Description" STRING "Abra can detect the lingering Terrestrial Repercussion effect of any rebound magic and can feed and heal itself by canceling that effect. Abra heals itself by 25 Hit Points when absorbing this effect. If Abra is at maximum Hit Points, instead Abra gains 25 Temporary Hit Points. Abra can feed from a Terrestrial Repercussion effect remotely and it can be as far as six miles away."
+        }
+        #tBYMgRt7B11ueW8neUs8tm8e ^"Tail Swipe" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Legendary Action"
+            ^"Description" STRING "(Costs 2 Actions) Abra makes a tail swipe attack."
+        }
+        #twYIqiat4jpPxiSsEGic2IgE ^"Wing Attack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Legendary Action"
+            ^"Description" STRING "(Cost 2 Actions) Abra beats its wings. Each creature within 10 feet of Abra must succeed on a dexterity saving throw (DC 18) or take 15 (2d6+9) Bludgeoning damage and be knocked prone. Abra can fly up to half its flying speed."
+        }
+    }
+}
+
+#txhuMGybPwwfXTwcN8EPrVoW ^"Bukre" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Bukre"
+        ^"Size" STRING "Tiny"
+        ^"Type" STRING "dragon"
+        ^"Alignment" STRING "neutral good or neutral evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 4
+            ^"Dexterity" INTEGER 17
+            ^"Constitution" INTEGER 13
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 14
+            ^"Charisma" INTEGER 15
+        }
+        ^"Armor Class" STRING "13"
+        ^"Hit Points" INTEGER 21
+        ^"Hit Dice" STRING "6d4 +6"
+        ^"Speed" STRING "20 ft., fly 70 ft."
+        ^"Skills" STRING "Arcana +3, History +3, Perception +4."
+        ^"Senses" STRING "Darkvision 60 ft. Passive Perception 14"
+        ^"Challenge Rating" STRING "1/4"
+        ^"Experience Points" INTEGER 50
+    }
+    FEATURES {
+        #tFPiaZ0Cn9409yK3TAoVyUdC ^"Heightened Senses" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The bukre has Advantage on wisdom checks that rely on sight, hearing or smell."
+        }
+        #tea0caS43fWI4duZ1uEk4MBR ^"Magical Resistance" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The bukre has Advantage on saving throws against spells and other magical effects."
+        }
+        #tmsxvnmsFVPLeQFjWgRjPW0G ^"Ancient Understanding" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The bukre can speak and understand any language."
+        }
+        #tn6aq5vZ2piJjpQnPxgTZ9wl ^"Telepathy" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The bukre can magically communicate anything with any sentient creature within 100 feet of it."
+        }
+        #tIUjRt6FyfvKMZUgAmgfV5kT ^"Bite" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +5 to hit, reach 5 ft., one creature. Hit: 6 (1d4+3) Piercing damage and the target creature must succeed on a Constitution saving throw or become Poisoned for 1 hour. If the saving throw fails by 5 or more, the target falls unconscious for the same duration, or until it takes damage or another creature uses an action to shake it awake."
+        }
+    }
+}
+
+#toHp1SsRjc7cUonpxWdpc4OQ ^"Karbuga" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Karbuga"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "monstrosity"
+        ^"Alignment" STRING "neutral good or evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 10
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 14
+            ^"Charisma" INTEGER 10
+        }
+        ^"Armor Class" STRING "13 (Natural Armor)"
+        ^"Hit Points" INTEGER 52
+        ^"Hit Dice" STRING "8d8+16"
+        ^"Speed" STRING "30 ft."
+        ^"Damage Resistances" STRING "bludgeoning, piercing and slashing from nonmagical weapons."
+        ^"Damage Immunities" STRING "cold"
+        ^"Senses" STRING "Darkvision 60 ft., Passive Perception 12"
+        ^"Challenge Rating" STRING "2"
+        ^"Experience Points" INTEGER 400
+    }
+    FEATURES {
+        #tsp0G3VjZ5edEVCvQcSyBsRt ^"Drain Heat" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Any creature in direct sight of the karbuga will feel chilled and any natural fire smaller than the size of a large bonfire will blow out."
+        }
+        #tavCFWOeNHnaqAYBCKN27HQM ^"Terrain Camouflage" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The karbuga has Advantage on Dexterity (Stealth) checks made to hide in snowy terrain."
+        }
+        #tAvZW8eCHy6bthy1fl4K27XO ^"Cold Embrace" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one creature. Hit: 10 (2d8+5) Cold damage. The karbuga caresses the body of its target with the back of its hand, and everything it touches freezes."
+        }
+        #tAhErSRi31RJS0KAMcLfoT78 ^"Icicle Breath (Recharge on 4-6)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The karbuga exhales a blast of freezing wind and icicles in a 20-foot cone. Each creature in that area must make a Dexterity saving throw (DC 12) or take 20 (5d8) Cold damage on a failed save, or half as much damage on a successful one."
+        }
+    }
+}
+
+#te1LKrD4CPHRo5tw4KckOftb ^"Gulyabani" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Gulyabani"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "Hollow Undead"
+        ^"Alignment" STRING "neutral evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 13
+            ^"Dexterity" INTEGER 15
+            ^"Constitution" INTEGER 10
+            ^"Intelligence" INTEGER 7
+            ^"Wisdom" INTEGER 10
+            ^"Charisma" INTEGER 6
+        }
+        ^"Armor Class" STRING "12"
+        ^"Hit Points" INTEGER 22
+        ^"Hit Dice" STRING "5d8"
+        ^"Speed" STRING "30 ft."
+        ^"Damage Immunities" STRING "poison"
+        ^"Condition Immunities" STRING "charmed, exhaustion, poisoned."
+        ^"Senses" STRING "Darkvision 60 ft, passive perception 10"
+        ^"Challenge Rating" STRING "1"
+        ^"Experience Points" INTEGER 200
+    }
+    FEATURES {
+        #tcgYgLdJfS6QUVEzMU7SVqSB ^"Bite" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +4 to hit, reach 5 ft, one creature Hit: 10 (2d6 + 3) Piercing damage."
+        }
+        #tM5MwS327F4RH5BOmqZpYE3Y ^"Claws" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +4 to hit, reach 5 ft, one creature. If a creature is hit with this attack, it must succeed on a Constitution save (DC 10) or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save."
+        }
+    }
+}
+
+#tVg5NSlBbJNRwcb75GfJBRDG ^"Plague Stricken - Semi Sentient" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Plague Stricken - Semi Sentient"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "Aberration"
+        ^"Alignment" STRING "Neutral"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 14
+            ^"Dexterity" INTEGER 7
+            ^"Constitution" INTEGER 19
+            ^"Intelligence" INTEGER 3
+            ^"Wisdom" INTEGER 8
+            ^"Charisma" INTEGER 3
+        }
+        ^"Armor Class" STRING "11 (Neutral Armor)"
+        ^"Hit Points" INTEGER 17
+        ^"Hit Dice" STRING "2d8 +8"
+        ^"Speed" STRING "30 ft."
+        ^"Saving Throws" STRING "Wis +1"
+        ^"Damage Resistances" STRING "necrotic."
+        ^"Damage Immunities" STRING "poison."
+        ^"Condition Immunities" STRING "poisoned."
+        ^"Senses" STRING "Passive Perception 9"
+        ^"Challenge Rating" STRING "1/2"
+        ^"Experience Points" INTEGER 100
+    }
+    FEATURES {
+        #tdZYmb4GaAcFEb5aqNe30wWh ^"Coated with Ichor" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "A creature that touches the plague stricken or hits it with a melee attack while within 5 feet of it takes 2 (1d4) Poison damage and must succeed on a Strength saving throw (DC 11) to keep its weapon. The creature can reroll this saving throw to pull back a weapon stuck in plague stricken ichor."
+        }
+        #tm4qXsT3KEr3hSiHEIk8i1mz ^"Horrid Crawlers" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Any creature who strikes plague stricken with a slashing or a piercing weapon from 5 feet will be infested with worms. To avoid this the creature needs to roll a Dexterity (Acrobatics) check on DC 12. The worms will deal 1 point of Necrotic damage to the creature infested each round unless the creature uses an action to remove them. Multiple worms deal more than 1 Necrotic damage each round but all can be removed with one action. If a creature drops to 0 HP with this effect the creature will raise as a **sentient plague stricken** in the next 24 hours."
+        }
+        #tw7xJLVNefFDvkCpsTbzVpc4 ^"Eternal Vigor" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The plague stricken will regain 1d4 Hit Points every 1 hour, provided it has at least 1 hit point left."
+        }
+        #ttuAgOUTM74WiBXfMIZSORXQ ^"Pummel" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4 + 2) Bludgeoning damage and 2 (1d4) Poison damage."
+        }
+    }
+}
+
+#tVdwkxBKYKEa6yvQ4SWcHvNR ^"Plague Stricken - Sentient" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Plague Stricken - Sentient"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "Aberration"
+        ^"Alignment" STRING "Neutral"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 14
+            ^"Dexterity" INTEGER 10
+            ^"Constitution" INTEGER 19
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 14
+            ^"Charisma" INTEGER 12
+        }
+        ^"Armor Class" STRING "14 (Neutral Armor)"
+        ^"Hit Points" INTEGER 64
+        ^"Hit Dice" STRING "8d8 + 32"
+        ^"Speed" STRING "30 ft."
+        ^"Skills" STRING "Athletics +4, Perception +4."
+        ^"Damage Resistances" STRING "bludgeoning, piercing and slashing from nonmagical attacks, necrotic."
+        ^"Damage Immunities" STRING "poison."
+        ^"Condition Immunities" STRING "poisoned."
+        ^"Senses" STRING "Passive Perception 14"
+        ^"Challenge Rating" STRING "2"
+        ^"Experience Points" INTEGER 200
+    }
+    FEATURES {
+        #tD66ABl7Bx4DvFSfZuKwewOj ^"Coated with Ichor" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "A creature that touches the plague stricken or hits it with a melee attack while within 5 feet of it takes 4 (2d4) Poison damage and must succeed on a Strength saving throw (DC 11) to keep its weapon. The creature can reroll this saving throw to pull back a weapon stuck in plague stricken."
+        }
+        #tISkwrnkgCymYHZEw8xLyfl8 ^"Horrid Crawlers" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Any creature strikes the plague stricken with a slashing or a piercing weapon from 5 feet will be infested with the worms. The worms will deal 1 point of Necrotic damage to the creature infested each round unless the creature uses an action to remove them. If a creature drops to 0 HP with this effect the creature will raise as a sentient plague stricken in the next 24 hours."
+        }
+        #tlTRMJ7GsIhS0tBcgRsdkEIP ^"Eternal Vigor" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The plague stricken will regain 2d4 Hit Points every 1 hour, provided it has at least 1 hit point left."
+        }
+        #tXbDQWDpcBgCHwz0m0Vg8cfG ^"Telepathic Command" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Each round of combat the sentient plague stricken can use its Reaction to utter a telepathic command to a semi-sentient plague stricken. The semi-sentient plague stricken can add d4 to its next attack roll, saving throw or ability check. A semi-sentient plague stricken can benefit from one d4 die."
+        }
+        #tvEbZ1sSETpewApDvdNM6Z1I ^"Yatagan" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +4 to hit, reach 5 ft. one target. Hit 6 (1d8 + 2) Slashing damage, or 7 (1d10 + 2) Slashing damage if used with two hands."
+        }
+    }
+}
+
+#tOJBnK6oxL1ieEKav5mZblq3 ^"Scavenger" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Scavenger"
+        ^"Size" STRING "Small"
+        ^"Type" STRING "fey"
+        ^"Alignment" STRING "neutral evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 8
+            ^"Dexterity" INTEGER 18
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 12
+            ^"Charisma" INTEGER 8
+        }
+        ^"Armor Class" STRING "14"
+        ^"Hit Points" INTEGER 9
+        ^"Hit Dice" STRING "2d6 +2"
+        ^"Speed" STRING "25 ft."
+        ^"Skills" STRING "Stealth +8 Sleight of Hand +8"
+        ^"Senses" STRING "Darkvision 60 ft., Passive Perception 11."
+        ^"Challenge Rating" STRING "1/4"
+        ^"Experience Points" INTEGER 50
+    }
+    FEATURES {
+        #ty2s9kqfRSsS4cdqPhW5juir ^"Cunning Strike" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Scavengers know how to strike subtly and exploit their enemies' distraction. Once per turn, the scavenger can deal an extra 1d6 damage to one creature it hits if it hits it with an attack if it has Advantage on the attack roll. The attack must use a finesse or a ranged weapon."
+        }
+        #tybM0gyORxfDedG9nGHViIFp ^"Swift Stealth" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Scavengers act quick when they are on the run. Scavengers can take a Bonus Action on each of its turns in combat. This action can be used only to take the Dash, Disengage or Hide actions."
+        }
+        #t5Z5ADmusqXgFItxB1qFD8yD ^"Pala" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one creature. Hit 7 (1d6+4) Slashing damage."
+        }
+        #tLZ96EYLSjlLCo5ljZElPhm5 ^"Shortbow" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +6 to hit, range 80/320 ft., one creature. Hit 7 (1d6+4) Piercing damage."
+        }
+    }
+}
+
+#tLvkRKlocG38KglinpH9MByj ^"Cat Burglar" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Cat Burglar"
+        ^"Size" STRING "Tiny"
+        ^"Type" STRING "beast"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 6
+            ^"Dexterity" INTEGER 22
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 10
+            ^"Charisma" INTEGER 14
+        }
+        ^"Armor Class" STRING "15 (natural armor)"
+        ^"Hit Points" INTEGER 21
+        ^"Hit Dice" STRING "6d4 + 6"
+        ^"Speed" STRING "40 ft. 20 ft. Climb"
+        ^"Skills" STRING "Acrobatics +10, Sleight of Hand +10, Stealth +10, Perception +2"
+        ^"Senses" STRING "Darkvision 60 ft. Passive Perception 12"
+        ^"Challenge Rating" STRING "2"
+        ^"Experience Points" INTEGER 450
+    }
+    FEATURES {
+        #tS3mroeFLJl6QpR0OdZdWXde ^"Keen Smell" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The cat burglar has Advantage on Wisdom (Perception) checks that rely on smell."
+        }
+        #t86SZQR5ayP4ylSolac0nNWC ^"Cunning Action" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The cat burglar can take a Bonus Action on each of its turns in combat. This action can be used only to take a Dash, Disengage, or Hide action."
+        }
+        #twmx6gyilLNR8Y91VVoo6srH ^"Sneak Attack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Once per turn the cat burglar can deal extra 7 (2d6) damage to one creature it hits with an attack if it has Advantage on the attack roll. The attack must use a finesse or a ranged weapon. The cat burglar doesn't need Advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapaciated, and the cat burglar doesn't have Disadvantage on the attack roll."
+        }
+        #tBzEKx1bxsZTJ5EtHWCmffCi ^"Dagger" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Melee Weapon Attack:* +8 to hit, reach 5 ft. one target. Hit: 8 (1d4+6) Piercing damage."
+        }
+        #tyHJFqvIQwgHiZdcG9LE1jFn ^"Special Blowgun" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "*Ranged Weapon Attack:* +8 to hit, 25 ft. one target. Hit: 1 (1) Piercing damage. The dart is coated with a poison called felinkin. A creature subjected to this poison must succeed on a DC 10 Constitution saving throw or be poisoned for 10 minutes. If the saving throw fails by 3 or more, the creature is also unconscious while poisoned in this way. The creature wakes up if it takes damage or another creature takes a turn to shake it awake."
+        }
+        #tFOIiz8AIl8PxPAcPeZOpKJT ^"Fortunate Soul" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Reaction"
+            ^"Description" STRING "When the cat burglar rolls a 1 on an attack roll, ability check or saving throw, it can reroll the die and must use the new roll."
+        }
+        #tobetM4ngMD7Q9Tag9X0vNCY ^"Nine Lives" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Reaction"
+            ^"Description" STRING "All council members have this trait and they can use it as a Reaction: The members of the cat guild have a mystical ability that keeps them alive. When a cat is reduced to 0 Hit Points but not killed outright, it can drop to 1 Hit Points instead. A cat can use this trait an unlimited number of times but each time after the first requires a constitution saving throw. The second saving throw is rolled against difficulty 15, the third 20, the fourth 25 and so on."
+        }
+    }
+}
+
+#tdTICVsd1pvj8E7RnLP393Er ^"Cat Saberpaw" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Cat Saberpaw"
+        ^"Size" STRING "tiny/small"
+        ^"Type" STRING "beast"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 6
+            ^"Dexterity" INTEGER 22
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 11
+            ^"Wisdom" INTEGER 12
+            ^"Charisma" INTEGER 10
+        }
+        ^"Armor Class" STRING "18"
+        ^"Hit Points" INTEGER 21
+        ^"Hit Dice" STRING "6d4+9"
+        ^"Speed" STRING "40 ft. 20 ft. Climb"
+        ^"Skills" STRING "Perception +3, Stealth, +8"
+        ^"Senses" STRING "Darkvision 60 ft. Passive Perception 13"
+        ^"Challenge Rating" STRING "2"
+        ^"Experience Points" INTEGER 450
+    }
+    FEATURES {
+        #tO3tDh8gmZe66IL93LXsvUE0 ^"Enlarge" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "As a Reaction, the cat saberpaw can change its size into a Small humanoid-cat hybrid. Its size becomes Small and its hit dice, and Hit Points, change. The saberpaw uses its Dexterity to perform its attacks. If the cat saberpaw's Hit Points drop to 0 in either form, the cat saberpaw dies (if its Nine Lives are spent), it does not revert to another form."
+        }
+        #tHxUOxjMilIe0CVRLKfotoEO ^"Ambushing Leap" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If the cat saberpaw moves at least 20 feet straight towards a creature and then hits with an attack on the same turn, that attack is considered a critical if it hits."
+        }
+        #tOQPRX1aCOWU2X5ZxLCsv9Uo ^"Keen Hearing, Smell and Eyesight" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The saberpaw has Advantage on Wisdom (Perception) checks that rely on hearing, smell or eyesight."
+        }
+        #tGYDQiKHSXv161Q8wJAvvEF1 ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The cat saberpaw can attack three times: twice with its claws and once with its bite in its hybrid cat form."
+        }
+        #tYxtIanFjrTAZEgnePXxz2Kt ^"Claw" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 5 (1d8 +3) Slashing damage."
+        }
+        #tLDDu5sx0AXDZpVOSZIRJJBi ^"Bite" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 8 (1d10 +3) Piercing damage."
+        }
+        #tWUQfZjwcbvm2zKjYTWfsnW2 ^"Fortunate Soul" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Reaction"
+            ^"Description" STRING "When the cat saberpaw rolls a 1 on an attack roll, ability check or saving throw, it can reroll the die and must use the new roll."
+        }
+    }
+}
+
+#tT2kO3F5yHruYf1VLcS0mYC5 ^"Cat Spook" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Cat Spook"
+        ^"Size" STRING "Tiny"
+        ^"Type" STRING "beast"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 6
+            ^"Dexterity" INTEGER 28
+            ^"Constitution" INTEGER 10
+            ^"Intelligence" INTEGER 14
+            ^"Wisdom" INTEGER 10
+            ^"Charisma" INTEGER 13
+        }
+        ^"Armor Class" STRING "18"
+        ^"Hit Points" INTEGER 20
+        ^"Hit Dice" STRING "8d4"
+        ^"Speed" STRING "40 ft. 20 ft. Climb"
+        ^"Skills" STRING "Stealth +10 Perception +2"
+        ^"Senses" STRING "Darkvision 60 ft. Passive Perception 12"
+        ^"Challenge Rating" STRING "1"
+        ^"Experience Points" INTEGER 200
+    }
+    FEATURES {
+        #t423CIapsC1nDjgZ5OAKIjzm ^"Naturally Hidden" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The cat spook is always considered stealthed against hostile detection: even in conditions where it can't use an action or a Bonus Action to perform hide action, it is considered hidden (DC 15 to detect)."
+        }
+        #twiRWoaetBU4ButYO2pWNUkZ ^"Keen Smell" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The cat spook has Advantage on Wisdom (Perception) checks that rely on smell."
+        }
+        #tApAgqvXpNHQvWZbnJn1SlAf ^"Cunning Action" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The cat spook can take a Bonus Action on each of its turns in combat. This action can be used only to take a Dash, Disengage, or Hide action."
+        }
+        #tbFJayAaTSGyZL8XZ9L1igsm ^"Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The cat spook has these magical abilities and requires no components to cast: At Will: minor illusion, prestidigitation, fog cloud 3/day: darkness, knock, misty step 1/day: invisibility, pass without trace"
+        }
+        #tEDLVYhiezvJsbqtTq1k6Cge ^"Dagger" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +10 to hit, reach 5 ft. one target. Hit: 10 (1d4+8) Piercing damage."
+        }
+        #t2HvFrwlrESVQ4LUTjLRj1D9 ^"Blowgun" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Weapon Attack: +10 to hit, 25 ft. one target. Hit: 1 (1) Piercing damage. The dart is coated with a poison called felinkin. A creature subjected to this poison must succeed on a Constitution saving throw (DC 8) or be poisoned for 10 minutes. If the saving throw fails by 3 or more, the creature is also unconscious while poisoned in this way. The creature wakes up if it takes damage or another creature takes a turn to shake it awake."
+        }
+        #t9cBHx7tR1yt8I7jb8JQj2xr ^"Fortunate Soul" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Reaction"
+            ^"Description" STRING "When the cat spook rolls a 1 on an attack roll, ability check or saving throw, it can reroll the die and must use the new roll."
+        }
+    }
+}
+
+#t3j1GIUdZARznrLw4RII6abU ^"Cat Officer" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Cat Officer"
+        ^"Size" STRING "Tiny"
+        ^"Type" STRING "beast"
+        ^"Alignment" STRING "any alignment"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 6
+            ^"Dexterity" INTEGER 28
+            ^"Constitution" INTEGER 10
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 10
+            ^"Charisma" INTEGER 14
+        }
+        ^"Armor Class" STRING "18"
+        ^"Hit Points" INTEGER 30
+        ^"Hit Dice" STRING "12d4"
+        ^"Speed" STRING "40 ft. 20 ft. Climb"
+        ^"Saving Throws" STRING "Dex +11, Int +4"
+        ^"Skills" STRING "Acrobatics +11, Intimidation +5 Perception +3 Sleight of Hand +11, Stealth +11"
+        ^"Senses" STRING "Superior Darkvision 120 ft. Passive Perception 13"
+        ^"Challenge Rating" STRING "5"
+        ^"Experience Points" INTEGER 1800
+    }
+    FEATURES {
+        #t4DHDrtkKvirEPliX0fXzrzI ^"Keen Smell" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The cat officer has Advantage on perception checks that rely on smell."
+        }
+        #tZDYGhX8L91P0gtt8mKDGaxG ^"Cunning Action" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The cat officer can take a Bonus Action on each of its turns in combat. This action can be used only to take a Dash, Disengage, or Hide action."
+        }
+        #tC1AKfCjoO27bCtn36N5i74C ^"Evasion" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If the cat officer is subjected to an effect that allows it to make a Dexterity saving throw to take half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+        }
+        #tCnW3URhyTvfHh39ZgWeDC5h ^"Sneak Attack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Once per turn the cat officer can deal extra 14 (4d6) damage to one creature it hits with an attack if it has Advantage on the attack roll. The attack must use a finesse or a ranged weapon. The cat officer doesn't need Advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapaciated and the cat officer doesn't have Disadvantage on the attack roll."
+        }
+        #tOoyer5bvxjPK3eEkXpYgAM2 ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The cat officer makes three attacks with its two palas. Twice with the first, once with the second."
+        }
+        #tEH3h98P0zNrrL9KKPd1NQeZ ^"Pala" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +11 to hit, reach 5 ft., one target. Hit: 11 (1d6+8) Piercing damage."
+        }
+        #tvWSChAB5DzDoMkMyizmdQ5b ^"Short Bow" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Weapon Attack: +11 to hit, range 80/320 ft., one target. Hit 11 (1d6+8) Piercing damage."
+        }
+        #t7IvbIvoXL0xghmACwDnJQBd ^"Uncanny Dodge" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Reaction"
+            ^"Description" STRING "The cat officer halves the damage that it takes from an attack that hits it. It must be able to see the attacker."
+        }
+        #tCCUk6sQubMDURM33g2GtacK ^"Fortunate Soul" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Reaction"
+            ^"Description" STRING "When the cat officer rolls a 1 on an attack roll, ability check or saving throw, it can reroll the die and must use the new roll."
+        }
+    }
+}
+
+#toSEnVNT1OUQuOvKOS6dlsmL ^"Obur, The Spritof Gluttony" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Obur, The Spritof Gluttony"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "fey"
+        ^"Alignment" STRING "neutral evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 18
+            ^"Dexterity" INTEGER 8
+            ^"Constitution" INTEGER 16
+            ^"Intelligence" INTEGER 8
+            ^"Wisdom" INTEGER 14
+            ^"Charisma" INTEGER 6
+        }
+        ^"Armor Class" STRING "13 (Natural Armor)"
+        ^"Hit Points" INTEGER 82
+        ^"Hit Dice" STRING "11d8 + 33"
+        ^"Speed" STRING "25 ft."
+        ^"Saving Throws" STRING "Str +6, Con +5"
+        ^"Damage Resistances" STRING "Bludgeoning, Piercing and Slashing from nonmagical attacks."
+        ^"Condition Immunities" STRING "Charmed, Exhausted, Poisoned."
+        ^"Senses" STRING "Darkvision 60 ft. Passive Perception 12."
+        ^"Challenge Rating" STRING "3"
+        ^"Experience Points" INTEGER 700
+    }
+    FEATURES {
+        #tYNym3HIPZbUvbuBOB2UuMPW ^"Ichor Carapace" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The obur has a hard carapace-like skin, coated with acidic ichor. When a creature touches the obur or hits it with a melee attack while within 5 feet of it, the creature takes 3 (1d6) Acid damage."
+        }
+        #tHmQ3PX0ORRaOswIXCPNKtAc ^"Extended Tongue" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 7 (1d6+4) Piercing damage and the target must succeed on a Constitution save (DC 12) or take 9 (3d6) Poison damage and become Poisoned for 1 minute. The target can repeat its saving throw at the end of each of its turns to break free from this effect. The target is also grappled (Escape DC16). Until the grapple ends, the target is Restrained, and the obur can't bite another target."
+        }
+        #tIhDzAZuerDc08KUMEOEdNYK ^"Swallow Whole" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The obur makes another attack against a medium or smaller target it is already grappling. If this attack hits, the target is swallowed, and the grapple condition ends. The swallowed target is Blinded and restrained, it has cover against attacks and other effects outside the obur, and it takes 15 (5d6) Acid damage at the start of the obur's turns. The obur can have only one target swallowed at a time. If the obur dies, a swallowed creature is no longer Restrained by it and can escape from the corpse using 5 feet of movement, exiting prone."
+        }
+    }
+}
+
+#tKs2LEkKbKo0zAsBSUkG3vqt ^"Stealer of Faces" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Stealer of Faces"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "construct"
+        ^"Alignment" STRING "neutral evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 16
+            ^"Dexterity" INTEGER 18
+            ^"Constitution" INTEGER 14
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 15
+            ^"Charisma" INTEGER 15
+        }
+        ^"Armor Class" STRING "14"
+        ^"Hit Points" INTEGER 68
+        ^"Hit Dice" STRING "10d8 +20"
+        ^"Speed" STRING "30 ft."
+        ^"Skills" STRING "Stealth +7"
+        ^"Condition Immunities" STRING "charmed, blinded, deafened."
+        ^"Senses" STRING "Tremorsense 60 ft. Passive Perception 12"
+        ^"Challenge Rating" STRING "5"
+        ^"Experience Points" INTEGER 1800
+    }
+    FEATURES {
+        #t0t6aMGKG62lmpch0ymrjlPm ^"Howls of Madness" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The stealer of faces has a crudely sewn cloth made of faces that howl and scream at any creature in close proximity. Any creature within 15 ft to the stealer of faces will have to make a Wisdom saving throw (DC 15) or get frightened."
+        }
+        #tHD4bMlDHPf7YsBnJwhe5no3 ^"Hunter of Fear" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Any attack the stealer of faces does against a creature under the Frightened condition will have Advantage."
+        }
+        #tjVFRx573KsdYA9AQ0C5BBfO ^"Absorb Fear" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "When the stealer of faces attacks a frightened opponent for the first time, it deals 12 (4d6) Necrotic damage and heals its wounds for as much damage it deals. If the stealer of faces has maximum Hit Points, it gains 10 Temporary Hit Points."
+        }
+        #tz2qFsB4XAIe706eYA6hWtLu ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The stealer of faces makes two claw attacks."
+        }
+        #tVYnMQfc1uZgeRqN7QKlQLWd ^"Dreadful Claws" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 7 (1d6+4) Slashing damage. The creature who is hit with any of these claw attacks needs to make a Constitution saving throw (DC 13) or be paralyzed for 1 minute. The creature can repeat the saving throw at the end of its turns, ending the effect on itself on a success."
+        }
+    }
+}
+
+#tqoSrMuYJJ3IiEsyeHe4sXmI ^"Tall Spirit" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Tall Spirit"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "Hollow Undead"
+        ^"Alignment" STRING "Neutral Evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 18
+            ^"Dexterity" INTEGER 14
+            ^"Constitution" INTEGER 16
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 11
+            ^"Charisma" INTEGER 12
+        }
+        ^"Armor Class" STRING "12"
+        ^"Hit Points" INTEGER 45
+        ^"Hit Dice" STRING "6d8 + 18"
+        ^"Speed" STRING "30 ft."
+        ^"Skills" STRING "Perception +2"
+        ^"Damage Resistances" STRING "necrotic, bludgeoning, piercing and slashing from nonmagical weapons."
+        ^"Damage Immunities" STRING "poison"
+        ^"Condition Immunities" STRING "exhaustion and poisoned."
+        ^"Senses" STRING "Darkvisin 60 ft. Passive Perception 13."
+        ^"Challenge Rating" STRING "3"
+        ^"Experience Points" INTEGER 700
+    }
+    FEATURES {
+        #txODYNWm3LRNyYbE9UlUPBlw ^"Sunlight Sensitivity" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "While in sunlight, the aychura has Disadvantage on all attack rolls, as well as on all perception checks that rely on sight."
+        }
+        #toBTcv9MlHFuq6ezv4Yw1Dc3 ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The aychura makes two attacks: one with each of its long arms. If it has a creature grappled with its arm, it replaces one arm attack with a bite attack."
+        }
+        #tcZHifxWoNC6ZVkBBYC6b5LC ^"Strangling Attack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +6 to hit, reach 15 ft., one target. Hit: 8 (2d6+4) Bludgeoning damage. The aychura goes for the throat, grappling its target. The target is Grappled (Escape DC16), and until the grapple ends the aychura can't grapple another target with this arm."
+        }
+        #t2M1W7c0imDhbiglc4FoZ6js ^"Pounding Attack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 11 (3d6 + 4) Bludgeoning damage."
+        }
+        #t9TzcyHvX1szh5W4SItfm6yW ^"Bite" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d6+4) Piercing damage."
+        }
+    }
+}
+
+#tqxPrYazMQB2qeO9lVkSrFJ0 ^"Ya'is" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Ya'is"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "undead"
+        ^"Alignment" STRING "chaotic evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 3
+            ^"Dexterity" INTEGER 19
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 14
+            ^"Charisma" INTEGER 15
+        }
+        ^"Armor Class" STRING "13"
+        ^"Hit Points" INTEGER 66
+        ^"Hit Dice" STRING "12d8+12"
+        ^"Speed" STRING "30 ft. move and fly"
+        ^"Saving Throws" STRING "Dex +6, Cha +4."
+        ^"Skills" STRING "Stealth +5"
+        ^"Damage Vulnerabilities" STRING "radiant"
+        ^"Damage Resistances" STRING "acid, fire, lightning, thunder, bludgeoning, piercing and slashing from nonmagical attacks."
+        ^"Damage Immunities" STRING "cold, poison necrotic."
+        ^"Condition Immunities" STRING "exhausted, grappled, paralyzed, petrified, poisoned, prone, restrained."
+        ^"Senses" STRING "Darkvision 120 ft., Passive Perception 12."
+        ^"Challenge Rating" STRING "4"
+        ^"Experience Points" INTEGER 1100
+    }
+    FEATURES {
+        #tyGpATrmxmhEwNUzNu8coq5c ^"Incorporeal" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The ya'is can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) Force damage if it ends its turn inside an object."
+        }
+        #t8UFBdYLE2DA8BwdXZahnTzB ^"Remain in Shadows" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "While in total darkness, the ya'is can take the Hide action as a Bonus Action and will have Advantage in dim light conditions."
+        }
+        #tzGzmOWEvJu6OqMVrCfuZYG1 ^"Sensitive to Light" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "While in bright light, the ya'is has Disadvantage on attack rolls, as well as perception checks that rely on sight."
+        }
+        #teffWhL79EGdQUlOVTC3n7yu ^"Shadow Embrace" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (2d6 +4) Necrotic damage. The ya'is gains Temporary Hit Points equal to the damage dealt."
+        }
+        #tDwyDCvOn51Zw5yEP39hnW0C ^"Sorrowful Scream" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "As an action, the ya'is can utter a horrific scream. Creatures within 30 ft. of the ya'is must succeed a Wisdom saving throw (DC 12) or take 9 (2d8) Psychic damage and gain -1 penalty to attack rolls, ability checks and saving throws. On a successful save, they take half damage and suffer no penalty."
+        }
+    }
+}
+
+#t7OTFFeJrpLeNfmeXaTplvB1 ^"Chor" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Chor"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "djinn"
+        ^"Alignment" STRING "lawful evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 16
+            ^"Dexterity" INTEGER 17
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 8
+            ^"Wisdom" INTEGER 10
+            ^"Charisma" INTEGER 8
+        }
+        ^"Armor Class" STRING "13"
+        ^"Hit Points" INTEGER 28
+        ^"Hit Dice" STRING "5d8+5"
+        ^"Speed" STRING "30 ft., 30 ft. climb"
+        ^"Skills" STRING "Stealth +5"
+        ^"Senses" STRING "Darkvision 60 ft. Passive Perception 10"
+        ^"Challenge Rating" STRING "3"
+        ^"Experience Points" INTEGER 700
+    }
+    FEATURES {
+        #tiEnJxMysKm2yltIfUZnbtUx ^"Possession (Recharge 6)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The chor may try to possess a creature within 5 ft. of it. The creature makes a Charisma saving throw (DC 13) or is possessed by the chor. The djinn may choose which ability score to use after possessing the creature (only physical ability scores, the mental scores will be the djinni's)."
+        }
+        #tB9CKynaDyPU6Rn1ueDjxaSk ^"Form of the Ghaib" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "While not possessing a creature, the djinn is in this form (p.360)."
+        }
+        #tbYFVVpnOvGE8dTv72x32Sf9 ^"Djinnstruck" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If a creature physically contacts a djinn in any way, it has the effects of the djinnstruck (p.360)."
+        }
+        #to6Z5ehdDWEHQqfZloL4sctY ^"Burning Touch" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit 8 (2d6 +3) Necrotic damage. The touch of chor has a draining effect: the target creature has to make a Constitution save (DC 8) or get 1 level of exhaustion for each hit."
+        }
+    }
+}
+
+#tAfRzwV436afv3p9oWhN0mcQ ^"The Soul Whisperer" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "The Soul Whisperer"
+        ^"Size" STRING "medium"
+        ^"Type" STRING "djinn"
+        ^"Alignment" STRING "chaotic evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 3
+            ^"Dexterity" INTEGER 15
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 14
+            ^"Wisdom" INTEGER 10
+            ^"Charisma" INTEGER 17
+        }
+        ^"Armor Class" STRING "12"
+        ^"Hit Points" INTEGER 33
+        ^"Hit Dice" STRING "6d8 + 6"
+        ^"Speed" STRING "30 ft. fly 50 ft."
+        ^"Saving Throws" STRING "Cha +5"
+        ^"Skills" STRING "Persuasion +5"
+        ^"Senses" STRING "Passive Perception 10. Darkvision 60 ft."
+        ^"Challenge Rating" STRING "1"
+        ^"Experience Points" INTEGER 200
+    }
+    FEATURES {
+        #tlG2Ng6igm0uJP7YIBn4TzTu ^"Possession (Recharge 6)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The soul whisperer may try to possess a creature within 5 ft. of it. The creature makes a Charisma saving throw (DC 13) or is possessed by the Soul Whisperer. The djinn may choose which ability score to use after possessing the creature (only physical ability scores, the mental scores will be djinnis)."
+        }
+        #t2ps7Y6hhNtoujF42BignKNp ^"Form of the Ghaib" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "While not possessing a creature, the djinn is in this form (p.360)."
+        }
+        #tlIqmbpgpd4ROaRi7NZWNyT8 ^"Djinnstruck" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If a creature physically contacts a djinn in any way, it has the effects of the djinnstruck (p.360)."
+        }
+        #tT1DNjONzgAtBt6b3XSSsdi8 ^"Innate Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The soul whisperer's spell save DC is 13 and has a +5 spell attack bonus. At will: firebolt 1/day: invisibility, charm person"
+        }
+        #t9MEYlMOPVcmT0PjPvQ6nxqI ^"Maddening Whispers (1/day)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The soul whisperer chooses a creature within 30 ft. of it that can at least understand one language and can hear. That creature is forced to make a Charisma saving throw (DC 13). On a failed save, the creature falls under the effects of the djinnstruck and is Frightened of a specific object or creature that the soul whisperer chooses. If the spell fails by 5 or more, the creature's alignment shifts. Lawful becomes chaotic, good becomes evil, and vice versa. If you are true neutral or unaligned, this feature has no effect. The effect disappears after three days."
+        }
+        #tSufWisQSepOLA5TkC4LaskZ ^"Claw Attack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +4 to hit. Reach: 5 ft., one target. Hit: 7 (2d4 + 2) Psychic damage."
+        }
+    }
+}
+
+#tpQYPYeOwE4uq2l5jVmDwSW8 ^"The Silver Tongue" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "The Silver Tongue"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "djinn"
+        ^"Alignment" STRING "chaotic evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 10
+            ^"Dexterity" INTEGER 14
+            ^"Constitution" INTEGER 11
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 15
+            ^"Charisma" INTEGER 16
+        }
+        ^"Armor Class" STRING "12"
+        ^"Hit Points" INTEGER 22
+        ^"Hit Dice" STRING "5d8"
+        ^"Speed" STRING "40 ft."
+        ^"Saving Throws" STRING "Charisma +5"
+        ^"Skills" STRING "Persuasion +5, Deception +5"
+        ^"Damage Immunities" STRING "psychic"
+        ^"Senses" STRING "Passive Perception 12"
+        ^"Challenge Rating" STRING "1"
+        ^"Experience Points" INTEGER 200
+    }
+    FEATURES {
+        #t2NH9J5YxNj3zwVqDG0yIUaM ^"Form of the Ghaib" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "While not possessing a creature, the djinn is in this form (p.360)."
+        }
+        #tmGIo32JFSGLnN6nzptjDok0 ^"Djinnstruck" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If a creature physically contacts a djinn in any way, it has the effects of the djinnstruck (p.360)."
+        }
+        #tq9M9Q6cTKpeO3onNTWE6R2z ^"Possession (Recharge 6)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The silver tongue may try to possess a creature within 5 ft. of it. The creature makes a Charisma saving throw (DC 13) or be possessed by the silver tongue. The djinn may choose which ability score to use after possessing the creature (only physical ability scores, the mental ability scores will be djinn's)."
+        }
+        #tkQn202ZDce6ZUvkzwwuz4xX ^"Deadly Claws" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Spell Attack: +5 to hit., reach 5 ft., one target. Hit: 3 (1d6) Psychic damage."
+        }
+        #t7PlcBhapEyGb7nlKcnxI3l1 ^"Charming Glance" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The silver tongue attempts to charm a creature that is attracted to it within 30 feet of her with a look. If that creature and silver tongue can see each other, the creature must succeed on a wisdom save (DC 13) or be charmed for 1 hour. The creature will act friendly towards the silver tongue and never turn hostile if treated kindly enough."
+        }
+    }
+}
+
+#tbes6em8v85rgeQXJwz2WqFQ ^"The Wicked Shade" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "The Wicked Shade"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "djinn"
+        ^"Alignment" STRING "chaotic evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 14
+            ^"Dexterity" INTEGER 14
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 11
+            ^"Charisma" INTEGER 16
+        }
+        ^"Armor Class" STRING "12"
+        ^"Hit Points" INTEGER 27
+        ^"Hit Dice" STRING "5d8+5"
+        ^"Speed" STRING "40 ft."
+        ^"Saving Throws" STRING "Charisma +5"
+        ^"Skills" STRING "Deception +5, Intimidation +5"
+        ^"Damage Immunities" STRING "psychic"
+        ^"Senses" STRING "Passive Perception 10"
+        ^"Challenge Rating" STRING "1"
+        ^"Experience Points" INTEGER 200
+    }
+    FEATURES {
+        #tICCw5kQTpEwBJqSRcxUoO7j ^"Form of the Ghaib" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "While not possessing a creature, the djinn is in this form (p.360)."
+        }
+        #tozP46cetByXCSDp7ACbyIAi ^"Djinnstruck" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If a creature physically contacts a djinn in any way, it has the effects of the djinnstruck (p.360)."
+        }
+        #tKovKo2tFdmmlk5XnjyQMflt ^"Possession (Recharge 6)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The wicked shade may try to possess a creature within 5 ft. of it. The creature makes a Charisma saving throw (DC 13) or be possessed by the wicked shade. The djinn may choose which ability score to use after possessing the creature (only physical ability scores, the mental ability scores will be djinn's)."
+        }
+        #tLRJ9IYLoFCn8guH81eUtz1g ^"Touch of Evil" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Spell Attack: +5 to hit., reach 5 ft., one target. Hit: 3 (1d6) Psychic damage."
+        }
+        #tgoyuXaMsTHPtYEjhsWz20kY ^"Intimidating Glance" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The wicked shade attempts to frighten a creature within 30 feet of it with a look. If that creature and the wicked shade can see each other, the creature must succeed on a Wisdom saving throw (DC 13) or be frightened for 1 minute. A creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the wicked shade's Intimidating Glance for the next 24 hours."
+        }
+    }
+}
+
+#tnI3Cqk0l8JGsI81oo75h68s ^"The Horrorist" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "The Horrorist"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "djinn"
+        ^"Alignment" STRING "chaotic evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 14
+            ^"Dexterity" INTEGER 13
+            ^"Constitution" INTEGER 12
+            ^"Intelligence" INTEGER 14
+            ^"Wisdom" INTEGER 15
+            ^"Charisma" INTEGER 16
+        }
+        ^"Armor Class" STRING "13"
+        ^"Hit Points" INTEGER 71
+        ^"Hit Dice" STRING "13d8+13"
+        ^"Speed" STRING "40 ft."
+        ^"Saving Throws" STRING "Charisma +5"
+        ^"Skills" STRING "Arcana +4, History +4 Insight +4 Perception +4"
+        ^"Damage Immunities" STRING "psychic"
+        ^"Senses" STRING "Passive Perception 14"
+        ^"Challenge Rating" STRING "1"
+        ^"Experience Points" INTEGER 200
+    }
+    FEATURES {
+        #tpmHPoZfNXvoxMKnMhKY8Z4O ^"Form of the Ghaib" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "While not possessing a creature, the djinn is in this form (p.360)."
+        }
+        #tpX66wvtmtXhdKAcplEtqnP0 ^"Djinnstruck" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If a creature physically contacts a djinn in any way, it has the effects of the djinnstruck (p.360)."
+        }
+        #tVg6dsOtJs3xoLhevqWZ9xat ^"Possession (Recharge 6)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The horrorist may try to possess a creature within 5 ft. of it. The creature makes a Charisma saving throw (DC 13) or be possessed by the horrorist. The djinn may choose which ability score to use after possessing the creature (only physical ability scores, the mental ability scores will be djinn's)."
+        }
+        #t4aZsWCRofODSq1jOtiRIyG7 ^"Innate Spellcasting" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Charisma is his spellcasting modifier. DC 13. At will: vicious mockery, evil eye 1/day: bane, sleep"
+        }
+        #tmSqLabQwrXKWXO0uzcZxIGO ^"III Word" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The horrorist can choose a creature within 30 ft. of him and force that creature into making a Charisma saving throw (DC 13). On a failed save the creature will be frightened until the end of its next turn and take 10 (3d6) Psychic damage."
+        }
+        #tuGaerJ9oZP2h0YIxJwYCgkZ ^"Story of Enthrallment" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The horrorist can spin a tale that every listener will listen to, leaving worries of the world behind. Every listener will have to succeed on a DC 13 Wisdom saving throw or be forced to listen to the tale the horrorist spins until the story ends. Any hostile activity will break the desire to listen to the tale."
+        }
+    }
+}
+
+#t6RyYQWho1FeEmruUIbAStYU ^"Shamhuresh" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Shamhuresh"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "djinn"
+        ^"Alignment" STRING "chaotic evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 17
+            ^"Dexterity" INTEGER 15
+            ^"Constitution" INTEGER 18
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 13
+            ^"Charisma" INTEGER 10
+        }
+        ^"Armor Class" STRING "12"
+        ^"Hit Points" INTEGER 85
+        ^"Hit Dice" STRING "10d8 +40"
+        ^"Speed" STRING "40 ft."
+        ^"Saving Throws" STRING "Dex +5, Con +7, Wis +4"
+        ^"Skills" STRING "Medicine +4"
+        ^"Damage Immunities" STRING "psychic"
+        ^"Senses" STRING "Passive Perception 11"
+        ^"Challenge Rating" STRING "6"
+        ^"Experience Points" INTEGER 2300
+    }
+    FEATURES {
+        #tckSjmRXNnfFxLDSHP9TzFAb ^"Form of the Ghaib" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "While not possessing a creature, the djinn is in this form (p.360)."
+        }
+        #tHyskCTXMkS8c3zdkFFC43yW ^"Djinnstruck" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If a creature physically contacts a djinn in any way, it has the effects of the djinnstruck (p.360)."
+        }
+        #tgPh8Yv9MNWodimjWSlPNRg8 ^"Possession (Recharge 6)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The shamhuresh may try to possess a creature within 5 ft. of it. The creature makes a Charisma saving throw (DC 13) or is possessed by the rot bringner. The djinn may choose which ability score to use after possessing the creature (only physical ability scores, the mental ability scores will be djinn's)."
+        }
+        #ttUWdEZk1Joh6GgoDeakb24L ^"Magical Resistance" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The shamhuresh has Advantage on saving throws against spells and other magical effects."
+        }
+        #tNnGIHZdzeS6m0kiqw1GWUkk ^"Aura of Infection" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "A strong and mind boggling disease emanates from the shamhuresh in an aura with a 30-foot radius. Any non-Djinni creature in that area can't use reactions against it."
+        }
+        #t96Ccu8gcrxQDDoZxml5sSSu ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The shamhuresh makes two attacks with its Infectious Touch."
+        }
+        #tUjpLOCHdyA0CYdtbEZiPw1v ^"Infectious Touch" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 10 (2d6+3) Necrotic damage. If the target is a living creature, it must succeed on a Constitution saving throw (DC 14) or become diseased. While diseased this way, the target takes 9 (2d8) Necrotic damage at the start of each of its turns. The target can repeat the saving throw at the end of its turns, ending the disease on a success."
+        }
+        #tE4lSCXOat4HOJZN8M9uiLdJ ^"Infectious Cloud" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "A 60-foot radius cloud of disease extends from the shamhuresh. Each living creature in the area must succeed on a constitution saving throw (DC 14) or become diseased. While diseased in this way, a living creature's speed is halved and can't use bonus actions. A target can repeat this saving throw at the end of its turns ending the disease on a success."
+        }
+    }
+}
+
+#tx2X0MpdSILoAhTHusheIYzG ^"Nar-as Samum" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Nar-as Samum"
+        ^"Size" STRING "Large"
+        ^"Type" STRING "djinn"
+        ^"Alignment" STRING "chaotic evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 10
+            ^"Dexterity" INTEGER 17
+            ^"Constitution" INTEGER 16
+            ^"Intelligence" INTEGER 12
+            ^"Wisdom" INTEGER 13
+            ^"Charisma" INTEGER 16
+        }
+        ^"Armor Class" STRING "17 (Natural Armor)"
+        ^"Hit Points" INTEGER 93
+        ^"Hit Dice" STRING "11d10+33"
+        ^"Speed" STRING "40 ft."
+        ^"Skills" STRING "Perception +3, Survival +3"
+        ^"Damage Resistances" STRING "piercing, slashin and bludgeoning attacks from non-magical weapons."
+        ^"Damage Immunities" STRING "psychic"
+        ^"Senses" STRING "Passive Perception 13"
+        ^"Challenge Rating" STRING "6"
+        ^"Experience Points" INTEGER 2300
+    }
+    FEATURES {
+        #tMDV7GLnBcEzgYfHopaU2Emb ^"Possession (Recharge 6)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The djinn may try to possess a creature within 5 ft. of it. The creature makes a Charisma saving throw (DC 13) or be possessed by the djinn. The djinn may choose which ability score to use after possessing the creature (only physical ability scores, the mental scores will be djinnis)."
+        }
+        #twqEt70jjgGjd7agoMvt9DE6 ^"Form of the Ghaib" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "While not possessing a creature, the djinn is in this form (p.360)."
+        }
+        #tw1zI79mFOwjxfH5R5MJit1v ^"Djinnstruck" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If a creature physically contacts a djinn in any way, it has the effects of the djinnstruck (p.360)."
+        }
+        #tNOBoktzqNkrKKYYcI5Y2Tyf ^"Burning Aura" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "A creature that touches the nar-as samum or hits it with a melee attack while within 5 ft. of it takes 6 (1d12) Fire damage."
+        }
+        #toMeh9Oq3MTNvgoPnqF2es0G ^"Burning Bright" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The nar-as samum sheds a bright light in a 20-foot radius and dim light in an additional 20 ft."
+        }
+        #tX05JQ9MqJbtZUKFRmfIN8fq ^"Multiattack" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "The nar-as samum can make two attacks in any combination."
+        }
+        #tjai9qLKWDBxIjJEaUqa5Bnu ^"Flaming Touch" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit 10 (2d6 +3) Fire damage. If the target is a creature or a flammable object, it ignites. Until a creature takes an action to douse the fire, the target takes 6 (1d12) Fire damage at the start of each of its turns."
+        }
+        #tPoPOWlIzfwYzzD3qP5CxpWL ^"Flame Bolt" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Ranged Spell Attack: +5 to hit, reach 120 ft., one target. Hit 14 (2d10+3) Fire damage."
+        }
+    }
+}
+
+#thkBDadgXAgM8m6XqrR0XKlR ^"Zawbaw'ah" DEF {
+    EXTENDS ^"Monster"
+    PROPERTIES {
+        ^"Name" STRING "Zawbaw'ah"
+        ^"Size" STRING "Medium"
+        ^"Type" STRING "djinn"
+        ^"Alignment" STRING "chaotic evil"
+        ^"Abilities" DEF {
+            ^"Strength" INTEGER 18
+            ^"Dexterity" INTEGER 16
+            ^"Constitution" INTEGER 17
+            ^"Intelligence" INTEGER 10
+            ^"Wisdom" INTEGER 12
+            ^"Charisma" INTEGER 12
+        }
+        ^"Armor Class" STRING "15 (Natural Armor)"
+        ^"Hit Points" INTEGER 85
+        ^"Hit Dice" STRING "9d12 + 27"
+        ^"Speed" STRING "35 ft. 70 ft. fly"
+        ^"Damage Immunities" STRING "psychic"
+        ^"Senses" STRING "Passive Perception 11"
+        ^"Challenge Rating" STRING "4"
+        ^"Experience Points" INTEGER 1100
+    }
+    FEATURES {
+        #tO7c2AMOkz59YvT69X7g8WwM ^"Form of the Ghaib" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "While not possessing a creature, the djinn is in this form (p.360)."
+        }
+        #t3YqVqOLhaSZfmJSBSyDUnlc ^"Djinnstruck" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "If a creature physically contacts a djinn in any way, it has the effects of the djinnstruck (p.360)."
+        }
+        #tcAyLClnx2UiD8MejvaEfjta ^"Possession (Recharge 6)" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "The djinn may try to possess a creature within 5 ft. of it. The creature makes a Charisma saving throw (DC 13) or be possessed by the djinn. The djinn may choose which ability score to use after possessing the creature (only physical ability scores, the mental scores will be djinnis)."
+        }
+        #tdLr25B2zCJmxudUzmkLhS9j ^"Onslaught" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Winds push the zawbaw'ah towards its enemies. As a Bonus Action, the zawbaw'ah can move up to its speed towards a hostile creature that it can see."
+        }
+        #ttBCYaNRckB102v6IpOYqcfc ^"Windy Aura" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Trait"
+            ^"Description" STRING "Creatures that start their turn within 5 feet of the zawbaw'ah must make a dexterity saving throw (Difficulty 14) or take 8 (1d6+4) Lightning damage on a failed save, or half as much damage on a successful one."
+        }
+        #texzrfsAR09EDiF1DCvmFzXF ^"Wind Touch" DEF {
+            EXTENDS ^"Stat Block Feature"
+            ^"Category" STRING "Action"
+            ^"Description" STRING "Melee Weapon Attack: +6 to hit, reach 5 ft. one creature. Hit: 10 (1d10+4) Slashing damage. Additionally the target must succeed on a wisdom saving throw (Difficulty 13) or take 3 (1d6) Lightning damage."
+        }
+    }
+}
+
+}

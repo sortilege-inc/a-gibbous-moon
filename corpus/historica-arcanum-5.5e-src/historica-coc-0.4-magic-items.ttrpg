@@ -1,0 +1,259 @@
+EXTENSION "HistoricaArcanum_CoC_MagicItems" EXTENDS "Dnd5_5e_Core_Base" {
+    NAME "Historica Arcanum: The City of Crescent - Magic Items"
+    VERSION "0.4"
+    SPEC_VERSION "0.4"
+    RELEASE_DATE "2026-07-21"
+
+#tF3CTtPqgJGyVX0FheZ7qoAd ^"Al-Jazari's Book of Engineering" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "very rare"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Attunement Requirement" STRING "by a wizard, warlock or sorcerer"
+        ^"Description" STRING "Al-Jazari was a scientist from the court of Saladin. He was known as a man of great education and knowledge. This book was one of the very few books written by Al-Jazari and can be used as a wizard's spellbook and arcane focus at the same time. The book contains these spells:\n• grease • fog cloud • unseen servant • web • sleet storm • stinking cloud\nThe attuned wizard gains these spells as if they are scribed into the spellbook and can memorize them. The wizard also gets +1 to all saving throws versus Conjuration magic."
+    }
+}
+
+#tXa0RfrV9Z1YnTRhD5oJvaSk ^"Amulet of Justinian" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "uncommon"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Description" STRING "Justinian the Great is considered by many to be the most capable Basileos of the Byzantine Empire. It is rumored that he never slept throughout his reign. It is this amulet that gave him the ability to do so. The wearer requires no sleep and is immune to any kind of magic or spell-like abilities that would put it to sleep. However, the wearer still needs to mentally or physically rest for 8 hours in order to benefit from Long Rest."
+    }
+}
+
+#tr4YmvkWV8vgPvhwrPftnO75 ^"Ceramic Cup" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "common"
+        ^"Description" STRING "These Turkish coffee cups are used for fortune telling. The arcane residue from the divining spells sometimes remain on the cups themselves. These cups are quite common in the arcane circles and grant the user the ability to cast guidance once, and after that they are regular coffee cups. It also can be used for fortune-telling feats and features."
+    }
+}
+
+#tEMZr07dzzR7mFsubK69GzeI ^"Crown of Thorns" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "very rare"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Description" STRING "This crown is made from gold and small pieces of diamond are inlaid as thorns. It grants the wearer resistance against Piercing damage. The wearer also has Advantage on all Wisdom saving throws. The crown also gives the ability to cast telepathic bond once a day. This ability recharges at dawn."
+    }
+}
+
+#tXNxSBULXgmXQlp17oeDiEYg ^"Crown of Sargon" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "legendary"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Attunement Requirement" STRING "by a creature with at least 19 Charisma"
+        ^"Description" STRING "This is the crown of the very first sovereign of an empire: Sargon of Akkad. It has eight charges and the wearer may cast the spells below by expending the necessary charges. The spell save DC is 17. The crown regains 1d6 expended charges daily at dawn.\n• command (1 charge) • detect thoughts (2 charges) • silence (2 charges) • dominate person (5 charges)"
+    }
+}
+
+#tVWF0lHlsw23YA4fai2CJBgJ ^"Girdle of Courage" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "uncommon"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Description" STRING "This belt is studded with gems and inlaid with golden writings of holy scriptures, and lion carvings. It inspires courage in the wearer. The wearer is immune to the Frightened condition as long as it is attuned to this girdle."
+    }
+}
+
+#tMED8w1wtuH14grsscBfq1D2 ^"Greek Flamethrower" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "rare"
+        ^"Description" STRING "This two-handed weapon can expel flames in a 20 ft. line. The creatures inside the area must make a Dexterity saving throw (DC 14). On a failed save, they take 4d8 Fire damage. The weapon has 5 charges and every attack expends 1 charge. The flamethrower regains all expended charges daily at dawn."
+    }
+}
+
+#tZSQNFPJ9TToAAlWEpS4fAdb ^"Hacivat's Cane" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "legendary"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Attunement Requirement" STRING "by a bard"
+        ^"Description" STRING "This cane once belonged to Hacivat, the famous Shadowactor who is rumored to have magically managed to survive as a shadow to this very day. Hacivat, as a jester and actor, lived in the 13th century, during the invasion of Anatolia and the rapid Islamization of Turks. This cane still contains some piece of his power. All Charisma checks while wielding this cane are made with Advantage. Any use of Bardic Inspiration will also have Advantage. The cane has 12 charges and can be used to cast the spells below:\n• vicious mockery (at will) • charm person (1 charge) • disguise self (1 charge) • detect thoughts (2 charges) • suggestion (2 charges) • hypnotic pattern (3 charges) • fear (3 charges) • hallucinatory terrain (4 charges)\nAlso, the wielder of the cane is immune to any mind-altering illusion, phantasm, enchantment or charm magic. The cane gives +2 AC and Advantage on all spell saving throws while the wielder is holding the cane.\nThe charges of the cane only recover after another wielder attunes to the cane. It will not attune to any previous users who expended all the uses of the cane."
+    }
+}
+
+#tV4UmroPcudnFeMVWj7h0Co1 ^"Holy Staff of St. Benoit" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Item Type" STRING "Weapon (quarterstaff)"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Attunement Requirement" STRING "by a cleric or a druid"
+        ^"Description" STRING "This was once a very strong and potent magical item; now it only holds a small amount of power left. There are 3 charges in the staff, each charge can be either used as a cure wounds or a lesser restoration spell. Cure wounds can be cast up to 3rd level by expending more charges. After all the charges are expended, the staff can still be used as a magical weapon. The staff regains all expended charges daily at dawn."
+    }
+}
+
+#tJwtK6Cy08Tedk7SIApGd6Vj ^"Janissary Musket" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "rare"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Description" STRING "Sometimes janissaries of legendary marksmanship were given well decorated muskets with magically enhanced firepower. They are quite rare and require the extensive training of a janissary to be used. When attuned, this musket gives the ability to overcome piercing resistance to the one using it. Only creatures with proficiency in martial weapons can use this musket."
+    }
+}
+
+#tJ6oVIbooTUiTHz9wWW6PXQW ^"Janissary Shield" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "uncommon"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Attunement Requirement" STRING "by one creature who is proficient in martial weapons"
+        ^"Description" STRING "These circular shields were awarded to prominent janissaries for their valor and courage in combat. There are many different designs but all of them have the same ability. The shield grants the janissary resistance against any one type of damage once a day as a Reaction. This ability recharges at dawn."
+    }
+}
+
+#t2gkR4bFXu7WZUvHBqmKPQnR ^"Kopis of the Great" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "legendary"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Description" STRING "This kopis is far from the weapon it is meant to be, with its frail steel and cracked hilt. However, it wields immense authority and magical powers. It is rumored to be the Kopis of Alexander, found in a ditch near the easternmost border of the Ottoman empire, in the foot of the Zagros Mountains. Once attuned, it grants the owner proficiency on Persuasion and Intimidation checks. If the owner already has proficiency in either of these, it grants expertise instead. It also gives Advantage on any Charisma check performed by the wielder."
+    }
+}
+
+#tdZPwShIoOIxLP8EWf87Re0x ^"Lydian Coins" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "common"
+        ^"Description" STRING "These coins were passed from generation to generation and were first minted and used by the Lydians, who were the founders of minted currency. These coins, originating in Anatolia and used throughout all the civilizations in this geographical area, are a powerful symbol of trading fairly. Although they do not have any magical powers, it is through their cultural significance that they give the owner a fully fair trade in one trade agreement. The seller won't have ill intentions to rip off the buyer in this said trade."
+    }
+}
+
+#tlylqV1ZnYMBr2cj3F1ghTpm ^"Mirror of Roxelana" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "very rare"
+        ^"Description" STRING "This magic mirror once belonged to Hurrem Sultan, as the mirror carries her old name. It can be activated with the command word: доверять ('Doveryat'), which means trust. The first person looking into the mirror must make a Wisdom saving throw (DC 14). On a failed save the person who has spoken the command word can manipulate the mind of a creature that has looked into the mirror, as if it were under the effects of the suggestion spell. The affected creature will believe and regard as the truth the next sentence it will hear from the speaker of the command word."
+    }
+}
+
+#tuAWty4lwLWGCNpfp2KHBIpQ ^"Talisman of Warding" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "uncommon"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Description" STRING "Also known as “Musqa” by commoners, these talismans are crafted by clerics or, most often than not, by charlatans. Most do not do anything, but some actually have arcane properties.\nIf the players come across a working Musqa, any saving throws against curses or possession effects targeting the player are rolled with Advantage. The wearer is always under the effect of a protection from evil and good spell and also can cast bless spell once a day. This ability recharges at dawn."
+    }
+}
+
+#tdlh18Mj8XJqgwrKlSRZ4xqZ ^"Reyhan Sherbet" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "uncommon"
+        ^"Description" STRING "This rose colored potion smells like cinnamon and has a sweet taste. When drunk, it gives Advantage on all Charisma checks for 8 hours."
+    }
+}
+
+#tuNZBvv7FPRmJPahiv8erRC3 ^"Rider’s Bow" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "uncommon"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Description" STRING "This longbow is designed to use while on horseback. While you are mounted, it gives +2 to damage rolls."
+    }
+}
+
+#t2MLAuWScwyCDEmBkB3dON5S ^"Ring of the Conqueror" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "very rare"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Description" STRING "This ring stores spells cast into it, holding them until the attuned wearer uses them. The ring can store up to 5 levels worth of spells at a time. When found, it contains 1d6-1 levels of stored spells chosen by the GM. Any creature can cast a spell of 1st through 5th level into the ring by touching the ring as the spell is cast. The spell has no effect, other than to be stored in the ring. If the ring can’t hold the spell, the spell is expended without effect. The level of the slot used to cast the spell determines how much space it uses. While wearing this ring, you can cast any spell stored in it. The spell uses the slot level, spell save DC, spell attack bonus, and spellcasting ability of the original caster, but is otherwise treated as if you cast the spell. The spell cast from the ring is no longer stored in it, freeing up space. The wielder also has Advantage on all Charisma saving throws."
+    }
+}
+
+#teiHtneL2UnQNswmYOVkxJxG ^"Shaman Drum" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "uncommon"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Attunement Requirement" STRING "by a bard, cleric, or a druid"
+        ^"Description" STRING "This drum is the instrument of a shaman. It is used by shamans to worship Tengri, the Sky God of the Steppes. It can be used as a spellcasting focus. When attuned, the drum maximizes the benefit of spending a hit dice once per person during a Short Rest. This also includes the song of rest ability of the bard."
+    }
+}
+
+#t7TwdLlwNdjvrq3fcT4V2kVJ ^"Bronze Mirror" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "uncommon"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Description" STRING "Bronze mirrors are said to contain mystic powers in ancient civilizations. According to legends, one certain mirror was enchanted during the Warring States period in China by the lady Chang’e, goddess of the moon. It was lost during the Mongolian invasion.\nThe holder of this mirror has the following benefits while attuned to it:\n• The holder has Advantage on saving throws against body altering spells and magical effects, such as petrifying gaze or polymorph spells. This property can’t be used again until next dawn.\n• The holder can cast protection from evil and good spell without expending a spell slot but can’t do so again until the next dawn."
+    }
+}
+
+#tOpzaU43lCBUA4QlEV9sgTV8 ^"Spear of the Satrap" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "uncommon"
+        ^"Description" STRING "This spear is a Magic Weapon. When you hurl it and speak its Command word, it transforms into a piercing and burning light, forming a line 5 ft. wide that extends out from you to a target within 60 ft. Each creature in the line excluding you and the target must make a Dexterity saving throw (DC 13), taking 4d6 Fire damage on a failed save, and half as much damage on a successful one. The piercing light turns back into a spear when it reaches the target. Make a ranged weapon attack against the target. On a hit, the target takes damage from the spear plus 4d6 Fire damage. The spear’s property can’t be used again until the next dawn. In the meantime, the spear can be used as a Magic Weapon.\nThe command word is “Jatiy”, the Achaemenid word meaning “to strike.” It was found near the Taurus Mountains, hinting that this spear was used against Alexander the Great during the Battle of Issus."
+    }
+}
+
+#tHjWecsG9IgMUwPPOIILfyfs ^"Spectacles of Reflection" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "uncommon"
+        ^"Description" STRING "By using these spectacles, you can avoid directly making eye-contact with the creatures thanks to the cleverly installed and magically enhanced mirrors. While wearing the glasses, the creatures are unaffected by petrification effects, such as those from a Medusa’s gaze."
+    }
+}
+
+#tCifH6ASuY9WYMTIcRd4moDU ^"Sword of Yakup Agha of the Janissary Hearth" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Item Type" STRING "Scimitar +2"
+        ^"Rarity" STRING "very rare"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Description" STRING "This magical longsword has +2 bonus to hit and damage rolls. While attuned to it, the user is proficient with Wisdom saving throws."
+    }
+}
+
+#tAzd6HhefzcZ8j7SljBFllCm ^"Talisman of Nazar" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "uncommon"
+        ^"Description" STRING "Common folk call this the “Nazar Charm” in Turkish, and it protects the wearer against ill effects. When the wearer fails a saving throw against a curse or an enchantment spell, the talisman is broken, and the saving throw is considered a success. A person can benefit only once from this item in one given day."
+    }
+}
+
+#tZeK0AGPNRP7hIoeaPED2lR2 ^"The Blade of Solomon" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "legendary"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Description" STRING "This blade is said to be used by Solomon, the Sultan of Djinns. It was taken by Selim the Grim from Solomon’s tomb in the Holy Lands and was brought to Anatolia. Suleiman the Magnificent is rumored to have also wielded this blade, too. The blade is a +2 Yatagan, dealing an extra 2d6 Psychic damage against any non-Djinns. The wielder of the blade can see any Djinns whether they are in their Form of Al Ghaib or not, and is immune to any possession attempt."
+    }
+}
+
+#tol8ehYAvYq2W6AA7Px4bMlT ^"Turban of the Sophists: Averroes" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "uncommon"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Description" STRING "This turban is made from the finest white silk and adorned with an exquisite line of peridots. It grants the wielder proficiency in History skill; if the wielder already has proficiency in History skill, it gives expertise instead. The turban also gives the ability to cast comprehend languages once a day. This ability recharges at dawn."
+    }
+}
+
+#tQ3rHso3ERsKakMpYLHPALNU ^"Wings of Galata" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "very rare"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Description" STRING "This mechanical contraption can be worn over any armor and grants the attuned person a 60 ft. flight speed for 10 minutes. The wings have only one charge, which recharges each dawn."
+    }
+}
+
+#tKvVhJFWhtl3oLvHf7OqtrGU ^"Yasevi’s Arcane Tome" DEF {
+    EXTENDS ^"Magic Item"
+    PROPERTIES {
+        ^"Rarity" STRING "rare"
+        ^"Requires Attunement" BOOLEAN true
+        ^"Attunement Requirement" STRING "by a Wizard, Sorcerer or a Warlock"
+        ^"Description" STRING "The first of these arcane tomes were written by the famous poet Ahmad Yasevi and throughout the ages, many copies were made by strong spellcasters. This tome can be used by spellcasters to exchange their vitality to perform more magic. The owner of this tome can use an action to sacrifice 5 Hit Points per spell level to regain expended spell slots three times a day. The tome can be used to regain up to 3rd level spells. The Hit Points of the caster can never go below 0 Hit Points to gain spell slots and Temporary Hit Points can’t be used to regain spell slots."
+    }
+}
+
+}

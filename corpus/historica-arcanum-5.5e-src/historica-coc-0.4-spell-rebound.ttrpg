@@ -1,0 +1,228 @@
+EXTENSION "HistoricaArcanum_CoC_SpellRebound" EXTENDS "Dnd5_5e_Core_Base" {
+    NAME "Historica Arcanum: The City of Crescent - Spell Rebound"
+    VERSION "0.4"
+    SPEC_VERSION "0.4"
+    RELEASE_DATE "2026-07-21"
+
+#tdE1YCwELPQChb3kxVDKCOAW ^"Spell Rebound" DEF {
+    EXTENDS ^"Spell Rebound"
+    PROPERTIES {
+        ^"Description" STRING "Magic comes at a price. A GM may want to include these rules in a game set in the World of Historica Arcanum to show why magic is considered dangerous universally and add some consequence to spell casting.\n\nCore Mechanic: In the table below, a trigger for a Spell Rebound is shown depending on the caster's proficiency bonus. However, a GM may deem a situation to be appropriate for a Spell Rebound.\n\n*The usual maximum proficiency bonus for a player character is +6. Some creatures may have higher proficiency bonus than that, such as a lich or an ancient red dragon, but those kinds of immensely powerful creatures are very rare or nonexistent at all in the Historica Arcanum universe.\n\n**For warlocks, this trigger is considered as \"Casting a spell that is provided with Eldritch Invocations, such as casting detect magic through eldritch sight, casting magic armor through armor of shadows, or other similar situations.\"\n\n***Such as casting the magic missile spell on its own initiative count and casting the shield spell at another creature's turn but during the same round.\n\nTriggers are cumulative. If a creature has +4 proficiency bonus, the triggers for lower proficiency bonuses apply as well.\n\nTrigger: The character makes a saving throw using the same ability used for spellcasting. For example, a wizard makes an Intelligence saving throw because the wizard's spellcasting ability is Intelligence. The DC equals the character's own spell save DC. On a failed save, consult the Effects table below. On a successful save, nothing happens, and the character cannot trigger the same Spell Rebound until it finishes a Long Rest (A creature that fails can trigger the effects again). If it can trigger it by another means, the trigger will happen again. For example, a 5th level wizard casting a fireball triggers the spell rebound. When the wizard expends their last spell slot, the spell rebound is triggered again.\n\nIf a creature has two separate spellcasting ability scores due to multiclassing, taking a feat or other reasons, the source of the spell determines the ability score. If a spell somehow comes from separate sources at once, use the highest DC possible.\n\nSome situations can cause more than one trigger, so each one requires its own saving throw.\n\nEffects: There are three types of effects: Cosmetic, Destructive, and Internal. Cosmetic effects usually do not harm creatures or affect nearby objects or constructs in the means of dealing damage, but it may bring many social or similar consequences with them. Destructive effects usually damage nearby people and/or objects, possibly including the caster. Internal effects usually only affect the caster.\n\nThere are alternative ways to determine which category of effect occurs:\n\n• A GM may roll a d6 and choose which categorical effect occurs. 1-2: Destructive 3-4: Internal 5-6: Cosmetic\n\n• It may depend on the school of magic the spell that triggers the effect. A GM may choose a different category from the ones listed below: Abjuration: Internal Conjuration: Destructive Divination: Cosmetic Enchantment: Cosmetic Evocation: Destructive Illusion: Cosmetic Necromancy: Internal Transmutation: Internal\n\n• The GM may decide which category to use depending on the triggering spell's theme, effect, or type. For example, a healing word spell may cause internal damage, while a damaging spell could cause destructive damage. A necromancy spell may cause internal damage regardless.\n\n• It may depend on the situation. If the caster tries to harm someone, the effect could be internal. If the caster is deceiving someone, the effect could be cosmetic.\n\nThe Exceptions:\n1. Some spells are ignored when its casting coincides with a trigger: detect magic, identify, lesser restoration, dispel magic, counterspell and antimagic field.\n2. Casting a spell that is 4th level or higher from a spell scroll always causes a trigger.\n3. Using a class feature or a similar effect that enables a creature to cast a spell of 3rd level or higher or expending a spell slot of 3rd level or higher directly causes a trigger. For example, mystic arcanum of a warlock, divine smite (3rd level or higher) of a paladin.\n4. Casting a 9th level spell or expending a 9th level spell slot is counted as another destructive trigger, no matter what the spell is."
+    }
+    TRIGGERS {
+        #t4NAnnA7odIYohu1TM7nc494 ^"Trigger +2" DEF {
+            EXTENDS ^"Spell Rebound Trigger"
+            ^"Proficiency Bonus" STRING "+2"
+            ^"Trigger" STRING "Expending all spell slots."
+        }
+        #tKvtFZyAuL17CCtA7GCtnssh ^"Trigger +3" DEF {
+            EXTENDS ^"Spell Rebound Trigger"
+            ^"Proficiency Bonus" STRING "+3"
+            ^"Trigger" STRING "Expending a highest level spell slot.**"
+        }
+        #t98Z44ddaWtU2EHacMtIHNEJ ^"Trigger +4" DEF {
+            EXTENDS ^"Spell Rebound Trigger"
+            ^"Proficiency Bonus" STRING "+4"
+            ^"Trigger" STRING "Casting two spells in successive rounds or in the same round***. Cantrips do not count."
+        }
+        #tdFckjokOZ2HPnsXpRJBgNIy ^"Trigger +5" DEF {
+            EXTENDS ^"Spell Rebound Trigger"
+            ^"Proficiency Bonus" STRING "+5"
+            ^"Trigger" STRING "Casting a spell that includes a damage roll. Such as fireball, magic missile, blight, and scorching ray. Cantrips do not count."
+        }
+        #tXCmyPRul2zQKOL8yoheiDDy ^"Trigger +6" DEF {
+            EXTENDS ^"Spell Rebound Trigger"
+            ^"Proficiency Bonus" STRING "+6"
+            ^"Trigger" STRING "Casting a spell of 6th level or higher."
+        }
+        #t2gDtSQr5sdMIfgmkhqFtLlp ^"Trigger +7 or higher*" DEF {
+            EXTENDS ^"Spell Rebound Trigger"
+            ^"Proficiency Bonus" STRING "+7 or higher*"
+            ^"Trigger" STRING "Dropping a creature to 0 Hit Points with a spell, magical ability, a supernatural feature or the like or restoring life to a creature while it is on 0 Hit Points with a spell or a similar magical effect."
+        }
+    }
+    EFFECTS {
+        #tMXmNJ8yhynuVAFPJNDFXlkD ^"Cosmetic 1" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Cosmetic"
+            ^"Roll" STRING "1"
+            ^"Effect" STRING "Stutter: The caster stutters for the next 3d6 hours. Disadvantage on spell attack rolls for the duration (Spells with verbal component). The greater restoration spell ends this effect early."
+        }
+        #tipZyiNoFBuONO22QrogocC1 ^"Cosmetic 2" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Cosmetic"
+            ^"Roll" STRING "2"
+            ^"Effect" STRING "Bodily Dysfunction. The caster suffers a malevolent effect that badly affects the body. For example, if the leg is affected, the caster may suffer a limp and thus have his walking speed reduced to half. It lasts for 3d4 days."
+        }
+        #tHk08umX7LkAJiTj7j0ZXoC1 ^"Cosmetic 3" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Cosmetic"
+            ^"Roll" STRING "3"
+            ^"Effect" STRING "Rot. Vegetables and plants within 120 ft. of the caster wither and die. It lasts 2d6 days. Bathing under the moonlight reduces the area to 30 ft for the next 24 hours."
+        }
+        #t79uo4nBcePxsrnYdPYREvtv ^"Cosmetic 4" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Cosmetic"
+            ^"Roll" STRING "4"
+            ^"Effect" STRING "Pale Skin. The caster appears sickly and extremely pale. It lasts 2d6 days. The greater restoration spell ends this effect early."
+        }
+        #t4tCPCCs3CqKuUufaJnxTuLG ^"Cosmetic 5" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Cosmetic"
+            ^"Roll" STRING "5"
+            ^"Effect" STRING "Glow in the Dark. The caster's eyes or other limbs (for example, their hand) glow in total darkness. It lasts for 3d4 days. Drinking water from a river during sunset negates this effect until midnight."
+        }
+        #tOx5MA6eTvh9PQa6lu1L1oIV ^"Cosmetic 6" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Cosmetic"
+            ^"Roll" STRING "6"
+            ^"Effect" STRING "Scar. The caster receives a scar determined by the GM. It can't be removed. The scar can only be removed with a greater restoration spell that is cast from an 8th-level or higher spell scroll."
+        }
+        #t5hEeUVd3ziHJwNBgXwNLoFW ^"Cosmetic 7" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Cosmetic"
+            ^"Roll" STRING "7"
+            ^"Effect" STRING "Wild Despise. The wild seems to despise the caster. Wild beasts are aggressive towards them, and urban animals are terrified of them. Dogs and cats alike usually hiss and growl at the caster. Chewing a three-leaf clover at the start of the day reduces the aggressiveness of the beasts."
+        }
+        #tsxLgm6epToQkgTzauRZjJ7R ^"Cosmetic 8" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Cosmetic"
+            ^"Roll" STRING "8"
+            ^"Effect" STRING "Shaking Hands. The caster's hands start to shake, and it constantly gets worse. The caster has Disadvantage on Dexterity or Strength check that is related to the hands. It lasts for 2d4 days."
+        }
+        #tNjf5cDJTzTVEH4fSWNa4meb ^"Cosmetic 9" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Cosmetic"
+            ^"Roll" STRING "9"
+            ^"Effect" STRING "Constant Cold. The caster constantly feels cold and appears to be shivering. While in extreme heat, this effect is not seen."
+        }
+        #tJH2BpCvMhdvHtuNrFtMYsVR ^"Cosmetic 10" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Cosmetic"
+            ^"Roll" STRING "10"
+            ^"Effect" STRING "Reflection Mishap. The caster's reflection in proper surfaces may occur differently, such as facing in the wrong direction, doing something else entirely: crying, appearing angry or appearing extremely happy. These mishaps usually happen briefly, for mere seconds, and disappear. These effects can be seen for 2d8 days."
+        }
+        #tCLDRx8fCOaosNnysEwAtRJ0 ^"Destructive 1" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Destructive"
+            ^"Roll" STRING "1"
+            ^"Effect" STRING "Hellfire: The flames erupt from you as if you are bringing the fire itself from the depths of Tartarus. Any object that is flammable catches fire within 120 ft. of the caster. Each creature within 120 ft. must succeed on a Constitution saving throw or take 5d6 Fire damage. Each proficiency bonus after +2 adds another 2d6 Fire damage. A counterspell stops this effect if the triggering spell is 3rd level or lower. If it is higher, the DC equals to 10 + spell slot's level."
+        }
+        #t7bAUYINWnpCOoYO3NblxUkD ^"Destructive 2" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Destructive"
+            ^"Roll" STRING "2"
+            ^"Effect" STRING "Quake: The ground shakes. Each creature within 300 ft. must succeed on a Dexterity saving throw or fall prone. For the next minute the shake continues and standing up requires another Dexterity saving throw. Each fail results in 1d6 Bludgeoning damage. Each proficiency bonus after +2 deals another 2d6 damage."
+        }
+        #tE7en97LXgW5TmF4b5wm6R3D ^"Destructive 3" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Destructive"
+            ^"Roll" STRING "3"
+            ^"Effect" STRING "Blinding Light: A bright light erupts from the caster. Each creature within 120 ft. of the caster must succeed on a Constitution saving throw or be blinded. At the end of each day, the affected creatures can make another saving throw to be free from the effect. A greater restoration spell reverses this effect."
+        }
+        #ttZWyaDY50e3fJ6BezuVEADd ^"Destructive 4" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Destructive"
+            ^"Roll" STRING "4"
+            ^"Effect" STRING "Deafening Sound: A horrible scream, a crash of thunder, or another loud noise is heard within 300 ft. of the caster. Each creature within the area must succeed on a Constitution saving throw or be deafened. At the end of each day, the affected creatures can make another saving throw to be free from the effect. A greater restoration spell reverses this effect."
+        }
+        #t4JjEYX3KMfo8QEN9zcju1aM ^"Destructive 5" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Destructive"
+            ^"Roll" STRING "5"
+            ^"Effect" STRING "Poison Aura: A foul stench overwhelms you. Each creature within 60 ft. of the caster must succeed on a Constitution saving throw or be poisoned for the next 4d6 hours, and they take 3d6 Poison damage (damage occurs only once). Each proficiency bonus after +2 deals another 2d6 damage. The stench stays in the area for the next 2d4 hours. Each creature that enters the area or starts its turn there must make the saving throw. A lesser restoration or a greater restoration spell reverses this effect."
+        }
+        #tuyALow7PKfZ2m2ifdwe8LGy ^"Destructive 6" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Destructive"
+            ^"Roll" STRING "6"
+            ^"Effect" STRING "Smell of Mortem: A feeling of dread and the impending doom of time surrounds the area. Each creature within 120 ft. of the caster must succeed on a Wisdom saving throw or age 1d6 x 5 years. The magical aura stays there for 24 hours. Each creature that enters the area or starts its turn there must make the saving throw. A greater restoration spell reverses this effect."
+        }
+        #ta1tpwgYY7dpa9N2px1tukHD ^"Destructive 7" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Destructive"
+            ^"Roll" STRING "7"
+            ^"Effect" STRING "March of the Dead. A loud heartbeat fills the caster's mind and creates an aura within 300 ft. of it. Dead creatures within the aura become undead creatures proper to their state and body. The creatures in the aura take 1d6 Necrotic damage at the start of each of their turns or when they enter the first time; the undead are immune to this. The undead created by this aura are relentless and attack everyone on sight. If no creature has become undead, a blast within the area deals each creature 2d6 Necrotic damage. A touch of a believer immediately destroys the undead if it is CR 1/4 or lower."
+        }
+        #t1tRP6gT1FafdqlwDwod59nC ^"Destructive 8" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Destructive"
+            ^"Roll" STRING "8"
+            ^"Effect" STRING "Thunderous Hands. A flash of lightning erupts from the caster. Each creature within 120 ft. of the caster must succeed on DC 15 Constitution saving throw or take 3d6 Lightning damage. The creatures that have failed take extra 1d6 Lightning damage whenever they touch a metal object. This effect lasts for 2d4 days. Spending a Long Rest on a soil that at least one believer prayed on will end the effect early."
+        }
+        #tyYyX2DENumRFXa4NGmcDYm4 ^"Destructive 9" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Destructive"
+            ^"Roll" STRING "9"
+            ^"Effect" STRING "Enduring Cold. The reign of foretold winter in the ancient myths comes to life within 120 ft. of the caster. Each creature within range must succeed on a DC 15 Constitution saving throw or take 3d6 Cold damage, or half of it on a successful save. Each proficiency bonus after +2 adds another 2d6 Cold damage. The cold aura persists after the first blast. If a creature enters the aura for the first time or starts its turn there, it takes 1d6 Cold damage. A counterspell stops this effect if the triggering spell is 3rd level or lower. If it is higher, the DC equals to 10 + spell slot's level."
+        }
+        #tSNuCRHiMxbmCq82OViSJ4qQ ^"Destructive 10" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Destructive"
+            ^"Roll" STRING "10"
+            ^"Effect" STRING "Aura of Nightmare: A voice from the apocalypse reaches out from the depths with a vision of terror. Each creature within 120 ft. of the caster must succeed on a DC 15 Wisdom saving throw. On a failed save, they see random visions and hallucinations. In addition, whenever they attempt a Long Rest, they must succeed on a DC 10 Wisdom saving throw. On a failed save, they can't benefit from a Long Rest, as their sleep is haunted by terrible nightmares. Starting the Long Rest while having the good will and/or the blessing of an innocent creature gives the caster an Advantage on the saving throw."
+        }
+        #tExszUzDPppHfG6ojTIsyl5U ^"Internal 1" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Internal"
+            ^"Roll" STRING "1"
+            ^"Effect" STRING "The caster has Disadvantage on saving throws for the next 1d6 hours."
+        }
+        #t6JTVobu279pxfvBiXKq6prb ^"Internal 2" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Internal"
+            ^"Roll" STRING "2"
+            ^"Effect" STRING "The caster gains two levels of exhaustion. A greater restoration spell reduces all exhaustion related to spell rebound."
+        }
+        #t3fk6J4xgvnd0A0QyiLYTbP7 ^"Internal 3" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Internal"
+            ^"Roll" STRING "3"
+            ^"Effect" STRING "The caster can't cast a spell for the next 3d6 hours. This includes cantrips and features like divine smite. If the caster receives an inspiration, it can spend it to cast a spell. A spell cast this way must be 3rd level or lower."
+        }
+        #tfA0u1WHuWD40bsX9tE9d82H ^"Internal 4" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Internal"
+            ^"Roll" STRING "4"
+            ^"Effect" STRING "The caster can't gain any benefit from a short or Long Rest for the next 1d6 days. A greater restoration spell reverses this effect."
+        }
+        #t4GeMwuyLPMgGtxL2lZAUA9k ^"Internal 5" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Internal"
+            ^"Roll" STRING "5"
+            ^"Effect" STRING "The caster's spell save DC is reduced by 1d4 for the next 24 hours. A greater restoration spell reverses this effect."
+        }
+        #tcmE1IGgMLSltEL0jmdif9zK ^"Internal 6" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Internal"
+            ^"Roll" STRING "6"
+            ^"Effect" STRING "The caster has a short term memory loss. It lasts for 4d6 hours. If the caster receives a hug or a kiss from a loved one, the effect ends early (minimum of 1 hour)"
+        }
+        #tgHWnioWi0eX8ugM2K1rXZQR ^"Internal 7" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Internal"
+            ^"Roll" STRING "7"
+            ^"Effect" STRING "The caster loses the ability to move one of their limbs. A greater restoration spell reverses this effect."
+        }
+        #tlEDEjxsspue3NI49R20ydOm ^"Internal 8" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Internal"
+            ^"Roll" STRING "8"
+            ^"Effect" STRING "The caster loses the ability to see or to hear for the next 24 hours."
+        }
+        #tQpc0cR0COuVWSpI1wsaRpoK ^"Internal 9" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Internal"
+            ^"Roll" STRING "9"
+            ^"Effect" STRING "The caster's maximum HP is reduced by 1d6. Each proficiency bonus after +2 reduces it for another 3d6. For example, a creature with +4 proficiency loses 7d6 maximum HP. A greater restoration spell reverses this effect."
+        }
+        #taDF3gHul9xg5lFlIVjesIQ4 ^"Internal 10" DEF {
+            EXTENDS ^"Spell Rebound Effect"
+            ^"Category" STRING "Internal"
+            ^"Roll" STRING "10"
+            ^"Effect" STRING "The caster is driven mad in a way determined by the GM."
+        }
+    }
+}
+
+}

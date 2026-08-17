@@ -1,0 +1,55 @@
+EXTENSION "HistoricaArcanum_CoC_MagicOrigins" EXTENDS "Dnd5_5e_Core_Base" {
+    NAME "Historica Arcanum: The City of Crescent - Origins of Magic"
+    VERSION "0.4"
+    SPEC_VERSION "0.4"
+    RELEASE_DATE "2026-07-21"
+
+#tvuy5lqRgoZefO0VgpBzbVr6 ^"Arcane Magic" DEF {
+    EXTENDS ^"Magic Origin"
+    PROPERTIES {
+        ^"Associated Classes" LIST OF STRING ["Wizard"]
+        ^"Description" STRING "**Lore of the Arcane**\n\nMagic is said to be the driving force of the entropy of the universe, the source of instability of laws of nature. If harnessed correctly, it can grant physical strength, emotional connection, mental focus, spiritual alignment, energetic vitalization, and all sorts of miraculous feats. Yet to harness such powers demands disciplined hard work.\n\nPractitioners have identified many different aspects to cast spells with arcane magic. To become a powerful practitioner of arcane magic, any aspiring arcanist needs to be dynamic and harmonious with at least some of the aspects of the arcane. Spellcasters with differing origins may also tap into several aspects of the arcane.\n\n**Aspects of Arcane**\n\n**Abjuration** school is dedicated to protective magic, the magic that cancels or interferes with other kinds of magic, supernatural energies and effects through twisting the reality’s natural protection against arcane.\n\n**Alteration** and **Transmutation** schools are dedicated to the skill to transform one form of matter into another, using magic to transform the molecular nature of matter.\n\n**Conjuration** and **Summoning** schools are dedicated to spontaneous transportation or manifesting of creatures, energies, objects into reality, by tapping into a wizard's creative energy and twisting the flow of time and space.\n\n**Divination** school is dedicated to acquiring or exposing information about the unknown and the future. Arcanists achieve this feat by not pulling knowledge from the future itself, but through manifesting an otherwise unexplorable wisdom hidden in their minds. However, existence of other diviners within reach may cloud the manifestation capabilities of diviners.\n\n**Enchantment** or **Charm** schools are dedicated to beguiling the minds of others to make them do the things you want. Such a feat is accomplished by manipulating the sensory perceptions and the nervous system of the victim through the use of arcane abilities.\n\n**Evocation** school is dedicated to creating matter and energy out of nothing by forcing reality into submission, and altering the nature of the elements existing near the caster.\n\n**Illusion** and **Phantasm** schools are dedicated to changing the appearance of something by manifesting images, hallucinations and deception. The magic achieves the desired effect by manipulating matters’ visibility through arcane.\n\n**Necromancy** is dedicated to spells which involve death, undeath and the manipulation of the energy of life. There are many methods of casting necromantic spells, such as manipulating the time flow in a single object, or a body, to rewind death and injury."
+    }
+}
+
+#tnVH7CEUGeOaazDtraBxmwKx ^"Divine Magic" DEF {
+    EXTENDS ^"Magic Origin"
+    PROPERTIES {
+        ^"Associated Classes" LIST OF STRING ["Cleric", "Paladin"]
+        ^"Description" STRING "**Rules of Divinity**\n\nThe ancient tablets, parchments and scrolls on divine magic written by the priests of old describe divine magic as a solemn understanding between a greater power and a mortal being. They describe this relationship as a symbiosis: the greater power rejoices the faith of the believer and in return provides the miracles to one in need. However, some arcane researchers dwell on an entirely different idea that these pious people take their power to create miracles only through their willpower and creed. In either case, their miracles can be used to heal the wounded, bless the miserable, return sight to the sightless and guide people through hardships. They appear in history as miracle workers, prodigies of the holy, and wielders of the scripture.\n\nDivine magic is direct, predictable, and easy to accept when viewed by an educated witness in the matters of the occult. It may be holy or dark, benign or catastrophic, depending on the person performing the miracles. If a believer somehow loses her faith or starts to walk in a completely different path, it is said that the greater power either curses her or stops granting miracles to her. More credible researchers interpose this idea by saying that the loss of power is due to the caster losing belief in themselves.\n\n**Origin of Divinity**\n\nThe knowledge passed from generation to generation on divine magic describes its origin as such: “It is granted by a beneficent, abusive, or egoistical greater power bearing the capability to grant miracles.” Some researchers contradict this idea by dictating that the origin of divine magic comes from the very souls each person possesses. Research made on rural areas brings into our view that in some rare cases divine power appears in cases like prolonged delusion, abuse of hallucinogenic mushrooms, and even manifests under mental duress too. Throughout history the world has seen many different cults, beliefs, and religions supporting many different approaches to the origin of their own powers, and who can say which idea is correct?\n\nHoly offerings, incense, and holy symbols are the usual offerings for divine spells, but in some cases, it has been seen that some acolytes pray upon profane religions offering live sacrifices as well.\n\n**The Never-ending Path**\n\nIn Historica Arcanum, the work of a pious character never ends. The belief in the existence of celestial concepts took a hit among the masses during the Industrial Age. The practitioners of the divine powers are quite rare, and mundane people do not have the educated eye to notice them in more modern times. There may be trouble in following the path of the pious, but it is a path that is worth following."
+    }
+}
+
+#tNbtQjyCL0f6lcuyDrkTcwv6 ^"Inherent Magic" DEF {
+    EXTENDS ^"Magic Origin"
+    PROPERTIES {
+        ^"Associated Classes" LIST OF STRING ["Sorcerer"]
+        ^"Description" STRING "**Fiery Blood**\n\nSome magic isn't earned by hard work, endless hours of study or understanding of the arcane; some magic is inherent in the blood passed from many ancestors and received by the caster. In this aspect, the ancestor in question is mostly a creature or concept which has great power and spellcasting prowess. These kinds of spellcasters use the raw magic which burns in their veins. Such people bear a magical birthright descended to them from a bizarre or alien bloodline, some kind of otherworldly force or manifestation of a cosmic energy in them. These casters don't choose to be such, they are chosen to be as they are.\n\n**Raw Potential**\n\nPractitioners of inherent magic are rare to come by. They are always in a quest to unlock their raw potential or tap into the unknown limits of their powers. Such people soon discover that their power never stays dormant once awoken."
+    }
+}
+
+#te45LqAA6XtdiXnCEuheGf7D ^"Inspirational Magic" DEF {
+    EXTENDS ^"Magic Origin"
+    PROPERTIES {
+        ^"Associated Classes" LIST OF STRING ["Bard"]
+        ^"Description" STRING "**Authentic Artist**\n\nSome magic manifests under the powers of song, art, or speech. This kind of arcane power is a lot more subtle. The performers of this kind of magic can inspire, arouse, excite, hearten, impress, influence, motivate, and provoke by the use of their magical song, inspirational speech or gorgeous art. It is said that the art of these magics is the reflection of words used during the creation of the universe; thus, the performers of such magic benefit from various kinds of different magics. In other words, this kind of magic is mostly based on art, stories, music and oratory skills and involves knowing a little bit from everything at a time but never grasping one subject wholly.\n\n**Potent Troubadour**\n\nThis kind of magic can be used a lot more subtly compared with many other types. It can be hidden behind poems, songs, musical notes or even behind speeches. It is really easy for such a caster to inspire allies or cripple foes, alter how people think, cause confusion or create deception."
+    }
+}
+
+#tobHz0t80T5J1fZCpvNIs9bE ^"Natural Magic" DEF {
+    EXTENDS ^"Magic Origin"
+    PROPERTIES {
+        ^"Associated Classes" LIST OF STRING ["Druid", "Ranger"]
+        ^"Description" STRING "**Apostle of Terra Firma**\n\nThe magic of nature is perhaps the most pure of occult arts, yet it hosts great irony as you twist the laws of nature using nature itself. Texts passed down on obelisks, standing stones and other archaic information detail this kind of magic as a connection between forces of nature and a mortal capable of twisting the laws of nature to unleash the force. These arcane powers are harsh, raw and less refined than other aspects.\n\nNature magic is severe, sharp, acute, and to the point, as nature herself. Those with an educated eye and mind will perceive that this kind of magic rebounds on flora and fauna in a miniscule way.\n\n**Roots of Augury**\n\nAccording to the combined observations of and insight of sages through the ages, the amassed knowledge on nature magic describes it as such: ”The archaic forces of mother nature are granted by the so-called “ancient spirits of nature” to a select people who hear a call to the wilds. These ancient spirits are most likely a product of a person’s subconsciousness born with the inherent power of nature magic. The ways of these spellcasters are primitive and rigid as are the ways of nature.”"
+    }
+}
+
+#toUYXamWGPYtECbbPgUGxB5S ^"Pact Magic" DEF {
+    EXTENDS ^"Magic Origin"
+    PROPERTIES {
+        ^"Associated Classes" LIST OF STRING ["Warlock"]
+        ^"Description" STRING "**Bonding Contracts**\n\nThe first users of the arcane were wizards, their powers and rebounds on the world gave birth to sorcerers. The combined magic in turn spawned beings of immense arcane instability, who can grant powers through pacts. Some arcanists seeking power or ways to fulfill their desires forge contracts with these patrons. In the dusty pages of history, magic influenced many supernatural creatures and allowed them to inflict great changes among the common folk. If one being’s desire and a supernatural being’s agenda fit, these contracts give them magical powers, allowing them to use magic even though they are not wizards who study the arcane, or sorcerers that inherit a great power.\n\n**Invoking Arcana**\n\nCreatures gain the ability to cast spells through pacts, and their bonding terms also invoke the mysterious powers in the arcane boundaries of magic. Their eldritch abilities seem mysterious even in the eyes of arcane masters. The chains of the pact makers may be broken if the creature on the receiving end reaches the peaks of mystic arcanum."
+    }
+}
+
+}

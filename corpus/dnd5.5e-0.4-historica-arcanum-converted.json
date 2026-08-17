@@ -1,0 +1,32 @@
+{
+  "edition": "dnd5.5e",
+  "spec_version": "0.4",
+  "base_dir": "../../../Titterpig DSL/titterpig-dsl-dnd5.5e/0.4",
+  "output_dir": ".",
+  "load_order": [
+    "dnd5.5e-0.4-core-base.ttrpg",
+    "dnd5.5e-0.4-conditions.ttrpg",
+    "dnd5.5e-0.4-glossary.ttrpg",
+    "dnd5.5e-0.4-species.ttrpg",
+    "dnd5.5e-0.4-backgrounds.ttrpg",
+    "dnd5.5e-0.4-classes.ttrpg",
+    "dnd5.5e-0.4-feats.ttrpg",
+    "dnd5.5e-0.4-equipment.ttrpg",
+    "dnd5.5e-0.4-magic-items.ttrpg",
+    "dnd5.5e-0.4-spells.ttrpg",
+    "dnd5.5e-0.4-monsters.ttrpg",
+    "dnd5.5e-0.4-gameplay-toolbox.ttrpg",
+    "../../../2025-2026 A Gibbous Moon Over Constantinople/a-gibbous-moon/corpus/historica-arcanum-5.5e-src/historica-coc-0.4-core.ttrpg",
+    "../../../2025-2026 A Gibbous Moon Over Constantinople/a-gibbous-moon/corpus/historica-arcanum-5.5e-src/historica-coc-0.4-magic-origins.ttrpg",
+    "../../../2025-2026 A Gibbous Moon Over Constantinople/a-gibbous-moon/corpus/historica-arcanum-5.5e-src/historica-coc-0.4-spells.ttrpg",
+    "../../../2025-2026 A Gibbous Moon Over Constantinople/a-gibbous-moon/corpus/historica-arcanum-5.5e-src/historica-coc-0.4-magic-items.ttrpg",
+    "../../../2025-2026 A Gibbous Moon Over Constantinople/a-gibbous-moon/corpus/historica-arcanum-5.5e-src/historica-coc-0.4-equipment.ttrpg",
+    "../../../2025-2026 A Gibbous Moon Over Constantinople/a-gibbous-moon/corpus/historica-arcanum-5.5e-src/historica-coc-0.4-spell-rebound.ttrpg",
+    "../../../2025-2026 A Gibbous Moon Over Constantinople/a-gibbous-moon/corpus/historica-arcanum-5.5e-src/historica-coc-0.4-subclasses.ttrpg",
+    "../../../2025-2026 A Gibbous Moon Over Constantinople/a-gibbous-moon/corpus/historica-arcanum-5.5e-src/historica-coc-0.4-feats.ttrpg",
+    "../../../2025-2026 A Gibbous Moon Over Constantinople/a-gibbous-moon/corpus/historica-arcanum-5.5e-src/historica-coc-0.4-professions.ttrpg",
+    "../../../2025-2026 A Gibbous Moon Over Constantinople/a-gibbous-moon/corpus/historica-arcanum-5.5e-src/historica-coc-0.4-monsters.ttrpg",
+    "../../../2025-2026 A Gibbous Moon Over Constantinople/a-gibbous-moon/corpus/historica-arcanum-5.5e-src/historica-coc-0.4-djinn-rules.ttrpg",
+    "../../../2025-2026 A Gibbous Moon Over Constantinople/a-gibbous-moon/corpus/campaign-5.5e-src/dnd5.5e-college-of-eloquence.ttrpg"
+  ]
+}

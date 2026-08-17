@@ -1,0 +1,556 @@
+EXTENSION "HistoricaArcanum_CoC_Subclasses" EXTENDS "Dnd5_5e_Core_Base" {
+    NAME "Historica Arcanum: The City of Crescent - Subclasses"
+    VERSION "0.4"
+    SPEC_VERSION "0.4"
+    RELEASE_DATE "2026-07-21"
+
+#tb3OKuzvTOFHEeJ8qG676u7I ^"Barbarian - Urban Vagabond" DEF {
+    EXTENDS ^"Subclass"
+    PROPERTIES {
+        ^"Parent Class" STRING "Barbarian"
+        ^"Description" STRING "There are bruisers who dwell in cities who command respect among the common folk and other warriors alike. Their words respected, their deeds valued, their stern demeanor feared. They roam the streets and right wrongs, their own way. They know the code and creed of their city, just as they wrote it themselves. An urban vagabond is a charismatic drifter, who has his own understanding of justice and injustice, law and fear in society. They are upheld by the people and they shine where the local guards fail to do so. Their shouts in combat inspire their allies, and dissolve the fighting spirit of their adversaries. They use their natural charisma in order to taunt and psychologically disarm enemies."
+    }
+    FEATURES {
+        #tXGE9k0RmmPWCGwJaay3K1cA ^"Wrath of the Vagabond" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "Your wrath invokes fear in your enemies. Starting at 3rd level when you rage, you invoke fear in the hearts of your enemies. This fear can affect a number of people equal to your constitution modifier in that you can see in 60 ft. and only during your rage; the targets of this effect will roll a Wisdom save (DC equals to 8 + your proficiency bonus + your Strength modifier) or be frightened for 1 minute. Affected creatures can repeat the saving throw at the end of their turns for 1 minute. You can use this feature once per rage."
+        }
+        #tvRINltrqM9gOinfpM7HjFl4 ^"Anger of Mad Blood" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 6
+            ^"Description" STRING "When you are raging, your yell and mocking words crush the spirit of your enemies. Starting at 6th level when you rage you use your shouts alongside your weaponry with great effect. When you are raging, the first creature you hit on each of your turns with a weapon attack takes extra damage equal to 1d6 + half your Barbarian level. The extra damage is psychic and the creature will have Disadvantage on its next attack if it attacks another creature other than you."
+        }
+        #tewCAumo9jqjw14O45RB7E5V ^"Inspiring Fury" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 10
+            ^"Description" STRING "Inspired by your shining example and prowess in battle, your allies are boosted by your fury. At 10th level, while you are raging, you can use a Bonus Action to inspire your allies. All allies within 30 ft. of you have Advantage on attack rolls and saving throws until the end of your next turn and when they deal damage, they deal additional Psychic damage equal to half your barbarian level + 1d6. This extra damage can be applied to one attack only. You can use this ability once per rage."
+        }
+        #thyxd2iW0wA16ejiQEz50urs ^"Shielding Fury" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 14
+            ^"Description" STRING "Your rage affects your allies and protects them from harm. At 14th level, when you rage, you choose three allies within 30 ft. of you that can hear you. Those allies gain the resistances granted by you from your rage for 1d6 rounds. You can use this ability once per rage."
+        }
+    }
+}
+
+#tnBJulgnsghm09x3poxNPoNs ^"Bard - Shadowactor" DEF {
+    EXTENDS ^"Subclass"
+    PROPERTIES {
+        ^"Parent Class" STRING "Bard"
+        ^"Description" STRING "A majestic festival scene in the gold-blue nights of Istanbul, and at the heart of the field, crowds gather to see their favorite show: the art of shadowacting. A candle lights up a beige canvas scene, elaborate puppets and gestures cast shadows, of human and beast, of city and the wild. The master of these shadowy figures, the bard, plays with them, twists and turns their blackened image, telling fascinating tales of joy and deceit, captivating hundreds gathered around. One time, my curiosity got the better of me. I snuck up to the backstage to see what was happening there. No one believed me when I told this story but I swear, I saw no one moving the puppets...Well, no puppets at all. Only a candle shining bright - with shadows cast, from the shimmering flames themselves. My eyes locked with the flame and smoke dancing on top of the candle - shimmering sparks and embers, and I lost touch with reality. Just before I was about to fall headfirst from the platform, I saw the shadow actress, emerging from the shadows in the canvas itself to catch me. She was such a lovely lady…"
+    }
+    FEATURES {
+        #t9WgKQ1CCtahwvN3Ylbxu6Fm ^"Shaper of Shadows" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "Starting at Level 3, you gain the ability to control and manipulate shadows. You can use a lantern, a candle, or a torch as your spellcasting focus. While using one of these focuses you can create a Shadowfield called Azlaz-saha (means Area of Shadows) centered on yourself with your Bonus Action. This area is considered dim-light of 30 ft. for 1 minute (you can end it early on your turn with a Bonus Action) and gives the following benefits:\n\n• You can see in this area as if it were bright light. This area is not affected by *darkness* or *daylight* spells.\n\n• You can shape the shadows according to your wishes with simple hand movements (no actions required).\n\n• You gain the ability to make shadows become material. You can grapple creatures with your shadows as an action. Make a melee spell attack against the creature. If you hit, the creature must succeed on a Strength saving throw against your spell save DC; on a failed save, it is Grappled by your shadow (the victim can try to escape against your spell save DC by). While grappled, the creature is Restrained and attacks have Advantage against that creature. You have to expend one of your Bardic Inspiration uses for this. By expending a spell slot of 1st level or higher as a Bonus Action, you can use this ability again.\n\n• You can use this feature a number of times equal to your Charisma modifier (minimum of 1)."
+        }
+        #t7NE6mHhzYKyJKUe8nRNWaM6 ^"Collector of Shadows" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 6
+            ^"Description" STRING "Starting at Level 6, When a creature dies in your Azlaz-saha, you can collect their shadows in your spellcasting focus. You can do that as a Reaction and can’t do so again until you finish a Long Rest. You can store up to 3 creatures. You can’t restore the shadow of a creature whose CR is more than half your level (rounded down). You can unleash the creature’s shadow as an action and it stays for 1 minute, as if you are concentrating on a spell. It can’t cast spells with verbal and material components, but otherwise it uses its stat blocks, and obey your mental commands (no action required for commands). After that the creature returns to the lantern and you can’t unleash anymore creatures until you finish a Long Rest. You can't have more than 1 creature unleashed at the same time. If the creature stored is below CR 1 and a beast, you can use that creature as if you cast a *find familiar* spell.\n\nBy expending a spell slot of 2nd level or higher, you can unleash another creature without needing to finish a Long Rest, but to be able to unleash a creature again in the same day, the creature must rest at least 1 hour."
+        }
+        #teevIVTi34gjMSjRj0acZjgs ^"Master of Shadows" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 14
+            ^"Description" STRING "Starting at 14th level the shadows you catch with the Collector of Shadows ability can remain outside for 10 minutes as if you are concentrating on a spell. When you take damage, half of the damage is transferred to the shadow. You can use this ability as a Reaction when you take damage and can use it equal to your proficiency bonus. Expended uses are restored after you finish a Long Rest. By spending a spell slot of 1st level or higher you can expend the creature’s stay for another 10 minutes."
+        }
+    }
+}
+
+#t19dD0B0jelJ2WbASPdfT8Vd ^"Cleric - Realitymender" DEF {
+    EXTENDS ^"Subclass"
+    PROPERTIES {
+        ^"Parent Class" STRING "Cleric"
+        ^"Description" STRING "Magic is unstable. Cast a potent spell, and you risk cracking open the reality and letting loose horrors to our mortal realm. There are those devoted to serving reality itself and soothe the pain of the universe plagued by chaos. They wander the realms, aiming to prevent the cracks from appearing, mending those already broken and keeping reality stable for all sentient life. Their motivations may come from a higher calling such as religion, or from their own will to serve the reality itself. They are adept at hunting down mages, discovering origins of arcane, and curing spellborne wounds."
+    }
+    FEATURES {
+        #tHhCdTN0dUM6mwgoQZVZeSdA ^"Domain Spells" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "When you reach certain levels in this subclass, your domain grants you spells at certain levels. These spells are always prepared and don't count against the spells you can prepare each day."
+            ^"Granted Spells" DEF {
+                ^"Level 1" LIST OF STRING ["detect magic", "identify"]
+                ^"Level 3" LIST OF STRING ["arcanist's magical aura", "silence"]
+                ^"Level 5" LIST OF STRING ["counterspell", "dispel magic"]
+                ^"Level 7" LIST OF STRING ["banishment", "freedom of movement"]
+                ^"Level 9" LIST OF STRING ["dispel evil and good", "greater restoration"]
+            }
+        }
+        #tLuSlnf594N98dHyrWEZ9axh ^"The Seeker of the Arcane" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "You study the arcane arts for the sole purpose of protection and your time spent has paid off. At 1st level, you gain proficiency in two of the skills: Arcana, Religion, Nature, History. If you ever fail one of the checks with the chosen skills, you can use your Reaction to add 1d6 to the roll, potentially turning it into a success. You can use this feature a number of times equal to your proficiency bonus and regain expended uses when you finish a Long Rest. The die increases when your proficiency bonus increases as well: +3 (1d8), +4 (1d10), +5 (1d12), +6 (2d8).\n\nIn addition, when you trigger a Spell Rebound Effect, you have Advantage on the saving throw."
+        }
+        #tezgyUA4OP8gSyLOz9vQyAji ^"Magical Retribution" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "Your deep study on arcane arts have honed your skills and your ability to sense spells immediately. At 1st level, when a spell is cast within 60 ft. of you, you can use your Reaction to make an attack roll against the creature. This can be a melee attack, a ranged attack or a spell attack from a cantrip. If you score a hit, you deal an additional Radiant damage equal to your Wisdom modifier."
+        }
+        #teq62RWqpUmRMu2NmuU4Aa9L ^"Channel Divinity - Execute the Otherworldly" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 2
+            ^"Description" STRING "You can summon your divine power onto otherworldly creatures: aberration, celestial, djinn, elemental, fey, fiend, and undead. You can use your action to present your holy symbol and attempt to mark a mentioned creature. The creature is forced to make a Charisma saving throw. On a failed save, it is marked for 1 minute. For the duration, it has Disadvantage on saving throws against spells that are cast by you and you have Advantage on spell attacks against the marked creature. When the creature takes damage, it takes additional Radiant damage equal to your Wisdom modifier."
+        }
+        #t0qhfkCm773lGXc6RHgCm5xp ^"The Magic Disabler" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 6
+            ^"Description" STRING "You are potent at stopping other creatures and your skills have improved greatly. Starting from 6th level, whenever you make an ability check related to your spellcasting ability as a part of a counterspell, dispel magic or a similar spell, you add 1d4 to your total.\n\nIn addition, when you expend a spell of 3rd level or higher to cast a counterspell or a dispel magic spell, you regain one 2nd level or two 1st level spell slots. Once you do so, you can't use this again until you finish a Long Rest."
+        }
+        #tOVGNOEEk0x8WE2H7tMLmQmT ^"Punishing Strikes" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 8
+            ^"Description" STRING "When a creature takes damage from one of your cantrips or weapon attacks, you can also deal 1d8 Radiant damage to that creature. Once you deal this damage, you can't use this feature again until the start of your next turn.\n\nIn addition, when you trigger a Spell Rebound Effect and fail, you can choose which type of effect occurs."
+        }
+        #tlKpqbLOibpbGgXevJqxddQN ^"The Spellbinder" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 17
+            ^"Description" STRING "Your powers have proven themselves to be worthy of legends, myths and sagas. At 17th level, whenever you cast counterspell and dispel magic, and successfully counter or dispel a spell, you regain a 3rd level or lower spell slot.\n\nInstead of restoring a spell slot, you can choose five allies within 60 ft. of you that you can see. The chosen allies gain a bonus equal to your Wisdom modifier on saving throws against spells or other magical effects. This effect lasts for 1 minute. If you do so, you can't forgo restoring a spell slot like this until you finish a short or Long Rest."
+        }
+    }
+}
+
+#txMIoVpvNbJn41hxdZ9veZWP ^"Druid - Circle of Nazar" DEF {
+    EXTENDS ^"Subclass"
+    PROPERTIES {
+        ^"Parent Class" STRING "Druid"
+        ^"Description" STRING "Nazar, ward of the evil eye. It is the common people's belief that the blue beads with eyes drawn on them protect from those with bad intentions. They do not know that it is not the beads that protect, but those who create and control them. Circle of Nazar Druids seek to protect ordinary people from unintended magical effects or intended evil from charms and enchantments. They roam the wilderness, ruins and the cities to seek out curses, ill-intents, evil arcane, with the help of beads with the sign of the Nazar."
+    }
+    FEATURES {
+        #tSUnH05nx18QTNeaX3n8gIAh ^"Circle of Nazar Spells" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 2
+            ^"Description" STRING "Your archaic link with fate and your ability to manipulate fate grants you access to certain spells. At 2nd, 3rd, 5th, 7th and 9th level you gain access to the spells listed for that level in the Circle of Nazar Spells table. Once you gain access to one of these spells, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you."
+            ^"Granted Spells" DEF {
+                ^"Level 2" LIST OF STRING ["protection from evil and good"]
+                ^"Level 3" LIST OF STRING ["avicenna", "lesser restoration", "detect djinni"]
+                ^"Level 5" LIST OF STRING ["exorcise djinni", "remove curse"]
+                ^"Level 7" LIST OF STRING ["divination", "polymorph"]
+                ^"Level 9" LIST OF STRING ["greater restoration", "sense the sinner"]
+            }
+        }
+        #t12r2aHidIGIgdrUwTtOGMc2 ^"The Good Eye" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 2
+            ^"Description" STRING "When you choose this circle at 2nd level, you gain the following benefits:\n\n• By touching a creature you can detect any nazars (such as Nazar or evil eye spells), curses (such as *bestow curse* spell or other curses), and spells that are affecting it. You know exactly which effects are present (e.g. the curse of demon armor). You can use this feature a number of times equal to your proficiency bonus and regain expended uses after you finish a Long Rest.\n\n• You learn either the *spare the dying* or *purifying breath* cantrip. You can cast that cantrip as a Bonus Action.\n\n• By spending one of your Wild Shape features, your touch removes Djinnspeak effects and the *evil eye* cantrip's effects immediately from a creature."
+        }
+        #taFR5w6dFXTi9RVR7vhzhcQh ^"The Pure Touch" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 6
+            ^"Description" STRING "Starting at 6th level, you gain the following benefits:\n\n• When you cast either *remove curse* or *exorcize djinni* spell, you regain a portion of your expended spell slots–either one 2nd level spell slot or two 1st level spell slots. Additionally you can regain one of your Wild Shape uses. You can use this feature twice and can't use it again until you finish a Long Rest.\n\n• The casting time for the *exorcize djinni* spell is 1 minute rather than 10 minutes. Alternatively, you can cast *protection from evil and good* as a ritual, and it only takes 1 minute to cast.\n\n• While fighting a djinn, *fiend, or* an undead, your damaging spells deal an extra 2d6 Radiant damage. This damage can't be prevented or reduced in any way."
+        }
+        #tUe9Lrje3GdNY171F9j2lWKn ^"Serenity of the Breath" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 10
+            ^"Description" STRING "Starting at 10th level you gain following benefits:\n\n• You can't be possessed. • You can cast *greater restoration* without material components."
+        }
+        #t6YCkXFPzHXXZEpy9hxnCsyB ^"Banishing Eye" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 14
+            ^"Description" STRING "Starting at 14th level you unleash your powers upon those unholy. As an action you can cast the banishment spell without expending a spell slot and can target 3 creatures. The creatures roll the saving throw with Disadvantage if they are fiends, fey, undead, celestials, or djinns. You can't use this feature again until you finish a Long Rest."
+        }
+    }
+}
+
+#tTOEuyQrZTlSq0CK0JFmq6Ag ^"Fighter - Janissary" DEF {
+    EXTENDS ^"Subclass"
+    PROPERTIES {
+        ^"Parent Class" STRING "Fighter"
+        ^"Description" STRING "A victorious soldier emerging from the hellish battleground with a proud face and blood taints on his armor. He is not a simple warrior that was levied on the eve of a war. He was trained as a soldier for years and years and honed a military tradition since the days of Caesars in the west and Khagans in the east. His profession is warfare, he guards stability and security during the times of peace and does his jobs as a warrior in the times of war. He is a Janissary that knows and excels in fighting.\n\nMany Ottoman conquests owed their success to the discipline and mastery of the Janissaries. Taken as children from Ottoman-ruled Christian lands, and trained since childhood as elite imperial soldiers, the Janissary are masters of commanding a diverse range of weaponry in a single combat. Armed to the teeth with a large selection of weapons, their prowess shines in the battlefield as they utilize all in a bewildering flurry of gunpowder, arrow, bolt and blade."
+    }
+    FEATURES {
+        #tma3Vpz20EGrmRXmqXOamBcD ^"Ottoman Slap" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "The slap of a Janissary is legendary among the battlefields. You trained and beat hard marbles with your bare hands and marked your hands with calluses in your palm. At 3rd level, whenever you take Attack action you can make an Unarmed Attack as a Bonus Action, even if both of your hands are occupied.\n\nIf you hit, this Unarmed Attack deals 1d6 + your Strength modifier Bludgeoning damage and you can force the creature to make a Strength saving throw (The DC equals to 8 + your proficiency bonus + your Strength modifier). On a failed save, the creature is Frightened until the end of your next turn or it falls prone. You can frighten or prone a creature in this way a number of times equal to your proficiency bonus and regain expended uses when you finish a Long Rest. Otherwise, you can still use your Bonus Action to make the Unarmed Attack without applying a condition.\n\nWhen you reach certain levels in this class, the damage of your Unarmed Strikes increases: 5th level (1d8), 11th level (1d10), 17th level (1d12)."
+        }
+        #tf7rFHbaWxcdivrrGH9GoxAd ^"Master of Arms" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "A Janissary is a master of weapons and trained from childhood to be a soldier. At 3rd level, you gain proficiency with firearms and receive +2 bonus to attack rolls with those weapons.\n\nIn addition, when you make a weapon attack (Unarmed Attacks do not count), depending on the damage type, you can cause one of the effects mentioned in the damage type. You can use a feature once per turn. The DC equals to 8 + your proficiency bonus + your Strength modifier.\n\n**Bludgeoning:** When you deal Bludgeoning damage, you can force the creature to make a Strength saving throw.\n\n**Push:** On a failed save, it is pushed 10 feet in a way you choose. If the attack roll is critical or you roll the maximum on the damage die, the creature is proned. Starting at 7th level, you can push the target 20 feet away and starting at 10th level, you can push the creature 30 feet away.\n\n**Shake the Ground:** If you miss the attack roll, you use your momentum to give yourself an edge with the next attack. You add 1d4 to your next attack roll. The bonus increases when you reach certain levels: 7th level (1d6), 10th level (1d8), 15th level (1d10), 18th level (1d12)\n\n**Piercing:** When you deal Piercing damage, you can force the creature to make a Constitution saving throw.\n\n**Slow:** On a failed save, its speed is reduced by 10 feet. This effect does not stack on a creature. Starting at 7th level, the creature’s speed is reduced by half. At 15th level, the creature’s walking speed becomes 0.\n\n**Internal Wound:** On a failed save, the creature starts to bleed. At the start of each of its turns for the next minute, it takes 1d4 damage. If it or another creature uses the action to tend to wound, the bleeding stops early. Receiving magical healing or a DC 10 Wisdom (Medicine) check also ends the condition early. When you reach certain levels, the damage caused by bleed increases: 7th level (1d6), 10th level (1d8), 15th level (1d10), 18th level (1d12)\n\n**Slashing:** When you deal Slashing damage, you can force the creature to make a Dexterity saving throw.\n\n**Distraction:** On a failed save, it has Disadvantage on the first attack roll until the start of your next turn.\n\n**Off-Balance:** On a failed save, the next attack roll against the creature has Advantage. At 10th level, all attack rolls have Advantage against the creature until the start of your next turn.\n\nAt 10th level, a saving throw is no longer required to apply one of these features. They can be applied instantly when a damage is dealt."
+        }
+        #tbpiXe8Q3pEOMGvETcDsvLDD ^"Conqueror’s Slap" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 7
+            ^"Description" STRING "Your marble hardened strike improves greatly as you survive countless battles and conflicts. When you use your Ottoman Slap feature, instead of frightening your opponent, you can apply the Stunned condition to the target."
+        }
+        #tTZRrLIgYb9gwZc8hWfwwtb7 ^"Valor of the Warrior" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 10
+            ^"Description" STRING "At 10th level, your edge in battle proves itself greatly and your expertise in weapons is felt by your enemies. When you use your Indomitable feature, you gain a 1d10 bonus to your next attack roll. If this bonus carries the total over 20 on the die, it is counted as a critical hit. For example, if 12 is rolled in d20 and a 9 is rolled in d10, the attack is counted as a critical hit."
+        }
+        #tvFgNtDSHE7qYIcYBnefYLqk ^"The Unyielding Might" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 15
+            ^"Description" STRING "At 15th level, your skills as a warrior already entered historical records and told across trade routes and harbors. When you hit a creature with an attack roll, you can forgo one of your attacks to make this attack a critical hit. You can’t use this feature again until you finish a Long Rest."
+        }
+        #tBIK1bT5UZkBlr2xWr1cu20t ^"Grim’s Sla" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 18
+            ^"Description" STRING "You now stand at the epitome of a warrior and your prowess is unmatched. At 18th level, the condition applied by the Ottoman Slap feature’s duration is extended to 1 minute. The creature can make the saving throw again at the end of each of its turns and each time it takes damage."
+        }
+    }
+}
+
+#tZjGNlz18sKqkMmf16nIHE7e ^"Monk - Whirling Dervish" DEF {
+    EXTENDS ^"Subclass"
+    PROPERTIES {
+        ^"Parent Class" STRING "Monk"
+        ^"Description" STRING "One hand looks upwards: “Take wisdom from heaven”; one hand faces the ground “...and share it with the Earth.” Start the whirl-like dance, spin as the Earth does; to lose thyself, and to find thyself. Some monks seek enlightenment through combining a trancelike state of chanting and whirling to sever their link to reality. Yet these actions are not just a way of escaping the mundane world. Their martial skill is immense, thanks to their impeccable balance, and unorthodox fighting stance. They call forth divine boons for their companions, and crack their foes’ stance and posture with their grappling attacks."
+    }
+    FEATURES {
+        #tFapXIQhBuCr0HcrpmUc6gAH ^"Whirling Dance" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "Starting when you choose this tradition at 3rd level, you can manipulate your enemy’s movements as you dance around them. You have a chance to do one of the three below as a Bonus Action:\n\n• Move an extra 10 feet around your enemy that you attacked on top of your movement without provoking opportunity attacks from other enemies.\n\n• Swap places with a willing ally who is 10 feet from you; both of you don't provoke opportunity attacks.\n\n• Move 10 feet away from your enemy without causing opportunity attacks. This will end your movement."
+        }
+        #tf7zHXrNeDiMDlhVNZYX8Bou ^"Bonus Proficiency" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "Your martial prowess mixes with the eloquent dance you perform. When you choose this tradition at 3rd level, you gain proficiency in Performance skill if you don’t already have it. Additionally, you can choose a musical instrument and gain proficiency with it."
+        }
+        #tN9RTfqn4Y5lehi0fUfYMwLe ^"Unyielding Balance" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 6
+            ^"Description" STRING "Starting from 6th level, you can go into a flurry of parrying blows. By spending your Reaction you start parrying every blow that comes your way. By spending 2 ki points, you gain +5 armor class until the start of your next turn."
+        }
+        #tRMNFodrgsPFycxbrGYTBkfn ^"Meditative Trance" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 11
+            ^"Description" STRING "Starting at 11th level, you can enter a special trance for 1 minute as a Bonus Action. For the duration, attack rolls against you can’t benefit from Advantage and you will not have a Disadvantage for your melee attacks. During this trance, all Acrobatics and Athletics checks are made with Advantage. Once you use this Bonus Action, you can’t use it again until you finish a Long Rest."
+        }
+        #t7VE9yWLLbGcZeSJeyTQZMdG ^"Existential Oneness" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 17
+            ^"Description" STRING "Starting at 17th level, your connection with the cosmos is complete. You use your Bonus Action to activate this power for 1 minute; you gain resistance against every type of damage apart from slashing, piercing and bludgeoning. You gain Advantage on saving throws against spells and similar effects. Once you use this Bonus Action, you can’t use it again until you finish a Long Rest."
+        }
+    }
+}
+
+#tXtsQcA16Z86u9w1ZFmAlTAm ^"Paladin - Oath of Silence" DEF {
+    EXTENDS ^"Subclass"
+    PROPERTIES {
+        ^"Parent Class" STRING "Paladin"
+        ^"Description" STRING "Some words need not be said. There are times where an oath of silence must be taken to protect a secret, or your sanity, or to channel a spectacular judgment. In either way, these warriors use the unsaid words to fuel their warfighting and instead use telepathy and thaumaturgy for communication. Their oaths are taken, usually, to fight against those who mislead and lie to their people; in some cases, those who take this oath usually face unimaginable horror and decide to speak no more, and in others, these are philosophers who believe that oft times words are misunderstood, but actions are not."
+    }
+    FEATURES {
+        #ty3q562aXTdUY8FiXpvFuQl2 ^"Additional Feature Effects" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "Starting at 1st-level, some of paladin’s features have additional effects:"
+        }
+        #tnaJ66QczCfqTWtLHKmiXITm ^"Lay on Hands" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "By spending 5 points you can choose to end the effects of the djinnstruck."
+        }
+        #tmmpL0M7ua0XH3mhdp5cgy83 ^"Divine Smite" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "Additionally, your smite’s damage against djinns increases by 1d8, the same rules that apply extra damage for fiends and undead."
+        }
+        #ttiF1n7K3isUhZC6t4HLJLkC ^"Divine Sense" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "Additionally, your divine sense can sense djinns."
+        }
+        #tawqpkEAzLaH67aFe4rWDKQN ^"Tenets of Silence" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "**Silence:** Do not speak. Let your unspoken words be your fuel.\n\n**Patience:** Do not act rashly. Do not jump to conclusions. Think twice, walk once.\n\n**Acceptance:** See the world as it is. The tree is a tree, a sword is a sword. Do not deny the facts. Swallow the truth and accept it."
+        }
+        #thvELIsZqpMszFRRQLXz3IIP ^"Oath Spells" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "You gain oath spells at the paladin levels listed."
+            ^"Granted Spells" DEF {
+                ^"Level 3" LIST OF STRING ["shield of faith", "thunderwave"]
+                ^"Level 5" LIST OF STRING ["detect thought", "silence"]
+                ^"Level 9" LIST OF STRING ["spirit guardians", "tongues"]
+                ^"Level 13" LIST OF STRING ["freedom of movement", "locate creature"]
+                ^"Level 17" LIST OF STRING ["legend lore", "telepathic bond"]
+            }
+        }
+        #t9ikKRwp8dS7r2uROSmhDGDW ^"Channel Divinity" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "When you take this oath at 3rd level, you gain the following two Channel Divinity options."
+        }
+        #tiTc1eTkzm5JqU5r437nr47K ^"Channel Divinity: Unrivaled Silence" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "You can use your Channel Divinity to create an aura of silence around you, granting the ability to use Stealth without Disadvantage while wearing heavy armor for 10 minutes."
+        }
+        #t0Uina5FRxhmwSvpLpCwTXxX ^"Channel Divinity: The Words, Unspoken" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "You can use your action to present your holy symbol. You choose three creatures of your choice that you can see within 60 ft. Those creatures must succeed on a Charisma saving throw against your spell save DC or be silenced for 1 minute."
+        }
+        #tSCFeU7ZiuRTvHO8CM0UnIXw ^"Silent Spell" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "You gain silent spell feature for all your paladin spells, meaning you do not need verbal components for any of your spells. In the cases when a spell contains only a verbal component, you use a somatic component instead."
+        }
+        #tUSuTqLgX3FG4E5V3oTrA12B ^"Silence as a Whole" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "Starting at 3rd-level, your oath forbids you from speaking. You gain the ability to telepathically communicate with creatures within 30 ft. of you. You may choose to project words, or images, telepathically. These words and images are on a very primitive level and they can’t be used in a form of manipulation; this is only a way for communication, not attack. The creatures can’t answer back telepathically unless they have other abilities for telepathy. Five creatures can hear you at the same time. The creatures are aware that these telepathic messages are coming from you. Additionally, you have resistance to Thunder damage."
+        }
+        #tAUety9ZAVDcTmQP4hnSnvdM ^"Aura of Serenity" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 7
+            ^"Description" STRING "Starting at 7th level, you invoke the power of the words that were never spoken. You and the creatures within 10 ft. of you can choose to deal Thunder damage with their weapon attacks. Additionally, you can cast silence centered on you without expending a spell slot. You can’t use this feature until you finish a short or Long Rest."
+        }
+        #tcQCPSRUL03NSwyDF3rtT0dF ^"Thunderous Retribution" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 15
+            ^"Description" STRING "Starting at 15th level, those unlucky souls who dare to strike you are punished by the thunderous presence you emit. Whenever a creature hits you with an attack, the creature takes Thunder damage equal to your Charisma modifier (minimum of 1) if you are not incapacitated."
+        }
+        #tIGvTKF4Q1qT2lmTbXg6UDiu ^"Angel of Serenity" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 20
+            ^"Description" STRING "At 20th level, you gain the ability to harness extraordinary martial prowess. As a Bonus Action, you can magically become the avatar of stillness, gaining the following benefits for 1 minute.\n\n• You have resistance to elemental damage, (fire, cold, acid, poison, and lightning) and immunity to Thunder damage.\n\n• Once on each of your turns when you make a weapon attack and hit your opponent you add 3d6 Thunder damage on top of the damage you deal.\n\n• Once on each of your turns you can use your Reaction to give resistance to an elemental attack (you have to choose from: fire, cold, acid, poison, and lightning) to an ally for one round.\n\nOnce you use this Bonus Action you can’t use it again until you finish a Long Rest."
+        }
+    }
+}
+
+#tS8ylHf9fixEwuZti3TTcp1V ^"Rogue - The Secret Service" DEF {
+    EXTENDS ^"Subclass"
+    PROPERTIES {
+        ^"Parent Class" STRING "Rogue"
+        ^"Description" STRING "A woman with a perfect dress, subtly moves and listens to an important conversation between two ambassadors of great presidents and kings. While she is undetected by others, successfully retrieves a document that was not meant for her eyes.\n\nA young man with ragged clothes appears as a kindly flower-seller in the streets while carefully collecting information on the influence of a certain organization among the common folk. Slowly, he connects the dots and prepares his deadly strike for the necessary enemy.\n\nEvery government worth their salt has uses for people who do the dirty damning deeds that should never come to light. These individuals– whether trained for their job professionally or just happened to be the one person for the job– can charm, stab, or sneak their way into and out of different situations as a true jack of all trades\n\n- or by seeming like jacks of all trades."
+    }
+    FEATURES {
+        #tmG7yd2upmbiUFly1t9Fivlp ^"Subtle Arcana" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "Your training as a spy and in the arcane ways earned you incredible abilities worthy of the best secret services in the world. You learn the disguise self and the comprehend languages spells and can cast each of them without expending a spell slot. You can do so a number of times equal to your Intelligence modifier and regain expended uses when you finish a Long Rest.\n\nAt 5th level, you learn the alter self, detect thoughts, and invisibility spells and cast each of them without expending a spell slot. You can’t do so until you finish a Long Rest.\n\nIntelligence is your spellcasting ability modifier for these and future spells."
+        }
+        #txZQx6hBu30ZQsXF9mDPH0Yr ^"Unmatched Training" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 3
+            ^"Description" STRING "Your hard and unique training enabled you interesting abilities, starting at 3rd level, you have access to the following features:\n\n• You can read lips and understand what the person is saying if you know the language.\n\n• If a conversation or a sound is within your hearing range, you can discern simple gestures and whispers even if it is a noisy environment.\n\n• Whenever you fail or roll below 10 in a Wisdom or Charisma check, you can add your Intelligence modifier to the result.\n\n• When you make a Stealth check without a Disadvantage, you add your Intelligence modifier to the result."
+        }
+        #tgQF5EI7XG18YEhC7DvFPiDm ^"Invisible Strike" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 9
+            ^"Description" STRING "You learned to finish your job without encountering the gazes of your enemies. When you hit an enemy that can’t see you, it must succeed on a Constitution saving throw (DC equals to 8 + your proficiency bonus + Dexterity modifier) you can forgo some of your Sneak Attack to dice to gain certain benefits:\n\n• 1d6: The creature falls prone or pushed 10 ft. away from you. • 2d6: The creature is Blinded or deafened until the end of your next turn. • 3d6: The creature is Stunned until the end of your next turn. • 4d6: The creature is Paralyzed until the end of your next turn."
+        }
+        #tFmpKdOq9gkx3Axq8hqRQ4k0 ^"Knowledge Extraction" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 13
+            ^"Description" STRING "By the time you reached 13th level, you learned all ways to extract knowledge, whether it be arcane or direct. For certain conditions, you have access to these features to extract knowledge. You have access to all the features below:\n\nDiscreet Minds: A target has Disadvantage against the saving throw you force them during detect thoughts spell. Strong Walls: You learn the arcane eye spell and cast it once a day without expending a spell slot. Hidden Rooms: You learn the clairvoyance spell and cast it once a day without expending a spell slot. Beyond Comprehension: You learn the contact other plane spell and cast it once a day without expending a spell slot."
+        }
+        #tQ0XcGjQgOSBl4ZfOtY5rjdo ^"Stunning Gaze" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 17
+            ^"Description" STRING "You are now one of the greatest secret service agents that has ever lived and even your gaze is enough to stop an opponent. At 17th level, you can cast the hold person and hold monster spells without expending a spell slot (each of them). When you do so, you can’t cast it again until you finish a Long Rest."
+        }
+    }
+}
+
+#t3LUw739HYsGuDmQ7rqL56eS ^"Sorcerer - Djinnpossessed" DEF {
+    EXTENDS ^"Subclass"
+    PROPERTIES {
+        ^"Parent Class" STRING "Sorcerer"
+        ^"Description" STRING "Even a whisper of their name may put your soul in danger. And if you try to bend them to your will, you should not expect to walk away. Djinns, hungry and curious of this world-plane, try every trick in the book to break from the chains of their usually overconfident masters. Once tricked, or with their will broken, masters' bodies become the playground of the Djinn. In moments of clarity, Djinnpossessed can act as their own masters, using their memory and knowledge of the world. However, most often, they act as their own in a foreign body and a foreign realm, trying to absorb as much information as possible, and trying to blend in. Yet their inexperience on Earth is quite easy to catch. In combat, they let loose all their abilities, using the body they host not as an object of tremendous value to be protected, but as an expendable weapon. Their arcane powers usually focus on this stratagem."
+    }
+    FEATURES {
+        #tUTNFtnlnhD6lvQk8qlmuKrZ ^"Djinnpossessed Magic" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "You learn additional spells when you reach certain levels in this class, as shown on the Djinpossessed Spells table. Each of these spells counts as a sorcerer spell for you, but it doesn't count against the number of sorcerer spells you know."
+            ^"Granted Spells" DEF {
+                ^"Level 1" LIST OF STRING ["hellish rebuke", "unseen servant"]
+                ^"Level 3" LIST OF STRING ["hold person", "ray of enfeeblement"]
+                ^"Level 5" LIST OF STRING ["bestow curse", "vampiric touch"]
+                ^"Level 7" LIST OF STRING ["black tentacles", "conjure minor elementals"]
+                ^"Level 9" LIST OF STRING ["conjure elemental", "insect plague"]
+            }
+        }
+        #tPjkRdTsTxGVPML0zsMpo0PH ^"Djinntouched" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "Starting at 1st level, you learn the Djinnspeak, the tongue of the Al-Ghaib and your inner djinn's influence will start to have effects on the world around you. When you expend one of your 1st level spell slots by touching a creature, you can force that creature to make a saving throw against your spell save DC. On a failed save you choose one of the effects below:\n\n• The creature loses the ability to speak for 1 hour.\n\n• The creature gains one level of exhaustion. (You can't make it exceed two levels of exhaustion.)\n\n• The creature has a fear of the dark. It has Disadvantage on saving throws in dim light and darkness. It lasts for 1 hour.\n\nYou can only use 1st level spell slots for this ability."
+        }
+        #tonldlPdq88tmyZbgmnlPOTW ^"The Djinn Inside" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "OPTIONAL FEATURE\n\nStarting at 1st level, your body is possessed by a djinn. If other individuals somehow manage to exorcize the djinni through the means of Exorcism Sacrament (see The Wonder of Creatures section for the details), you will have the chance to become a Warlock through a pact with your djinn. If so, you become the Djinnmaster Warlock with a djinn patron. With every level you gained with this class the Difficulty for the Exorcism Sacrament is increased by 1."
+        }
+        #tFwza8jsVDvZN3MbLRzND8fO ^"A Mortal Shell" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 6
+            ^"Description" STRING "Starting at 6th level, your body will start to decay with the effect of the djinn. Starting from the time you reach 6th level you will have one month before your body will become completely useless. Once a month has ended only magical healing and greater restoration will help to preserve your body. If you do not use magical ways of stopping the decay of your body, you will suffer consequences:\n\nAfter First week: Your foul stench will give you Disadvantage on your Charisma checks.\nAfter 15 days: Your body's decay will give you Disadvantage on saving throws.\nAfter one month: Your GM may choose to kill your body permanently, any given day.\n\nIf you die, you can't be resurrected.\n\nHowever, you can change your body when you touch another humanoid whose CR is half (rounded down) your level and is Unconscious. The humanoid must make a Charisma saving throw against your spell save DC, on a failed save your djinn can possess the body (On a success, the creature is immune to this feature for 24 hours). It takes an hour of rituals for you to transfer your consciousness over to the new body, and destroy the inhabitant's. You can use this feature a number of times equal to your proficiency bonus. Your expended uses refresh in one month. After taking on a new body you will suffer level 2 exhaustion. Your ability scores, skills, spells, and HP will be the same. You also do not have access to the target's memories."
+        }
+        #t0QZWss5OQ5BC5BZAQNWtxvo ^"Unveil the Dark Half" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 6
+            ^"Description" STRING "Starting at 6th level, your djinn will be able to leave your body and fight for you. He can appear within 10 ft. of you and has its own Initiative roll. It can't go away more than 30 ft. from you and have half your Hit Points. When the distance between you exceeds 30 ft. or it drops to 0 Hit Points, the djinn is forced back to your body. You can't use this feature again until you finish a Long Rest.\n\nThe djinns stats are the same as yours and regardless of your abilities, it can take one attack action with Decay Touch. The other actions it can take are: Dash, Disengage, Dodge, and Hide.\n\nDecay Touch: Melee Weapon Attack: reach 5 ft., one creature. Hit: 2d6 Psychic damage."
+        }
+        #tOJ5FDlimBrtMz3LUI5WCYsJ ^"Baneful Adversary" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 14
+            ^"Description" STRING "Starting at 14th level, the Djinnpossessed starts to lay curses on people. You can use your Bonus Action to curse a foe, and it will have Disadvantage on its next saving throw. You can use this ability a number of times equal to your proficiency bonus and will regain expended uses after a Long Rest."
+        }
+        #tvntNTE5cPDegSQfbNgBZ4vL ^"True Form" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 18
+            ^"Description" STRING "Starting at 18th level, you use a Bonus Action to unleash the Djinn inside, gaining a new Djinnlike form. This new and powerful form will last for 1 minute. While you are in your True Form, you will gain the following benefits:\n\n• The ability to fly at will with a speed of 50 feet.\n\n• You now have the magic resistance feature: any kind of spell magical effects used against you, you will have Advantage in the saving throws. Also if you successfully resist a spell, you will be healed as much HP as the spell has levels. You can use this heal once a day.\n\n• Any damaging magic spell you cast will always have a chance to deal maximum damage. Roll an additional d6 when you cast a damaging spell. If you roll higher than 3, the spell deals full damage. This feature can't be used for spells higher than 7th level.\n\nWhen your True Form ends, you won't be able to move and take actions until after your next turn, and you will have one level of exhaustion. Once you use this feature, you must finish a Long Rest before you can use it again."
+        }
+    }
+}
+
+#tlGyrxtqjVUGN7vRc81mhPA0 ^"Warlock - Ancient Sage" DEF {
+    EXTENDS ^"Subclass"
+    PROPERTIES {
+        ^"Parent Class" STRING "Warlock"
+        ^"Description" STRING "Sages of old devoted their waking lives to the pursuit of wisdom and knowledge, and even in death, they continue to guide their predecessors. Speaking through the artifacts they leave, their lessons and powers are echoed within those who seek and excel through knowledge of ancient arts. Their students gain abilities in acquiring information, detecting the supernatural, and at their epitome; they can summon the spirits of the dead from their belongings at will to converse with those who are long gone."
+    }
+    FEATURES {
+        #tAedxyCKApE8Erw7PljeORqj ^"Ancient Sage Expanded Spell List" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "The Ancient Sage subclass grants expanded spells known."
+            ^"Granted Spells" DEF {
+                ^"Level 1" LIST OF STRING ["detect evil and good", "wisdom of avicenna"]
+                ^"Level 2" LIST OF STRING ["animal messenger", "augury"]
+                ^"Level 3" LIST OF STRING ["clairvoyance", "sending"]
+                ^"Level 4" LIST OF STRING ["arcane eye", "divination"]
+                ^"Level 5" LIST OF STRING ["contact other plane", "legend lore"]
+            }
+        }
+        #tnfdGJK0Z7ijimi7eHT7BFuL ^"The Wise Question" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "Starting at 1st level your patron gives you a talisman (or you acquire such an artifact that starts your journey as an Ancient Sage Warlock) that helps you invoke your powers. You gain the ability to magically enhance your inquiry when asking any sentient creature that can understand the language you speak, a logical, full-sentence question. The creature needs to make a Wisdom saving throw against your spell save difficulty. On a failed save it is obliged to tell you the unaltered truth. You can use this ability a number of times equal to your proficiency modifier and will regain expended uses at a short or Long Rest. The Wise Question is undetectable using mundane skills, and will only be discerned by spells, feats, and abilities detecting arcane powers."
+        }
+        #tsHSiEOE1Ik9UECJ0G1qnSs1 ^"Bonus Proficiency" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "You gain proficiency in two skills from History, Medicine, Nature, Arcana, or Religion."
+        }
+        #twTHC4qk5SCTMJhla5Hgi9sT ^"Supernatural Senses" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 6
+            ^"Description" STRING "Starting at 6th level you learn to open your awareness as a Bonus Action to detect supernatural creatures. Until the end of your next turn you sense any non-humanoid, within 60 feet of you. You also learn the type (i.e., shapechanger, undead, celestial, etc.) of any creature you sense, but not its identity or power. You can use this ability a number of times equal to your proficiency bonus and regain all expended uses at a Long Rest."
+        }
+        #tlwQoIu83Nahr8aNDnGqEgoc ^"Wisdom of the Sage" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 10
+            ^"Description" STRING "Starting at 10th level you gain Advantage on Wisdom saving throws against any spells or magical effects, such as a sleep-breath of a gold dragon or *hold person* spell."
+        }
+        #tQBWS7Wgo12xgA5LoE81WOUW ^"Embodiment" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 14
+            ^"Description" STRING "Starting at 14th level, you will be able to call forth the cumulative knowledge and experience of the deceased sages before you and gain the following benefits:\n\n• You gain resistance to Psychic damage.\n\n• You can speak to any lingering spectral undead and will have Advantage on any Charisma checks you make to gain information from such spectral and normally aggressive undead.\n\n• You understand what every creature is saying (it must be a spoken language) and creatures that have at least an Intelligence score of 3 can understand you as well.\n\n• As an action you can summon the spirit of a long-deceased sage to empower your abilities, as an avatar shrouding your body. You gain Advantage on your spell attack rolls and creatures that you force to make a saving throw have Disadvantage on that roll. This feature is active for 1 minute and can't be used again until you finish a Long Rest."
+        }
+    }
+}
+
+#tE4GwDqqsj9PrOlqMW0XAF7a ^"Warlock - Djinnmaster" DEF {
+    EXTENDS ^"Subclass"
+    PROPERTIES {
+        ^"Parent Class" STRING "Warlock"
+        ^"Description" STRING "It is told that they are made of smokeless fire, a primordial substance. Calling them elementals would be wrong; what we call smokeless fire has nothing to do with our version of flames. Their need for a vessel is also a myth, neither do they grant any wishes. But, it is true that they scour a parallel world, and they constantly interfere with ours. Never call them by their name, names have the power to summon - refer to them as “three lettered ones” instead. Contacting them is fruitless, and not because they won’t answer. They will. But you risk them having a laugh at the expense of your bodily integrity. Worse is if one takes a liking to you. They are envious creatures, and god almighty help those that they think are a competition for your attention. There are ways to keep them in line, yes. And of course those dark techniques can be taught. But have you considered what you will unleash if you happen to lose control? How will you keep the balance with your partners from the other realm, once you invite them to your body?"
+    }
+    FEATURES {
+        #tqwbZgc2PMskKkSfHUA4lj7T ^"Djinnmaster Expanded Spell List" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "You gain the following expanded spells."
+            ^"Granted Spells" DEF {
+                ^"Level 1" LIST OF STRING ["command", "bane"]
+                ^"Level 2" LIST OF STRING ["enhance ability", "augury"]
+                ^"Level 3" LIST OF STRING ["speak with the dead", "bestow curse"]
+                ^"Level 4" LIST OF STRING ["banishment", "polymorph"]
+                ^"Level 5" LIST OF STRING ["dominate person", "hold monster"]
+            }
+        }
+        #tnV57yUxZw4WoqzfAu0oYjx9 ^"Voices of Al-Ghaib" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "Starting at 1st-level, you gain proficiency with Arcana. If you are already proficient in it, you gain another skill from Intelligence. When rolling to gain knowledge on the realm of Al-Ghaib, you can ask your djinni to give you a +10 bonus to that check, as long as you use this feature before the roll. You can’t use this feature again until you finish a short or a Long Rest."
+        }
+        #tV2tN7psKHtxaauu9yzkjDdd ^"Controlled Possession" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "You learned how to command the Djinn’s power for a brief amount of time, but this comes at a great cost. Starting at first level, as a Bonus Action, you can pull your consciousness back for your Djinn to take over your body for a brief time, enhancing your combat abilities. You add 1d6 Force damage to all your melee and ranged damage rolls (including ranged spell attack rolls) as long as the Djinn is in control. This damage is increased to 2d6 Force damage at level 5, 2d8 Force damage at level 11 and 3d8 Force damage at level 14. For each time you use this ability in one combat (doesn’t matter if you hit or miss) pick a d6 and roll them all at the end of combat; apply the amount as Psychic damage to yourself. This feature lasts for 1 minute. You can use this ability once per Long Rest."
+        }
+        #tTCDgkiSNtFau7WbrBDrePML ^"Losing Control (Optional Feature)" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "Starting at 1st level, your patron may try to possess your body. With every level you gain in this class, you make a Charisma saving throw. The difficulty is set by the GM (more powerful djinn means higher difficulty). On the third successive fail, the djinn possesses your body, and you become a Sorcerer of Djinnpossessed origin. You retain your level, experience, and abilities but everything about your class changes."
+        }
+        #t2UYL2cQ271sAJAmwJO2cP19 ^"Unfathomable Being" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 6
+            ^"Description" STRING "The Djinn possessing your body doesn’t like to be spied upon or tracked by magic. Starting at 6th level, whenever you are being targeted by an enchantment or a divination spell, the spellcaster (if within 120 ft.) has to roll a Wisdom saving throw (Difficulty is your spell save DC) On a failed save, the effects of the spell are negated and the user takes 1d6 Psychic damage for each spell level. You may use this ability a number of times equal to your proficiency modifier, and the expended uses come back at a Long Rest.\n\nAlso, as an action you can unleash a fraction of the djinn’s true form. Every creature that can see the djinn makes a Wisdom saving throw against your spell save DC. On a failed save, they are Frightened of you for 1 minute and can repeat the saving throw at the end of their turns. You can’t use this feature again until you finish a short or Long Rest."
+        }
+        #tjq2M2H1UO6cDKL2jsbpGZWf ^"Nether Armor" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 10
+            ^"Description" STRING "The Djinn inside you starts to care about its vessel more or shows a hint of care to you personally, and tries to protect you by manifesting itself as an amorphous shield that protects you when you are threatened. Starting at 10th level, you can use one of your spell slots or Mystic Arcanum (of any level once it is available to you) to use your Reaction to reduce some incoming damage by 2d8 or d8 equal to the Mystic Arcanum slot you used."
+        }
+        #tGXiXfwopKND9zeeo5lVvnX4 ^"Loosen the Chain" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 14
+            ^"Description" STRING "Starting at 14th level, you will be able to unleash your Djinn outside your body for a short time. You use your action to target a humanoid you can see within 60 feet of yourself and send your Djinn to possess it. Even though you can sense the creature with magic, you will need a direct line to this humanoid. The humanoid must make a Wisdom saving throw against your spell save DC. On a failed save, the target humanoid's body is in your control for up to 1 hour as per dominate person spell. While still in the possession of your target, you can still act freely granted the visual link between you and the target humanoid is not broken; however, you can’t use your other archetype abilities. You can’t use this feature again until you finish a Long Rest."
+        }
+        #tb77UxyNfMufcqhMIDYZm8MJ ^"Invocation of the Eye" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "Invocation of the Eye. Your eyes will be imbued with otherworldly magic. If you wish your eye color may change according to your patron (your or GM’s choice). You can borrow an otherworldly sight when you need it. You gain increased eyesight and the ability Blindsight (10 ft.) and have +2 bonus to your Passive Perception.\n\nOnce you activate the magic in your eye (as a Bonus Action) you can choose one of the benefits:\n\n• You have Darkvision out to a range of 120 ft. for 10 minutes. If you already have Darkvision from other sources, this feature adds Darkvision on top of the other.\n\n• Your eyes can detect curses, nazars, diseases and desecrated, or sacred places within 60 ft. for 10 minutes.\n\n• You can see Shapechangers and Invisible creatures for 1 minute.\n\n• For the Historica Arcanum Universe: You can detect any influence from Al-Ghaib or creatures from Al-Ghaib for 1 minute. (For other settings you can change Al-Ghaib to Ethereal or Astral Plane)\n\nYou can use this feature equal to your proficiency bonus. Your uses will replenish after you finish a short or Long Rest."
+        }
+        #t7B2zM3Ka5BViXfxsJmbxIU0 ^"Invocations" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 1
+            ^"Description" STRING "Dead Spirits Around: You can sense any undead within 300 ft. You don’t know the type and location, but you are aware of the numbers.\n\nTouch of the Eye: You can cast nazar once a day, without expending a spell slot.\n\nWay of the Sage: You gain proficiency in Arcana and History.\n\nVoices of Al-Ghaib: You can use your Bonus Action to sense fiends, feys and djinns around 30 ft. of you that are not behind the total cover. You know which type (e.g. a fiend) but not specifics (e.g. a succubus) about the target. You know how many of them there are. You can use this ability equal to your proficiency bonus and your replenished uses will recover after you finish a short or Long Rest.\n\nSense the Vile: (Prerequisite: 9th-level) You can cast sense the sinner once a day, without expending a spell slot.\n\nMaddening Blast: (Prerequisite: Eldritch Blast - 5th level) Once a turn, you enhance your Eldritch Blast with the influence of Al-Ghaib. When you hit a creature with Eldritch Blast, you can make them hear maddening voices from Al-Ghaib (no actions required). That creature will have Disadvantage on the next attack roll. You can use this feature a number of times equal to your proficiency bonus."
+        }
+    }
+}
+
+#tUSXs2M19lIdZLEiNXZWJi24 ^"Wizard - Stargazer" DEF {
+    EXTENDS ^"Subclass"
+    PROPERTIES {
+        ^"Parent Class" STRING "Wizard"
+        ^"Description" STRING "Gazing at the stars is an ancient art form, almost as old as history itself. Those with the arcane skills and knowledge have used the essence of the stars and their movements to enhance the potency of their foresight. The stargazers, with their understanding of time and fate, excel in manipulating the destinies of people around them."
+    }
+    FEATURES {
+        #te2ZL4QuJkFq4SlE8bSrXTKL ^"Omen from the Skies" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 2
+            ^"Description" STRING "Your studies in the ancient art of stargazing earned you great abilities that other magicians aren’t able to. Starting at 2nd level, you can touch a creature (including yourself) to grant them one of the abilities below, that is active for 1 minute. Once used, the ability is lost. A creature can’t have more than one benefit active on them at the same time.\n\n**Bad Omen:** When the creature is hit by an attack, it can use its Reaction to roll a d10 and deduct it from the roll, potentially causing it to miss.\n\n**Good Omen:** When the creature misses an attack roll, it can use its Reaction to roll a d10 and add it to their attack roll, potentially causing it to hit.\n\n**Magical Surge:** When the creature casts a spell that is 3rd level or lower and expends a spell slot, it can use its Reaction to make a spellcasting ability check. DC is equal to 10 + spell’s level. On a success, the spell slot is restored. Instead of restoring a spell slot, the creature can give itself 1d10 Temporary Hit Points.\n\n**Altering Fate:** The creature uses its Reaction to give itself 1d10 bonus on the next ability check that is rolled within 1 minute.\n\n**Starry Eyes:** The stars shine on the eyes of the creature. It gains darkvision (30 ft.) for the next minute.\n\n**Celestial Eyes:** The creature is blessed with celestial sight. It has Advantage on Perception or Intelligence checks made within the next minute.\n\nYou can use this ability a number of times equal to your Intelligence modifier. You regain expended uses after you finish a Long Rest. In addition, you can expend a spell slot of 1st level or higher to regain one use of this ability (no action required)."
+        }
+        #t8dl4SRgsYlSwBnSioZWpUR3 ^"Bonus Spells" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 2
+            ^"Description" STRING "You gain the use of guidance or resistance cantrips, bless or bane at 1st, augury at 3rd, divination at 7th and legend lore at 9th level. Once you gain access to these spells, they don’t count against the number of cantrips and spells you have. They are all counted as wizard spells, are always prepared, and don't count against the number of spells you can prepare."
+            ^"Granted Spells" DEF {
+                ^"Level 2" LIST OF STRING ["guidance", "resistance"]
+                ^"Level 1" LIST OF STRING ["bless", "bane"]
+                ^"Level 3" LIST OF STRING ["augury"]
+                ^"Level 7" LIST OF STRING ["divination"]
+                ^"Level 9" LIST OF STRING ["legend lore"]
+            }
+        }
+        #tglidRBCNaxMQEeKHojvmydH ^"Reading the Stars" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 6
+            ^"Description" STRING "Starting at 6th level, you gain the ability to perform the ancient art of reading the stars. During a Long Rest, you can spend 2 hours searching the stars and make use of them in three ways:\n\n**• Fortune-telling:** You can catch a glimpse of the future. The next day, either you or one of your allies within 30 ft. of you can have Advantage on attack rolls, ability checks or saving throws. You must grant this ability before the roll. You can use this feature a number of times up to half your Intelligence modifier (rounded up).\n\n**• Finding the Path:** You can use the stars to honor an archaic method of navigation. The next day you can cast one of these spells once, without expending a spell slot: find traps, locate object, pass without trace, sending, clairvoyance. After you choose to cast one of the spells, you can’t use this feature until you finish a Long Rest.\n\n**• Celestial Omens:** You can check the stars’ alignment to see what fate holds in her hands. The next day, you can recall what you have seen in the stars. As an action you can use your ability to gain insight about any creature’s intentions for you that you can see within 60 ft. The creature makes a Wisdom saving throw against your spell save DC. On a failed save, you will learn their intentions: good, bad, neutral or none (i.e. if the creature doesn’t know you or is not sentient)."
+        }
+        #tWZ9Rsssnj9FPYCxmnLVb58A ^"Omens from the Stars" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 10
+            ^"Description" STRING "Your eyes are sensitive to the starlight and you know where the celestial objects are even at daytime. This enables you to read fate even more potently. When you or an ally within 30 ft. of you makes an attack roll, ability check or a saving throw, you can intervene and decide what the creature has rolled. If the creature isn’t willing, the feature has no effect. Once you use this ability, you can’t use it again until you finish a Long Rest."
+        }
+        #t5xTcaVeKDKQxT3UHlEeVfzx ^"When Stars Align" DEF {
+            EXTENDS ^"Subclass Feature"
+            ^"Level" INTEGER 14
+            ^"Description" STRING "Starting at 14th level, you gain the ability to call forth the power of the stars. When you do so, you gain these abilities for the next minute and you can’t use this feature again until you finish a Long Rest:\n\n• You have True Sight out to 30 ft.\n\n• You have resistance to radiant and Psychic damage.\n\n• Five radiant orbs originate around you. You can use them as a ranged spell attack within creatures 100 ft. of you. On a hit, the creatures take 6d10 Radiant damage. Whether a hit or not, the orb is lost upon the attack. The orbs shed 30 ft. bright and 30 ft. of dim light. The creatures hit by the attack will shed 5 ft. bright and 5 ft. of dim light. The next attack roll against them will have Advantage, and they can’t become Invisible again in the next minute. If they are already invisible, they can’t benefit from that spell or effect in the next minute."
+        }
+    }
+}
+
+}

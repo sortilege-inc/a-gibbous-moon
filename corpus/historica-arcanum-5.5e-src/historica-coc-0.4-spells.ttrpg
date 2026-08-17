@@ -1,0 +1,378 @@
+EXTENSION "HistoricaArcanum_CoC_Spells" EXTENDS "Dnd5_5e_Core_Base" {
+    NAME "Historica Arcanum: The City of Crescent - Spells"
+    VERSION "0.4"
+    SPEC_VERSION "0.4"
+    RELEASE_DATE "2026-07-21"
+
+#txMv7R53Prvu9EJEBTps6Ge4 ^"Karya’s Dream Flow" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 5
+        ^"School" STRING "Divination"
+        ^"Casting Time" STRING "1 hour"
+        ^"Range" STRING "Self"
+        ^"Components" STRING "V, S, M (a silver mirror)"
+        ^"Duration" STRING "10 minutes"
+        ^"Description" STRING "When you cast this spell, you fall asleep and can dream up to six humanoids you have seen before. You can share your memories with those humanoids through dreams. The creatures dream about your selected memories in their sleep and remember it when they wake up. They experience the memories as if watching from the side, rather than directly in your perspective. You can share your emotions."
+        ^"Classes" LIST OF STRING ["Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#t4e1RuroUKOTov3odwtlNhZd ^"Consecrate Brethren" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 4
+        ^"School" STRING "Abjuration"
+        ^"Casting Time" STRING "10 minutes"
+        ^"Range" STRING "30 ft."
+        ^"Components" STRING "V, S, M (wine, essence, or purified water)"
+        ^"Duration" STRING "8 hours"
+        ^"Description" STRING "When you cast this spell, you choose up to five creatures within range. You bolster the creatures you choose with holy resolve. Each creature you choose gains Advantage against all saving throws against poison and disease; they also gain 10 Temporary Hit Points for the duration of this spell."
+        ^"Classes" LIST OF STRING ["Cleric", "Paladin"]
+    }
+}
+
+#tfXV8fBo2AgxUpvDuKygQXH8 ^"Detect Djinn" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 2
+        ^"School" STRING "Divination"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "Self"
+        ^"Components" STRING "V, S"
+        ^"Duration" STRING "Concentration, up to 10 minutes"
+        ^"Ritual" BOOLEAN true
+        ^"Concentration" BOOLEAN true
+        ^"Description" STRING "For the duration, you sense the presence of any Djinn or Djinn-possessed vessels within 30 feet of you. If you sense any Djinni in this way, you can use your action to see a faint aura around any visible creature in the area to determine its type. The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, of thin sheet of lead, or 3 feet of wood or dirt."
+        ^"Classes" LIST OF STRING ["Bard", "Cleric", "Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#t7LQtgXk5XL2tuaw9TCVO46p ^"Djinnstrike" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 3
+        ^"School" STRING "Enchantment"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "30 ft."
+        ^"Components" STRING "V"
+        ^"Duration" STRING "Instantaneous"
+        ^"Description" STRING "You tap into the dark power of Al-Ghaib to utter twisted words that spread madness. You choose a creature within range. They must succeed on a Charisma saving throw against your spell save DC. On a failed save they will get one of the following effects, and they will take 3d6 Psychic damage. You choose one of the effects below:\n• The target will lose the ability to speak for 1 minute. When it tries to talk, it will utter the names of the great djinn lords.\n• The target's speed is reduced to 0 until the end of your next turn.\n• The target cannot use reactions.\n• The target will have Disadvantage on all its ability checks for 1 hour.\nOn a success, they only take half damage and suffer no other ill effects."
+        ^"Classes" LIST OF STRING ["Cleric", "Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#t8rpK8nWnxk1uIh7ZuVOZrW8 ^"Exorcize Djinni" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 3
+        ^"School" STRING "Abjuration"
+        ^"Casting Time" STRING "10 minutes"
+        ^"Range" STRING "Touch"
+        ^"Components" STRING "V, S, M (A vial of consecrated water)"
+        ^"Duration" STRING "Concentration, up to 10 minutes or until the Djinn is Exorcized"
+        ^"Concentration" BOOLEAN true
+        ^"Description" STRING "You focus on a Djinni-possessed vessel and force the Djinni to lose its Al-Ghaib form and its grip on the vessel. The Djinn rolls a Constitution save with Disadvantage each turn. On a failure, the Djinn returns to its ethereal form. If it makes the saving throw, then you may choose to force the Djinni to repeat the saving throw on your next turn. To fully exorcize the Djinn, it must either be convinced to leave the possessed body, or must be defeated in combat outside of its possessed vessel."
+        ^"At Higher Levels" STRING "When you cast this spell using a spell slot of 4th level the exorcism will affect a Zawbaw'ah. When you cast this spell using a spell slot of 6th level the exorcism will affect a Nar-as Samum or a Shamhuresh."
+        ^"Classes" LIST OF STRING ["Cleric", "Paladin", "Warlock"]
+    }
+}
+
+#tkH1jVghFxhzbNjdN3jxW836 ^"Faithful Guidance" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 1
+        ^"School" STRING "Enchantment"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "30 ft."
+        ^"Components" STRING "V, S"
+        ^"Duration" STRING "Instantaneous."
+        ^"Description" STRING "Your hands glow and you utter words from your holy scripture, summoning a faint aura of blessing that covers an ally of your choosing. Your ally will make the next attack roll, saving throw or skill check with Advantage."
+        ^"At Higher Levels" STRING "When you cast this spell using a spell slot of 2nd level or higher, the recipients of this spell will increase for each slot level above 1st."
+        ^"Classes" LIST OF STRING ["Cleric", "Paladin"]
+    }
+}
+
+#taaqBK2JXKw5jV5EWgQH6c77 ^"Gaze of the Unholy" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 4
+        ^"School" STRING "Necromancy"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "30 ft."
+        ^"Components" STRING "V"
+        ^"Duration" STRING "Instantaneous"
+        ^"Description" STRING "When you cast this spell, choose up to three creatures with whom you have a direct, unobscured line of sight within 30 ft. They make a Constitution saving throw. They take 5d10 Necrotic damage on a failed save and half as much on a successful one. Upon failing the saving throw, any creature which is not undead or a construct becomes Frightened. A creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success. On a failed save and if the creature dies, the creature will raise as an undead under your control for the duration of 1 minute."
+        ^"At Higher Levels" STRING "When you cast this spell using a spell slot of 5th level or higher, each slot above 4th will increase the targets of the spell by 1 and damage taken by 1d10 Necrotic damage."
+        ^"Classes" LIST OF STRING ["Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#tmAEWsAsLIXcY0O5H26h6jKB ^"Infernal Whispers" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 4
+        ^"School" STRING "Divination"
+        ^"Casting Time" STRING "1 minute"
+        ^"Range" STRING "Self"
+        ^"Components" STRING "V, S, M (an eye of a cat)"
+        ^"Duration" STRING "Instantaneous"
+        ^"Description" STRING "You cut the cat eye in half and utter the accursed words of the spell, and a powerful being of demonic nature will answer. You ask a single question concerning a specific goal, event, or activity to occur within 7 days. The GM must offer a truthful reply. The reply might be a short phrase, a cryptic rhyme, or an omen. The spell doesn't take into account any possible circumstances that might change the outcome, such as the casting of additional spells or the loss or gain of a companion."
+        ^"At Higher Levels" STRING "When you cast this spell using a spell slot of 5th level or higher, each slot above 4th will increase the time of the occurrence by 7 days and the number of questions by 1, but for each slot over 4th the caster will gain 1 level of exhaustion."
+        ^"Classes" LIST OF STRING ["Cleric", "Warlock", "Wizard"]
+    }
+}
+
+#t7gRktpzJzhkncHFovqlfIdb ^"Karya’s Mind Wipe" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 7
+        ^"School" STRING "Enchantment"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "10 ft."
+        ^"Components" STRING "V"
+        ^"Duration" STRING "Instantaneous"
+        ^"Description" STRING "You attempt to twist the mind of a humanoid you can see within 10 ft. of you. The target makes a Wisdom saving throw against your spell save DC or suffers one effect you choose from below:\n• You choose some specific information from the target's mind and erase it completely. This information can be the target's name, a language, a book it read, an event it saw, etc.\n• You plant new memories instead of the old ones. You can change 1 minute of the target's memory with any memory you would like.\nThe victim suffers from violent fits when trying to recall their altered memories, such as repeatedly hitting their head."
+        ^"Classes" LIST OF STRING ["Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#tS6jsX86NBDRNGojrxOo6QOB ^"Knot the Luck" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 0
+        ^"School" STRING "Enchantment"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "30 ft."
+        ^"Components" STRING "S, M (a string of black cat fur)"
+        ^"Duration" STRING "One day, or until the knot is broken"
+        ^"Description" STRING "You knot the fur string to make a sign of supernatural hex. You create one of the following magical effects within range:\n• The target's fertility drops to 0.\n• The target suffers from bad luck in all ordinary aspects of life.\n• The target suffers from random mundane mishaps."
+        ^"Classes" LIST OF STRING ["Cleric", "Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#tg1UpKqYpXEkxuH2fc7KcC6O ^"Mandate of the Sophists: Avicenna" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 1
+        ^"School" STRING "Divination"
+        ^"Casting Time" STRING "1 minute"
+        ^"Range" STRING "Self"
+        ^"Components" STRING "V, S, M (a piece of old parchment with Arabic runes written on it by black ink)"
+        ^"Duration" STRING "Concentration, up to 10 minutes"
+        ^"Ritual" BOOLEAN true
+        ^"Concentration" BOOLEAN true
+        ^"Description" STRING "You burn the paper, utter the words of the spell, and inhale the smoke to tap into the wisdom of Avicenna. You gain information on how the human body works. For ten minutes, you gain Advantage on Medicine checks and detect any natural disease and poison harming the body. Although the existence of poison and disease can be detected, the natures of both will require a medicine check with proper difficulties."
+        ^"Classes" LIST OF STRING ["Wizard", "Druid", "Cleric"]
+    }
+}
+
+#th1LQcxyxgfrLn23egkN4i9i ^"Mandate of the Sophists: Rumi" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 5
+        ^"School" STRING "Abjuration"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "60 ft."
+        ^"Components" STRING "V, M (a silver mirror worth 25 gp which the spell consumes)"
+        ^"Duration" STRING "Instantaneous"
+        ^"Description" STRING "You shatter the silvery mirror with your hand and crumble the shards. Amidst the crackling sound, you utter the truthful words of the sophist Rumi.\nYou affect any creature that can hear your voice. All the creatures need to make a Charisma saving throw, and on a failed save, every creature that shape changed by magic or skill will forcefully revert back to its original form. Every illusion spell that shows the target as someone or something else and every transmutation spell that changes the target's shape will be broken. This spell only works on sentient creatures; it does not work on objects."
+        ^"Classes" LIST OF STRING ["Bard", "Cleric", "Paladin", "Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#tPGQtKtDZC8QEsuOxTpzmJyf ^"Nazar, the Bead" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 0
+        ^"School" STRING "Enchantment"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "30 ft."
+        ^"Components" STRING "S, M (A small Nazar bead worth 1 cp which the spell consumes)"
+        ^"Duration" STRING "Varies"
+        ^"Description" STRING "You crush the Nazar bead in your hand and blow the dust at your target, a creature of your choice within 30 ft. That creature makes a Wisdom saving throw or makes the next ability check or attack roll with Disadvantage."
+        ^"Classes" LIST OF STRING ["Bard", "Cleric", "Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#t0UuEGyzyjbMCUmt97nNAsox ^"Nazar, the Evil Eye" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 2
+        ^"School" STRING "Enchantment"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "30 ft."
+        ^"Components" STRING "S"
+        ^"Duration" STRING "Varies"
+        ^"Description" STRING "Your eyes morph to the colors of the Evil Eye, momentarily, and you curse your target, a creature of your choice within 30 ft. That creature will be affected by one effect of your choice:\n• The target must make a Strength saving throw or gain one level of exhaustion (If the target already has one, this will not have an effect)\n• The target must make a Dexterity saving throw or gain Disadvantage on any one task that needs fine manipulation.\n• The target must make a Constitution saving throw or lose the use of hit dice during the next Short Rest.\n• The target must make an Intelligence saving throw or lose the ability to read for one hour.\n• The target must make a Wisdom saving throw or gain Disadvantage on the next spell save it makes.\n• The target must make a Charisma saving throw or gain Disadvantage on the next Persuasion, Intimidation, Deception or Performance check."
+        ^"Classes" LIST OF STRING ["Bard", "Cleric", "Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#tKccs12KeOA3Ek9MDxR5EW8z ^"Purifying Breath" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 0
+        ^"School" STRING "Evocation"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "30 ft."
+        ^"Components" STRING "S"
+        ^"Duration" STRING "Varies"
+        ^"Description" STRING "You blow out a minor boon, a sign of supernatural blessing. You create one of the following magical effects within range:\n• The target’s fertility chance increases.\n• The target has good luck in all ordinary aspects of life.\n• If the target has a hex or a curse placed on itself, the spell offers ways to undo this curse or hex."
+        ^"Classes" LIST OF STRING ["Cleric", "Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#tlhlkDG87K8K5O37OagiNJQE ^"Serenity of Dervish" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 6
+        ^"School" STRING "Abjuration"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "Self"
+        ^"Components" STRING "V, S, M (A piece of silk worth 250 gp which the spell consumes)"
+        ^"Duration" STRING "Concentration, up to 1 hour"
+        ^"Concentration" BOOLEAN true
+        ^"Description" STRING "By magically letting go of the chains that bind you to this world, your body transcends its limitations. You gain resistance against all damage types except for psychic, which you gain immunity against."
+        ^"Classes" LIST OF STRING ["Bard", "Cleric", "Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#t9aBryWNyqGlCMm4NlwNX28j ^"Sense the Sinner" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 5
+        ^"School" STRING "Divination"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "Self"
+        ^"Components" STRING "V, S"
+        ^"Duration" STRING "Concentration, up to 10 minutes"
+        ^"Ritual" BOOLEAN true
+        ^"Concentration" BOOLEAN true
+        ^"Description" STRING "Choose a creature within 30 ft. That creature must make a Wisdom saving throw. On a failed save you learn its past sinful actions. The GM will decide what entails a sin depending on your character’s own beliefs. You learn the sins as a vision where you see through the eyes of the sinner. The most recent sin is the most vivid one; however, as you delve deeper, the visions will get hazy - which require a further casting of the spell. The creature is not aware of the spell the first time.\nIf you cast this spell on the same creature again, you can probe deep into the older sins. The creature will realize someone has reached into their minds with magic in the second casting of the spell. On the third time, they will know who is probing into their minds, but you will be able to choose a direct sin from the creature’s mind (You can ask questions, like “What is your biggest sin?” “What is the sin you regret the most?” etc.)."
+        ^"Classes" LIST OF STRING ["Bard", "Cleric", "Warlock", "Wizard"]
+    }
+}
+
+#teL3jiACTX7Ncved3kduf3te ^"Shroud of Taqiyya" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 2
+        ^"School" STRING "Abjuration"
+        ^"Casting Time" STRING "1 Reaction"
+        ^"Range" STRING "Self"
+        ^"Components" STRING "S, M (a stale bread)"
+        ^"Duration" STRING "1 hour"
+        ^"Description" STRING "Whenever you need to deceive, you may use the Shroud of Taqiyya to help out in your lies, by crumbling the stale bread between your fingers with arcane hand gestures. You will have Advantage on Deception skill checks, and you also gain Advantage on saving throws against any spells such as *zone of truth*."
+        ^"At Higher Levels" STRING "When you cast this spell using a spell slot of 3rd level or higher, each slot above 2nd will increase the duration by 1 hour."
+        ^"Classes" LIST OF STRING ["Bard", "Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#tZmYgT0MrzH8WZXL2OrVMST6 ^"Solomon’s Everlasting Wrath" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 5
+        ^"School" STRING "Evocation"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "90 ft."
+        ^"Components" STRING "V, S"
+        ^"Duration" STRING "1 minute"
+        ^"Description" STRING "You call down smokeless white flames of Solomon, the Sultan of the Djinn, from Al-Ghaib, spreading in a 60 ft. area. You have to choose a resistance that an enemy creature possesses. Any creature within the area will have to roll a Constitution saving throw or lose that resistance and also take 2d8 of that kind of damage each of their turn for the duration of the spell."
+        ^"At Higher Levels" STRING "When you cast this spell using a spell slot of 6th level or higher, each slot above 5th will increase the targets of the spell by 1."
+        ^"Classes" LIST OF STRING ["Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#t1VSzyjwgF1J4b5w6bX0cndH ^"Summon High Djinn" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 6
+        ^"School" STRING "Conjuration"
+        ^"Casting Time" STRING "1 minute"
+        ^"Range" STRING "90 ft."
+        ^"Components" STRING "V, S, M (a reverse text from any holy book, written in spirals on a piece of blood soaked papyrus)"
+        ^"Duration" STRING "Concentration, up to 1 hour."
+        ^"Concentration" BOOLEAN true
+        ^"Description" STRING "As you chant a holy text in reverse, the papyrus in your hand starts glowing an ominous hue. Reality twists and turns as the papyrus consumes itself, summoning beings from Al-Ghaib.\nYou summon 1 Nar-as Samum or Shamhuresh that appears in an unoccupied space you can see within range. Any djinni immediately returns to Al-Ghaib when it drops to 0 Hit Points or when the spell ends. The summoned djinn are hostile against all except for any natives of the Al-Ghaib. Roll initiative for the summoned djinni. Djinni will attack the creatures they are hostile towards to the best of their ability, prioritizing targets closer to them.\nAs a part of casting the spell, you can offer a live sacrifice? and form a circle with blood. This will let you form a circle that the summoned djinni can’t pass, or inflict any kind of harm to the creatures on the other side of the circle. Djinni summoned this way can’t use their Form of the Ghaib and Possession abilities."
+        ^"At Higher Levels" STRING "When you cast this spell using a spell slot of 7th level or higher, each slot above 6th will summon another Nar-as Samum, or Shamhuresh."
+        ^"Classes" LIST OF STRING ["Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#teOKJuKXN9e9uefGcgW88hwa ^"Summon Lesser Djinn" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 3
+        ^"School" STRING "Conjuration"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "90 ft."
+        ^"Components" STRING "V, S, M (a reverse text from any holy book, written on a piece of papyrus)"
+        ^"Duration" STRING "Concentration, up to 1 hour."
+        ^"Concentration" BOOLEAN true
+        ^"Description" STRING "As you chant a holy text in reverse, the papyrus in your hand starts glowing an ominous hue. Reality twists and turns as the papyrus consumes itself, summoning beings from Al-Ghaib.\nYou summon 2 djinns that are CR 1 or one djinn that is CR 2 of your choice that appear in unoccupied spaces you can see within range. Any djinni immediately returns to Al-Ghaib when it drops to 0 Hit Points or when the spell ends. The summoned djinn are hostile against all except for any natives of the Al-Ghaib. Roll initiative for the summoned djinni as a group. Djinni will attack the creatures they are hostile towards to the best of their ability, prioritizing targets closer to them.\nAs a part of casting the spell, you can offer a live sacrifice? and form a circle with blood. This will let you form a circle that the summoned djinni can’t pass, or inflict any kind of harm to the creatures on the other side of the circle. Djinni summoned this way can’t use their Form of the Ghaib and Possession abilities."
+        ^"Classes" LIST OF STRING ["Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#tRA20ZVQMHKJKFqJqSNeiRD3 ^"Summon Noble Djinns" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 9
+        ^"School" STRING "Conjuration"
+        ^"Casting Time" STRING "1 minute"
+        ^"Range" STRING "90 ft."
+        ^"Components" STRING "V, S, M (a reverse text from any holy book, carved in spirals on a bloodsoaked obsidian)"
+        ^"Duration" STRING "Concentration, up to 1 hour."
+        ^"Concentration" BOOLEAN true
+        ^"Description" STRING "As you chant a holy text in reverse, the papyrus in your hand starts glowing an ominous hue. Reality twists and turns as the papyrus consumes itself, summoning beings from Al-Ghaib.\nYou summon 1 noble djinni of your choice (Abu Al Aswad, Abu Al Harid, Abu Mihriz, Abu Said) that appears in an unoccupied space you can see within range. Any djinni immediately returns to Al-Ghaib when it drops to 0 Hit Points or when the spell ends. The summoned djinn are hostile against all except for any natives of the Al-Ghaib. Roll initiative for the summoned djinni. Djinni will attack the creatures they are hostile towards to the best of their ability, prioritizing targets closer to them.\nAs a part of casting the spell, you can offer a live sacrifice? and form a circle with blood. This will let you form a circle that the summoned djinni can’t pass, or inflict any kind of harm to the creatures on the other side of the circle. Djinni summoned this way can’t use their Form of the Ghaib and Possession abilities."
+        ^"Classes" LIST OF STRING ["Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#t1xoGjjDsJTR4NyLRRfEM1qH ^"Summon Zawbaw’ah" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 4
+        ^"School" STRING "Conjuration"
+        ^"Casting Time" STRING "1 minute"
+        ^"Range" STRING "90 ft."
+        ^"Components" STRING "V, S, M (a reverse text from any holy book, written in spirals on a papyrus)"
+        ^"Duration" STRING "Concentration, up to 1 hour."
+        ^"Concentration" BOOLEAN true
+        ^"Description" STRING "As you chant a holy text in reverse, the papyrus in your hand starts glowing an ominous hue. Reality twists and turns as the papyrus consumes itself, summoning beings from Al-Ghaib.\nYou summon 1 Zawbaw’ah that appears in an unoccupied space you can see within range. Any djinni immediately returns to Al-Ghaib when it drops to 0 Hit Points or when the spell ends. The summoned djinn are hostile against all except for any natives of the Al-Ghaib. Roll initiative for the summoned djinni. Djinni will attack the creatures they are hostile towards to the best of their ability, prioritizing targets closer to them.\nAs a part of casting the spell, you can offer a live sacrifice? and form a circle with blood. This will let you form a circle that the summoned djinni can’t pass, or inflict any kind of harm to the creatures on the other side of the circle. Djinni summoned this way can’t use their Form of the Ghaib and Possession abilities."
+        ^"At Higher Levels" STRING "When you cast this spell using a spell slot of 5th level or higher, each slot above 4th will summon another Zawbaw’ah."
+        ^"Classes" LIST OF STRING ["Sorcerer", "Warlock", "Wizard"]
+    }
+}
+
+#tT39Aa0WizKchJ0uQ8GC6W56 ^"Voice of the Inner Faith" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 8
+        ^"School" STRING "Evocation"
+        ^"Casting Time" STRING "1 action"
+        ^"Range" STRING "120 ft."
+        ^"Components" STRING "V"
+        ^"Duration" STRING "Instantaneous"
+        ^"Description" STRING "You let loose a chant of your faith, altering the reality around you with the power of your belief. Any friend and foe who is in hearing distance will be affected. Each foe in the area must make a Wisdom saving throw. It takes 10d8 Psychic damage and becomes Paralyzed on a failed save, or half as much damage on a successful one. Any of the targets can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Any allies in the area of effect will gain the same exact amount (of the original damage) as Temporary Hit Points for 1 minute."
+        ^"Classes" LIST OF STRING ["Cleric", "Paladin"]
+    }
+}
+
+#txgYaZ3aZyzniJDt4ZUDGjbL ^"Warlord’s Bond" DEF {
+    EXTENDS ^"Spell"
+    PROPERTIES {
+        ^"Level" INTEGER 2
+        ^"School" STRING "Enchantment"
+        ^"Casting Time" STRING "1 Bonus Action"
+        ^"Range" STRING "15 ft."
+        ^"Components" STRING "V, S, M (a piece of armor or armament that has been blessed by a priest)"
+        ^"Duration" STRING "Varies, up to 1 minute."
+        ^"Description" STRING "You choose one creature and yourself. Both of you add your proficiency bonuses to the damage of your next successful melee, ranged or spell attack."
+        ^"At Higher Levels" STRING "When you cast this spell using a spell slot of 3th level or higher, each slot above 2nd will increase the targets of the spell by 1."
+        ^"Classes" LIST OF STRING ["Cleric", "Paladin"]
+    }
+}
+
+}

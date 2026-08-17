@@ -1,0 +1,150 @@
+EXTENSION "HistoricaArcanum_CoC_Core" EXTENDS "Dnd5_5e_Core_Base" {
+    NAME "Historica Arcanum: The City of Crescent - Core (new subsystem framework types)"
+    VERSION "0.4"
+    SPEC_VERSION "0.4"
+    RELEASE_DATE "2026-07-21"
+
+    # Third-party D&D 5e setting book (Historica Arcanum: The City of Crescent).
+    # It is a composition-set EXTENSION of the dnd5e base edition: its content
+    # files reuse the base framework types (Spell, Magic Item, Feat, Monster,
+    # Subclass, Background) declared in Dnd5e_Core_Base, and this file adds the
+    # THREE new subsystem type families the book introduces on top of 5e:
+    #   1. The Profession System  (PEX, ranks, perks)
+    #   2. Spell Rebound          (the setting's "magic has a price" subsystem)
+    #   3. Magic Origins          (the setting's six origins of magic)
+    # Instances live in sibling historica-coc-0.4-*.ttrpg files.
+
+    # ============================================================
+    # MAGIC ORIGINS (section 01 - "Origin of Magic")
+    # ============================================================
+
+    #cocMagicOrigin00001 ^"Magic Origin" DEF {
+        # One of the setting's six origins of magic, each tied to the D&D 5e
+        # classes that draw on it. Flavor/lore prose lives in the companion
+        # .lore; the queryable mapping (origin -> classes) is structured here.
+        PROPERTIES {
+            ^"Associated Classes" LIST OF STRING
+            ^"Description" STRING
+        }
+    }
+
+    # ============================================================
+    # THE PROFESSION SYSTEM (section 09)
+    # ============================================================
+
+    #cocProfession000001 ^"Profession" DEF {
+        APPLIES TO [^"Character"]
+        # A profession a character can take (one only), gaining Profession
+        # Experience (PEX) to buy ranks and perks. A profession instance supplies
+        # its CR->PEX earning schedule in a PEX_TABLE sub-block (^"PEX Award"
+        # entries) and its rank tiers in a RANKS sub-block (^"Profession Rank"
+        # entries, each with a PERKS sub-block of ^"Profession Perk").
+        PROPERTIES {
+            ^"Description" STRING                 # "Being a X" flavor intro
+            ^"Overview" STRING                    # how PEX is earned / climbing the ranks
+            ^"Aspiring Background" STRING         # the level-1 "Aspiring" background text
+        }
+    }
+
+    #cocPexAward00000001 ^"PEX Award" DEF {
+        # One row of a profession's Challenge Rating -> PEX earning table.
+        PROPERTIES {
+            ^"Challenge Rating" STRING            # kept whole: "1/8", "15-16", "17+"
+            ^"PEX" INTEGER MIN 0
+        }
+    }
+
+    #cocProfRank00000001 ^"Profession Rank" DEF {
+        # A rank tier within a profession (Apprentice=1, Journeyman=2, ...). Its
+        # purchasable perks live in a PERKS sub-block of ^"Profession Perk".
+        PROPERTIES {
+            ^"Rank Number" INTEGER MIN 1
+            ^"Description" STRING
+        }
+    }
+
+    #cocProfPerk00000001 ^"Profession Perk" DEF {
+        # A perk purchasable with PEX at a given rank. Some perks present an
+        # internal "choose one of" — that choice text is kept whole in the
+        # description (completeness over structure).
+        PROPERTIES {
+            ^"PEX Cost" INTEGER MIN 0             # 0 = free/automatic (e.g. a Specialization Choice)
+            ^"Description" STRING
+        }
+    }
+
+    # ============================================================
+    # SPELL REBOUND (section 06 - "A Vengeful Reality and Magic Untamed")
+    # ============================================================
+
+    #cocSpellRebound0001 ^"Spell Rebound" DEF {
+        # The optional subsystem that makes spellcasting dangerous. The core
+        # mechanic prose (trigger saving throw, exceptions, effect-category
+        # determination) is the ^"Description"; the proficiency-bonus trigger
+        # ladder is a TRIGGERS sub-block (^"Spell Rebound Trigger"), and the
+        # rollable effects are an EFFECTS sub-block (^"Spell Rebound Effect").
+        PROPERTIES {
+            ^"Description" STRING
+        }
+    }
+
+    #cocReboundTrigger01 ^"Spell Rebound Trigger" DEF {
+        # One rung of the proficiency-bonus trigger ladder: at this proficiency
+        # bonus, the given situation triggers a Spell Rebound. Triggers are
+        # cumulative (higher bonuses also suffer all lower triggers).
+        PROPERTIES {
+            ^"Proficiency Bonus" STRING           # "+2", "+7 or higher", kept whole
+            ^"Trigger" STRING
+        }
+    }
+
+    #cocReboundEffect001 ^"Spell Rebound Effect" DEF {
+        # One rollable Spell Rebound effect within a category (Cosmetic,
+        # Destructive, or Internal).
+        PROPERTIES {
+            ^"Category" STRING                    # Cosmetic | Destructive | Internal
+            ^"Roll" STRING                        # the die/table roll, kept whole (e.g. "1", "01-10")
+            ^"Effect" STRING
+        }
+    }
+
+    # ============================================================
+    # NEW WEAPON PROPERTIES (section 03 - firearms)
+    # ============================================================
+
+    #cocWeaponProperty01 ^"Weapon Property" DEF {
+        # A weapon property this setting adds on top of the D&D 5e list, used by
+        # the firearms in historica-coc-0.4-equipment.ttrpg.
+        PROPERTIES {
+            ^"Description" STRING
+        }
+    }
+
+    #cocWpnPropReload001 ^"Reload" DEF {
+        EXTENDS ^"Weapon Property"
+        PROPERTIES {
+            ^"Description" STRING "This ability determines how much ammunition can be spent without using an attack or an action to reload the weapon. It is shown like this: Reload (6)"
+        }
+    }
+
+    #cocWpnPropGunpowdr1 ^"Gunpowder" DEF {
+        EXTENDS ^"Weapon Property"
+        PROPERTIES {
+            ^"Description" STRING "All martial firearm weapons have the gunpowder property; when you roll the maximum amount of damage in damage die, you reroll the die and add it to the resulting damage."
+        }
+    }
+
+    # ============================================================
+    # DJINN INTERACTION RULES (section 20 - "Djinnkind")
+    # ============================================================
+
+    #cocDjinnRule0000001 ^"Djinn Rule" DEF {
+        # One of the djinn-interaction subsystems that accompany the bestiary's
+        # Djinnkind material: Possession for the Djinn, Exorcism Sacrament,
+        # Djinnstruck, and Name of the Djinn. Each is a self-contained rule
+        # (saving throws, DCs, ritual requirements) kept whole in ^"Description".
+        PROPERTIES {
+            ^"Description" STRING
+        }
+    }
+}

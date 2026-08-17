@@ -8,12 +8,22 @@ bind a player page to either edition.
 | Edition | Base | Merged / resolved files | Entities |
 |---|---|---|---|
 | **5e** (2014) | SRD 5.1 | `dnd5e-historica-arcanum.{merged.ttrpg,resolved.json}` | 1383 |
-| **5.5e** (2024) | SRD 5.2.1 | `dnd5.5e-historica-arcanum.{merged.ttrpg,resolved.json}` | 1626 |
+| **5.5e** (2024) | SRD 5.2.1 | `dnd5.5e-historica-arcanum.{merged.ttrpg,resolved.json}` | 1627 |
 
 The `.resolved.json` (fully flattened, system-agnostic entity list) is what the
 sheet build reads; the `.merged.ttrpg` (structure-preserving, EXTENDS chains kept)
-is for nested-feature extraction. The two `*-0.4-historica-arcanum.json` files are
-the composition manifests (load order).
+is for nested-feature extraction.
+
+### The 5.5e corpus is built from *converted* sources (campaign-specific)
+The 5e corpus composes the raw SRD 5.1 + raw Historica (manifest
+`dnd5e-0.4-historica-arcanum.json`). The **5.5e corpus** composes SRD 5.2.1 with
+the Historica content that has been **run through the 5.1→5.2.1 conversion**
+(`historica-arcanum-5.5e-src/`) plus the converted **College of Eloquence**
+(`campaign-5.5e-src/`) — manifest `dnd5.5e-0.4-historica-arcanum-converted.json`.
+So it carries owner design decisions (Miray's Nazar table, Sidra's Invocation of
+the Eye, Eloquence) and is **not** a generic Historica corpus; it is not mirrored
+into `Titterpig Utilities/titterpig-corpora` for that reason. See
+`historica-arcanum-5.5e-src/CONVERSION-NOTES.md`.
 
 ## Composition (load order = precedence, later wins)
 1. **SRD base** — `core-base` first (defines the abstract type DEFs Historica
@@ -36,17 +46,37 @@ Historica's `^"Spell Rebound"` DEF self-`EXTENDS` (one cycle,
 tracked upstream in the Historica corpus — not introduced here.
 
 ## Regenerate
-The canonical copies live in `Titterpig Utilities/titterpig-corpora/<edition>/0.4/`;
-these are synced copies. **Rebuild the synthesist binary first** — a stale binary
-silently drops content. To rebuild both:
+**Rebuild the synthesist binary first** — a stale binary silently drops content.
 
 ```sh
 export PATH="$HOME/.local/go/bin:$PATH"
 cd "$HOME/Working/Titterpig Utilities/titterpig-synthesist"
 go build -o synthesist ./cmd/synthesist
-./synthesist --merge manifests/dnd5e-0.4-historica-arcanum.json   --name dnd5e-historica-arcanum   --no-timestamp
-./synthesist --merge manifests/dnd5.5e-0.4-historica-arcanum.json --name dnd5.5e-historica-arcanum --no-timestamp
-# then copy both pairs (+ the manifests) into a-gibbous-moon/corpus/
+```
+
+**5e (2014)** — generic, also mirrored to `titterpig-corpora`:
+
+```sh
+./synthesist --merge manifests/dnd5e-0.4-historica-arcanum.json --name dnd5e-historica-arcanum --no-timestamp
+# then copy the pair (+ manifest) into a-gibbous-moon/corpus/
+```
+
+**5.5e (2024)** — converted, campaign-specific, repo-only. First (re)generate the
+converted Historica if the source or the conversion script changed:
+
+```sh
+python3 "<repo>/../a-gibbous-moon-support/scripts/convert_historica_5_5e.py"
+```
+
+then compile straight into this dir (the repo manifest references the converted
+sources + Eloquence and writes the files the site reads):
+
+```sh
+SYN="$HOME/Working/Titterpig Utilities/titterpig-synthesist"
+C="<repo>/corpus"
+"$SYN/synthesist" --merge "$C/dnd5.5e-0.4-historica-arcanum-converted.json" \
+  --out-ttrpg "$C/dnd5.5e-historica-arcanum.merged.ttrpg" \
+  --out-json  "$C/dnd5.5e-historica-arcanum.resolved.json"
 ```
 
 SRD content © Wizards of the Coast, CC-BY-4.0 (attribution preserved in each merged
