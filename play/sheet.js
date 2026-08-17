@@ -487,7 +487,9 @@
       '<span class="atk-bonus">' + sgn(atkBonus) + ' to hit</span>' +
       (dmgSpec ? '<button class="atk-dmg rollable" data-dmg="' + esc(dmgSpec) + '" data-dmg-name="' + esc(atk.name) + '">' + esc(dmgSpec) + (atk.damageType ? " " + esc(atk.damageType) : "") + '</button>' : '') +
       (atk.range ? '<span class="atk-meta">' + esc(atk.range) + '</span>' : '') +
-      (atk.notes ? '<div class="atk-notes">' + nl2br(atk.notes) + '</div>' : '');
+      (atk.mastery ? '<span class="atk-mastery" title="' + esc(atk.mastery.text || "") + '">Mastery: ' + esc(atk.mastery.name) + '</span>' : '') +
+      (atk.notes ? '<div class="atk-notes">' + nl2br(atk.notes) + '</div>' : '') +
+      (atk.mastery && atk.mastery.text ? '<div class="atk-mastery-text"><strong>' + esc(atk.mastery.name) + '.</strong> ' + esc(atk.mastery.text) + '</div>' : '');
     return row;
   }
   // Attacks & Actions — no title, just tabs by action-economy type

@@ -26,12 +26,15 @@ Guarded patches in the script (each asserts a single match):
   lesser restoration, detect djinni; 5/7/9 unchanged.
 - **Djinnmaster (Warlock — Sidra).** "Pact of the Eye" rehomed as the invocation
   "Invocation of the Eye".
+- **Firearm Weapon Mastery.** 2024 weapons carry a Mastery property; the four
+  firearms get one by mechanical role (closest official analog): Handgun → Vex,
+  Repeating Handgun → Vex, Tüfeq → Slow, Early Shotgun → Push.
 
 ## NOT applied — still owner decisions (the remaining follow-ups)
 - Context-dependent New Names (Water→Dehydration, inspiration→Heroic
   Inspiration, Hide/Leather→…Armor): would corrupt Historica text, skipped.
 - Full subclass level-shift to 3/6/10/14 beyond the two decisions above.
-- Weapon Mastery on Historica weapons/firearms.
+- Weapon Mastery on the *melee* Historica weapons (only firearms assigned so far).
 - Feat categories (Origin/General/…) on the five Historica feats.
 - Monster stat-block reformat.
 

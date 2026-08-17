@@ -35876,6 +35876,7 @@ The command word is “Jatiy”, the Achaemenid word meaning “to strike.” It
             ^"Damage" STRING "1d6"
             ^"Damage Type" STRING "piercing"
             ^"Properties" LIST OF STRING ["Ammunition", "Light", "Finesse", "Gunpowder", "Reload"]
+            ^"Mastery" STRING "Vex"
             ^"Description" STRING "Range 200/500. Gunpowder: if you roll the maximum amount of damage in the damage die, reroll the die and add it to the resulting damage."
         }
     }
@@ -35890,6 +35891,7 @@ The command word is “Jatiy”, the Achaemenid word meaning “to strike.” It
             ^"Damage" STRING "1d6"
             ^"Damage Type" STRING "piercing"
             ^"Properties" LIST OF STRING ["Ammunition", "Gunpowder", "Reload (6)"]
+            ^"Mastery" STRING "Vex"
             ^"Description" STRING "Range 200/500. Gunpowder: if you roll the maximum amount of damage in the damage die, reroll the die and add it to the resulting damage."
         }
     }
@@ -35904,6 +35906,7 @@ The command word is “Jatiy”, the Achaemenid word meaning “to strike.” It
             ^"Damage" STRING "1d8"
             ^"Damage Type" STRING "piercing"
             ^"Properties" LIST OF STRING ["Ammunition", "Gunpowder", "Reload", "Heavy", "Two Handed"]
+            ^"Mastery" STRING "Slow"
             ^"Description" STRING "Range 350/700. Gunpowder: if you roll the maximum amount of damage in the damage die, reroll the die and add it to the resulting damage."
         }
     }
@@ -35918,6 +35921,7 @@ The command word is “Jatiy”, the Achaemenid word meaning “to strike.” It
             ^"Damage" STRING "1d10"
             ^"Damage Type" STRING "piercing"
             ^"Properties" LIST OF STRING ["Ammunition", "Gunpowder", "Reload (2)", "Two Handed", "Heavy"]
+            ^"Mastery" STRING "Push"
             ^"Description" STRING "Range 25. Gunpowder: if you roll the maximum amount of damage in the damage die, reroll the die and add it to the resulting damage."
         }
     }

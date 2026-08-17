@@ -153,6 +153,9 @@
 .atk-dmg:hover{ background:var(--rust); color:var(--vellum-lit); }
 .atk-meta{ font-family:var(--caps); font-size:0.56rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-faint); grid-column:1; }
 .atk-notes{ grid-column:1 / -1; font-size:0.84rem; color:var(--ink-soft); }
+.atk-mastery{ font-family:var(--caps); font-size:0.55rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:700;
+  color:var(--rust-deep); border:1px solid var(--rust); border-radius:3px; padding:0 0.3rem; }
+.atk-mastery-text{ grid-column:1 / -1; font-size:0.82rem; color:var(--ink-soft); border-left:2px solid var(--rust); padding-left:0.5rem; }
 
 /* ---- spellcasting ------------------------------------------- */
 .spell-head{ font-family:var(--serif); font-size:0.92rem; color:var(--ink-2); margin-bottom:0.7rem; }
