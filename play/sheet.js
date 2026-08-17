@@ -18,7 +18,24 @@
   var BASE_ID = (window.SHEET || {}).id || (window.SHEET || {}).name || "unknown";
   var SHEET_KEY = "agm:sheet:" + BASE_ID;   // uploaded-sheet override (persists a swapped/edited character)
   function loadSheetOverride() { try { var r = localStorage.getItem(SHEET_KEY); if (r) return JSON.parse(r); } catch (e) {} return null; }
-  var S = loadSheetOverride() || window.SHEET || {};
+
+  // ---- edition-bound sheets ----------------------------------------------
+  // A page may bake a single window.SHEET, OR a window.SHEETS map keyed by
+  // edition ("2014" = 5e, "2024" = 5.5e) — each a whole character sheet sourced
+  // from that edition's rules corpus. When the map is present the Rules toggle
+  // swaps the entire active sheet, not just per-item ed-tagged rows.
+  var SHEETS = (window.SHEETS && typeof window.SHEETS === "object") ? window.SHEETS : null;
+  function baseSheetFor(ed) {
+    if (SHEETS) return SHEETS[ed] || SHEETS["2014"] || SHEETS[Object.keys(SHEETS)[0]] || {};
+    return window.SHEET || {};
+  }
+  // edition persisted with play-state (read before S/PS exist, so peek the raw store)
+  function persistedEdition() {
+    try { var raw = localStorage.getItem("agm:play:" + BASE_ID); if (raw) { var o = JSON.parse(raw); if (o && o.edition) return o.edition; } } catch (e) {}
+    return null;
+  }
+  var _initEd = persistedEdition() || (window.SHEET || {}).defaultEdition || (SHEETS && SHEETS["2014"] ? "2014" : (SHEETS ? Object.keys(SHEETS)[0] : "2014"));
+  var S = loadSheetOverride() || baseSheetFor(_initEd) || {};
   var ABILS = ["str", "dex", "con", "int", "wis", "cha"];
   var ABIL_NAME = { str: "Strength", dex: "Dexterity", con: "Constitution",
     int: "Intelligence", wis: "Wisdom", cha: "Charisma" };
@@ -126,6 +143,7 @@
   function curEd() { return (PS && PS.edition) || S.defaultEdition || "2014"; }
   function inEd(x) { return !x || !x.ed || x.ed === curEd(); }
   function hasEditions() {
+    if (SHEETS && Object.keys(SHEETS).length >= 2) return true;
     var arr = [].concat(S.features || [], S.attacks || [], ((S.spellcasting || {}).spells) || []);
     return arr.some(function (x) { return x && x.ed; });
   }
@@ -263,6 +281,14 @@
     if (!root) return;
     root.innerHTML = "";
     root.appendChild(header());
+    if (S.scaffold2024 && curEd() === "2024") {
+      root.appendChild(el("div", "ed-scaffold-note",
+        '⚠ <strong>2024 (5.5e) conversion in progress.</strong> This sheet carries the ' +
+        'character’s 5e build across unchanged; spell, feature and item rules text is drawn ' +
+        'from the D&amp;D 5.5e + Historica Arcanum corpus where an entry was matched (others keep ' +
+        'their 5e text, tagged below). The build itself has <em>not</em> yet been re-verified ' +
+        'against 2024 rules — pending a fresh 2024 build.'));
+    }
     root.appendChild(vitals());
     var body = el("div", "sheet-body");
     body.appendChild(colLeft());
@@ -513,7 +539,10 @@
   function spellRow(sp) {
     var canCast = (sp.level || 0) === 0 || hasSlotFor(sp.level || 0);
     var badges = (sp.concentration ? '<span class="sp-badge" title="Concentration">C</span>' : "") +
-                 (sp.ritual ? '<span class="sp-badge" title="Ritual">R</span>' : "");
+                 (sp.ritual ? '<span class="sp-badge" title="Ritual">R</span>' : "") +
+                 // on the pending 2024 scaffold, mark spells whose text is still 5e (no 5.5e match)
+                 ((S.scaffold2024 && curEd() === "2024" && sp.text2024 === false)
+                    ? '<span class="sp-badge ed5e" title="No 5.5e entry matched — rules text shown is 5e, pending 2024 conversion">5e text</span>' : "");
     var it = el("div", "spell" + (sp.prepared === false ? " unprepared" : ""));
     it.setAttribute("data-econ", spellCost(sp));
     // a roll button for damage / healing / dice-pool spells (MOD -> spellcasting mod)
@@ -776,10 +805,20 @@
       // rest / reset
       if (t.classList.contains("btn-short")) { shortRest(); return; }
       if (t.classList.contains("btn-rest")) { longRest(); return; }
-      if (t.classList.contains("ed-btn")) { var ne = t.getAttribute("data-ed"); if (ne && ne !== PS.edition) { PS.edition = ne; save(); render(); } return; }
+      if (t.classList.contains("ed-btn")) {
+        var ne = t.getAttribute("data-ed");
+        if (ne && ne !== curEd()) {
+          PS.edition = ne;
+          // whole-sheet swap when the page baked a per-edition sheet map (an
+          // uploaded override still wins and is shown under both editions)
+          if (SHEETS && !loadSheetOverride()) S = baseSheetFor(ne);
+          save(); render();
+        }
+        return;
+      }
       if (t.classList.contains("btn-dl")) { downloadJSON(); return; }
       if (t.classList.contains("btn-ul")) { var inp = document.getElementById("agm-upload"); if (inp) inp.click(); return; }
-      if (t.classList.contains("btn-reset")) { if (confirm("Revert to the shipped character and clear all play-state?")) { try { localStorage.removeItem(KEY); localStorage.removeItem(SHEET_KEY); } catch (e) {} S = window.SHEET || {}; PS = defaultState(); render(); } return; }
+      if (t.classList.contains("btn-reset")) { if (confirm("Revert to the shipped character and clear all play-state?")) { try { localStorage.removeItem(KEY); localStorage.removeItem(SHEET_KEY); } catch (e) {} S = baseSheetFor(curEd()); PS = defaultState(); render(); } return; }
     });
   }
 

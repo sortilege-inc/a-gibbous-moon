@@ -30,6 +30,9 @@
 .sh-player{ font-family:var(--fell); font-style:italic; color:var(--ink-soft); }
 .sheet-head .tagrow{ margin:0.6rem 0 0; display:flex; flex-wrap:wrap; align-items:center; gap:0.4rem; }
 /* ruleset edition toggle */
+.ed-scaffold-note{ margin:0.6rem 0 0.2rem; padding:0.6rem 0.85rem; font-family:var(--fell); font-size:0.82rem; line-height:1.4;
+  color:var(--rust-deep); background:rgba(196,154,69,0.1); border:1px solid var(--gold); border-left:4px solid var(--rust); border-radius:4px; }
+.ed-scaffold-note strong{ color:var(--rust-deep); }
 .ed-toggle{ display:inline-flex; align-items:center; gap:0.25rem; margin-left:auto; }
 .ed-toggle .ed-lbl{ font-family:var(--caps); text-transform:uppercase; letter-spacing:0.12em; font-size:0.55rem; color:var(--ink-faint); }
 .ed-btn{ font-family:var(--caps); text-transform:uppercase; letter-spacing:0.06em; font-size:0.6rem; cursor:pointer;
@@ -179,6 +182,7 @@
 .spell.unprepared .sp-name{ color:var(--ink-faint); font-style:italic; }
 .spell .sp-notes{ font-size:0.78rem; color:var(--ink-soft); margin:0.1rem 0; }
 .sp-badge{ font-family:var(--caps); font-size:0.5rem; font-weight:700; color:var(--gold); border:1px solid var(--gold); border-radius:3px; padding:0 0.28rem; }
+.sp-badge.ed5e{ color:var(--rust); border-color:var(--rust); text-transform:none; letter-spacing:0.02em; }
 .sp-save{ font-family:var(--caps); font-size:0.55rem; letter-spacing:0.05em; color:var(--slate); }
 .sp-cast{ font-family:var(--caps); font-size:0.56rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal-deep); border:1px solid var(--teal); background:rgba(31,122,134,0.08); border-radius:4px; padding:0.18rem 0.5rem; cursor:pointer; opacity:0; transition:.12s; }
 .spell:hover .sp-cast, .spell:focus-within .sp-cast{ opacity:1; }
