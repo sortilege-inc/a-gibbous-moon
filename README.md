@@ -116,10 +116,16 @@ generator and all sources live in a sibling support dir, `../a-gibbous-moon-supp
 
 | Path | What |
 |------|------|
-| `archivist/vault/` | The Archivist Obsidian export (baseline of record) |
-| `art/optimized/` | Web-optimized WebP portraits (`<uuid>.webp`), keyed to the vault's image URLs |
-| `alchemy/` | Alchemy character exports → play sheets |
+| `site.config.json` | Every path the build uses. Change a location here, not in the scripts |
+| `build/vault/` | The curated vault the build reads (per-session factual edits land here) |
+| `build/canon.json` | Canon register: global find→replace applied to every source file |
+| `build/art-optimized/` | Web-optimized WebP portraits (`<uuid>.webp`), keyed to the vault's image URLs |
+| `build/alchemy/` | Alchemy character exports → play sheets |
+| `build/sheets/` | Hand-authored play-sheet data, preferred over Alchemy |
+| `archive/my-archivist-export/` | The Archivist Obsidian export (baseline of record) |
+| `archive/` | Raw material the build never reads: maps, soundtracks, sourcebooks, art, transcripts, session analysis, notes |
 | `scripts/build_site.py` | The builder |
+| `scripts/organize_archive.py` | Files new material into `archive/<bucket>/`; dry-run unless `--apply` |
 
 ```bash
 python3 ../a-gibbous-moon-support/scripts/build_site.py
