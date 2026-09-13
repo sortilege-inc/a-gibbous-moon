@@ -11,10 +11,10 @@ the sources and rebuild — never hand-patching HTML twice.
 
 ## Phase 1 — Integrate the Archivist baseline
 
-Source: `~/Working/A Gibbous Moon Over Constantinople-obsidian-export/…/`
+Source: `a-gibbous-moon-support/archive/obsidian-export/`
 (16 recaps incl. World Summary · 15 timelines · 10 moments · 4 PCs · 79 NPCs ·
 64 locations · 46 items · 15 factions), plus the Alchemy sheet backups and local
-portrait art in `~/Working/28. A Gibbous Moon Over Constantinople/`.
+portrait art in `a-gibbous-moon-support/archive/art/`.
 
 | # | Part | Detail |
 |---|------|--------|
@@ -35,7 +35,7 @@ portrait art in `~/Working/28. A Gibbous Moon Over Constantinople/`.
 - **Portraits: commit web-optimized WebP** into the repo (via PIL); **never hot-link
   myarchivist**. Source art: `gibbous/<uuid>.webp` (keyed to each file's image URL
   UUID), with `gibbous2/` + `PCs/` named art as fallback/override.
-- **Support dir: `~/Working/a-gibbous-moon-support/`** (separate from the site repo)
+- **Support dir: `~/Sortilege/Campaigns/2025 A Gibbous Moon Over Constantinople/a-gibbous-moon-support/`** (separate from the site repo)
   holds the vault copy, art originals, Alchemy JSONs, and `build_site.py`. The site
   repo commits only generated pages + optimized images + engine + docs.
 

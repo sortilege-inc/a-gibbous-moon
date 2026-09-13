@@ -123,7 +123,7 @@ generator and all sources live in a sibling support dir, `../a-gibbous-moon-supp
 | `build/alchemy/` | Alchemy character exports → play sheets |
 | `build/sheets/` | Hand-authored play-sheet data, preferred over Alchemy |
 | `archive/my-archivist-export/` | The Archivist Obsidian export (baseline of record) |
-| `archive/` | Raw material the build never reads: maps, soundtracks, sourcebooks, art, transcripts, session analysis, notes |
+| `archive/` | Raw material the build never reads: maps, soundtracks, sourcebooks, art, transcriptions, session analysis, notes |
 | `scripts/build_site.py` | The builder |
 | `scripts/organize_archive.py` | Files new material into `archive/<bucket>/`; dry-run unless `--apply` |
 
